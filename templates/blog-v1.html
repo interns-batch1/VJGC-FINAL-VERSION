@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
+	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
+	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:url" content="https://creativegigstf.com">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
+	<meta name='og:image' content='{{ url_for("static", filename="images/assets/ogg.png") }}?v=1.2'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#1A4137">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#1A4137">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
+	<title>Vijayalakshmi Foundation | Vijayalakshmi Group</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
+	<!-- Main style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
+	<!-- responsive style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+
+	<!-- Fix Internet Explorer ______________________________________-->
+	<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="{{ url_for('static', filename='vendor/html5shiv.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
+		<![endif]-->
+	<style>
+		/* ================= GLASS EFFECT ================= */
+
+
+
+		/* ?? HARD TOP COVER (FINAL LINE KILLER) */
+
+
+		/* keep content above */
+
+
+		/* LOGO */
+
+
+		/* NAVBAR */
+
+
+
+
+		/* HOVER */
+
+
+		/* HOVER INDICATOR */
+
+
+		/* DROPDOWN */
+
+
+
+
+		/* ================= STICKY STATE ================= */
+
+
+
+
+
+
+
+		/* LOGO SCALE */
+
+
+		/* Force Header to Overlay */
+		.theme-main-menu.menu-overlay {
+			position: absolute !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			z-index: 1000 !important;
+			background: transparent !important;
+		}
+
+		/* MOBILE */
+		@media (max-width: 991px) {}
+
+		/* BODY FIX */
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background: #08201b;
+		}
+
+		/* Hero Slider Styles */
+		.hero-banner-one {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero-banner-one .vjs-hero-slider {
+			position: relative !important;
+			z-index: 1;
+			height: auto !important;
+			overflow: hidden;
+		}
+
+		.vjs-hero-slider .item {
+			position: relative;
+			padding: 0 0 120px;
+			min-height: 100vh !important;
+			display: flex !important;
+			align-items: center;
+			z-index: 5;
+			background: #08201b; /* Fallback */
+		}
+
+		.vjs-hero-slider .hero-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: -1;
+			transition: transform 5s linear;
+		}
+
+		.vjs-hero-slider .hero-img::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2));
+		}
+
+		/* GLASS CARD FOR FOUNDATION */
+		.foundation-card {
+			background: rgba(255, 255, 255, 0.08);
+			backdrop-filter: blur(16px);
+			-webkit-backdrop-filter: blur(16px);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			border-radius: 24px;
+			padding: 35px 45px;
+			box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+			max-width: 750px;
+			margin-bottom: 30px;
+		}
+
+		.foundation-card h1 {
+			color: #ffffff !important;
+			font-size: 46px !important;
+			font-weight: 800 !important;
+			line-height: 1.15;
+			margin: 0;
+			text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+		}
+
+		.vjs-foundation-hero {
+			position: relative;
+			height: 100vh;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+			padding-top: 100px;
+		}
+
+		.vjs-foundation-hero .hero-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+		}
+
+		.vjs-foundation-hero .hero-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+
+
+
+		@media (max-width: 991px) {
+			.hero-banner-one .item {
+				min-height: 600px;
+				padding: 180px 0 100px;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.hero-heading-glass {
+				font-size: 34px;
+				padding: 25px 30px;
+				max-width: 100% !important;
+			}
+
+			.hero-banner-one .item {
+				padding: 150px 0 80px;
+				min-height: 500px;
+			}
+		}
+
+		/* ANIMATION */
+		@keyframes adaniNavReveal {
+			from {
+				opacity: 0;
+				transform: translateY(-18px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0"
+		media="all">
+</head>
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- 
+		=============================================
+				Theme Main Menu
+		============================================== 
+		-->
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
+								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__text">
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
+										<span class="site-brand-lockup__subtitle">Of Companies</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="{{ url_for('home') }}" class="d-block">
+												<span class="site-brand-lockup"
+													aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi
+															Groups</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu about-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses
+										</a>
+										<ul class="dropdown-menu biz-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
+											Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu news-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
+		</header>
+		<!-- /.theme-main-menu -->
+
+
+
+
+
+		<!-- 
+		=============================================
+			Hero Banner
+		============================================== 
+		-->
+		<!-- STATIC HERO SECTION -->
+		<div class="hero-banner-one vjs-foundation-hero">
+			<div class="hero-img">
+				<img src="{{ url_for('static', filename='images/media/foundation_edu.png') }}"
+					alt="Vijayalakshmi Foundation" style="width: 100%; height: 100%; object-fit: cover;">
+				<div class="hero-overlay" style="background: rgba(0,0,0,0.4);"></div>
+			</div>
+			<div class="container position-relative" style="z-index: 2;">
+				<div class="row">
+					<div class="col-lg-8 col-md-10">
+						<div class="foundation-card">
+							<h1>Empowering Communities, <span style="color: #9ec008;">Transforming Lives</span></h1>
+							<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">At Vijayalakshmi Foundation, we are committed to driving grassroots change through sustainable education, healthcare, and environmental initiatives. Together, we build a future where every individual has the opportunity to thrive.</p>
+						</div>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb" style="background: none; padding: 0; margin-top: 20px;">
+								<li class="breadcrumb-item"><a href="{{ url_for('home') }}"
+										style="color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500;">Home</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page"
+									style="color: #fff; font-weight: 600;">Vijayalakshmi Foundation</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.vjs-foundation-hero -->
+		<!-- /.hero-banner-one -->
+
+		<!--
+		=====================================================
+			Quote Section (Second Section)
+		=====================================================
+		-->
+		<div class="quote-section-one pt-120 pb-120"
+			style="background: #fdfdfd; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-10 m-auto">
+						<div class="blog-meta-four text-center wow fadeInUp"
+							style="background: linear-gradient(135deg, #092c23 0%, #081c17 100%); padding: 80px 40px; border-radius: 40px; border: 2px solid rgba(158, 192, 8, 0.3); box-shadow: 0 40px 100px rgba(0,0,0,0.5), inset 0 0 30px rgba(158, 192, 8, 0.1);">
+							<div class="post-data">
+								<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto mb-40"
+									style="background: #9ec008; width: 90px; height: 90px; box-shadow: 0 0 30px rgba(158, 192, 8, 0.4);">
+									<img src="{{ url_for('static', filename='images/icon/icon_93.svg') }}?v=1.0" alt=""
+										style="width: 45px; filter: brightness(0);">
+								</div>
+								<h2 class="text-white fw-500 mb-50"
+									style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+									"Driving community upliftment and sustainable social impact through education, basic
+									support, and local development."</h2>
+								<div class="d-flex align-items-center justify-content-center">
+									<div
+										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
+									</div>
+									<h6 class="post-info text-white m0"
+										style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
+										Lakshmi Trust Initiative. <span
+											style="color: #9ec008; font-weight: 700; margin-left: 10px;">Purpose
+											Statement</span></h6>
+									<div
+										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.quote-section-one -->
+
+		<!--
+		=====================================================
+			Ecosystem Section
+		=====================================================
+		-->
+		<div class="ecosystem-section pt-120 pb-120 bg-white">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 wow fadeInLeft">
+						<div class="title-style-one mb-40">
+							<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">Where Education
+								<br><span style="color: #9ec008;">Meets Opportunity</span>
+							</h2>
+						</div>
+						<p class="text-lg mb-30" style="color: #444; line-height: 1.8;">
+							<strong>Aditya Institute – Academy & IT Skilling Hub</strong>, powered by the Vijayalakshmi
+							Foundation, is built to transform learning into real careers.
+						</p>
+						<p class="mb-40" style="color: #666; line-height: 1.8; font-size: 17px;">
+							We are not just an institute—we are part of a larger mission to empower students through
+							education, skill development, and employment opportunities. Many students supported by the
+							foundation begin their journey here, gaining industry-ready IT skills and practical
+							knowledge.
+						</p>
+						<h5 class="fw-bold mb-40"
+							style="color: #081c17; font-size: 22px; border-left: 4px solid #9ec008; padding-left: 15px;">
+							Our goal is simple: to turn potential into profession.
+						</h5>
+
+						<div class="row">
+							<div class="col-sm-6 mb-20">
+								<div class="d-flex align-items-center">
+									<div class="icon-box d-flex align-items-center justify-content-center rounded-circle"
+										style="width: 50px; height: 50px; background: rgba(158, 192, 8, 0.1); flex-shrink: 0;">
+										<i class="bi bi-book-fill" style="color: #9ec008; font-size: 20px;"></i>
+									</div>
+									<h6 class="ms-3 mb-0" style="color: #081c17; font-size: 16px;">Foundation-Supported
+										Learning</h6>
+								</div>
+							</div>
+							<div class="col-sm-6 mb-20">
+								<div class="d-flex align-items-center">
+									<div class="icon-box d-flex align-items-center justify-content-center rounded-circle"
+										style="width: 50px; height: 50px; background: rgba(158, 192, 8, 0.1); flex-shrink: 0;">
+										<i class="bi bi-laptop" style="color: #9ec008; font-size: 20px;"></i>
+									</div>
+									<h6 class="ms-3 mb-0" style="color: #081c17; font-size: 16px;">Industry-Focused
+										Training</h6>
+								</div>
+							</div>
+							<div class="col-sm-6 mb-20">
+								<div class="d-flex align-items-center">
+									<div class="icon-box d-flex align-items-center justify-content-center rounded-circle"
+										style="width: 50px; height: 50px; background: rgba(158, 192, 8, 0.1); flex-shrink: 0;">
+										<i class="bi bi-briefcase-fill" style="color: #9ec008; font-size: 20px;"></i>
+									</div>
+									<h6 class="ms-3 mb-0" style="color: #081c17; font-size: 16px;">Real Career
+										Opportunities</h6>
+								</div>
+							</div>
+							<div class="col-sm-6 mb-20">
+								<div class="d-flex align-items-center">
+									<div class="icon-box d-flex align-items-center justify-content-center rounded-circle"
+										style="width: 50px; height: 50px; background: rgba(158, 192, 8, 0.1); flex-shrink: 0;">
+										<i class="bi bi-graph-up-arrow" style="color: #9ec008; font-size: 20px;"></i>
+									</div>
+									<h6 class="ms-3 mb-0" style="color: #081c17; font-size: 16px;">Growth Within
+										Ecosystem</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInRight">
+						<div class="img-gallery position-relative mt-50 lg-mt-20 ps-xl-5">
+							<div class="position-relative"
+								style="border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
+								<img src="{{ url_for('static', filename='images/media/aditya_institute_learning.png') }}?v=1.0"
+									alt="Students Learning" class="w-100" style="object-fit: cover; aspect-ratio: 4/3;">
+								<div
+									style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(8, 28, 23, 0.2) 0%, rgba(158, 192, 8, 0.2) 100%); mix-blend-mode: multiply;">
+								</div>
+							</div>
+							<!-- Floating badge -->
+							<div class="position-absolute d-flex flex-column align-items-center justify-content-center"
+								style="bottom: -30px; left: 20px; width: 120px; height: 120px; background: #fff; border-radius: 50%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 4px solid #fdfdfb;">
+								<i class="bi bi-mortarboard"
+									style="color: #9ec008; font-size: 36px; line-height: 1;"></i>
+								<span class="fw-bold mt-2" style="color: #081c17; font-size: 14px;">Aditya Inst.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.ecosystem-section -->
+
+		<!--
+		=====================================================
+			Path to Future Section
+		=====================================================
+		-->
+		<div class="path-to-future-section pt-120 pb-120"
+			style="background: #f8fcf5; position: relative; overflow: hidden;">
+			<div
+				style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(158, 192, 8, 0.05); border-radius: 50%; z-index: 0;">
+			</div>
+
+			<div class="container position-relative" style="z-index: 1;">
+				<div class="row justify-content-center">
+					<div class="col-lg-8 text-center wow fadeInUp">
+						<div class="title-style-one mb-30">
+							<h2 class="main-title text-uppercase fw-800"
+								style="font-size: 42px; color: #081c17; letter-spacing: 2px;">A Clear Path to Your
+								Future</h2>
+							<div class="m-auto"
+								style="height: 4px; width: 80px; background: #9ec008; margin-top: 20px !important;">
+							</div>
+						</div>
+						<p class="text-lg mb-80" style="color: #555;">At Aditya Institute, every student is guided
+							through a complete journey—from learning to livelihood.</p>
+					</div>
+				</div>
+
+				<div class="row justify-content-center position-relative">
+					<!-- Connecting Line for Desktop -->
+					<div class="d-none d-lg-block position-absolute"
+						style="top: 50px; left: 15%; right: 15%; height: 2px; background: dashed 2px rgba(158, 192, 8, 0.3); z-index: -1;">
+					</div>
+
+					<!-- Step 1 -->
+					<div class="col-lg-4 col-md-6 mb-40 wow fadeInUp">
+						<div class="step-card text-center px-4">
+							<div class="step-icon m-auto d-flex align-items-center justify-content-center rounded-circle mb-30"
+								style="width: 100px; height: 100px; background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.05); border: 2px solid #9ec008; position: relative;">
+								<span class="position-absolute fw-bold"
+									style="top: -10px; right: -10px; width: 30px; height: 30px; background: #081c17; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px;">01</span>
+								<i class="bi bi-door-open" style="color: #081c17; font-size: 40px;"></i>
+							</div>
+							<h4 class="fw-bold mb-20" style="color: #081c17;">Opportunity</h4>
+							<p style="color: #666; font-size: 16px; line-height: 1.7;">Students from the Vijayalakshmi
+								Foundation and other backgrounds get access to quality education.</p>
+						</div>
+					</div>
+
+					<!-- Step 2 -->
+					<div class="col-lg-4 col-md-6 mb-40 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="step-card text-center px-4">
+							<div class="step-icon m-auto d-flex align-items-center justify-content-center rounded-circle mb-30"
+								style="width: 100px; height: 100px; background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.05); border: 2px solid #9ec008; position: relative;">
+								<span class="position-absolute fw-bold"
+									style="top: -10px; right: -10px; width: 30px; height: 30px; background: #081c17; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px;">02</span>
+								<i class="bi bi-tools" style="color: #081c17; font-size: 40px;"></i>
+							</div>
+							<h4 class="fw-bold mb-20" style="color: #081c17;">Skill Development</h4>
+							<p style="color: #666; font-size: 16px; line-height: 1.7;">We provide hands-on training in
+								IT and professional skills that match real industry needs.</p>
+						</div>
+					</div>
+
+					<!-- Step 3 -->
+					<div class="col-lg-4 col-md-6 mb-40 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="step-card text-center px-4">
+							<div class="step-icon m-auto d-flex align-items-center justify-content-center rounded-circle mb-30"
+								style="width: 100px; height: 100px; background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.05); border: 2px solid #9ec008; position: relative;">
+								<span class="position-absolute fw-bold"
+									style="top: -10px; right: -10px; width: 30px; height: 30px; background: #081c17; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px;">03</span>
+								<i class="bi bi-rocket-takeoff" style="color: #081c17; font-size: 40px;"></i>
+							</div>
+							<h4 class="fw-bold mb-20" style="color: #081c17;">Career Growth</h4>
+							<p style="color: #666; font-size: 16px; line-height: 1.7;">After training, students can join
+								Aditya Institute, work within our ecosystem, or step into external job opportunities
+								with confidence.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row mt-40">
+					<div class="col-12 text-center wow fadeInUp" data-wow-delay="0.3s">
+						<div class="d-inline-block px-5 py-4"
+							style="background: #081c17; border-radius: 20px; box-shadow: 0 20px 40px rgba(8, 28, 23, 0.2);">
+							<h3 class="m-0 text-white fw-bold" style="font-size: 24px; letter-spacing: 0.5px;">"We don't
+								just teach skills—we create careers."</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.path-to-future-section -->
+
+		<!--
+		=====================================================
+			Foundation Company Sections (4-8)
+		=====================================================
+		-->
+		<style>
+			.foundation-biz-section {
+				padding: 120px 0;
+				overflow: hidden;
+				transition: background 0.5s ease;
+			}
+
+			.foundation-biz-section.bg-soft-purple {
+				background: #f8fcf5; /* Matches the soft green of path-to-future */
+			}
+
+			.foundation-biz-section.bg-white {
+				background: #FFFFFF;
+			}
+
+			.f-biz-img-container {
+				position: relative;
+				border-radius: 30px;
+				overflow: hidden;
+				box-shadow: 0 20px 50px rgba(158, 192, 8, 0.15);
+				transform: translateZ(0);
+				transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+			}
+
+			.f-biz-img-container:hover {
+				transform: scale(1.02);
+			}
+
+			.f-biz-img-container img {
+				width: 100%;
+				height: 500px;
+				object-fit: cover;
+				transition: transform 0.8s ease;
+			}
+
+			.f-biz-img-container:hover img {
+				transform: scale(1.1);
+			}
+
+			.f-biz-badge {
+				position: absolute;
+				top: 30px;
+				left: 30px;
+				background: rgba(158, 192, 8, 0.9);
+				color: #fff;
+				padding: 10px 25px;
+				border-radius: 999px;
+				font-weight: 700;
+				font-size: 14px;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				backdrop-filter: blur(5px);
+				z-index: 2;
+				box-shadow: 0 10px 20px rgba(158, 192, 8, 0.3);
+			}
+
+			.f-biz-content h2 {
+				font-size: 42px;
+				font-weight: 800;
+				color: #081c17;
+				line-height: 1.2;
+				margin-bottom: 30px;
+			}
+
+			.f-highlight {
+				color: #9ec008 !important;
+				display: block; /* Matches the 'Meets Opportunity' stacked style if desired, or keep as inline */
+			}
+
+			.f-biz-content p {
+				font-size: 18px;
+				line-height: 1.8;
+				color: #444;
+				margin-bottom: 40px;
+			}
+
+			.f-quote-box {
+				background: #fff;
+				border-left: 5px solid #9ec008;
+				padding: 25px 35px;
+				border-radius: 0 20px 20px 0;
+				box-shadow: 10px 15px 40px rgba(158, 192, 8, 0.08);
+				position: relative;
+			}
+
+			.f-quote-box span {
+				display: block;
+				font-size: 20px;
+				font-weight: 700;
+				color: #081c17;
+				font-style: italic;
+			}
+
+			.f-divider {
+				width: 100%;
+				height: 1px;
+				background: linear-gradient(to right, transparent, rgba(158, 192, 8, 0.2), transparent);
+			}
+
+			@media (max-width: 991px) {
+				.f-biz-img-container img {
+					height: 400px;
+					margin-bottom: 50px;
+				}
+				.f-biz-content h2 {
+					font-size: 32px;
+				}
+			}
+		</style>
+
+		<!-- Section 4: Vijay Anjaneya Traders -->
+		<div class="foundation-biz-section bg-soft-purple">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 wow fadeInLeft">
+						<div class="f-biz-img-container">
+							<div class="f-biz-badge">Nourishment</div>
+							<img src="{{ url_for('static', filename='images/media/hero_foundation_2.png') }}" alt="Nourishment">
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInRight">
+						<div class="f-biz-content ps-lg-5">
+							<h2>Vijay Anjaneya Traders – <span class="f-highlight">Sharing Nourishment</span> with Humanity</h2>
+							<p>Vijay Anjaneya Traders actively supports orphanages and old age homes by providing food, fruits, and essential supplies to those in need. We believe that no individual should experience hunger or neglect, especially the elderly and children without support systems. Our contribution reflects compassion, dignity, and the commitment to spreading care through essential nourishment and community service.</p>
+							<div class="f-quote-box">
+								<span>"Spreading care through essential nourishment"</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="f-divider"></div>
+
+		<!-- Section 5: Aditya Powers -->
+		<div class="foundation-biz-section bg-white">
+			<div class="container">
+				<div class="row align-items-center flex-row-reverse">
+					<div class="col-lg-6 wow fadeInRight">
+						<div class="f-biz-img-container">
+							<div class="f-biz-badge">Sustainable Energy</div>
+							<img src="{{ url_for('static', filename='images/media/vjs_energy_glance_1.png') }}" alt="Solar Energy">
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInLeft">
+						<div class="f-biz-content pe-lg-5">
+							<h2>Aditya Powers – <span class="f-highlight">Empowering Lives</span> Through Sustainable Energy</h2>
+							<p>Aditya Powers proudly supports recently widowed women by providing free solar energy solutions for their homes. This initiative is designed to reduce financial burden while promoting sustainable and independent living. By bringing renewable energy into vulnerable households, we aim to create hope, security, and long-term empowerment for women facing difficult life circumstances.</p>
+							<div class="f-quote-box">
+								<span>"Bringing light to vulnerable households"</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="f-divider"></div>
+
+		<!-- Section 6: Springreen -->
+		<div class="foundation-biz-section bg-soft-purple">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 wow fadeInLeft">
+						<div class="f-biz-img-container">
+							<div class="f-biz-badge">Employment</div>
+							<img src="{{ url_for('static', filename='images/media/whyus_training.png') }}" alt="Employment">
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInRight">
+						<div class="f-biz-content ps-lg-5">
+							<h2>Springreen – Creating <span class="f-highlight">Opportunities</span> for Better Futures</h2>
+							<p>Springreen is dedicated to empowering unemployed youth, bachelors, and economically disadvantaged individuals by creating meaningful employment opportunities. We believe that employment is not just a source of income but a pathway to dignity, confidence, and self-reliance. Our initiatives focus on helping individuals build stable careers and brighter futures through inclusive growth and equal opportunities.</p>
+							<div class="f-quote-box">
+								<span>"Employment as a pathway to dignity"</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="f-divider"></div>
+
+		<!-- Section 7: Real Estate Division -->
+		<div class="foundation-biz-section bg-white">
+			<div class="container">
+				<div class="row align-items-center flex-row-reverse">
+					<div class="col-lg-6 wow fadeInRight">
+						<div class="f-biz-img-container">
+							<div class="f-biz-badge">Profit with Purpose</div>
+							<img src="{{ url_for('static', filename='images/media/hero_foundation_1.png') }}" alt="Elderly Care">
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInLeft">
+						<div class="f-biz-content pe-lg-5">
+							<h2>Real Estate Division – <span class="f-highlight">Profits with a Purpose</span></h2>
+							<p>Our Real Estate Division proudly contributes 1% of its profits toward supporting old age homes and elderly care initiatives. We strongly believe that business growth should also create social value and meaningful community impact. Through this contribution, we continue to support senior citizens with dignity, care, and essential resources that improve their quality of life.</p>
+							<div class="f-quote-box">
+								<span>"1% of profits for elderly care"</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="f-divider"></div>
+
+		<!-- Section 8: Aham Grham -->
+		<div class="foundation-biz-section bg-soft-purple">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 wow fadeInLeft">
+						<div class="f-biz-img-container">
+							<div class="f-biz-badge">Wellness</div>
+							<img src="{{ url_for('static', filename='images/media/vjs_yoga_new.png') }}" alt="Wellness">
+						</div>
+					</div>
+					<div class="col-lg-6 wow fadeInRight">
+						<div class="f-biz-content ps-lg-5">
+							<h2>Aham Grham – <span class="f-highlight">Wellness</span> with a Social Purpose</h2>
+							<p>Aham Grham organizes yoga camps and wellness programs focused on promoting healthy living, inner peace, and mental wellbeing. As part of our social contribution, a portion of the proceeds from these initiatives supports orphanages and children in need. Our goal is to combine wellness with compassion, creating positive change both for the individual and the broader community.</p>
+							<div class="f-quote-box">
+								<span>"Wellness combined with compassion"</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--
+		=====================================================
+			At A Glance Section
+		=====================================================
+		-->
+		<div class="at-a-glance-section pt-150 pb-150 lg-pt-80 lg-pb-80"
+			style="background: #fdfdfb; position: relative; overflow: hidden;">
+			<!-- Background Decorative Shape -->
+			<div
+				style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: rgba(158, 192, 8, 0.05); border-radius: 50%; filter: blur(80px);">
+			</div>
+
+			<div class="container">
+				<div class="title-style-one mb-80 lg-mb-40 text-center">
+					<h2 class="main-title text-uppercase fw-800"
+						style="font-size: 42px; color: #081c17; letter-spacing: 2px;">At a Glance</h2>
+					<div class="m-auto"
+						style="height: 4px; width: 80px; background: #9ec008; margin-top: 20px !important;"></div>
+				</div>
+
+				<div class="row gx-xl-5 gy-5">
+					<!-- Card 1: Education Support -->
+					<div class="col-lg-4 col-md-6 wow fadeInUp">
+						<div class="glance-card-premium"
+							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+								<img src="{{ url_for('static', filename='images/media/glance_empowerment.png') }}?v=1.0"
+									alt="Education Support" class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+									class="accent-bar"></div>
+							</div>
+							<div class="p-4 pt-30 pb-40 px-xl-5">
+								<h5 class="fw-bold mb-15"
+									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Education Support
+								</h5>
+								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Assistance for
+									students, learning resources, and basic digital exposure to build future-ready
+									talent.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 2: Social Service -->
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="glance-card-premium"
+							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+								<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0"
+									alt="Social Service" class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+									class="accent-bar"></div>
+							</div>
+							<div class="p-4 pt-30 pb-40 px-xl-5">
+								<h5 class="fw-bold mb-15"
+									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Social Service</h5>
+								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Financial and
+									material support during critical needs, rural assistance, and emergency support
+									programs.</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Card 3: Community Development -->
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="glance-card-premium"
+							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+								<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0"
+									alt="Community Development" class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+									class="accent-bar"></div>
+							</div>
+							<div class="p-4 pt-30 pb-40 px-xl-5">
+								<h5 class="fw-bold mb-15"
+									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Community
+									Development</h5>
+								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Driving
+									sustainable grassroots development through local engagement and infrastructure
+									needs.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Proof of Impact Section -->
+				<div class="row justify-content-center mt-100 lg-mt-60">
+					<div class="col-xl-11">
+						<div class="proof-impact-bar wow fadeInUp"
+							style="background: #fff; border-radius: 30px; padding: 40px 60px; box-shadow: 0 30px 70px rgba(0,0,0,0.06); border: 1px solid rgba(158, 192, 8, 0.1); position: relative; overflow: hidden;">
+							<!-- Decorative Accent -->
+							<div
+								style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #9ec008;">
+							</div>
+
+							<div class="row align-items-center">
+								<div class="col-lg-3 col-md-4">
+									<h4 class="m0 fw-700" style="color: #081c17; font-size: 26px;">Proof of Impact</h4>
+									<p class="m0 opacity-75 mt-5">Verified community results</p>
+								</div>
+								<div class="col-lg-9 col-md-8">
+									<div class="row">
+										<!-- Stat 1 -->
+										<div class="col-sm-6 mb-20 mb-sm-0">
+											<div
+												class="d-flex align-items-center justify-content-center justify-content-md-start">
+												<div class="icon-box d-flex align-items-center justify-content-center rounded-circle"
+													style="width: 60px; height: 60px; background: rgba(158, 192, 8, 0.1); flex-shrink: 0;">
+													<i class="bi bi-mortarboard-fill"
+														style="color: #9ec008; font-size: 24px;"></i>
+												</div>
+												<div class="ps-3 ps-xl-4 text-start">
+													<div class="counter-number fw-800"
+														style="font-size: 32px; color: #081c17; line-height: 1;">50+
+													</div>
+													<p class="m0 opacity-75" style="font-size: 15px; line-height: 1.4;">
+														Students supported with education resources</p>
+												</div>
+											</div>
+										</div>
+										<!-- Stat 2 -->
+										<div class="col-sm-6">
+											<div
+												class="d-flex align-items-center justify-content-center justify-content-md-start">
+												<div class="icon-box d-flex align-items-center justify-content-center rounded-circle"
+													style="width: 60px; height: 60px; background: rgba(158, 192, 8, 0.1); flex-shrink: 0;">
+													<i class="bi bi-people-fill"
+														style="color: #9ec008; font-size: 24px;"></i>
+												</div>
+												<div class="ps-3 ps-xl-4 text-start">
+													<div class="counter-number fw-800"
+														style="font-size: 32px; color: #081c17; line-height: 1;">10+
+													</div>
+													<p class="m0 opacity-75" style="font-size: 15px; line-height: 1.4;">
+														Local community initiatives conducted</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Add Custom CSS for Hover Effect -->
+			<style>
+				.glance-card-premium:hover {
+					transform: translateY(-12px);
+					box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12) !important;
+					border-color: rgba(158, 192, 8, 0.2) !important;
+				}
+
+				.glance-card-premium:hover .accent-bar {
+					transform: scaleX(1) !important;
+				}
+
+				.glance-card-premium:hover img {
+					transform: scale(1.08);
+				}
+			</style>
+		</div>
+		<!-- /.at-a-glance-section -->
+
+
+
+
+		<div class="foundation-visit-section" style="background: transparent;">
+			<div class="container-fluid p-0">
+				<div class="fancy-banner-three position-relative wow fadeInUp" style="background: url('{{ url_for("
+					static", filename="images/media/foundation_visit_bg.png" ) }}') no-repeat center center;
+					background-size: cover; padding: 120px 0; border-radius: 0; overflow: hidden; box-shadow: none;">
+					<!-- Dark Bottom-Heavy Gradient Overlay -->
+					<div
+						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);">
+					</div>
+
+					<div class="container position-relative" style="z-index: 1;">
+						<div class="row">
+							<div class="col-12 text-center">
+								<h2 class="hero-heading-glass d-inline-block text-white mb-30"
+									style="font-size: clamp(24px, 5vw, 42px);">
+									To Know More About Lakshmi Trust Initiative</h2>
+								<p class="text-white mb-40 m-auto p-3"
+									style="max-width: 850px; font-size: 18px; line-height: 1.7; background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); border-radius: 12px; font-weight: 500;">
+									Lakshmi Trust Initiative operates as part of Springreen's internal CSR efforts and
+									is currently not a separately registered legal entity. All contributions are managed
+									directly through our organizational social responsibility programs.
+								</p>
+								<a href="#" class="btn-visit-website d-inline-block"
+									style="padding: 14px 50px; border: 2px solid #fff; color: #fff; border-radius: 999px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; font-size: 18px; text-transform: uppercase; letter-spacing: 1px;">Get
+									in Touch</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<style>
+				.btn-visit-website:hover {
+					background: #fff;
+					color: #08201b !important;
+					transform: translateY(-3px);
+					box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+				}
+			</style>
+		</div>
+		<!-- /.fancy-banner-three -->
+
+
+
+
+
+
+		<!--
+		=====================================================
+			Footer Three
+		=====================================================
+		-->
+
+		<footer class="footer-modern">
+			<div class="footer-container">
+				<div class="footer-top">
+					<!-- LOGO & BRAND -->
+					<div class="footer-brand">
+						<div class="footer-logo-group">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Logo Mark">
+							<div class="footer-logo-text">
+								<span>Vijayalakshmi Group</span>
+								<span>OF COMPANIES</span>
+							</div>
+						</div>
+
+						<div class="social-icons-mini">
+							<a href="#"><i class="bi bi-facebook"></i></a>
+							<a href="#"><i class="bi bi-instagram"></i></a>
+							<a href="#"><i class="bi bi-youtube"></i></a>
+							<a href="#"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+
+					<!-- ABOUT -->
+					<div class="footer-col">
+						<h5>About Us</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- BUSINESS -->
+					<div class="footer-col">
+						<h5>Businesses</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
+									Logistics</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
+						</ul>
+					</div>
+
+					<!-- QUICK LINKS -->
+					<div class="footer-col">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a
+									href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- BOTTOM -->
+				<div class="footer-bottom">
+					<div class="footer-copyright">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="Mark">
+						<span>@2026 Vijayalakshmi Group</span>
+					</div>
+
+					<div class="footer-bottom-links">
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
+					</div>
+				</div>
+			</div>
+		</footer> <!-- /.footer-modern -->
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-fullscreen modal-dialog-centered">
+				<div class="container">
+					<div class="user-data-form modal-content">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="form-wrapper m-auto">
+							<ul class="nav nav-tabs border-0 w-100" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1"
+										role="tab">Login</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2"
+										role="tab">Signup</button>
+								</li>
+							</ul>
+							<div class="tab-content mt-30">
+								<div class="tab-pane show active" role="tabpanel" id="fc1">
+									<div class="text-center mb-20">
+										<h2>Hi, Welcome Back!</h2>
+										<p>Still don't have an account? <a href="#">Sign up</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="Youremail@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember">
+														<label for="remember">Keep me logged in</label>
+													</div>
+													<a href="#">Forget Password?</a>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+								<div class="tab-pane" role="tabpanel" id="fc2">
+									<div class="text-center mb-20">
+										<h2>Register</h2>
+										<p>Already have an account? <a href="#">Login</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Name*</label>
+													<input type="text" placeholder="Zubayer Hasan">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="zubayerhasan@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember2">
+														<label for="remember2">By hitting the "Register" button, you
+															agree to the <a href="#">Terms conditions</a> & <a
+																href="#">Privacy Policy</a></label>
+													</div>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+							</div>
+
+							<div class="d-flex align-items-center mt-30 mb-10">
+								<div class="line"></div>
+								<span class="pe-3 ps-3 fs-6">OR</span>
+								<div class="line"></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Google</span>
+									</a>
+								</div>
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Facebook</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- /.form-wrapper -->
+					</div>
+					<!-- /.user-data-form -->
+				</div>
+			</div>
+		</div>
+
+
+		<button class="scroll-top">
+			<i class="bi bi-arrow-up-short"></i>
+		</button>
+
+
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+
+		<script>
+			$(document).ready(function () {
+				// No slider needed for static hero
+			});
+		</script>
+	</div> <!-- /.main-page-wrapper -->
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript"
+		src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
+
+
+

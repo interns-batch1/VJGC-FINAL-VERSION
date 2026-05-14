@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
+	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
+	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:url" content="https://creativegigstf.com">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
+	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}?v=1.2'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#1A4137">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#1A4137">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
+	<title>Vijayalakshmi Group Of Companies</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
+	<!-- Main style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
+	<!-- responsive style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+
+	<!-- Fix Internet Explorer ______________________________________-->
+	<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="{{ url_for('static', filename='vendor/html5shiv.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
+		<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0"
+		media="all">
+</head>
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- ==
+				Loading Transition
+			=== -->
+		<div id="preloader">
+			<div id="ctn-preloader" class="ctn-preloader">
+				<div class="icon"><video class="m-auto d-block site-loader-video" autoplay muted loop playsinline
+						webkit-playsinline preload="auto" disablepictureinpicture aria-label="Loading animation">
+						<source src="{{ url_for('static', filename='images/fav-icon/reload.ani.mp4') }}?v=1.0"
+							type="video/mp4">
+					</video></div>
+			</div>
+		</div>
+
+
+
+		<!-- 
+		===
+				Theme Main Menu
+		==== 
+		-->
+		<!-- 
+		===
+				Theme Main Menu
+		==== 
+		-->
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
+								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__text">
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
+										<span class="site-brand-lockup__subtitle">Of Companies</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="{{ url_for('home') }}" class="d-block">
+												<span class="site-brand-lockup"
+													aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi
+															Groups</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu about-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses
+										</a>
+										<ul class="dropdown-menu biz-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
+											Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu news-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
+		</header>
+		<!-- /.theme-main-menu -->
+
+
+
+		<!-- 
+		===
+			About Us ? Premium Hero Section
+		==== 
+		-->
+		<style>
+			/* ====
+		   VJS About Hero ? Premium Split Layout
+		   ==== */
+			.vjs-about-hero {
+				position: relative;
+				height: 75vh;
+				min-height: 700px;
+				max-height: 850px;
+				display: flex;
+				align-items: flex-end;
+				padding-bottom: 120px;
+				background-image: linear-gradient(135deg, rgba(8, 32, 27, 0.98) 0%, rgba(8, 32, 27, 0.7) 40%, rgba(8, 32, 27, 0.2) 100%),
+				url('{% if cms["Hero Section"].content[0].image_url %}{{ cms["Hero Section"].content[0].image_url }}{% else %}{{ url_for("static", filename="images/media/about_hero_cinematic.png") }}{% endif %}');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				overflow: hidden;
+			}
+
+
+
+
+
+			@keyframes vjsOrbFloat {
+
+				0%,
+				100% {
+					transform: translateY(0) scale(1);
+				}
+
+				50% {
+					transform: translateY(-22px) scale(1.04);
+				}
+			}
+
+			.vjs-hero-breadcrumb {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				list-style: none;
+				padding: 0;
+				margin: 0 0 28px;
+			}
+
+			.vjs-hero-breadcrumb li,
+			.vjs-hero-breadcrumb a {
+				font-size: 13px;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				color: rgba(255, 255, 255, 0.5);
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			.vjs-hero-breadcrumb a:hover {
+				color: #ffffff;
+			}
+
+			.vjs-hero-breadcrumb .sep {
+				color: rgba(255, 255, 255, 0.6);
+				font-size: 10px;
+			}
+
+			.vjs-hero-breadcrumb .active {
+				color: #ffffff;
+			}
+
+			.vjs-hero-eyebrow {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				background: rgba(158, 192, 8, 0.1);
+				border: 1px solid rgba(158, 192, 8, 0.25);
+				border-radius: 999px;
+				padding: 6px 16px 6px 8px;
+				margin-bottom: 22px;
+			}
+
+			.vjs-hero-eyebrow .dot {
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background: #9ec008;
+				animation: vjsPulse 2s ease-in-out infinite;
+			}
+
+			@keyframes vjsPulse {
+
+				0%,
+				100% {
+					box-shadow: 0 0 0 0 rgba(158, 192, 8, 0.5);
+				}
+
+				50% {
+					box-shadow: 0 0 0 6px rgba(158, 192, 8, 0);
+				}
+			}
+
+			.vjs-hero-eyebrow span {
+				font-size: 12px;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: #c8f542;
+			}
+
+
+
+			.vjs-about-hero h1 em {
+				font-style: normal;
+				color: #ffffff;
+				position: relative;
+			}
+
+			.vjs-about-lead {
+				font-size: 1.05rem;
+				line-height: 1.8;
+				color: rgba(255, 255, 255, 0.65);
+				max-width: 520px;
+				margin-bottom: 40px;
+			}
+
+			.vjs-hero-cta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 14px;
+				margin-bottom: 56px;
+			}
+
+			.vjs-btn-primary {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				background: #9ec008;
+				color: #08201b;
+				font-weight: 700;
+				font-size: 14px;
+				letter-spacing: 0.04em;
+				padding: 14px 28px;
+				border-radius: 999px;
+				text-decoration: none;
+				transition: all 0.35s ease;
+			}
+
+			.vjs-btn-primary:hover {
+				background: #c8f542;
+				color: #08201b;
+				transform: translateY(-2px);
+				box-shadow: 0 8px 24px rgba(158, 192, 8, 0.35);
+			}
+
+			.vjs-btn-outline {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				background: transparent;
+				color: rgba(255, 255, 255, 0.8);
+				font-weight: 600;
+				font-size: 14px;
+				letter-spacing: 0.04em;
+				padding: 13px 28px;
+				border-radius: 999px;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				text-decoration: none;
+				transition: all 0.35s ease;
+			}
+
+			.vjs-btn-outline:hover {
+				border-color: #9ec008;
+				color: #c8f542;
+				transform: translateY(-2px);
+			}
+
+			.vjs-hero-stats {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 1px;
+				background: rgba(255, 255, 255, 0.08);
+				border-radius: 16px;
+				overflow: hidden;
+				border: 1px solid rgba(255, 255, 255, 0.06);
+			}
+
+			.vjs-hero-stat {
+				background: rgba(8, 32, 27, 0.6);
+				backdrop-filter: blur(12px);
+				padding: 22px 18px;
+				text-align: center;
+				transition: background 0.3s;
+			}
+
+			.vjs-hero-stat:hover {
+				background: rgba(158, 192, 8, 0.08);
+			}
+
+			.vjs-hero-stat .num {
+				font-size: 1.9rem;
+				font-weight: 800;
+				color: #c8f542;
+				line-height: 1;
+				margin-bottom: 5px;
+			}
+
+			.vjs-hero-stat .lbl {
+				font-size: 11.5px;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				color: rgba(255, 255, 255, 0.5);
+			}
+
+			.vjs-about-right {
+				position: relative;
+				padding-left: 40px;
+			}
+
+			@media (max-width: 991px) {
+				.vjs-about-right {
+					padding-left: 0;
+					margin-top: 60px;
+				}
+			}
+
+			.vjs-founding-year {
+				position: absolute;
+				top: -30px;
+				right: 0;
+				font-size: clamp(5rem, 10vw, 9rem);
+				font-weight: 900;
+				color: rgba(158, 192, 8, 0.06);
+				line-height: 1;
+				user-select: none;
+				pointer-events: none;
+			}
+
+			.vjs-pillar-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 16px;
+			}
+
+			.vjs-pillar-card {
+				border-radius: 20px;
+				padding: 28px 24px;
+				background: rgba(255, 255, 255, 0.04);
+				border: 1px solid rgba(255, 255, 255, 0.07);
+				backdrop-filter: blur(10px);
+				transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.vjs-pillar-card::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: inherit;
+				background: linear-gradient(135deg, rgba(158, 192, 8, 0.06), transparent);
+				opacity: 0;
+				transition: opacity 0.4s;
+			}
+
+			.vjs-pillar-card:hover {
+				transform: translateY(-5px);
+				border-color: rgba(158, 192, 8, 0.25);
+			}
+
+			.vjs-pillar-card:hover::before {
+				opacity: 1;
+			}
+
+			.vjs-pillar-card.featured {
+				grid-column: span 2;
+				background: linear-gradient(135deg, rgba(158, 192, 8, 0.12) 0%, rgba(8, 32, 27, 0.8) 100%);
+				border-color: rgba(158, 192, 8, 0.2);
+			}
+
+			.vjs-pillar-icon {
+				width: 44px;
+				height: 44px;
+				border-radius: 12px;
+				background: rgba(158, 192, 8, 0.12);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 16px;
+				font-size: 20px;
+			}
+
+			.vjs-pillar-card h4 {
+				font-size: 15px;
+				font-weight: 700;
+				color: #fff;
+				margin-bottom: 8px;
+			}
+
+			.vjs-pillar-card p {
+				font-size: 13px;
+				color: rgba(255, 255, 255, 0.55);
+				line-height: 1.65;
+				margin: 0;
+			}
+
+			.vjs-pillar-card.featured h4 {
+				font-size: 17px;
+				color: #c8f542;
+			}
+
+			.vjs-pillar-card.featured p {
+				color: rgba(255, 255, 255, 0.65);
+				font-size: 13.5px;
+			}
+
+			@media (max-width: 767px) {
+				.vjs-about-hero {
+					padding: 120px 0 60px;
+				}
+
+				.vjs-hero-stats {
+					grid-template-columns: 1fr 1fr;
+				}
+
+				.vjs-pillar-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.vjs-pillar-card.featured {
+					grid-column: span 1;
+				}
+			}
+
+
+
+			/* ====
+		   CSR Impact Statistics Section
+		   ==== */
+			.vjs-impact-section {
+				background: #f8f9fa;
+				padding: 120px 0;
+				position: relative;
+				overflow: hidden;
+				border-top: 1px solid rgba(0, 0, 0, 0.05);
+			}
+
+			.vjs-impact-section .title-wrap {
+				margin-bottom: 80px;
+			}
+
+			.vjs-impact-section .title-small {
+				font-size: 13px;
+				font-weight: 800;
+				color: #9ec008;
+				text-transform: uppercase;
+				letter-spacing: 0.15em;
+				margin-bottom: 16px;
+				display: block;
+			}
+
+			.vjs-impact-section h2 {
+				font-size: clamp(2rem, 4vw, 3rem);
+				font-weight: 800;
+				color: #08201b;
+				line-height: 1.2;
+				margin: 0;
+			}
+
+			.vjs-impact-card {
+				padding: 50px 30px;
+				transition: all 0.5s cubic-bezier(0.24, 1, 0.32, 1);
+				border-radius: 30px;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background: #ffffff;
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+				border: 1px solid rgba(158, 192, 8, 0.1);
+				box-shadow: 0 10px 30px rgba(8, 32, 27, 0.03);
+			}
+
+			.vjs-impact-card::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(135deg, rgb(18, 190, 182) 0%, transparent 40%, transparent 60%, rgba(158, 192, 8, 0.12) 100%);
+				z-index: -1;
+				transition: all 0.5s ease;
+			}
+
+			.vjs-impact-card:hover {
+				transform: translateY(-12px);
+				border-color: rgba(109, 187, 21, 0.795);
+				box-shadow: 0 40px 80px rgba(10, 32, 53, 0.08);
+			}
+
+			.vjs-impact-card:hover::before {
+				background: linear-gradient(135deg, rgba(6, 226, 226, 0.2) 0%, transparent 40%, transparent 60%, rgba(158, 192, 8, 0.2) 100%);
+			}
+
+			.vjs-impact-card .icon-wrap {
+				width: 90px;
+				height: 90px;
+				background: rgba(158, 192, 8, 0.08);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 30px;
+				transition: all 0.4s ease;
+			}
+
+			.vjs-impact-card:hover .icon-wrap {
+				background: #9ec008;
+			}
+
+			.vjs-impact-card .icon-wrap svg {
+				width: 45px;
+				height: 45px;
+				fill: none;
+				stroke: #9ec008;
+				stroke-width: 1.5;
+				transition: all 0.4s ease;
+			}
+
+			.vjs-impact-card:hover .icon-wrap svg {
+				stroke: #ffffff;
+			}
+
+			.vjs-impact-card .num {
+				font-size: clamp(2.5rem, 5vw, 3.5rem);
+				font-weight: 800;
+				color: #08201b;
+				margin-bottom: 12px;
+				line-height: 1;
+				font-family: 'Inter', sans-serif;
+			}
+
+			.vjs-impact-card .label {
+				font-size: 15px;
+				font-weight: 600;
+				color: rgba(8, 32, 27, 0.6);
+				text-align: center;
+				line-height: 1.5;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			@media (max-width: 991px) {
+				.vjs-impact-section {
+					padding: 80px 0;
+				}
+
+				.vjs-impact-section .title-wrap {
+					margin-bottom: 50px;
+				}
+
+				.vjs-impact-card {
+					padding: 30px 15px;
+				}
+			}
+
+			/* ====
+		   Company Vision & Mission Sections
+		   ==== */
+			.vjs-vm-section {
+				padding: 100px 0;
+				background: #f8f9fa;
+			}
+
+			.vjs-vm-section:nth-of-type(even) {
+				background: #ffffff;
+			}
+
+			.vjs-vm-container {
+				display: flex;
+				align-items: stretch;
+				gap: 60px;
+				flex-wrap: wrap;
+			}
+
+			.vjs-vm-content {
+				flex: 1;
+				min-width: 320px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.vjs-vm-image {
+				flex: 1.2;
+				min-width: 320px;
+			}
+
+			.vjs-vm-image img {
+				width: 100%;
+				height: 100%;
+				min-height: 400px;
+				object-fit: cover;
+				border-radius: 30px;
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			}
+
+			/* ====
+		   Blog Section Customization
+		   ==== */
+			.blog-section-two {
+				background: #f8f9fa !important;
+				padding: 120px 0;
+			}
+
+			.vjs-blog-slider {
+				margin: 0 -15px;
+			}
+
+			.vjs-blog-slider .slick-track {
+				display: flex !important;
+				align-items: stretch;
+			}
+
+			.vjs-blog-slider .item {
+				padding: 0 15px;
+				height: auto;
+				display: flex;
+			}
+
+			.blog-meta-two {
+				background: #ffffff;
+				border-radius: 20px;
+				overflow: hidden;
+				box-shadow: 0 10px 30px rgba(8, 32, 27, 0.04);
+				transition: all 0.4s ease;
+				border: 1px solid rgba(158, 192, 8, 0.05);
+				height: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.blog-meta-two:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 25px 50px rgba(8, 32, 27, 0.08);
+				border-color: rgba(158, 192, 8, 0.2);
+			}
+
+			.blog-meta-two .post-img {
+				height: 280px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.blog-meta-two .post-img::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(to bottom, transparent 50%, rgba(8, 32, 27, 0.4) 100%);
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+
+			.blog-meta-two:hover .post-img::after {
+				opacity: 1;
+			}
+
+			.blog-meta-two .post-img img {
+				transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+			}
+
+			.blog-meta-two:hover .post-img img {
+				transform: scale(1.1);
+			}
+
+			.blog-meta-two .post-data {
+				padding: 30px;
+				flex: 1 1 auto;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.blog-meta-two .post-data>div:first-child {
+				flex: 1 1 auto;
+			}
+
+			.blog-meta-two .blog-title h4 {
+				font-size: 20px;
+				line-height: 1.5;
+				font-weight: 700;
+				color: #08201b;
+				margin-bottom: 20px;
+				transition: color 0.3s ease;
+			}
+
+			.blog-meta-two:hover .blog-title h4 {
+				color: #9ec008;
+			}
+
+			/* ====
+		   Modern Footer Styling
+		   ==== */
+			.footer-modern {
+				background: linear-gradient(to right, #f5f7f8, #e9eef0);
+				padding: 80px 0 40px;
+				font-family: 'Inter', sans-serif;
+				border-top: 1px solid rgba(0, 0, 0, 0.03);
+				position: relative;
+				z-index: 1;
+			}
+
+			.footer-modern::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 100px;
+				background: linear-gradient(to bottom, rgba(158, 192, 8, 0.04), transparent);
+				pointer-events: none;
+			}
+
+			.footer-container {
+				max-width: 1200px;
+				margin: auto;
+				padding: 0 20px;
+			}
+
+			.footer-top {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: 40px;
+			}
+
+			.footer-logo {
+				display: flex;
+				align-items: center;
+				margin-bottom: 25px;
+			}
+
+			.footer-logo img {
+				width: 64px;
+				margin-right: 18px;
+			}
+
+			.footer-logo-text {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.footer-logo-text .text-main {
+				font-size: 18px;
+				font-weight: 800;
+				color: #08201b;
+				letter-spacing: -0.01em;
+				line-height: 1.2;
+				text-transform: uppercase;
+			}
+
+			.footer-logo-text .text-sub {
+				font-size: 18px;
+				font-weight: 800;
+				color: #08201b;
+				letter-spacing: -0.01em;
+				line-height: 1.2;
+				text-transform: uppercase;
+			}
+
+			.social-icons {
+				display: flex;
+				gap: 12px;
+				margin-top: 20px;
+			}
+
+			.social-icons a {
+				width: 40px;
+				height: 40px;
+				background: #ffffff;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #08201b;
+				font-size: 17px;
+				transition: all 0.3s ease;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+			}
+
+			.social-icons a:hover {
+				background: #9ec008;
+				color: #ffffff;
+				transform: translateY(-3px);
+				box-shadow: 0 8px 20px rgba(158, 192, 8, 0.2);
+			}
+
+			.footer-col h5 {
+				font-size: 17px;
+				margin-bottom: 25px;
+				font-weight: 700;
+				color: #08201b;
+				position: relative;
+			}
+
+			.footer-col h5::after {
+				content: "";
+				position: absolute;
+				bottom: -8px;
+				left: 0;
+				width: 30px;
+				height: 2px;
+				background: #9ec008;
+				border-radius: 2px;
+			}
+
+			.footer-col ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.footer-col ul li {
+				margin-bottom: 12px;
+			}
+
+			.footer-col ul li a {
+				text-decoration: none;
+				color: rgba(8, 32, 27, 0.6);
+				font-size: 14px;
+				font-weight: 500;
+				transition: all 0.3s ease;
+			}
+
+			.footer-col ul li a:hover {
+				color: #9ec008;
+				padding-left: 5px;
+			}
+
+			.footer-bottom {
+				border-top: 1px solid rgba(0, 0, 0, 0.06);
+				margin-top: 60px;
+				padding-top: 30px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				font-size: 14px;
+			}
+
+			.footer-copyright {
+				display: flex;
+				align-items: center;
+				color: rgba(8, 32, 27, 0.8);
+				font-weight: 500;
+			}
+
+			.footer-copyright img {
+				width: 28px;
+				margin-right: 12px;
+			}
+
+			.footer-bottom-links {
+				display: flex;
+				gap: 25px;
+			}
+
+			.footer-bottom-links a {
+				text-decoration: none;
+				color: rgba(8, 32, 27, 0.5);
+				transition: color 0.3s ease;
+			}
+
+			.footer-bottom-links a:hover {
+				color: #9ec008;
+			}
+
+			@media(max-width:768px) {
+				.footer-top {
+					flex-direction: column;
+					gap: 30px;
+				}
+
+				.footer-bottom {
+					flex-direction: column;
+					gap: 20px;
+					text-align: center;
+				}
+
+				.footer-bottom-links {
+					justify-content: center;
+					gap: 15px;
+				}
+			}
+
+			.blog-meta-two .round-btn {
+				width: 45px;
+				height: 45px;
+				background: rgba(158, 192, 8, 0.1);
+				color: #9ec008;
+				font-size: 18px;
+				transition: all 0.3s ease;
+			}
+
+			.blog-meta-two:hover .round-btn {
+				background: #9ec008;
+				color: #ffffff;
+				transform: rotate(45deg);
+			}
+
+			.blog-meta-two .post-info {
+				font-size: 14px;
+				color: rgba(8, 32, 27, 0.5);
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				gap: 15px;
+			}
+
+			.blog-meta-two .date {
+				background: #9ec008;
+				color: #ffffff;
+				font-size: 12px;
+				font-weight: 800;
+				padding: 6px 15px;
+				border-radius: 30px 0 0 30px;
+				position: absolute;
+				top: 25px;
+				right: 0;
+				z-index: 2;
+			}
+
+			.vjs-vm-label {
+				font-size: 14px;
+				font-weight: 800;
+				color: #9ec008;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+				margin-bottom: 15px;
+				display: block;
+			}
+
+			.vjs-vm-title {
+				font-size: 42px;
+				font-weight: 800;
+				color: #08201b;
+				margin-bottom: 30px;
+				line-height: 1.2;
+			}
+
+			.vjs-vm-text {
+				font-size: 18px;
+				line-height: 1.8;
+				color: #555;
+				margin-bottom: 0;
+			}
+
+			@media (max-width: 991px) {
+				.vjs-vm-container {
+					gap: 40px;
+				}
+
+				.vjs-vm-title {
+					font-size: 32px;
+				}
+			}
+		</style>
+
+		<section class="vjs-about-hero" id="about-hero" aria-label="About Vijayalakshmi Group">
+			<div class="container position-relative" style="z-index:2;">
+				<div class="row align-items-center gy-5">
+
+					<!-- LEFT COLUMN -->
+					<div class="col-lg-9 wow fadeInLeft" data-wow-duration="0.9s">
+
+						<!-- Breadcrumb -->
+						<ul class="vjs-hero-breadcrumb">
+							<li><a href="{{ url_for('home') }}">Home</a></li>
+							<li class="sep">&rsaquo;</li>
+							<li class="active">About Us</li>
+						</ul>
+
+
+
+						<!-- Headline -->
+						{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
+						<h1 class="hero-heading-glass">
+							{% if hero.title %}
+								{{ hero.title | safe }}
+							{% else %}
+								Driving Growth & Building <em>Lasting Trust</em> For Decades
+							{% endif %}
+						</h1>
+						<p class="vjs-about-lead animate-up delay-1">
+							{% if hero.subtitle %}
+								{{ hero.subtitle }}
+							{% else %}
+								A diversified conglomerate with an unwavering commitment to excellence, sustainable innovation, and community development across the globe.
+							{% endif %}
+						</p>
+
+
+
+						<!-- CTA -->
+
+
+
+
+					</div><!-- /left -->
+
+					<!-- RIGHT COLUMN -->
+					<div class="col-lg-6 wow fadeInRight" data-wow-duration="0.9s" data-wow-delay="0.15s">
+						<div class="vjs-about-right px-xl-5">
+						</div>
+					</div><!-- /right -->
+
+				</div>
+			</div>
+		</section>
+		<!-- /.vjs-about-hero -->
+
+
+		<!-- Company Vision Section -->
+		<section class="vjs-vm-section">
+			<div class="container">
+				<div class="vjs-vm-container">
+					<div class="vjs-vm-content wow fadeInLeft">
+						<span class="vjs-vm-label">Defining Our Purpose</span>
+						<h2 class="vjs-vm-title">COMPANY<br>VISION</h2>
+						<p class="vjs-vm-text">To be a world class leader in businesses that enrich lives and contribute
+							to nations in building infrastructure through sustainable value creation.</p>
+					</div>
+					<div class="vjs-vm-image wow fadeInRight">
+						<img src="{{ url_for('static', filename='images/media/vision_landscape.png') }}?v=1.0"
+							alt="Company Vision - Sustainable Value Creation">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Company Mission Section -->
+		<section class="vjs-vm-section">
+			<div class="container">
+				<div class="vjs-vm-container">
+					<div class="vjs-vm-image wow fadeInLeft">
+						<img src="{{ url_for('static', filename='images/media/mission_industrial.png') }}?v=1.0"
+							alt="Company Mission - Empowering Communities">
+					</div>
+					<div class="vjs-vm-content wow fadeInRight">
+						<span class="vjs-vm-label">Our Path Forward</span>
+						<h2 class="vjs-vm-title">COMPANY<br>MISSION</h2>
+						<p class="vjs-vm-text">Defining sustainable growth through innovative infrastructure, ethical
+							trade, and financial excellence, empowering communities and nations for a resilient future.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- 
+		===
+			Impact Statistics Section
+		==== 
+		-->
+		<section class="vjs-impact-section">
+			<div class="container">
+				<div class="row align-items-end title-wrap">
+					<div class="col-lg-7 wow fadeInLeft">
+						<span class="title-small">Our Global Footprint</span>
+						<h2>CREATING THE IMPACT <br>OF A LIFETIME</h2>
+					</div>
+					<div class="col-lg-5 ms-auto wow fadeInRight">
+						<p class="m0 text-lg opacity-75 md-pt-20">We believe that real growth is measured by the
+							positive change we bring to the environment and the communities we serve.</p>
+					</div>
+				</div>
+
+				<div class="row gx-xxl-5">
+					<!-- Team Strength -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+									<circle cx="9" cy="7" r="4"></circle>
+									<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+									<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+								</svg>
+							</div>
+							<div class="num"><span class="counter">48000</span>+</div>
+							<div class="label">Team Strength</div>
+						</div>
+					</div>
+
+					<!-- Farmers -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path
+										d="m10 11 11 .9c.6 0 .9.5.8 1.1l-.8 5c-.1.6-.6 1-1.2 1H14c-.6 0-1.2-.4-1.3-1l-.2-1.5">
+									</path>
+									<path d="M16 18h2"></path>
+									<path d="M10 11V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2"></path>
+									<path d="m2 7 2 4h6"></path>
+									<path d="M13 18H9"></path>
+									<circle cx="7" cy="15" r="5"></circle>
+									<circle cx="18" cy="15" r="2"></circle>
+								</svg>
+							</div>
+							<div class="num"><span class="counter">1000</span>+</div>
+							<div class="label">Farmers are Happy</div>
+						</div>
+					</div>
+
+					<!-- Trees Planted -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path d="M7 20h10"></path>
+									<path d="M10 20c5.5-2.5 8-6.4 8-8.5V9a1 1 0 0 0-1-1c-2.1 0-6 2.5-8.5 8"></path>
+									<path d="M14 20c-5.5-2.5-8-6.4-8-8.5V9a1 1 0 0 1 1-1c2.1 0 6 2.5 8.5 8"></path>
+									<path d="M12 20V9"></path>
+								</svg>
+							</div>
+							<div class="num"><span class="counter">6.75</span></div>
+							<div class="label">Million Trees <br>Planted</div>
+						</div>
+					</div>
+
+					<!-- Lives Touched -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="vjs-impact-card">
+							<div class="icon-wrap">
+								<svg viewBox="0 0 24 24">
+									<path
+										d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+									</path>
+								</svg>
+							</div>
+							<div class="num"><span class="counter">9.10</span></div>
+							<div class="label">Million Lives <br>Touched</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /.vjs-impact-section -->
+		<div class="blog-section-two position-relative mt-0 pt-150 lg-pt-80 pb-150 lg-pb-80">
+			<div class="container">
+				<div class="position-relative">
+					<div class="title-one mb-30 lg-mb-10">
+						<h2>Insights News.</h2>
+					</div>
+					<!-- /.title-one -->
+
+					<div class="vjs-blog-slider">
+						{% set active_news = cms['Insights News'].content %}
+						{% if active_news %}
+							{% for item in active_news %}
+							<div class="item">
+								<article class="blog-meta-two wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+									<figure class="post-img position-relative d-flex align-items-end m0"
+										style="height: 280px; overflow: hidden; border-radius: 20px;">
+										{% if (item.image or item.image_url) and (item.image or item.image_url).endswith('.mp4') %}
+										<video loop muted playsinline autoplay
+											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+											<source src="{{ item.image or item.image_url }}" type="video/mp4">
+										</video>
+										{% else %}
+										<img src="{{ item.image or item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}"
+											alt="{{ item.title }}" class="lazy-img w-100 h-100" style="object-fit: cover;">
+										{% endif %}
+										<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+											class="stretched-link date tran3s">{{ item.updatedAt.strftime('%d %b') if item.updatedAt else (item.created_at.strftime('%d %b') if item.created_at else 'Recent') }}</a>
+									</figure>
+									<div class="post-data">
+										<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+												class="blog-title">
+												<h4>{{ item.title }}</h4>
+											</a>
+											<a href="{{ url_for('dynamic_route', path='blog-details') }}?v=1.0"
+												class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i
+													class="bi bi-arrow-up-right"></i></a>
+										</div>
+										<div class="post-info">{{ item.author or 'Admin' }} . {{ item.read_time or '5 min' }} read . {{ item.category_name or 'General' }}</div>
+									</div>
+								</article>
+							</div>
+							{% endfor %}
+						{% else %}
+							<!-- Fallback to original news items if DB is empty -->
+							<div class="item">
+								<article class="blog-meta-two wow fadeInUp">
+									<figure class="post-img position-relative d-flex align-items-end m0" style="height: 280px; overflow: hidden; border-radius: 20px;">
+										<img src="{{ url_for('static', filename='images/media/blog_01.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+										<a href="#" class="stretched-link date tran3s">15 Feb</a>
+									</figure>
+									<div class="post-data">
+										<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+											<a href="#" class="blog-title"><h4>Expanding Global Operations: New Tech Hubs in Singapore.</h4></a>
+											<a href="#" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+										</div>
+										<div class="post-info">Admin . 8 min read . Tech</div>
+									</div>
+								</article>
+							</div>
+							<div class="item">
+								<article class="blog-meta-two wow fadeInUp" data-wow-delay="0.1s">
+									<figure class="post-img position-relative d-flex align-items-end m0" style="height: 280px; overflow: hidden; border-radius: 20px;">
+										<img src="{{ url_for('static', filename='images/media/blog_02.jpg') }}" alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+										<a href="#" class="stretched-link date tran3s">20 Feb</a>
+									</figure>
+									<div class="post-data">
+										<div class="d-flex justify-content-between align-items-sm-center flex-wrap">
+											<a href="#" class="blog-title"><h4>Sustainable Growth: Reaching Our 10M Trees Milestone.</h4></a>
+											<a href="#" class="round-btn rounded-circle d-flex align-items-center justify-content-center tran3s"><i class="bi bi-arrow-up-right"></i></a>
+										</div>
+										<div class="post-info">Admin . 6 min read . Impact</div>
+									</div>
+								</article>
+							</div>
+						{% endif %}
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		<!-- /.blog-section-two -->
+		<!--
+		====
+			Footer Three
+		====
+		-->
+		<div class="footer-modern">
+			<div class="footer-container">
+				<div class="footer-top">
+					<!-- LOGO & BRAND -->
+					<div class="footer-brand">
+						<div class="footer-logo-group">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Logo Mark">
+							<div class="footer-logo-text">
+								<span>Vijayalakshmi Group</span>
+								<span>OF COMPANIES</span>
+							</div>
+						</div>
+
+						<div class="social-icons-mini">
+							<a href="#"><i class="bi bi-facebook"></i></a>
+							<a href="#"><i class="bi bi-instagram"></i></a>
+							<a href="#"><i class="bi bi-youtube"></i></a>
+							<a href="#"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+
+					<!-- ABOUT -->
+					<div class="footer-col">
+						<h5>About Us</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- BUSINESS -->
+					<div class="footer-col">
+						<h5>Businesses</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
+									Logistics</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
+						</ul>
+					</div>
+
+					<!-- QUICK LINKS -->
+					<div class="footer-col">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a
+									href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- BOTTOM -->
+				<div class="footer-bottom">
+					<div style="display: flex; align-items: center; gap: 8px;">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="Mark" style="height: 20px; width: auto;">
+						<span>@2026 Vijayalakshmi Group</span>
+					</div>
+
+					<div class="footer-bottom-links">
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /.footer-modern -->
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-fullscreen modal-dialog-centered">
+				<div class="container">
+					<div class="user-data-form modal-content">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="form-wrapper m-auto">
+							<ul class="nav nav-tabs border-0 w-100" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1"
+										role="tab">Login</button>
+									<h1 class="hero-heading-glass">
+										<em>Building</em> a sustainable legacy for generations
+									</h1> <button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2"
+										role="tab">Signup</button>
+								</li>
+							</ul>
+							<div class="tab-content mt-30">
+								<div class="tab-pane show active" role="tabpanel" id="fc1">
+									<div class="text-center mb-20">
+										<h2>Hi, Welcome Back!</h2>
+										<p>Still don't have an account? <a href="#">Sign up</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="Youremail@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember">
+														<label for="remember">Keep me logged in</label>
+													</div>
+													<a href="#">Forget Password?</a>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+								<div class="tab-pane" role="tabpanel" id="fc2">
+									<div class="text-center mb-20">
+										<h2>Register</h2>
+										<p>Already have an account? <a href="#">Login</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Name*</label>
+													<input type="text" placeholder="Zubayer Hasan">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="zubayerhasan@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember2">
+														<label for="remember2">By hitting the "Register" button, you
+															agree to the <a href="#">Terms conditions</a> & <a
+																href="#">Privacy Policy</a></label>
+													</div>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+							</div>
+
+							<div class="d-flex align-items-center mt-30 mb-10">
+								<div class="line"></div>
+								<span class="pe-3 ps-3 fs-6">OR</span>
+								<div class="line"></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Google</span>
+									</a>
+								</div>
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Facebook</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- /.form-wrapper -->
+					</div>
+					<!-- /.user-data-form -->
+				</div>
+			</div>
+		</div>
+
+
+		<button class="scroll-top">
+			<i class="bi bi-arrow-up-short"></i>
+		</button>
+
+
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+		<!-- WOW js -->
+		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+		<!-- Slick Slider -->
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+		<!-- Fancybox -->
+		<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
+		<!-- Lazy -->
+		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
+		<!-- js Counter -->
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
+
+		<!-- validator js -->
+		<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
+
+		<!-- Theme js -->
+		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+		<!-- Navbar Hover Animation -->
+		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+	</div> <!-- /.main-page-wrapper -->
+	<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript"
+		src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
+
+
+

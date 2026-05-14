@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Media Kit | Vijayalakshmi Group</title>
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0"
+		media="all">
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Devanagari:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- Theme Main Menu -->
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
+								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__text">
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
+										<span class="site-brand-lockup__subtitle">Of Companies</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="{{ url_for('home') }}" class="d-block">
+												<span class="site-brand-lockup"
+													aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi
+															Groups</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu about-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses
+										</a>
+										<ul class="dropdown-menu biz-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
+											Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu news-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
+		</header>
+
+		<style>
+			/* ===== PREMIUM ASSET CARDS ===== */
+			.media-kit-content-section {
+				background: linear-gradient(180deg, #f4f9f0 0%, #ffffff 60%, #f4f9f0 100%) !important;
+			}
+
+			.vjs-asset-card {
+				background: #fff;
+				border-radius: 20px;
+				overflow: hidden;
+				margin-bottom: 30px;
+				border: 1px solid rgba(158, 192, 8, 0.12);
+				box-shadow: 0 4px 20px rgba(8, 32, 27, 0.06);
+				transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.38s ease;
+			}
+
+			.vjs-asset-card:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 20px 50px rgba(8, 32, 27, 0.13);
+				border-color: rgba(158, 192, 8, 0.35);
+			}
+
+			.vjs-asset-img-box {
+				height: 220px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 30px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.vjs-asset-img-box img {
+				transition: transform 0.4s ease;
+			}
+
+			.vjs-asset-card:hover .vjs-asset-img-box img {
+				transform: scale(1.06);
+			}
+
+			.vjs-asset-body {
+				padding: 20px 22px 22px;
+				border-top: 1px solid #f0f5ec;
+			}
+
+			.vjs-asset-label {
+				padding: 0 0 8px;
+				font-weight: 700;
+				color: #081c17;
+				font-size: 15px;
+				letter-spacing: -0.2px;
+				line-height: 1.4;
+			}
+
+			.vjs-download-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+				padding: 7px 18px;
+				background: #9ec008;
+				color: #081c17 !important;
+				border-radius: 30px;
+				font-weight: 700;
+				font-size: 13px;
+				text-decoration: none !important;
+				margin-top: 4px;
+				transition: all 0.25s ease;
+				border: none;
+			}
+
+			.vjs-download-link:hover {
+				background: #081c17;
+				color: #9ec008 !important;
+				transform: translateX(2px);
+			}
+
+
+			.vjs-category-tab {
+				color: #08201b;
+				border-bottom: 3px solid #9ec008;
+				padding-bottom: 5px;
+				font-weight: 700;
+				font-size: 13px;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+		</style>
+
+		<div class="inner-banner-one position-relative"
+			style="background-image: url('{{ url_for('static', filename='images/media/contact_banner_bg.png') }}'); height: 100vh; min-height: 700px; display: flex; align-items: center;">
+			<div class="container position-relative">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<h1 class="hero-heading-glass">Media Kit</h1>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- ============================================================== -->
+		<!-- NEW BRAND GUIDELINES SECTIONS FOR VIJAYALAKSHMI GROUP -->
+		<!-- ============================================================== -->
+
+		<style>
+			:root {
+				--vjs-purple: #8C52FF;
+				--vjs-purple-light: #F3EFFF;
+				--vjs-dark: #2D2D2D;
+				--vjs-gray: #757575;
+				--vjs-bg-light: #F9F9FB;
+			}
+
+			.brand-guidelines-wrapper {
+				font-family: 'Inter', 'IBM Plex Sans Devanagari', sans-serif;
+				background-color: #fff;
+				color: var(--vjs-dark);
+				overflow: hidden;
+				margin-top: 50px;
+			}
+
+			.bg-section {
+				padding: 80px 0;
+				border-bottom: 1px solid #eee;
+			}
+
+
+			.bg-title-area h2 {
+				font-size: 72px;
+				font-weight: 700;
+				margin-bottom: 20px;
+				line-height: 1.1;
+			}
+
+			.bg-title-area h2 span {
+				color: var(--vjs-purple);
+				display: block;
+			}
+
+			.bg-description {
+				font-size: 16px;
+				line-height: 1.6;
+				color: var(--vjs-gray);
+				max-width: 500px;
+			}
+
+			/* Primary Logo Section */
+			.logo-card-container {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 30px;
+			}
+
+			.logo-card {
+				border-radius: 24px;
+				padding: 60px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 400px;
+				position: relative;
+			}
+
+			.logo-card.light {
+				background-color: var(--vjs-purple-light);
+			}
+
+			.logo-card.dark {
+				background: linear-gradient(135deg, #1A0B2E 0%, #4B248B 100%);
+			}
+
+			.vjs-logo-brand {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+
+			.vjs-logo-icon {
+				width: 120px;
+				height: 120px;
+				margin-bottom: 20px;
+			}
+
+			.vjs-logo-text {
+				font-size: 36px;
+				font-weight: 800;
+				letter-spacing: -1px;
+			}
+
+			.logo-card.light .vjs-logo-text {
+				color: var(--vjs-purple);
+			}
+
+			.logo-card.dark .vjs-logo-text {
+				color: #fff;
+			}
+
+			.vjs-logo-tagline {
+				font-size: 14px;
+				font-weight: 500;
+				margin-top: -5px;
+			}
+
+			.logo-card.light .vjs-logo-tagline {
+				color: var(--vjs-purple);
+			}
+
+			.logo-card.dark .vjs-logo-tagline {
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			/* Variations */
+			.variations-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto auto;
+				gap: 20px;
+			}
+
+			.variation-card {
+				border-radius: 20px;
+				padding: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 200px;
+			}
+
+			/* Safezone */
+			.safezone-box {
+				background: var(--vjs-purple-light);
+				border-radius: 24px;
+				padding: 80px;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.safezone-line {
+				position: absolute;
+				border: 1.5px dashed var(--vjs-purple);
+				opacity: 0.5;
+			}
+
+			.safezone-label {
+				position: absolute;
+				font-size: 12px;
+				font-weight: 700;
+				color: var(--vjs-dark);
+				background: #fff;
+				padding: 2px 6px;
+				border-radius: 4px;
+				z-index: 2;
+			}
+
+			/* Incorrect Usage */
+			.incorrect-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+			}
+
+			.incorrect-card {
+				background: var(--vjs-purple-light);
+				border-radius: 20px;
+				padding: 40px;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				overflow: hidden;
+			}
+
+			.incorrect-x {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(255, 0, 0, 0.05);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				pointer-events: none;
+			}
+
+			.incorrect-x::before,
+			.incorrect-x::after {
+				content: '';
+				position: absolute;
+				width: 150%;
+				height: 4px;
+				background: rgba(255, 50, 50, 0.3);
+			}
+
+			.incorrect-x::before {
+				transform: rotate(45deg);
+			}
+
+			.incorrect-x::after {
+				transform: rotate(-45deg);
+			}
+
+			.do-not-list {
+				list-style: none;
+				padding: 0;
+				margin-top: 40px;
+			}
+
+			.do-not-list li {
+				margin-bottom: 12px;
+				padding-left: 25px;
+				position: relative;
+				font-size: 15px;
+			}
+
+			.do-not-list li::before {
+				content: '•';
+				position: absolute;
+				left: 0;
+				color: var(--vjs-purple);
+				font-weight: 700;
+			}
+
+			/* Colors */
+			.color-row {
+				display: flex;
+				gap: 30px;
+			}
+
+			.color-block {
+				flex: 1;
+				border-radius: 24px;
+				padding: 40px;
+				min-height: 450px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.color-info {
+				font-weight: 700;
+				color: #fff;
+			}
+
+			/* Typography */
+			.typo-main-a {
+				font-size: 240px;
+				font-weight: 700;
+				line-height: 1;
+				margin-bottom: 20px;
+				font-family: 'IBM Plex Sans Devanagari', sans-serif;
+			}
+
+			.weight-line {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px solid #eee;
+				padding: 15px 0;
+				font-size: 24px;
+				font-family: 'IBM Plex Sans Devanagari', sans-serif;
+			}
+
+			/* Brand Imagery */
+			.imagery-grid {
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 20px;
+				height: 600px;
+			}
+
+			.img-item {
+				border-radius: 24px;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.img-item img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.img-overlay {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 50%;
+				background: linear-gradient(to top, rgba(140, 82, 255, 0.9), transparent);
+				display: flex;
+				align-items: flex-end;
+				padding: 25px;
+			}
+
+			.img-overlay span {
+				color: #fff;
+				font-size: 24px;
+				font-weight: 700;
+			}
+
+			/* Digital Presence */
+			.presence-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 25px;
+			}
+
+			.presence-card {
+				border-radius: 24px;
+				overflow: hidden;
+				position: relative;
+				height: 450px;
+			}
+
+			.presence-card img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.presence-label {
+				position: absolute;
+				bottom: 30px;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				color: #fff;
+				font-size: 20px;
+				font-weight: 700;
+				padding: 0 20px;
+				z-index: 2;
+			}
+
+			.presence-card::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 50%;
+				background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+			}
+
+			@media (max-width: 991px) {
+
+				.logo-card-container,
+				.variations-grid,
+				.incorrect-grid,
+				.color-row,
+				.imagery-grid,
+				.presence-grid {
+					grid-template-columns: 1fr;
+					height: auto;
+				}
+
+				.bg-title-area h2 {
+					font-size: 48px;
+				}
+
+				.typo-main-a {
+					font-size: 150px;
+				}
+			}
+		</style>
+
+		<div class="brand-guidelines-wrapper">
+			<!-- SECTION 1: PRIMARY LOGO -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-5">
+							<div class="bg-title-area">
+								<h2><span>Primary</span> Logo</h2>
+								<p class="bg-description">
+									The Vijayalakshmi Group logo symbolizes diversified excellence and united growth.
+									The flowing lines represent harmony between our various business verticals, while
+									the bold typography reflects our strength and stability.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="logo-card-container">
+								<div class="logo-card light">
+									<div class="vjs-logo-brand">
+										<img src="{{ url_for('static', filename='images/media-kit/1.png') }}"
+											alt="Vijayalakshmi Logo" style="max-width: 100%; height: auto;">
+									</div>
+								</div>
+								<div class="logo-card dark">
+									<div class="vjs-logo-brand">
+										<img src="{{ url_for('static', filename='images/media-kit/2.png') }}"
+											alt="Vijayalakshmi Logo Inverted" style="max-width: 100%; height: auto;">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 2: LOGO VARIATIONS -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="bg-title-area">
+								<h2><span>Logo</span> Variations</h2>
+								<p class="bg-description">
+									Our logo is adaptable to different contexts, allowing for flexibility while
+									maintaining brand identity. Each variation serves a specific purpose, providing
+									versatility across digital and print media.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<div class="variations-grid">
+								<div class="variation-card" style="background: var(--vjs-purple-light);">
+									<img src="{{ url_for('static', filename='images/media-kit/1.png') }}"
+										alt="Logo Variation 1" style="max-height: 100px; width: auto;">
+								</div>
+								<div class="variation-card" style="background: #E31E24;">
+									<img src="{{ url_for('static', filename='images/media-kit/2.png') }}"
+										alt="Logo Variation 2" style="max-height: 100px; width: auto;">
+								</div>
+								<div class="variation-card"
+									style="background: linear-gradient(135deg, #00FFCC 0%, #0099FF 100%);">
+									<img src="{{ url_for('static', filename='images/media-kit/3.png') }}"
+										alt="Logo Variation 3" style="max-height: 100px; width: auto;">
+								</div>
+								<div class="variation-card" style="background: #000;">
+									<img src="{{ url_for('static', filename='images/media-kit/4.png') }}"
+										alt="Logo Variation 4" style="max-height: 100px; width: auto;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 3: LOGO SAFEZONE -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 mb-40">
+							<div class="bg-title-area">
+								<h2><span>Logo</span> Safezone</h2>
+								<p class="bg-description">
+									The logo safe zone defines the clear space surrounding the Vijayalakshmi Group logo
+									to maintain its visibility and balance. This protected area prevents other elements
+									from crowding the logo.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="safezone-box">
+								<div class="vjs-logo-brand"
+									style="position: relative; display: inline-block; padding: 60px 100px;">
+									<!-- Safezone Dashed Box -->
+									<div class="safezone-line"
+										style="top: 0; left: 0; right: 0; height: 1px; width: 100%;"></div>
+									<div class="safezone-line"
+										style="bottom: 0; left: 0; right: 0; height: 1px; width: 100%;"></div>
+									<div class="safezone-line"
+										style="left: 0; top: 0; bottom: 0; width: 1px; height: 100%;"></div>
+									<div class="safezone-line"
+										style="right: 0; top: 0; bottom: 0; width: 1px; height: 100%;"></div>
+
+									<!-- Internal Alignment Lines -->
+									<div class="safezone-line"
+										style="top: 0; left: 25%; bottom: 0; width: 1px; height: 100%; border-style: dotted; opacity: 0.2;">
+									</div>
+									<div class="safezone-line"
+										style="top: 0; right: 25%; bottom: 0; width: 1px; height: 100%; border-style: dotted; opacity: 0.2;">
+									</div>
+
+									<!-- Labels -->
+									<div class="safezone-label"
+										style="top: -15px; left: 50%; transform: translateX(-50%);">1.5X</div>
+									<div class="safezone-label"
+										style="bottom: -15px; left: 50%; transform: translateX(-50%);">1X</div>
+									<div class="safezone-label"
+										style="left: -15px; top: 50%; transform: translateY(-50%);">3X</div>
+									<div class="safezone-label"
+										style="right: -15px; top: 50%; transform: translateY(-50%);">0.7X</div>
+
+									<img src="{{ url_for('static', filename='images/media-kit/1.png') }}"
+										alt="Safezone Logo"
+										style="max-height: 120px; width: auto; display: block; position: relative; z-index: 1;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 4: INCORRECT LOGO USAGE -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5">
+							<div class="bg-title-area">
+								<h2><span>Incorrect</span> Logo Usage</h2>
+								<p class="bg-description">
+									To maintain brand consistency, avoid distorting, recoloring, or misplacing the logo.
+									Always follow the approved guidelines to ensure the logo remains clear,
+									professional, and impactful.
+								</p>
+							</div>
+							<ul class="do-not-list">
+								<li>Do not change the position of the logo mark</li>
+								<li>Do not arrange the logo in a top-down vertical stack</li>
+								<li>Do not use unofficial colors or gradients</li>
+								<li>Do not rotate any part of the logo or wordmark</li>
+								<li>Do not use the wordmark without the company mark</li>
+							</ul>
+						</div>
+						<div class="col-lg-7">
+							<div class="incorrect-grid">
+								<div class="incorrect-card">
+									<img src="{{ url_for('static', filename='images/media-kit/1.png') }}"
+										alt="Incorrect 1"
+										style="max-height: 80px; opacity: 0.5; transform: scaleX(1.5);">
+									<div class="incorrect-x"></div>
+								</div>
+								<div class="incorrect-card">
+									<img src="{{ url_for('static', filename='images/media-kit/1.png') }}"
+										alt="Incorrect 2"
+										style="max-height: 80px; opacity: 0.5; transform: rotate(15deg);">
+									<div class="incorrect-x"></div>
+								</div>
+								<div class="incorrect-card">
+									<img src="{{ url_for('static', filename='images/media-kit/1.png') }}"
+										alt="Incorrect 3"
+										style="max-height: 80px; opacity: 0.5; filter: hue-rotate(90deg);">
+									<div class="incorrect-x"></div>
+								</div>
+								<div class="incorrect-card">
+									<img src="{{ url_for('static', filename='images/media-kit/1.png') }}"
+										alt="Incorrect 4"
+										style="max-height: 80px; opacity: 0.5; transform: scaleY(0.5);">
+									<div class="incorrect-x"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 5: COLOR PALETTE -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="bg-title-area">
+								<h2><span>Color</span> Palette</h2>
+								<p class="bg-description">
+									Our color palette is defined by a bold and energetic Corporate Red, reflecting the
+									Group's passion, strength, and commitment to excellence. This primary identity color
+									ensures high visibility and brand recognition.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<div class="color-row">
+								<div class="color-block"
+									style="background: linear-gradient(180deg, #E31E24 0%, #B5171B 100%);">
+									<span class="color-info" style="font-size: 24px;">Brand Gradient</span>
+									<div>
+										<span class="color-info d-block">Color 1: #E31E24</span>
+										<span class="color-info d-block">Color 2: #B5171B</span>
+									</div>
+								</div>
+								<div class="color-block" style="background: #E31E24;">
+									<span class="color-info" style="font-size: 24px;">Corporate Red</span>
+									<div>
+										<span class="color-info d-block">HEX: #E31E24</span>
+										<span class="color-info d-block">RGB: 227, 30, 36</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 6: TYPOGRAPHY -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="bg-title-area">
+								<h2><span>Primary</span> Typography</h2>
+								<div class="typo-main-a">Aa</div>
+								<h3 style="font-size: 32px; font-weight: 700;">IBM Plex Sans Devanagari</h3>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="weights-list" style="margin-top: 40px;">
+								<div class="weight-line" style="font-weight: 300;">Light</div>
+								<div class="weight-line" style="font-weight: 400;">Regular</div>
+								<div class="weight-line" style="font-weight: 500;">Medium</div>
+								<div class="weight-line" style="font-weight: 600;">Semi Bold</div>
+								<div class="weight-line" style="font-weight: 700;">Bold</div>
+							</div>
+							<div class="mt-40">
+								<p style="font-size: 18px; color: var(--vjs-gray);">
+									ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+									abcdefghijklmnopqrstuvwxyz<br>
+									1234567890!@#$%&*()
+								</p>
+								<p class="mt-20" style="color: var(--vjs-gray);">
+									Vijayalakshmi Group promotes excellence through innovation and sustainable
+									practices, helping industries achieve new heights of success and growth.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 7: BRAND IMAGERY -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="bg-title-area">
+								<h2><span>Brand</span> Imagery</h2>
+								<p class="bg-description">
+									Our brand imagery showcases professional, tech-forward experiences using vibrant
+									gradients and expressive human moments. It reflects our innovative and modern
+									identity.
+								</p>
+								<div class="mt-60">
+									<span class="d-block fw-700 mb-10">Keywords:</span>
+									<p style="font-size: 18px; color: var(--vjs-purple); font-weight: 600;">
+										Professional, Innovative, Sustainable, Trust, Growth, Excellence
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<div class="imagery-grid">
+								<div class="img-item"
+									style="grid-row: span 2; background: #f9f9f9; display: flex; align-items: center; justify-content: center; padding: 40px;">
+									<img src="{{ url_for('static', filename='images/media-kit/vjs_logo_full.png') }}"
+										alt="Innovation">
+									<div class="img-overlay"><span>Innovation</span></div>
+								</div>
+								<div class="img-item"
+									style="background: #f0ebff; display: flex; align-items: center; justify-content: center; padding: 20px;">
+									<img src="{{ url_for('static', filename='images/media-kit/vjs_logo_mark.png') }}"
+										alt="Growth" style="max-height: 150px; width: auto;">
+									<div class="img-overlay"><span>Growth</span></div>
+								</div>
+								<div class="img-item"
+									style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; padding: 20px;">
+									<img src="{{ url_for('static', filename='images/media-kit/vjs_logo_full.png') }}"
+										alt="Trust" style="filter: grayscale(1); opacity: 0.7;">
+									<div class="img-overlay"><span>Trust</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 8: DIGITAL PRESENCE -->
+			<section class="bg-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 mb-40">
+							<div class="bg-title-area">
+								<h2><span>Digital</span> Presence</h2>
+								<p class="bg-description">
+									Our social media voice reflects the professional and innovative essence of
+									Vijayalakshmi Group: visionary, efficient, and authentic.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="presence-grid">
+								<div class="presence-card"
+									style="background-image: url('{{ url_for('static', filename='images/media-kit/it_solutions.png') }}'); background-size: cover; background-position: center; position: relative; border-radius: 20px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: flex-end;">
+									<div
+										style="position: absolute; top: 20px; left: 20px; width: 70px; height: 70px; background: rgba(255,255,255,0.95); border-radius: 12px; padding: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(0,0,0,0.3);">
+										<img src="{{ url_for('static', filename='images/media-kit/vjs_logo_mark.png') }}"
+											alt="Mini Logo" style="width: 100%; height: 100%; object-fit: contain;">
+									</div>
+									<div class="presence-label"
+										style="width: 100%; padding: 15px 20px; color: #fff; font-weight: 700; font-size: 18px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+										IT Consulting Solutions</div>
+								</div>
+								<div class="presence-card"
+									style="background-image: url('{{ url_for('static', filename='images/media-kit/healthcare.png') }}'); background-size: cover; background-position: center; position: relative; border-radius: 20px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: flex-end;">
+									<div
+										style="position: absolute; top: 20px; left: 20px; width: 70px; height: 70px; background: rgba(255,255,255,0.95); border-radius: 12px; padding: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(0,0,0,0.3);">
+										<img src="{{ url_for('static', filename='images/media-kit/vjs_logo_mark.png') }}"
+											alt="Mini Logo" style="width: 100%; height: 100%; object-fit: contain;">
+									</div>
+									<div class="presence-label"
+										style="width: 100%; padding: 15px 20px; color: #fff; font-weight: 700; font-size: 18px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+										Healthcare Excellence</div>
+								</div>
+								<div class="presence-card"
+									style="background-image: url('{{ url_for('static', filename='images/media-kit/sustainability.png') }}'); background-size: cover; background-position: center; position: relative; border-radius: 20px; overflow: hidden; height: 350px; display: flex; flex-direction: column; justify-content: flex-end;">
+									<div
+										style="position: absolute; top: 20px; left: 20px; width: 70px; height: 70px; background: rgba(255,255,255,0.95); border-radius: 12px; padding: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(0,0,0,0.3);">
+										<img src="{{ url_for('static', filename='images/media-kit/vjs_logo_mark.png') }}"
+											alt="Mini Logo" style="width: 100%; height: 100%; object-fit: contain;">
+									</div>
+									<div class="presence-label"
+										style="width: 100%; padding: 15px 20px; color: #fff; font-weight: 700; font-size: 18px; margin: 0; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+										Sustainable Growth</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer class="footer-modern">
+			<div class="footer-container">
+				<div class="footer-top">
+					<!-- LOGO & BRAND -->
+					<div class="footer-brand">
+						<div class="footer-logo-group">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Mark">
+							<div class="footer-logo-text">
+								<span>Vijayalakshmi Group</span>
+								<span>OF COMPANIES</span>
+							</div>
+						</div>
+
+						<div class="social-icons-mini">
+							<a href="#"><i class="bi bi-facebook"></i></a>
+							<a href="#"><i class="bi bi-instagram"></i></a>
+							<a href="#"><i class="bi bi-youtube"></i></a>
+							<a href="#"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+
+					<!-- ABOUT -->
+					<div class="footer-col">
+						<h5>About Us</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- BUSINESS -->
+					<div class="footer-col">
+						<h5>Businesses</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
+									Logistics</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
+						</ul>
+					</div>
+
+					<!-- QUICK LINKS -->
+					<div class="footer-col">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a
+									href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- BOTTOM -->
+				<div class="footer-bottom">
+					<div class="footer-copyright">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="Mark">
+						<span>@2026 Vijayalakshmi Group</span>
+					</div>
+
+					<div class="footer-bottom-links">
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
+					</div>
+				</div>
+			</div>
+		</footer> <!-- /.footer-modern -->
+		<style>
+			.footer-mini {
+				width: 100%;
+				background: #f5f7f8;
+				border-top: 1px solid #e5e7ea;
+			}
+
+			.footer-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 90px 40px 35px;
+				font-family: "Helvetica Neue", Arial, sans-serif;
+			}
+
+			.footer-top {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				gap: 60px;
+				margin-top: 10px;
+			}
+
+			.footer-brand {
+				margin-top: 65px;
+				margin-left: 35px;
+			}
+
+			.footer-logo-group {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				margin-bottom: 25px;
+			}
+
+			.footer-logo-group img {
+				height: 46px;
+				width: auto;
+			}
+
+			.footer-logo-text {
+				display: flex;
+				flex-direction: column;
+				line-height: 1.1;
+			}
+
+			.footer-logo-text span:first-child {
+				font-size: 16px;
+				font-weight: 700;
+				color: #000;
+				letter-spacing: 0.5px;
+				text-transform: uppercase;
+			}
+
+			.footer-logo-text span:last-child {
+				font-size: 10px;
+				font-weight: 600;
+				color: #666;
+				letter-spacing: 1.5px;
+			}
+
+			
+
+			
+
+			.footer-col h5 {
+				font-size: 14px;
+				font-weight: 600;
+				margin-bottom: 16px;
+				color: #000;
+			}
+
+			.footer-col ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.footer-col ul li a {
+				text-decoration: none;
+				font-size: 12px;
+				color: #666;
+				transition: 0.3s;
+			}
+
+			.footer-bottom {
+				border-top: 1px solid #e5e7ea;
+				margin-top: 50px;
+				padding-top: 20px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				font-size: 12px;
+				color: #666;
+			}
+
+			.footer-bottom-links {
+				display: flex;
+				gap: 25px;
+			}
+
+			.footer-bottom-links a {
+				text-decoration: none;
+				color: #666;
+			}
+		</style>
+
+	</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+	<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+	<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+	<!-- Navbar Hover Animation -->
+
+</html>
+
+
+

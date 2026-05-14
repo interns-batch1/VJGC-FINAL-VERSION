@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
+	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
+	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:url" content="https://creativegigstf.com">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
+	<meta name='og:image' content='{{ url_for(' static', filename='images/assets/ogg.png' ) }}?v=1.2'>
+	<!-- For IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- For Resposive Device -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- For Window Tab Color -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#1A4137">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#1A4137">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
+	<title>Vijayalakshmi Group Of Companies</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
+	<!-- Main style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
+	<!-- responsive style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+
+	<!-- Fix Internet Explorer ______________________________________-->
+	<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="{{ url_for('static', filename='vendor/html5shiv.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
+		<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0"
+		media="all">
+</head>
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- ===================================================
+				Loading Transition
+			==================================================== -->
+
+
+
+
+		<!-- 
+		=============================================
+				Theme Main Menu
+		============================================== 
+		-->
+		<!-- 
+		=============================================
+				Theme Main Menu
+		============================================== 
+		-->
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
+								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__text">
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
+										<span class="site-brand-lockup__subtitle">Of Companies</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="{{ url_for('home') }}" class="d-block">
+												<span class="site-brand-lockup"
+													aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi
+															Groups</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu about-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses
+										</a>
+										<ul class="dropdown-menu biz-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
+											Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu news-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
+		</header>
+		<!-- /.theme-main-menu -->
+
+
+
+		<!-- 
+		=============================================
+			Inner Banner
+		============================================== 
+		-->
+		<div class="inner-banner-two light-bg text-center pt-200 md-pt-150 pb-85 lg-pb-50 position-relative">
+			<div class="container position-relative">
+				<div class="row">
+					<div class="col-lg-7 m-auto">
+						<ul class="style-none d-inline-flex justify-content-center pager">
+							<li><a href="{{ url_for('home') }}">Home</a></li>
+							<li>/</li>
+							<li><a href="#">Pages</a></li>
+							<li>/</li>
+							<li>Pricing</li>
+						</ul>
+						<h1 class="hero-heading-glass">Our Membership & pricing</h1>
+						<p class="text-lg">Find out the pricing for different service and products</p>
+					</div>
+				</div>
+			</div>
+			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+				data-src="{{ url_for('static', filename='images/assets/ils_01.svg') }}?v=1.0" alt=""
+				class="lazy-img shapes shape_01">
+			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+				data-src="{{ url_for('static', filename='images/assets/ils_02.svg') }}?v=1.0" alt=""
+				class="lazy-img shapes shape_02">
+			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+				data-src="{{ url_for('static', filename='images/shape/shape_05.svg') }}?v=1.0" alt=""
+				class="lazy-img shapes shape_03">
+			<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+				data-src="{{ url_for('static', filename='images/shape/shape_05.svg') }}?v=1.0" alt=""
+				class="lazy-img shapes shape_04">
+		</div>
+		<!-- /.inner-banner-two -->
+
+
+
+		<!--
+		=====================================================
+			Pricng
+		=====================================================
+		-->
+		<div class="pricing-section light-bg border-top pt-120 lg-pt-80 pb-150 lg-pb-80">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-7 text-center text-lg-start">
+						<div class="title-one">
+							<h2>Solo, Agency or team?</h2>
+						</div>
+						<!-- /.title-one -->
+						<p class="text-lg pt-10 m0">Find out the which plan match with your needs</p>
+					</div>
+					<div class="col-lg-5">
+						<nav class="pricing-nav d-flex justify-content-center justify-content-lg-end md-mt-40">
+							<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<button class="nav-link active" id="nav-month-tab" data-bs-toggle="tab"
+									data-bs-target="#nav-month" type="button" role="tab" aria-controls="nav-month"
+									aria-selected="true">Monthly</button>
+								<button class="nav-link" id="nav-year-tab" data-bs-toggle="tab"
+									data-bs-target="#nav-year" type="button" role="tab" aria-controls="nav-year"
+									aria-selected="false">Yearly</button>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-content mt-50 md-mt-30">
+					<div class="tab-pane show active" id="nav-month" role="tabpanel" aria-labelledby="nav-month-tab"
+						tabindex="0">
+						<div class="row gx-xl-5">
+							<div class="col-md-6 mb-65 md-mb-30">
+								<div class="pricing-card-one d-flex flex-column w-100 h-100 text-center">
+									<h2 class="fw-bold">Business</h2>
+									<div class="row">
+										<div class="col-xxl-9 m-auto">
+											<p>For individuals and teams. Get <span>1 month premium market access</span>
+											</p>
+										</div>
+									</div>
+									<div
+										class="price-banner text-lg-start d-lg-flex justify-content-center align-items-center">
+										<div class="price"><sup>$</sup> 09</div>
+										<div class="ps-lg-4">
+											<strong class="text-lg fw-500">Monthly membership</strong>
+											<span>Starting at $53/mo</span>
+										</div>
+									</div>
+									<!-- /.price-banner -->
+									<ul class="style-none mb-35">
+										<li>100% Better results</li>
+										<li>Suspe Ndisse Suscipit Sagittis</li>
+										<li>Review Credit Reports</li>
+									</ul>
+									<div class="action-btn text-center">Try us without risk. <a href="#">Choose Plan <i
+												class="bi bi-chevron-right"></i></a></div>
+								</div>
+								<!-- /.pricing-card-one -->
+							</div>
+							<div class="col-md-6 mb-65 md-mb-30">
+								<div class="pricing-card-one d-flex flex-column w-100 h-100 text-center">
+									<h2 class="fw-bold">Agency</h2>
+									<div class="row">
+										<div class="col-xxl-9 m-auto">
+											<p>For big agency & team, Get <span>1 month premium market access</span></p>
+										</div>
+									</div>
+									<div
+										class="price-banner text-lg-start d-lg-flex justify-content-center align-items-center">
+										<div class="price"><sup>$</sup> 12</div>
+										<div class="ps-lg-4">
+											<strong class="text-lg fw-500">Monthly membership</strong>
+											<span>Starting at $53/mo</span>
+										</div>
+									</div>
+									<!-- /.price-banner -->
+									<ul class="style-none mb-35">
+										<li>100% Better results</li>
+										<li>Suspe Ndisse Suscipit Sagittis</li>
+										<li>Review Credit Reports</li>
+									</ul>
+									<div class="action-btn text-center">Try us without risk. <a href="#">Choose Plan <i
+												class="bi bi-chevron-right"></i></a></div>
+								</div>
+								<!-- /.pricing-card-one -->
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="nav-year" role="tabpanel" aria-labelledby="nav-year-tab" tabindex="0">
+						<div class="row gx-xl-5">
+							<div class="col-md-6 mb-65 md-mb-30">
+								<div class="pricing-card-one d-flex flex-column w-100 h-100 text-center">
+									<h2 class="fw-bold">Business</h2>
+									<div class="row">
+										<div class="col-xxl-9 m-auto">
+											<p>For individuals and teams. Get <span>1 year premium market access</span>
+											</p>
+										</div>
+									</div>
+									<div
+										class="price-banner text-lg-start d-lg-flex justify-content-center align-items-center">
+										<div class="price"><sup>$</sup> 99</div>
+										<div class="ps-lg-4">
+											<strong class="text-lg fw-500">Yearly membership</strong>
+											<span>Starting at $53/mo</span>
+										</div>
+									</div>
+									<!-- /.price-banner -->
+									<ul class="style-none mb-35">
+										<li>100% Better results</li>
+										<li>Suspe Ndisse Suscipit Sagittis</li>
+										<li>Review Credit Reports</li>
+									</ul>
+									<div class="action-btn text-center">Try us without risk. <a href="#">Choose Plan <i
+												class="bi bi-chevron-right"></i></a></div>
+								</div>
+								<!-- /.pricing-card-one -->
+							</div>
+							<div class="col-md-6 mb-65 md-mb-30">
+								<div class="pricing-card-one d-flex flex-column w-100 h-100 text-center">
+									<h2 class="fw-bold">Agency</h2>
+									<div class="row">
+										<div class="col-xxl-9 m-auto">
+											<p>For big agency & team, Get <span>1 year premium market access</span></p>
+										</div>
+									</div>
+									<div
+										class="price-banner text-lg-start d-lg-flex justify-content-center align-items-center">
+										<div class="price"><sup>$</sup> 129</div>
+										<div class="ps-lg-4">
+											<strong class="text-lg fw-500">Yearly membership</strong>
+											<span>Starting at $53/mo</span>
+										</div>
+									</div>
+									<!-- /.price-banner -->
+									<ul class="style-none mb-35">
+										<li>100% Better results</li>
+										<li>Suspe Ndisse Suscipit Sagittis</li>
+										<li>Review Credit Reports</li>
+									</ul>
+									<div class="action-btn text-center">Try us without risk. <a href="#">Choose Plan <i
+												class="bi bi-chevron-right"></i></a></div>
+								</div>
+								<!-- /.pricing-card-one -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /.tab-content -->
+				<div class="contact-banner position-relative">
+					<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+						data-src="{{ url_for('static', filename='images/assets/ils_04.svg') }}?v=1.0" alt=""
+						class="lazy-img shapes screen_01">
+					<div class="row align-items-center justify-content-end">
+						<div class="col-lg-6">
+							<h2>Want a <span>custom pricing</span> plan for your business?</h2>
+						</div>
+						<div class="col-lg-4 text-center text-lg-end">
+							<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0" class="btn-four">Let's
+								Talk</a>
+						</div>
+					</div>
+				</div>
+				<!-- /.contact-banner -->
+			</div>
+		</div>
+		<!-- /.pricing-section -->
+
+
+
+		<!--
+		=====================================================
+			Fancy Banner Three
+		=====================================================
+		-->
+		<div class="fancy-banner-three position-relative">
+			<div class="container">
+				<div class="row align-content-center">
+					<div class="col-lg-8 col-md-9">
+						<div class="title-one mb-20 lg-mb-10">
+							<h2 class="text-white">Want to Chat? Feel free to Contact our Team.</h2>
+						</div>
+						<!-- /.title-one -->
+						<p class="text-lg m0 text-white opacity-75">If you have anything in mind just contact us with
+							our expert.</p>
+					</div>
+					<div class="col-lg-4 col-md-3">
+						<a href="{{ url_for('dynamic_route', path='contact') }}?v=1.0"
+							class="quote-btn tran5s rounded-circle d-flex align-items-center justify-content-center ms-auto">
+							<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
+								data-src="{{ url_for('static', filename='images/icon/icon_30.svg') }}?v=1.0" alt=""
+								class="lazy-img">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.fancy-banner-three -->
+
+
+
+		<!--
+		=====================================================
+			Footer Three
+		=====================================================
+		-->
+
+		<footer class="footer-modern">
+			<div class="footer-container">
+				<div class="footer-top">
+					<!-- LOGO & BRAND -->
+					<div class="footer-brand">
+						<div class="footer-logo-group">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Logo Mark">
+							<div class="footer-logo-text">
+								<span>Vijayalakshmi Group</span>
+								<span>OF COMPANIES</span>
+							</div>
+						</div>
+
+						<div class="social-icons-mini">
+							<a href="#"><i class="bi bi-facebook"></i></a>
+							<a href="#"><i class="bi bi-instagram"></i></a>
+							<a href="#"><i class="bi bi-youtube"></i></a>
+							<a href="#"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+
+					<!-- ABOUT -->
+					<div class="footer-col">
+						<h5>About Us</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- BUSINESS -->
+					<div class="footer-col">
+						<h5>Businesses</h5>
+						<ul>
+							<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
+									Logistics</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
+						</ul>
+					</div>
+
+					<!-- QUICK LINKS -->
+					<div class="footer-col">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a
+									href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
+							</li>
+							<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
+							<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- BOTTOM -->
+				<div class="footer-bottom">
+					<div class="footer-copyright">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="Mark">
+						<span>@2026 Vijayalakshmi Group</span>
+					</div>
+
+					<div class="footer-bottom-links">
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
+					</div>
+				</div>
+			</div>
+		</footer> <!-- /.footer-modern -->
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-fullscreen modal-dialog-centered">
+				<div class="container">
+					<div class="user-data-form modal-content">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="form-wrapper m-auto">
+							<ul class="nav nav-tabs border-0 w-100" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1"
+										role="tab">Login</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2"
+										role="tab">Signup</button>
+								</li>
+							</ul>
+							<div class="tab-content mt-30">
+								<div class="tab-pane show active" role="tabpanel" id="fc1">
+									<div class="text-center mb-20">
+										<h2>Hi, Welcome Back!</h2>
+										<p>Still don't have an account? <a href="#">Sign up</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="Youremail@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember">
+														<label for="remember">Keep me logged in</label>
+													</div>
+													<a href="#">Forget Password?</a>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+								<div class="tab-pane" role="tabpanel" id="fc2">
+									<div class="text-center mb-20">
+										<h2>Register</h2>
+										<p>Already have an account? <a href="#">Login</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Name*</label>
+													<input type="text" placeholder="Zubayer Hasan">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="zubayerhasan@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember2">
+														<label for="remember2">By hitting the "Register" button, you
+															agree to the <a href="#">Terms conditions</a> & <a
+																href="#">Privacy Policy</a></label>
+													</div>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+							</div>
+
+							<div class="d-flex align-items-center mt-30 mb-10">
+								<div class="line"></div>
+								<span class="pe-3 ps-3 fs-6">OR</span>
+								<div class="line"></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Google</span>
+									</a>
+								</div>
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Facebook</span>
+									</a>
+								</div>
+							</div>
+							<p class="text-center fs-6 mt-10">Have an account? <a href="#" class="fw-500"
+									data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a></p>
+						</div>
+						<!-- /.form-wrapper -->
+					</div>
+					<!-- /.user-data-form -->
+				</div>
+			</div>
+		</div>
+
+
+		<button class="scroll-top">
+			<i class="bi bi-arrow-up-short"></i>
+		</button>
+
+
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+		<!-- WOW js -->
+		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+		<!-- Slick Slider -->
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+		<!-- Fancybox -->
+		<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
+		<!-- Lazy -->
+		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
+		<!-- js Counter -->
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
+
+		<!-- validator js -->
+		<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
+		<!-- isotop -->
+		<script src="{{ url_for('static', filename='vendor/isotope.pkgd.min.js') }}?v=1.0"></script>
+
+		<!-- Theme js -->
+		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+		<!-- Navbar Hover Animation -->
+		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+	</div> <!-- /.main-page-wrapper -->
+	<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript"
+		src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
+
+
+

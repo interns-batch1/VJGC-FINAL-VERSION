@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="Vijayalakshmi Group, Advisors, Awards, Success Story, Corporate">
+	<meta name="description" content="Vijayalakshmi Group Of Companies leadership, awards, and success stories.">
+	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Leadership & Awards | Vijayalakshmi Group">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#08201b">
+	<title>Leadership & Awards | Vijayalakshmi Group Of Companies</title>
+	<link rel="icon" type="image/png" sizes="56x56"
+		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
+		media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
+	<style>
+		/* HERO SECTION */
+		.vjs-hero-section {
+			height: 90vh;
+			min-height: 600px;
+			background-size: cover;
+			background-position: center;
+			display: flex;
+			align-items: center;
+			position: relative;
+			padding-top: 100px;
+			overflow: hidden;
+		}
+
+		.vjs-hero-section::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(8, 32, 27, 0.5);
+		}
+
+		.vjs-hero-content {
+			position: relative;
+			z-index: 2;
+			color: #ffffff;
+			text-align: right;
+			max-width: 700px;
+			margin-left: auto;
+		}
+
+
+
+		.vjs-hero-content p {
+			font-size: clamp(18px, 1.5vw, 26px);
+			opacity: 0.95;
+			line-height: 1.4;
+			font-weight: 500;
+		}
+
+		/* ADVISORS SECTION */
+		.vjs-advisors-section {
+			background: #ffffff;
+			padding: 120px 0;
+		}
+
+		.vjs-advisor-card {
+			background: #f8f9f8;
+			border-radius: 20px;
+			overflow: hidden;
+			transition: all 0.4s ease;
+			border: 1px solid rgba(28, 161, 97, 0.05);
+			margin-bottom: 30px;
+			text-align: center;
+			padding-bottom: 25px;
+		}
+
+		.vjs-advisor-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 20px 40px rgba(28, 161, 97, 0.1);
+			background: #ffffff;
+		}
+
+		.vjs-advisor-img {
+			width: 100%;
+			height: 300px;
+			object-fit: cover;
+			background: #e9e9e9;
+		}
+
+		.vjs-advisor-card h4 {
+			font-size: 20px;
+			font-weight: 700;
+			color: #08201b;
+			margin-top: 20px;
+		}
+
+		.vjs-advisor-card span {
+			font-size: 14px;
+			color: #1ca161;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		/* AWARDS SECTION */
+		.vjs-awards-section {
+			background: #f4f7f6;
+			padding: 120px 0;
+		}
+
+		.vjs-award-slider-wrap {
+			margin-bottom: 80px;
+		}
+
+		.vjs-award-item {
+			padding: 0 15px;
+		}
+
+		.vjs-award-item img {
+			width: 100%;
+			height: 250px;
+			object-fit: contain;
+			background: #ffffff;
+			border-radius: 15px;
+			padding: 20px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+		}
+
+		.vjs-award-card {
+			background: #ffffff;
+			padding: 30px;
+			border-radius: 20px;
+			text-align: center;
+			height: 100%;
+			transition: all 0.3s ease;
+		}
+
+		.vjs-award-card:hover {
+			background: #1ca161;
+		}
+
+		.vjs-award-card:hover h5,
+		.vjs-award-card:hover p {
+			color: #ffffff;
+		}
+
+		.vjs-award-card h5 {
+			font-weight: 700;
+			margin-bottom: 10px;
+			color: #08201b;
+		}
+
+		/* SUCCESS STORY */
+		.vjs-success-section {
+			padding: 120px 0;
+			background: #ffffff;
+		}
+
+		.vjs-success-img {
+			width: 100%;
+			border-radius: 30px;
+			box-shadow: 20px 20px 60px rgba(28, 161, 97, 0.1);
+		}
+
+		.vjs-success-content {
+			padding-left: 50px;
+		}
+
+		@media (max-width: 991px) {
+			.vjs-success-content {
+				padding-left: 0;
+				margin-top: 50px;
+			}
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0"
+		media="all">
+
+<body>
+	<div class="main-page-wrapper">
+		<!-- Theme Main Menu -->
+		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
+			<div class="inner-content position-relative">
+				<div class="top-header">
+					<div class="d-flex align-items-center justify-content-between">
+						<div class="logo" style="flex: 1; display: flex; justify-content: flex-start;">
+							<a href="{{ url_for('home') }}" class="d-flex align-items-center">
+								<span class="site-brand-lockup" aria-label="Vijayalakshmi Group Of Companies">
+									<span class="site-brand-lockup__mark-wrap"><img
+											src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+											alt="" class="site-brand-lockup__mark"></span>
+									<span class="site-brand-lockup__text">
+										<span class="site-brand-lockup__title">Vijayalakshmi&nbsp;Groups</span>
+										<span class="site-brand-lockup__subtitle">Of Companies</span>
+									</span>
+								</span>
+							</a>
+						</div>
+						<!-- logo -->
+
+						<nav class="navbar navbar-expand-lg p0" style="flex: 0 0 auto; margin-right: 60px;">
+							<button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNav">
+								<ul class="navbar-nav align-items-lg-center">
+									<li class="d-block d-lg-none">
+										<div class="logo">
+											<a href="{{ url_for('home') }}" class="d-block">
+												<span class="site-brand-lockup"
+													aria-label="Vijayalakshmi Group Of Companies">
+													<span class="site-brand-lockup__mark-wrap"><img
+															src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+															alt="" class="site-brand-lockup__mark"></span>
+													<span class="site-brand-lockup__text">
+														<span class="site-brand-lockup__title">Vijayalakshmi
+															Groups</span>
+														<span class="site-brand-lockup__subtitle">OF COMPANIES</span>
+													</span>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">About Us
+										</a>
+										<ul class="dropdown-menu about-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About
+													Vijayalakshmi Group</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our
+													Journey</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership
+													and Awards</a></li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Businesses
+										</a>
+										<ul class="dropdown-menu biz-dropdown">
+											<li>
+												<div class="mega-menu-content mega-3-col">
+													<div class="mega-section">
+														<span class="mega-title">IT Infrastructure</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-consulting') }}">IT
+																	Consulting</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='data-centers-hosting') }}?v=1.0">Enterprise
+																	Data Centers & Hosting Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Education & Skills</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='it-training') }}">IT
+																	Training</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='yoga-wellness') }}?v=1.0">Yoga
+																	& Wellness</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Energy & Sustainability</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='green-energy') }}?v=1.0">Green
+																	Energy & Solar Manufacturing</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Agri & Trade</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='export-import') }}">Export
+																	& Import</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='plantations') }}">Plantations
+																	& Exotic Trees</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Real Estate</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='property-services') }}">Property
+																	Services</a></li>
+														</ul>
+													</div>
+													<div class="mega-section">
+														<span class="mega-title">Logistics & Travel</span>
+														<ul class="mega-list">
+															<li><a
+																	href="{{ url_for('dynamic_route', path='logistics-services') }}">Logistics
+																	Services</a></li>
+															<li><a
+																	href="{{ url_for('dynamic_route', path='travel-rentals') }}">Travel
+																	& Rentals</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item dropdown mega-dropdown">
+										<a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Sustainability
+										</a>
+										<ul class="dropdown-menu sus-dropdown">
+											<li>
+												<div class="mega-menu-content mega-4-col">
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Core Services</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}?v=1.0">Digital
+																		Transformation & IT Consulting</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='cloud-infrastructure-sustainability') }}?v=1.0">Cloud,
+																		Hosting & Infrastructure</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-solutions') }}?v=1.0">Renewable
+																		Energy Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='logistics-trade-sustainability') }}">Logistics
+																		& Trade Enablement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='education-skill-sustainability') }}">Education
+																		& Skill Development</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Environmental Initiatives</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='tree-plantation-sustainability') }}">Tree
+																		Plantation & Green Cover</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='eco-tech-solutions') }}">Eco-conscious
+																		Technology Solutions</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='renewable-energy-adoption') }}?v=1.0">Renewable
+																		Energy Adoption</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='sustainable-business-practices') }}">Sustainable
+																		Business Practices</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Social Responsibility</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='educational-support-csr') }}">Educational
+																		Support</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='financial-material-aid') }}?v=1.0">Financial
+																		& Material Aid</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='skill-building-youth') }}">Skill-Building
+																		Programs</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="mega-column">
+														<div class="mega-section">
+															<span class="mega-title">Community Development</span>
+															<ul class="mega-list">
+																<li><a
+																		href="{{ url_for('dynamic_route', path='rural-semi-urban-engagement') }}?v=1.0">Rural
+																		& Semi-Urban Engagement</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='awareness-programs-community') }}">Awareness
+																		Programs</a></li>
+																<li><a
+																		href="{{ url_for('dynamic_route', path='local-infrastructure-support') }}">Local
+																		Infrastructure Support</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ url_for('dynamic_route', path='blog-v1') }}?v=1.0"
+											role="button">Vijayalakshmi
+											Foundation</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="#" role="button"
+											data-bs-toggle="dropdown" data-bs-auto-close="outside"
+											aria-expanded="false">Newsroom
+										</a>
+										<ul class="dropdown-menu news-dropdown compact-dropdown">
+											<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Media
+													Releases</a></li>
+											<li><a href="{{ url_for('dynamic_route', path='media-kit') }}">Media Kit</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+
+						<div class="right-widget d-none d-lg-flex align-items-center">
+							
+							</div>
+							<!-- Language Dropdown -->
+							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
+										style="font-size: 10px;"></i>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
+									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div> <!--/.top-header-->
+				</div> <!-- /.inner-content -->
+		</header>
+
+		<!-- HERO SECTION -->
+		{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
+		<div class="hero-banner-five">
+			<div class="bg-wrapper position-relative"
+				style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/hero/cheerful-businesspeople-standing-on-top-of-stairca-2026-01-11-08-46-59-utc.jpg') }}{% endif %}?v=1.0'); background-size: cover; background-position: center; min-height: 100vh; display: flex; align-items: center;">
+				<div class="container position-relative" style="z-index: 2;">
+					<div class="row justify-content-between">
+						<div class="col-lg-8 col-md-10 wow fadeInLeft">
+							<h1 class="hero-heading-glass">
+								{% if hero.title %}
+								{{ hero.title | safe }}
+								{% else %}
+								Leadership & Excellence
+								{% endif %}
+							</h1>
+							<p class="text-lg text-white pt-20 pb-20 ps-3 pe-3 mt-40 lg-mt-30"
+								style="background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border-radius: 8px; display: inline-block;">
+								{% if hero.subtitle %}
+								{{ hero.subtitle }}
+								{% else %}
+								Empowering industries through visionary leadership <br> and a commitment to global excellence.
+								{% endif %}
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="hero-overlay"
+					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 1;">
+				</div>
+			</div>
+		</div>
+
+		<!-- SECTION 2: ADVISORS -->
+		<section class="vjs-advisors-section">
+			<div class="container">
+				<div class="title-one text-center mb-80 wow fadeInUp">
+					<h2>Our Advisor Coordinators</h2>
+					<p class="text-lg">The visionary minds driving growth and innovation across our diverse business
+						verticals.</p>
+				</div>
+				<div class="row">
+					{% if cms.Advisors.content %}
+					{% for item in cms.Advisors.content %}
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+						<div class="vjs-advisor-card">
+							<img src="{{ item.image_url or url_for('static', filename='images/media/img_27.jpg') }}?v=1.0"
+								alt="" class="vjs-advisor-img">
+							<h4>{{ item.title }}</h4>
+							<span>{{ item.description }}</span>
+						</div>
+					</div>
+					{% endfor %}
+					{% else %}
+					<!-- Fallback to static cards if no data in DB -->
+					<!-- Card 1 -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp">
+						<div class="vjs-advisor-card">
+							<img src="{{ url_for('static', filename='images/media/img_27.jpg') }}?v=1.0" alt=""
+								class="vjs-advisor-img">
+							<h4>Zubayer Hasan</h4>
+							<span>Strategy Lead</span>
+						</div>
+					</div>
+					<!-- Card 2 -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="vjs-advisor-card">
+							<img src="{{ url_for('static', filename='images/media/img_28.jpg') }}?v=1.0" alt=""
+								class="vjs-advisor-img">
+							<h4>Maria Escolova</h4>
+							<span>Operations Head</span>
+						</div>
+					</div>
+					<!-- Card 3 -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="vjs-advisor-card">
+							<img src="{{ url_for('static', filename='images/media/img_29.jpg') }}?v=1.0" alt=""
+								class="vjs-advisor-img">
+							<h4>Rashedul Kabir</h4>
+							<span>Finance Director</span>
+						</div>
+					</div>
+					<!-- Card 4 -->
+					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="vjs-advisor-card">
+							<img src="{{ url_for('static', filename='images/media/img_30.jpg') }}?v=1.0" alt=""
+								class="vjs-advisor-img">
+							<h4>Cristiano Messi</h4>
+							<span>Supply Chain</span>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 3: AWARDS -->
+		<section class="vjs-awards-section">
+			<div class="container">
+				<div class="title-one mb-60 wow fadeInUp">
+					<h2>Global Recognition</h2>
+					<p class="text-lg">Our unwavering commitment to excellence has been recognized by industry leaders
+						worldwide.</p>
+				</div>
+
+				<!-- Moving images slider -->
+				<div class="vjs-award-slider-wrap wow fadeInUp">
+					<div class="award-slider-one">
+						<div class="item">
+							<div class="vjs-award-item"><img src="vjs_award_excellence_trophy_1776587508170.png" alt="">
+							</div>
+						</div>
+						<div class="item">
+							<div class="vjs-award-item"><img
+									src="{{ url_for('static', filename='images/logo/media_01.png') }}?v=1.0" alt="">
+							</div>
+						</div>
+						<div class="item">
+							<div class="vjs-award-item"><img
+									src="{{ url_for('static', filename='images/logo/media_02.png') }}?v=1.0" alt="">
+							</div>
+						</div>
+						<div class="item">
+							<div class="vjs-award-item"><img
+									src="{{ url_for('static', filename='images/logo/media_03.png') }}?v=1.0" alt="">
+							</div>
+						</div>
+						<div class="item">
+							<div class="vjs-award-item"><img src="vjs_award_excellence_trophy_1776587508170.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Award Cards Below -->
+				<div class="row">
+					{% if cms.Awards.content %}
+					{% for item in cms.Awards.content %}
+					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+						<div class="vjs-award-card">
+							<h5>{{ item.title }}</h5>
+							<p>{{ item.description }}</p>
+						</div>
+					</div>
+					{% endfor %}
+					{% else %}
+					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp">
+						<div class="vjs-award-card">
+							<h5>Excellence 2024</h5>
+							<p>Highest industry safety and quality standards recognition.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="vjs-award-card">
+							<h5>Innovation Award</h5>
+							<p>Breakthrough solutions in green energy and utilities.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="vjs-award-card">
+							<h5>Sustainability Lead</h5>
+							<p>Commemorated for sustainable supply chain practices.</p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="vjs-award-card">
+							<h5>Leadership Gold</h5>
+							<p>Recognized for outstanding corporate governance.</p>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+		<!-- SECTION 4: SUCCESS STORY -->
+		<section class="vjs-success-section">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 wow fadeInLeft">
+						<img src="{{ url_for('static', filename='images/media/img_12.jpg') }}?v=1.0" alt=""
+							class="vjs-success-img">
+					</div>
+					<div class="col-lg-6 wow fadeInRight">
+						<div class="vjs-success-content">
+							<div class="title-one mb-30">
+								<h2>Our Success Story</h2>
+							</div>
+							<p class="text-lg text-dark mb-40">From a local enterprise to a diversified global group,
+								our journey has been defined by resilience, innovation, and long-term value creation for
+								our stakeholders.</p>
+							<p class="mb-40">Vijayalakshmi Group started with a single vision: to deliver excellence
+								across boundaries. Today, we are proud to stand at the forefront of the infrastructure,
+								energy, and logistics sectors, driving the economy forward with integrity and a
+								futuristic outlook.</p>
+							<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-five">Read Full
+								Journey</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--
+		=====================================================
+			Footer One
+		=====================================================
+		-->
+		<div class="footer-mini">
+
+			<style>
+				/* RESET (removes unwanted gaps) */
+				* {
+					box-sizing: border-box;
+				}
+
+				html,
+				body {
+					margin: 0;
+					padding: 0;
+				}
+
+				/* FULL WIDTH FOOTER */
+				.footer-modern {
+					width: 100%;
+					background: transparent;
+					padding: 60px 0 30px;
+				}
+
+				/* INNER CONTAINER */
+				.footer-container {
+					max-width: 1200px;
+					margin: 0 auto;
+					padding: 90px 40px 35px;
+					/* ?? pushes content downward */
+					font-family: "Helvetica Neue", Arial, sans-serif;
+				}
+
+				/* TOP SECTION */
+				.footer-top {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					gap: 60px;
+					margin-top: 10px;
+				}
+
+				/* LOGO & BRAND POSITIONING */
+				.footer-brand {
+					margin-top: 65px;
+					/* ?? Move further down */
+					margin-left: 35px;
+					/* ?? Move slightly back to the left */
+				}
+
+				.footer-logo-group {
+					display: flex;
+					flex-direction: row;
+					/* ?? Back to side-by-side */
+					align-items: center;
+					padding-right: 20px;
+					gap: 12px;
+					margin-bottom: 25px;
+				}
+
+				.footer-logo-group img {
+					height: 46px;
+					width: auto;
+				}
+
+				.footer-logo-text {
+					display: flex;
+					flex-direction: column;
+					line-height: 1.1;
+				}
+
+				.footer-logo-text span:first-child {
+					font-size: 16px;
+					font-weight: 700;
+					color: #000;
+					letter-spacing: 0.5px;
+					text-transform: uppercase;
+				}
+
+				.footer-logo-text span:last-child {
+					font-size: 10px;
+					font-weight: 600;
+					color: #666;
+					letter-spacing: 1.5px;
+				}
+
+				
+
+				
+
+				
+
+				/* COLUMNS */
+				.footer-col h5 {
+					font-size: 14px;
+					font-weight: 600;
+					margin-bottom: 16px;
+					color: #000;
+				}
+
+				.footer-col ul {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+				}
+
+				.footer-col ul li {
+					margin-bottom: 10px;
+				}
+
+				.footer-col ul li a {
+					text-decoration: none;
+					font-size: 12px;
+					color: #666;
+					transition: 0.3s;
+				}
+
+				.footer-col ul li a:hover {
+					color: #000;
+				}
+
+				/* RIGHT SIDE LINKS */
+				.footer-right {
+					display: flex;
+					flex-direction: column;
+					gap: 12px;
+				}
+
+				.footer-right a {
+					text-decoration: none;
+					font-size: 13px;
+					font-weight: 500;
+					color: #000;
+				}
+
+				/* BOTTOM BAR */
+				.footer-bottom {
+					border-top: 1px solid #e5e7ea;
+					margin-top: 50px;
+					/* ?? spacing like Adani */
+					padding-top: 20px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					font-size: 12px;
+					color: #666;
+				}
+
+				.footer-bottom-links {
+					display: flex;
+					gap: 25px;
+					margin-left: auto;
+					/* ?? pushes links to the right */
+					padding-left: 500px;
+					/* ?? adds small right offset */
+				}
+
+				.footer-bottom-links a {
+					text-decoration: none;
+					color: #666;
+				}
+
+				.footer-bottom-links a:hover {
+					color: #000;
+				}
+
+				/* RESPONSIVE */
+				@media(max-width:768px) {
+					.footer-top {
+						flex-direction: column;
+						gap: 30px;
+					}
+
+					.footer-bottom {
+						flex-direction: column;
+						text-align: center;
+						gap: 10px;
+					}
+				}
+			</style>
+
+
+			<div class="footer-modern">
+				<div class="footer-container">
+					<div class="footer-top">
+						<!-- LOGO & BRAND -->
+						<div class="footer-brand">
+							<div class="footer-logo-group">
+								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+									alt="Logo Mark">
+								<div class="footer-logo-text">
+									<span>Vijayalakshmi Group</span>
+									<span>OF COMPANIES</span>
+								</div>
+							</div>
+
+							<div class="social-icons-mini">
+								<a href="#"><i class="bi bi-facebook"></i></a>
+								<a href="#"><i class="bi bi-instagram"></i></a>
+								<a href="#"><i class="bi bi-youtube"></i></a>
+								<a href="#"><i class="bi bi-linkedin"></i></a>
+							</div>
+						</div>
+
+						<!-- ABOUT -->
+						<div class="footer-col">
+							<h5>About Us</h5>
+							<ul>
+								<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
+							</ul>
+						</div>
+
+						<!-- BUSINESS -->
+						<div class="footer-col">
+							<h5>Businesses</h5>
+							<ul>
+								<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
+										Logistics</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
+							</ul>
+						</div>
+
+						<!-- QUICK LINKS -->
+						<div class="footer-col">
+							<h5>Quick Links</h5>
+							<ul>
+								<li><a
+										href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
+								</li>
+								<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
+								<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- BOTTOM -->
+					<div class="footer-bottom">
+						<div class="footer-copyright">
+							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+								alt="Mark">
+							<span>@2026 Vijayalakshmi Group</span>
+						</div>
+
+						<div class="footer-bottom-links">
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Legal Disclaimer</a>
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Privacy Notice</a>
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Terms & Conditions</a>
+							<a href="{{ url_for('dynamic_route', path='contact') }}">Cookie Policy</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.footer-modern -->
+
+
+			<button class="scroll-top"><i class="bi bi-arrow-up-short"></i></button>
+
+			<!-- JavaScript -->
+			<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+			<script
+				src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+			<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+			<!-- Navbar Hover Animation -->
+			<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+			<script>
+				$(document).ready(function () {
+					if ($('.award-slider-one').length) {
+						$('.award-slider-one').slick({
+							dots: false,
+							arrows: false,
+							lazyLoad: 'ondemand',
+							infinite: true,
+							speed: 300,
+							slidesToShow: 4,
+							slidesToScroll: 1,
+							autoplay: true,
+							autoplaySpeed: 2000,
+							responsive: [
+								{ breakpoint: 992, settings: { slidesToShow: 3 } },
+								{ breakpoint: 768, settings: { slidesToShow: 2 } },
+								{ breakpoint: 576, settings: { slidesToShow: 1 } }
+							]
+						});
+					}
+				});
+			</script>
+		</div>
+		<!-- Vijayalakshmi Group Site Utils -->
+		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+		<!-- Google Translate Element -->
+		<div id="google_translate_element" style="display:none;"></div>
+		<script type="text/javascript"
+			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,710 @@
+
+<!-- ============================================================== -->
+<!-- NEW BRAND GUIDELINES SECTIONS FOR VIJAYALAKSHMI GROUP -->
+<!-- ============================================================== -->
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --vjs-purple: #8C52FF;
+        --vjs-purple-light: #F3EFFF;
+        --vjs-dark: #2D2D2D;
+        --vjs-gray: #757575;
+        --vjs-bg-light: #F9F9FB;
+    }
+
+    .brand-guidelines-wrapper {
+        font-family: 'Inter', 'IBM Plex Sans Devanagari', sans-serif;
+        background-color: #fff;
+        color: var(--vjs-dark);
+        overflow: hidden;
+        margin-top: 50px;
+    }
+
+    .bg-section {
+        padding: 80px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .bg-header-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #2D2D2D;
+        padding-bottom: 10px;
+        margin-bottom: 60px;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .bg-title-area h2 {
+        font-size: 72px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.1;
+    }
+
+    .bg-title-area h2 span {
+        color: var(--vjs-purple);
+        display: block;
+    }
+
+    .bg-description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--vjs-gray);
+        max-width: 500px;
+    }
+
+    /* Primary Logo Section */
+    .logo-card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .logo-card {
+        border-radius: 24px;
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        position: relative;
+    }
+
+    .logo-card.light {
+        background-color: var(--vjs-purple-light);
+    }
+
+    .logo-card.dark {
+        background: linear-gradient(135deg, #1A0B2E 0%, #4B248B 100%);
+    }
+
+    .vjs-logo-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .vjs-logo-icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+
+    .vjs-logo-text {
+        font-size: 36px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .logo-card.light .vjs-logo-text { color: var(--vjs-purple); }
+    .logo-card.dark .vjs-logo-text { color: #fff; }
+
+    .vjs-logo-tagline {
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: -5px;
+    }
+    .logo-card.light .vjs-logo-tagline { color: var(--vjs-purple); }
+    .logo-card.dark .vjs-logo-tagline { color: rgba(255,255,255,0.8); }
+
+    /* Variations */
+    .variations-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+
+    .variation-card {
+        border-radius: 20px;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+    }
+
+    /* Safezone */
+    .safezone-box {
+        background: var(--vjs-purple-light);
+        border-radius: 24px;
+        padding: 80px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .safezone-line {
+        position: absolute;
+        border: 1px dashed var(--vjs-purple);
+        opacity: 0.4;
+    }
+
+    .safezone-label {
+        position: absolute;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--vjs-dark);
+        background: #fff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        z-index: 2;
+    }
+
+    /* Incorrect Usage */
+    .incorrect-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .incorrect-card {
+        background: var(--vjs-purple-light);
+        border-radius: 20px;
+        padding: 40px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .incorrect-x {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+    }
+
+    .incorrect-x::before, .incorrect-x::after {
+        content: '';
+        position: absolute;
+        width: 150%;
+        height: 4px;
+        background: rgba(255, 50, 50, 0.3);
+    }
+    .incorrect-x::before { transform: rotate(45deg); }
+    .incorrect-x::after { transform: rotate(-45deg); }
+
+    .do-not-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 40px;
+    }
+
+    .do-not-list li {
+        margin-bottom: 12px;
+        padding-left: 25px;
+        position: relative;
+        font-size: 15px;
+    }
+
+    .do-not-list li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--vjs-purple);
+        font-weight: 700;
+    }
+
+    /* Colors */
+    .color-row {
+        display: flex;
+        gap: 30px;
+    }
+
+    .color-block {
+        flex: 1;
+        border-radius: 24px;
+        padding: 40px;
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .color-info {
+        font-weight: 700;
+        color: #fff;
+    }
+
+    /* Typography */
+    .typo-main-a {
+        font-size: 240px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 20px;
+        font-family: 'IBM Plex Sans Devanagari', sans-serif;
+    }
+
+    .weight-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        font-size: 24px;
+        font-family: 'IBM Plex Sans Devanagari', sans-serif;
+    }
+
+    /* Brand Imagery */
+    .imagery-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        height: 600px;
+    }
+
+    .img-item {
+        border-radius: 24px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .img-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .img-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba(140, 82, 255, 0.9), transparent);
+        display: flex;
+        align-items: flex-end;
+        padding: 25px;
+    }
+
+    .img-overlay span {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    /* Digital Presence */
+    .presence-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25px;
+    }
+
+    .presence-card {
+        border-radius: 24px;
+        overflow: hidden;
+        position: relative;
+        height: 450px;
+    }
+
+    .presence-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .presence-label {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        padding: 0 20px;
+        z-index: 2;
+    }
+
+    .presence-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    }
+
+    @media (max-width: 991px) {
+        .logo-card-container, .variations-grid, .incorrect-grid, .color-row, .imagery-grid, .presence-grid {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
+        .bg-title-area h2 { font-size: 48px; }
+        .typo-main-a { font-size: 150px; }
+    }
+</style>
+
+<div class="brand-guidelines-wrapper">
+    <!-- SECTION 1: PRIMARY LOGO -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Primary Logo</span>
+                <span>Page 01</span>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="bg-title-area">
+                        <h2><span>Primary</span> Logo</h2>
+                        <p class="bg-description">
+                            The Vijayalakshmi Group logo symbolizes diversified excellence and united growth. The flowing lines represent harmony between our various business verticals, while the bold typography reflects our strength and stability.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="logo-card-container">
+                        <div class="logo-card light">
+                            <div class="vjs-logo-brand">
+                                <svg class="vjs-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M50 10L85 85H15L50 10Z" stroke="#8C52FF" stroke-width="8" stroke-linejoin="round"/>
+                                    <path d="M50 30L70 75H30L50 30Z" fill="#8C52FF"/>
+                                </svg>
+                                <div class="vjs-logo-text">Vijayalakshmi</div>
+                                <div class="vjs-logo-tagline">Diversified Excellence | United in Growth</div>
+                            </div>
+                        </div>
+                        <div class="logo-card dark">
+                            <div class="vjs-logo-brand">
+                                <svg class="vjs-logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M50 10L85 85H15L50 10Z" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>
+                                    <path d="M50 30L70 75H30L50 30Z" fill="#fff"/>
+                                </svg>
+                                <div class="vjs-logo-text">Vijayalakshmi</div>
+                                <div class="vjs-logo-tagline">Diversified Excellence | United in Growth</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: LOGO VARIATIONS -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Logo Variations</span>
+                <span>Page 02</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="bg-title-area">
+                        <h2><span>Logo</span> Variations</h2>
+                        <p class="bg-description">
+                            Our logo is adaptable to different contexts, allowing for flexibility while maintaining brand identity. Each variation serves a specific purpose, providing versatility across digital and print media.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="variations-grid">
+                        <div class="variation-card" style="background: var(--vjs-purple-light);">
+                            <div class="vjs-logo-brand" style="flex-direction: row; gap: 15px;">
+                                <svg width="50" height="50" viewBox="0 0 100 100"><path d="M50 10L85 85H15L50 10Z" fill="#8C52FF"/></svg>
+                                <div class="vjs-logo-text" style="font-size: 24px;">Vijayalakshmi Group</div>
+                            </div>
+                        </div>
+                        <div class="variation-card" style="background: #E31E24;">
+                            <div class="vjs-logo-brand">
+                                <svg width="50" height="50" viewBox="0 0 100 100"><path d="M50 10L85 85H15L50 10Z" fill="#fff"/></svg>
+                                <div class="vjs-logo-text" style="font-size: 24px; color: #fff;">Vijayalakshmi</div>
+                            </div>
+                        </div>
+                        <div class="variation-card" style="background: linear-gradient(135deg, #00FFCC 0%, #0099FF 100%);">
+                            <div class="vjs-logo-brand">
+                                <svg width="50" height="50" viewBox="0 0 100 100"><path d="M50 10L85 85H15L50 10Z" fill="#fff"/></svg>
+                                <div class="vjs-logo-text" style="font-size: 24px; color: #fff;">Vijayalakshmi</div>
+                            </div>
+                        </div>
+                        <div class="variation-card" style="background: #000;">
+                            <div class="vjs-logo-brand">
+                                <svg width="50" height="50" viewBox="0 0 100 100"><path d="M50 10L85 85H15L50 10Z" fill="#8C52FF"/></svg>
+                                <div class="vjs-logo-text" style="font-size: 24px; color: var(--vjs-purple);">Vijayalakshmi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: LOGO SAFEZONE -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Logo Safezone</span>
+                <span>Page 03</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 mb-40">
+                    <div class="bg-title-area">
+                        <h2><span>Logo</span> Safezone</h2>
+                        <p class="bg-description">
+                            The logo safe zone defines the clear space surrounding the Vijayalakshmi Group logo to maintain its visibility and balance. This protected area prevents other elements from crowding the logo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="safezone-box">
+                        <div class="vjs-logo-brand" style="position: relative;">
+                            <!-- Safezone Visuals -->
+                            <div class="safezone-line" style="top: -60px; left: -100px; width: 450px;"></div>
+                            <div class="safezone-line" style="bottom: -60px; left: -100px; width: 450px;"></div>
+                            <div class="safezone-line" style="left: -100px; top: -60px; height: 200px;"></div>
+                            <div class="safezone-line" style="right: -100px; top: -60px; height: 200px;"></div>
+                            
+                            <div class="safezone-label" style="top: -75px; left: 50%;">1.5X</div>
+                            <div class="safezone-label" style="bottom: -75px; left: 50%;">1X</div>
+                            <div class="safezone-label" style="left: -125px; top: 50%;">3X</div>
+                            <div class="safezone-label" style="right: -125px; top: 50%;">0.7X</div>
+
+                            <svg width="80" height="80" viewBox="0 0 100 100" style="margin-right: 20px;"><path d="M50 10L85 85H15L50 10Z" fill="#8C52FF"/></svg>
+                            <div class="vjs-logo-text">Vijayalakshmi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INCORRECT LOGO USAGE -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Incorrect Logo Usage</span>
+                <span>Page 04</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="bg-title-area">
+                        <h2><span>Incorrect</span> Logo Usage</h2>
+                        <p class="bg-description">
+                            To maintain brand consistency, avoid distorting, recoloring, or misplacing the logo. Always follow the approved guidelines to ensure the logo remains clear, professional, and impactful.
+                        </p>
+                    </div>
+                    <ul class="do-not-list">
+                        <li>Do not change the position of the logo mark</li>
+                        <li>Do not arrange the logo in a top-down vertical stack</li>
+                        <li>Do not use unofficial colors or gradients</li>
+                        <li>Do not rotate any part of the logo or wordmark</li>
+                        <li>Do not use the wordmark without the company mark</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <div class="incorrect-grid">
+                        <div class="incorrect-card">
+                            <div class="vjs-logo-brand" style="opacity: 0.5; transform: scaleX(1.5);">
+                                <div class="vjs-logo-text" style="font-size: 20px;">Vijayalakshmi</div>
+                            </div>
+                            <div class="incorrect-x"></div>
+                        </div>
+                        <div class="incorrect-card">
+                            <div class="vjs-logo-brand" style="opacity: 0.5; transform: rotate(15deg);">
+                                <div class="vjs-logo-text" style="font-size: 20px;">Vijayalakshmi</div>
+                            </div>
+                            <div class="incorrect-x"></div>
+                        </div>
+                        <div class="incorrect-card">
+                            <div class="vjs-logo-brand" style="opacity: 0.5; filter: hue-rotate(90deg);">
+                                <div class="vjs-logo-text" style="font-size: 20px;">Vijayalakshmi</div>
+                            </div>
+                            <div class="incorrect-x"></div>
+                        </div>
+                        <div class="incorrect-card">
+                            <div class="vjs-logo-brand" style="opacity: 0.5; flex-direction: column-reverse;">
+                                <div class="vjs-logo-text" style="font-size: 20px;">Vijayalakshmi</div>
+                            </div>
+                            <div class="incorrect-x"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: COLOR PALETTE -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Color Palette</span>
+                <span>Page 05</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="bg-title-area">
+                        <h2><span>Color</span> Palette</h2>
+                        <p class="bg-description">
+                            Our color palette combines modern and professional tones to reflect the Group's forward-thinking approach. Electric Violet leads the identity, creating a sense of innovation and excellence.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="color-row">
+                        <div class="color-block" style="background: linear-gradient(180deg, #8C52FF 0%, #5E26D1 100%);">
+                            <span class="color-info" style="font-size: 24px;">Brand Gradient</span>
+                            <div>
+                                <span class="color-info d-block">Color 1: #8C52FF</span>
+                                <span class="color-info d-block">Color 2: #5E26D1</span>
+                            </div>
+                        </div>
+                        <div class="color-block" style="background: #8C52FF;">
+                            <span class="color-info" style="font-size: 24px;">Electric Violet</span>
+                            <div>
+                                <span class="color-info d-block">HEX: #8C52FF</span>
+                                <span class="color-info d-block">RGB: 140, 82, 255</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: TYPOGRAPHY -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Primary Typography</span>
+                <span>Page 06</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bg-title-area">
+                        <h2><span>Primary</span> Typography</h2>
+                        <div class="typo-main-a">Aa</div>
+                        <h3 style="font-size: 32px; font-weight: 700;">IBM Plex Sans Devanagari</h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="weights-list" style="margin-top: 40px;">
+                        <div class="weight-line" style="font-weight: 300;">Light</div>
+                        <div class="weight-line" style="font-weight: 400;">Regular</div>
+                        <div class="weight-line" style="font-weight: 500;">Medium</div>
+                        <div class="weight-line" style="font-weight: 600;">Semi Bold</div>
+                        <div class="weight-line" style="font-weight: 700;">Bold</div>
+                    </div>
+                    <div class="mt-40">
+                        <p style="font-size: 18px; color: var(--vjs-gray);">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                            abcdefghijklmnopqrstuvwxyz<br>
+                            1234567890!@#$%&*()
+                        </p>
+                        <p class="mt-20" style="color: var(--vjs-gray);">
+                            Vijayalakshmi Group promotes excellence through innovation and sustainable practices, helping industries achieve new heights of success and growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: BRAND IMAGERY -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Brand Imagery</span>
+                <span>Page 07</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="bg-title-area">
+                        <h2><span>Brand</span> Imagery</h2>
+                        <p class="bg-description">
+                            Our brand imagery showcases professional, tech-forward experiences using vibrant gradients and expressive human moments. It reflects our innovative and modern identity.
+                        </p>
+                        <div class="mt-60">
+                            <span class="d-block fw-700 mb-10">Keywords:</span>
+                            <p style="font-size: 18px; color: var(--vjs-purple); font-weight: 600;">
+                                Professional, Innovative, Sustainable, Trust, Growth, Excellence
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="imagery-grid">
+                        <div class="img-item" style="grid-row: span 2;">
+                            <img src="{{ url_for('static', filename='images/media-kit/3.png') }}" alt="Innovation">
+                            <div class="img-overlay"><span>Innovation</span></div>
+                        </div>
+                        <div class="img-item">
+                            <img src="{{ url_for('static', filename='images/media-kit/4.png') }}" alt="Growth">
+                            <div class="img-overlay"><span>Growth</span></div>
+                        </div>
+                        <div class="img-item">
+                            <img src="{{ url_for('static', filename='images/media-kit/2.png') }}" alt="Trust">
+                            <div class="img-overlay"><span>Trust</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: DIGITAL PRESENCE -->
+    <section class="bg-section">
+        <div class="container">
+            <div class="bg-header-line">
+                <span>Brand Guidelines</span>
+                <span>Digital Presence</span>
+                <span>Page 08</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 mb-40">
+                    <div class="bg-title-area">
+                        <h2><span>Digital</span> Presence</h2>
+                        <p class="bg-description">
+                            Our social media voice reflects the professional and innovative essence of Vijayalakshmi Group: visionary, efficient, and authentic.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="presence-grid">
+                        <div class="presence-card">
+                            <img src="{{ url_for('static', filename='images/media-kit/1.png') }}" alt="IT Solutions">
+                            <div class="presence-label">IT Consulting Solutions</div>
+                        </div>
+                        <div class="presence-card">
+                            <img src="{{ url_for('static', filename='images/media-kit/3.png') }}" alt="Healthcare">
+                            <div class="presence-label">Healthcare Excellence</div>
+                        </div>
+                        <div class="presence-card">
+                            <img src="{{ url_for('static', filename='images/media-kit/4.png') }}" alt="Sustainability">
+                            <div class="presence-label">Sustainable Growth</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
