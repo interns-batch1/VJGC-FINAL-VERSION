@@ -14,20 +14,22 @@ document.addEventListener('DOMContentLoaded', function() {
             video.pause();
 
             card.addEventListener('mouseenter', () => {
-                // play() returns a promise to handle browsers that block autoplay/interrupted play
-                const playPromise = video.play();
-                
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Playback prevented by browser: ", error);
+                // Only try to play if paused
+                if (video.paused) {
+                    video.play().catch(error => {
+                        // Suppress AbortError which occurs when mouse leaves before play starts
+                        if (error.name !== 'AbortError') {
+                            console.warn("Video playback failed:", error);
+                        }
                     });
                 }
             });
 
             card.addEventListener('mouseleave', () => {
-                video.pause();
-                // Optional: Uncomment below to reset video to start on leave
-                // video.currentTime = 0;
+                // Pause if playing
+                if (!video.paused) {
+                    video.pause();
+                }
             });
         }
     });
