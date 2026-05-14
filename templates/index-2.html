@@ -749,6 +749,58 @@
 			<script src="{{ url_for('static', filename='vendor/html5shiv.js') }}?v=1.0"></script>
 			<script src="{{ url_for('static', filename='vendor/respond.js') }}?v=1.0"></script>
 		<![endif]-->
+	<style>
+		/* ===== SCROLL TO TOP BUTTON ===== */
+		.vjs-scroll-top-btn {
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
+			width: 60px;
+			height: 60px;
+			background: linear-gradient(135deg, #A2D732 0%, #1A4137 100%);
+			border: none;
+			border-radius: 50%;
+			color: white;
+			font-size: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			z-index: 9999;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+			transform: translateY(20px);
+		}
+
+		.vjs-scroll-top-btn.visible {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+
+		.vjs-scroll-top-btn:hover {
+			transform: translateY(-5px) scale(1.05);
+			box-shadow: 0 15px 40px rgba(162, 215, 50, 0.4);
+			color: #fff;
+		}
+
+		.vjs-scroll-top-btn i {
+			line-height: 1;
+		}
+
+		@media (max-width: 768px) {
+			.vjs-scroll-top-btn {
+				width: 50px;
+				height: 50px;
+				bottom: 20px;
+				right: 20px;
+				font-size: 20px;
+			}
+		}
+	</style>
+</head>
 
 <body>
 	<div class="main-page-wrapper">
@@ -1053,7 +1105,7 @@
 					<div class="hero-img">
 						{% if slide.video_url or (slide.image and slide.image.endswith('.mp4')) %}
 						<video class="hero-video-bg" muted playsinline preload="auto" autoplay>
-							<source src="{{ slide.video_url or slide.image }}?t=1" type="video/mp4">
+							<source src="{{ slide.image_url or slide.video_url or slide.image }}?t=1" type="video/mp4">
 						</video>
 						{% else %}
 						<div class="hero-video-bg"
@@ -2027,14 +2079,13 @@
 									</div>
 									<figure
 										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										{% if (item.image or item.image_url) and (item.image or
-										item.image_url).endswith('.mp4') %}
+										{% if (item.image_url or item.image) and (item.image_url or item.image).endswith('.mp4') %}
 										<video loop muted playsinline autoplay
 											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-											<source src="{{ item.image or item.image_url }}" type="video/mp4">
+											<source src="{{ item.image_url or item.image }}" type="video/mp4">
 										</video>
 										{% else %}
-										<img src="{{ item.image or item.image_url or url_for('static', filename='images/media/blog_01.jpg') }}"
+										<img src="{{ item.image_url or item.image or url_for('static', filename='images/media/blog_01.jpg') }}"
 											alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
 										{% endif %}
 									</figure>
@@ -2371,6 +2422,32 @@
 		<div id="google_translate_element" style="display:none;"></div>
 		<script type="text/javascript"
 			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+	<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
+		<i class="bi bi-chevron-double-up"></i>
+	</button>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const scrollTopBtn = document.getElementById('vjs-scroll-top');
+			if (!scrollTopBtn) return;
+
+			window.addEventListener('scroll', function () {
+				if (window.pageYOffset > 400) {
+					scrollTopBtn.classList.add('visible');
+				} else {
+					scrollTopBtn.classList.remove('visible');
+				}
+			});
+
+			scrollTopBtn.addEventListener('click', function () {
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			});
+		});
+	</script>
 </body>
 
 </html>

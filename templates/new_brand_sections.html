@@ -708,3 +708,29 @@
 
 
 
+
+	<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
+		<i class="bi bi-chevron-double-up"></i>
+	</button>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const scrollTopBtn = document.getElementById('vjs-scroll-top');
+			if (!scrollTopBtn) return;
+
+			window.addEventListener('scroll', function () {
+				if (window.pageYOffset > 400) {
+					scrollTopBtn.classList.add('visible');
+				} else {
+					scrollTopBtn.classList.remove('visible');
+				}
+			});
+
+			scrollTopBtn.addEventListener('click', function () {
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			});
+		});
+	</script>

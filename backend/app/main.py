@@ -166,8 +166,11 @@ async def get_page_context(path: str):
         
         # Ensure template-friendly aliases
         img_path = doc.get("image") or ""
-        if img_path and not img_path.startswith(('http', '/', 'static/')):
-            img_path = f"/uploads/{img_path}"
+        if img_path:
+            if img_path.startswith('/static/'):
+                img_path = img_path.replace(' ', '%20')
+            elif not img_path.startswith(('http', '/')):
+                img_path = f"/uploads/{img_path}"
         doc["image_url"] = img_path
         doc["video_url"] = doc.get("video_url", img_path) if img_path.lower().endswith(".mp4") else ""
         
