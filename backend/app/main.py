@@ -253,21 +253,26 @@ async def dynamic_route(request: Request, path: str):
             db = get_database()
             all_media = []
             seen_ids = set()
+            seen_titles = set()
             
             # 1. Add from 'news' collection (Website News)
             try:
                 news_items = await db["news"].find().sort("date", -1).to_list(length=50)
                 for n in news_items:
                     nid = str(n["_id"])
-                    if nid not in seen_ids:
+                    title = n.get("title", "").strip().lower()
+                    if nid not in seen_ids and title not in seen_titles:
                         n["_id"] = nid
-                        if "image" in n and "image_url" not in n:
+                        if "image" in n:
                             img = n["image"]
                             if img and not img.startswith(('http', '/', 'static/')):
                                 img = f"/uploads/{img}"
+                            if img and img.startswith('/static/'):
+                                img = img.replace(' ', '%20')
                             n["image_url"] = img
                         all_media.append(n)
                         seen_ids.add(nid)
+                        if title: seen_titles.add(title)
             except Exception as e:
                 print(f"Error fetching from news collection: {e}")
 
@@ -278,15 +283,19 @@ async def dynamic_route(request: Request, path: str):
                     cat_items = await db["universal_content"].find({"category": cat, "isActive": True}).sort("updatedAt", -1).to_list(length=30)
                     for n in cat_items:
                         nid = str(n["_id"])
-                        if nid not in seen_ids:
+                        title = n.get("title", "").strip().lower()
+                        if nid not in seen_ids and title not in seen_titles:
                             n["_id"] = nid
-                            if "image" in n and "image_url" not in n:
+                            if "image" in n:
                                 img = n["image"]
                                 if img and not img.startswith(('http', '/', 'static/')):
                                     img = f"/uploads/{img}"
+                                if img and img.startswith('/static/'):
+                                    img = img.replace(' ', '%20')
                                 n["image_url"] = img
                             all_media.append(n)
                             seen_ids.add(nid)
+                            if title: seen_titles.add(title)
                 except Exception as e:
                     print(f"Error fetching {cat} from universal_content: {e}")
             
