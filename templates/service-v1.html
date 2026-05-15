@@ -652,308 +652,7 @@
 			Footer One
 		=====================================================
 		-->
-		<div class="footer-mini">
-
-			<style>
-				/* RESET (removes unwanted gaps) */
-				* {
-					box-sizing: border-box;
-				}
-
-				html,
-				body {
-					margin: 0;
-					padding: 0;
-				}
-
-				/* FULL WIDTH FOOTER */
-				.footer-modern {
-					width: 100%;
-					background: transparent;
-					padding: 60px 0 30px;
-				}
-
-				/* INNER CONTAINER */
-				.footer-container {
-					max-width: 1200px;
-					margin: 0 auto;
-					padding: 90px 40px 35px;
-					/* ?? pushes content downward */
-					font-family: "Helvetica Neue", Arial, sans-serif;
-				}
-
-				/* TOP SECTION */
-				.footer-top {
-					display: flex;
-					justify-content: space-between;
-					align-items: flex-start;
-					gap: 60px;
-					margin-top: 10px;
-				}
-
-				/* LOGO & BRAND POSITIONING */
-				.footer-brand {
-					margin-top: 65px;
-					/* ?? Move further down */
-					margin-left: 35px;
-					/* ?? Move slightly back to the left */
-				}
-
-				.footer-logo-group {
-					display: flex;
-					flex-direction: row;
-					/* ?? Back to side-by-side */
-					align-items: center;
-					padding-right: 20px;
-					gap: 12px;
-					margin-bottom: 25px;
-				}
-
-				.footer-logo-group img {
-					height: 46px;
-					width: auto;
-				}
-
-				.footer-logo-text {
-					display: flex;
-					flex-direction: column;
-					line-height: 1.1;
-				}
-
-				.footer-logo-text span:first-child {
-					font-size: 16px;
-					font-weight: 700;
-					color: #000;
-					letter-spacing: 0.5px;
-					text-transform: uppercase;
-				}
-
-				.footer-logo-text span:last-child {
-					font-size: 10px;
-					font-weight: 600;
-					color: #666;
-					letter-spacing: 1.5px;
-				}
-
-				
-
-				
-
-				
-
-				/* COLUMNS */
-				.footer-col h5 {
-					font-size: 14px;
-					font-weight: 600;
-					margin-bottom: 16px;
-					color: #000;
-				}
-
-				.footer-col ul {
-					list-style: none;
-					padding: 0;
-					margin: 0;
-				}
-
-				.footer-col ul li {
-					margin-bottom: 10px;
-				}
-
-				.footer-col ul li a {
-					text-decoration: none;
-					font-size: 12px;
-					color: #666;
-					transition: 0.3s;
-				}
-
-				.footer-col ul li a:hover {
-					color: #000;
-				}
-
-				/* RIGHT SIDE LINKS */
-				.footer-right {
-					display: flex;
-					flex-direction: column;
-					gap: 12px;
-				}
-
-				.footer-right a {
-					text-decoration: none;
-					font-size: 13px;
-					font-weight: 500;
-					color: #000;
-				}
-
-				/* BOTTOM BAR */
-				.footer-bottom {
-					border-top: 1px solid #e5e7ea;
-					margin-top: 50px;
-					/* ?? spacing like Adani */
-					padding-top: 20px;
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					font-size: 12px;
-					color: #666;
-				}
-
-				.footer-bottom-links {
-					display: flex;
-					gap: 25px;
-					margin-left: auto;
-					/* ?? pushes links to the right */
-					padding-left: 500px;
-					/* ?? adds small right offset */
-				}
-
-				.footer-bottom-links a {
-					text-decoration: none;
-					color: #666;
-				}
-
-				.footer-bottom-links a:hover {
-					color: #000;
-				}
-
-				/* RESPONSIVE */
-				@media(max-width:768px) {
-					.footer-top {
-						flex-direction: column;
-						gap: 30px;
-					}
-
-					.footer-bottom {
-						flex-direction: column;
-						text-align: center;
-						gap: 10px;
-					}
-				}
-			</style>
-
-
-			<div class="footer-modern">
-				<div class="footer-container">
-					<div class="footer-top">
-						<!-- LOGO & BRAND -->
-						<div class="footer-brand">
-							<div class="footer-logo-group">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-									alt="Logo Mark">
-								<div class="footer-logo-text">
-									<span>Vijayalakshmi Group</span>
-									<span>OF COMPANIES</span>
-								</div>
-							</div>
-
-							<div class="social-icons-mini">
-								<a href="#"><i class="bi bi-facebook"></i></a>
-								<a href="#"><i class="bi bi-instagram"></i></a>
-								<a href="#"><i class="bi bi-youtube"></i></a>
-								<a href="#"><i class="bi bi-linkedin"></i></a>
-							</div>
-						</div>
-
-						<!-- ABOUT -->
-						<div class="footer-col">
-							<h5>About Us</h5>
-							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
-							</ul>
-						</div>
-
-						<!-- BUSINESS -->
-						<div class="footer-col">
-							<h5>Businesses</h5>
-							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
-										Logistics</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- QUICK LINKS -->
-						<div class="footer-col">
-							<h5>Quick Links</h5>
-							<ul>
-								<li><a
-										href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- BOTTOM -->
-					<div class="footer-bottom">
-						<div class="footer-copyright">
-							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-								alt="Mark">
-							<span>@2026 Vijayalakshmi Group</span>
-						</div>
-
-						<div class="footer-bottom-links">
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Legal Disclaimer</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Privacy Notice</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Terms & Conditions</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Cookie Policy</a>
-						</div>
-					</div>
-				</div>
-			</div> <!-- /.footer-modern -->
-
-
-			
-
-			<!-- JavaScript -->
-			<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
-			<script
-				src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
-			<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
-			<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
-			<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
-			<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
-			<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
-			<!-- Navbar Hover Animation -->
-			<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
-			<script>
-				$(document).ready(function () {
-					if ($('.award-slider-one').length) {
-						$('.award-slider-one').slick({
-							dots: false,
-							arrows: false,
-							lazyLoad: 'ondemand',
-							infinite: true,
-							speed: 300,
-							slidesToShow: 4,
-							slidesToScroll: 1,
-							autoplay: true,
-							autoplaySpeed: 2000,
-							responsive: [
-								{ breakpoint: 992, settings: { slidesToShow: 3 } },
-								{ breakpoint: 768, settings: { slidesToShow: 2 } },
-								{ breakpoint: 576, settings: { slidesToShow: 1 } }
-							]
-						});
-					}
-				});
-			</script>
-		</div>
+		
 		<!-- Vijayalakshmi Group Site Utils -->
 		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
 		<!-- Google Translate Element -->
@@ -1012,6 +711,97 @@
 			});
 		});
 	</script>
+
+
+
+
+<footer class="footer-vjs-premium">
+				<div class="footer-gold-bar"></div>
+				<div class="footer-container">
+					<div class="footer-main">
+						<!-- Brand Column -->
+						<div class="footer-column footer-brand-col">
+							<div class="footer-logo">
+								<div class="logo-icon-circle">
+									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+								</div>
+								<div class="logo-text">
+									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+									<span class="brand-sub">OF COMPANIES</span>
+								</div>
+							</div>
+							<div class="footer-divider-h"></div>
+							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
+							<div class="social-links">
+								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+							</div>
+						</div>
+
+						<!-- About Us Column -->
+						<div class="footer-column">
+							<h5 class="footer-title">ABOUT US</h5>
+							<div class="title-underline"></div>
+							<ul class="footer-links">
+								<li><a href="/about-us-v2">About Company</a></li>
+								<li><a href="/about-us-v1">Chairman's Office</a></li>
+								<li><a href="/service-v1">Leadership</a></li>
+								<li><a href="/about-us-v1">Our Journey</a></li>
+								<li><a href="/service-v1">Awards</a></li>
+							</ul>
+						</div>
+
+						<!-- Businesses Column -->
+						<div class="footer-column">
+							<h5 class="footer-title">BUSINESSES</h5>
+							<div class="title-underline"></div>
+							<ul class="footer-links">
+								<li><a href="/it-consulting">Infrastructure</a></li>
+								<li><a href="/green-energy">Energy & Utilities</a></li>
+								<li><a href="/logistics-services">Transport & Logistics</a></li>
+								<li><a href="/export-import">Consumer Products</a></li>
+								<li><a href="/property-services">Real Estate</a></li>
+								<li><a href="/yoga-wellness">Healthcare</a></li>
+							</ul>
+						</div>
+
+						<!-- Quick Links Column -->
+						<div class="footer-column">
+							<h5 class="footer-title">QUICK LINKS</h5>
+							<div class="title-underline"></div>
+							<ul class="footer-links">
+								<li><a href="/sustainability">Sustainability</a></li>
+								<li><a href="/pricing">Investors</a></li>
+								<li><a href="/media-release">Newsroom</a></li>
+								<li><a href="/about-us-v1">Careers</a></li>
+								<li><a href="/contact">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Bottom Bar -->
+				<div class="footer-bottom-vjs">
+					<div class="footer-container">
+						<div class="bottom-inner">
+							<div class="copyright">
+								<i class="bi bi-crown-fill gold-icon"></i>
+								<span>© 2026 Vijayalakshmi Group of Companies</span>
+							</div>
+							<div class="legal-links">
+								<a href="#">All rights reserved</a>
+                                <a href="/contact">Legal Disclaimer</a>
+								<a href="/contact">Privacy Notice</a>
+								<a href="/contact">Terms & Conditions</a>
+								<a href="/contact">Cookie Policy</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
 </body>
 
 </html>

@@ -379,24 +379,67 @@
 
 		<div class="light-bg-page-wrapper">
 			<!-- At a Glance Section -->
-			<section class="glance-section-v3">
+			
+			<section class="glance-section-v3 py-5">
 				<div class="container">
-					<h2 class="section-title">At a Glance.</h2>
-					<div class="row justify-content-center g-4">
+					<h2 class="section-title text-center mb-5">At a Glance.</h2>
+					<div class="row vjs-card-row justify-content-center g-4">
 						{% if cms['At a Glance'] and cms['At a Glance'].content %}
 						{% for card in cms['At a Glance'].content %}
-						<div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
-							<div class="vjs-glance-card-v3">
-								<div class="img-wrap"><img
-										src="{% if card.image_url %}{{ card.image_url }}{% else %}https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800{% endif %}"
-										alt="{{ card.title }}" style="width:100%;height:100%;object-fit:cover;"></div>
-								<div class="content">
-									<h4 class="card-title">{{ card.title }}</h4>
-									<p class="card-desc">{{ card.description }}</p>
+						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+							<div class="vjs-card-premium-white">
+								<div class="card-img-box">
+									<img src="{{ card.image_url if card.image_url else 'https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800' }}" alt="{{ card.title }}">
+									<div class="card-badge-frosted">PLANTATIONS</div>
+								</div>
+								<div class="card-content-area">
+									<div class="card-header-row">
+										<div class="card-icon-box"><i class="bi bi-briefcase"></i></div>
+										<div class="card-header-divider"></div>
+									</div>
+									<h4 class="serif-heading">{{ card.title }}</h4>
+									<p class="muted-desc">{{ card.description }}</p>
+									
 								</div>
 							</div>
 						</div>
 						{% endfor %}
+						{% else %}
+						<!-- Fallback Content -->
+						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp">
+							<div class="vjs-card-premium-white">
+								<div class="card-img-box">
+									<img src="/static/images/media/vjs_plantations_glance_1.png" alt="Excellence">
+									<div class="card-badge-frosted">PLANTATIONS</div>
+								</div>
+								<div class="card-content-area">
+									<div class="card-header-row">
+										<div class="card-icon-box"><i class="bi bi-briefcase"></i></div>
+										<div class="card-header-divider"></div>
+									</div>
+									<h4 class="serif-heading">Strategic Excellence</h4>
+									<p class="muted-desc">Driving value through innovation and industry-leading standards.</p>
+									
+								</div>
+							</div>
+						</div>
+                        <div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
+							<div class="vjs-card-premium-white">
+								<div class="card-img-box">
+									<img src="/static/images/media/vjs_plantations_glance_2.png" alt="Innovation">
+									<div class="card-badge-frosted">PLANTATIONS</div>
+								</div>
+								<div class="card-content-area">
+									<div class="card-header-row">
+										<div class="card-icon-box"><i class="bi bi-briefcase"></i></div>
+										<div class="card-header-divider"></div>
+									</div>
+									<h4 class="serif-heading">Global Innovation</h4>
+									<p class="muted-desc">Transforming sectors with future-ready technology and expert insights.</p>
+									
+								</div>
+							</div>
+						</div>
 						{% endif %}
 					</div>
 				</div>
@@ -406,20 +449,27 @@
 			<section class="biz-section-v2">
 				<div class="container">
 					<h2 class="section-title">Our Plantation Businesses</h2>
-					<div class="row g-4">
+					<div class="row g-4 row-cols-lg-4">
 						{% if cms['Our Business'] and cms['Our Business'].content %}
 						{% for card in cms['Our Business'].content %}
-						<div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
-							<a href="#" class="vjs-biz-card-v2">
-								<div class="img-wrap"><img
-										src="{% if card.image_url %}{{ card.image_url }}{% else %}https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800{% endif %}"
-										alt="{{ card.title }}"></div>
-								<div class="content">
-									<h4 class="card-title">{{ card.title }}</h4>
-									<p class="card-desc">{{ card.description }}</p>
-								</div>
-							</a>
-						</div>
+						
+                        <div class="col-lg-3 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
+                            <div class="vjs-card-premium-white">
+                                <div class="card-img-box">
+                                    <img src="{% if card.image_url %}{{ card.image_url }}{% else %}https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800{% endif %}" alt="{{ card.title }}">
+                                    <div class="card-badge-frosted">PLANTATIONS</div>
+                                </div>
+                                <div class="card-content-area">
+                                    <div class="card-header-row">
+                                        <div class="card-icon-box"><i class="bi bi-briefcase"></i></div>
+                                        <div class="card-header-divider"></div>
+                                    </div>
+                                    <h4 class="serif-heading">{{ card.title }}</h4>
+                                    <p class="muted-desc">{{ card.description }}</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
 						{% endfor %}
 						{% endif %}
 					</div>
@@ -436,91 +486,7 @@
 			</section>
 
 			<!-- Footer -->
-			<div class="footer-modern">
-				<div class="footer-container">
-					<div class="footer-top">
-						<!-- LOGO & BRAND -->
-						<div class="footer-brand">
-							<div class="footer-logo-group">
-								<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-									alt="Logo Mark">
-								<div class="footer-logo-text">
-									<span>Vijayalakshmi Group</span>
-									<span>OF COMPANIES</span>
-								</div>
-							</div>
-
-							<div class="social-icons-mini">
-								<a href="#"><i class="bi bi-facebook"></i></a>
-								<a href="#"><i class="bi bi-instagram"></i></a>
-								<a href="#"><i class="bi bi-youtube"></i></a>
-								<a href="#"><i class="bi bi-linkedin"></i></a>
-							</div>
-						</div>
-
-						<!-- ABOUT -->
-						<div class="footer-col">
-							<h5>About Us</h5>
-							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v2') }}">About Company</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Chairman’s Office</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Leadership</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Our Journey</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='service-v1') }}">Awards</a></li>
-							</ul>
-						</div>
-
-						<!-- BUSINESS -->
-						<div class="footer-col">
-							<h5>Businesses</h5>
-							<ul>
-								<li><a href="{{ url_for('dynamic_route', path='it-consulting') }}">Infrastructure</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='green-energy') }}">Energy & Utilities</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='logistics-services') }}">Transport &
-										Logistics</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='export-import') }}">Consumer Products</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='property-services') }}">Real Estate</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='yoga-wellness') }}">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- QUICK LINKS -->
-						<div class="footer-col">
-							<h5>Quick Links</h5>
-							<ul>
-								<li><a
-										href="{{ url_for('dynamic_route', path='digital-transformation-sustainability') }}">Sustainability</a>
-								</li>
-								<li><a href="{{ url_for('dynamic_route', path='pricing') }}">Investors</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='media-release') }}">Newsroom</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='about-us-v1') }}">Careers</a></li>
-								<li><a href="{{ url_for('dynamic_route', path='contact') }}">Contact Us</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- BOTTOM -->
-					<div class="footer-bottom">
-						<div class="footer-copyright">
-							<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
-								alt="Mark">
-							<span>@2026 Vijayalakshmi Group</span>
-						</div>
-
-						<div class="footer-bottom-links">
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Legal Disclaimer</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Privacy Notice</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Terms & Conditions</a>
-							<a href="{{ url_for('dynamic_route', path='contact') }}">Cookie Policy</a>
-						</div>
-					</div>
-				</div>
-			</div> <!-- /.footer-modern -->
+			
 		</div>
 
 		
@@ -566,6 +532,99 @@
 			});
 		});
 	</script>
+
+
+
+
+<footer class="footer-vjs-premium">
+				<div class="footer-gold-bar"></div>
+				<div class="footer-container">
+					<div class="footer-main">
+						<!-- Brand Column -->
+						<div class="footer-column footer-brand-col">
+							<div class="footer-logo">
+								<div class="logo-icon-circle">
+									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+								</div>
+								<div class="logo-text">
+									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+									<span class="brand-sub">OF COMPANIES</span>
+								</div>
+							</div>
+							<div class="footer-divider-h"></div>
+							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
+							<div class="social-links">
+								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+							</div>
+						</div>
+
+						<!-- About Us Column -->
+						<div class="footer-column">
+							<h5 class="footer-title">ABOUT US</h5>
+							<div class="title-underline"></div>
+							<ul class="footer-links">
+								<li><a href="/about-us-v2">About Company</a></li>
+								<li><a href="/about-us-v1">Chairman's Office</a></li>
+								<li><a href="/service-v1">Leadership</a></li>
+								<li><a href="/about-us-v1">Our Journey</a></li>
+								<li><a href="/service-v1">Awards</a></li>
+							</ul>
+						</div>
+
+						<!-- Businesses Column -->
+						<div class="footer-column">
+							<h5 class="footer-title">BUSINESSES</h5>
+							<div class="title-underline"></div>
+							<ul class="footer-links">
+								<li><a href="/it-consulting">Infrastructure</a></li>
+								<li><a href="/green-energy">Energy & Utilities</a></li>
+								<li><a href="/logistics-services">Transport & Logistics</a></li>
+								<li><a href="/export-import">Consumer Products</a></li>
+								<li><a href="/property-services">Real Estate</a></li>
+								<li><a href="/yoga-wellness">Healthcare</a></li>
+							</ul>
+						</div>
+
+						<!-- Quick Links Column -->
+						<div class="footer-column">
+							<h5 class="footer-title">QUICK LINKS</h5>
+							<div class="title-underline"></div>
+							<ul class="footer-links">
+								<li><a href="/sustainability">Sustainability</a></li>
+								<li><a href="/pricing">Investors</a></li>
+								<li><a href="/media-release">Newsroom</a></li>
+								<li><a href="/about-us-v1">Careers</a></li>
+								<li><a href="/contact">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Bottom Bar -->
+				<div class="footer-bottom-vjs">
+					<div class="footer-container">
+						<div class="bottom-inner">
+							<div class="copyright">
+								<i class="bi bi-crown-fill gold-icon"></i>
+								<span>© 2026 Vijayalakshmi Group of Companies</span>
+							</div>
+							<div class="legal-links">
+								<a href="#">All rights reserved</a>
+                                <a href="/contact">Legal Disclaimer</a>
+								<a href="/contact">Privacy Notice</a>
+								<a href="/contact">Terms & Conditions</a>
+								<a href="/contact">Cookie Policy</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+	</div> <!-- /.light-bg-page-wrapper -->
+</div> <!-- /.main-page-wrapper -->
+
 </body>
 
 </html>

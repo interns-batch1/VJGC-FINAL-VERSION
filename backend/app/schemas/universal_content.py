@@ -9,9 +9,9 @@ class UniversalContentBase(BaseModel):
     mainPage: str
     subSection: str
     category: str
-    title: str
-    description: str
-    image: str
+    title: Optional[str] = ""
+    description: Optional[str] = ""
+    image: Optional[str] = ""
     order: Optional[int] = 0
     isActive: bool = True
 

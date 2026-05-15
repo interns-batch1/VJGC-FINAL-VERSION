@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends
 from app.db.mongodb import get_database
+from datetime import datetime
 from app.schemas.achievement import Achievement
 from app.schemas.about import About
 from app.schemas.service import Service
@@ -38,13 +39,48 @@ async def list_services(db = Depends(get_database)):
 
 @router.get("/news", response_model=List[Blog])
 async def list_news(db = Depends(get_database)):
-    """List all news/blog posts."""
-    blogs = []
-    cursor = db["news"].find().limit(100)
+    """List all news/blog posts from both 'news' and 'universal_content' collections."""
+    import os
+    print(f"DEBUG: list_news called in PID {os.getpid()}")
+    cols = await db.list_collection_names()
+    print(f"DEBUG: Collections in DB: {cols}")
+    all_news = []
+    seen_titles = set()
+    
+    # 1. Fetch from 'news' collection
+    cursor = db["news"].find().sort("date", -1).limit(100)
+    news_count = 0
     async for doc in cursor:
+        news_count += 1
         doc["_id"] = str(doc["_id"])
-        blogs.append(doc)
-    return blogs
+        title = doc.get("title", "").strip().lower()
+        if title:
+            seen_titles.add(title)
+        doc["source"] = "news_collection"
+        all_news.append(doc)
+        
+    # 2. Fetch from 'universal_content' news categories
+    news_categories = ["Insights News", "Latest_News", "News", "Media Release", "Insights / News", "News Section"]
+    cursor = db["universal_content"].find({"category": {"$in": news_categories}}).sort("updatedAt", -1).limit(100)
+    uni_count = 0
+    async for doc in cursor:
+        uni_count += 1
+        title = doc.get("title", "").strip().lower()
+        if title not in seen_titles:
+            doc["_id"] = str(doc["_id"])
+            if title:
+                seen_titles.add(title)
+            # Map universal fields to blog schema
+            doc["date"] = doc.get("date") or doc.get("updatedAt").strftime("%Y-%m-%d") if doc.get("updatedAt") else "Recent"
+            doc["status"] = "Published" if doc.get("isActive", True) else "Draft"
+            doc["content"] = doc.get("content") or doc.get("description") or "No content available."
+            doc["summary"] = doc.get("summary") or doc.get("description")
+            doc["image_url"] = doc.get("image_url") or doc.get("image")
+            doc["source"] = "universal_content"
+            all_news.append(doc)
+    
+    print(f"DEBUG: Scanned {uni_count} universal items. Total unique news: {len(all_news)}")
+    return all_news
 
 @router.get("/news/{id}", response_model=Blog)
 async def get_news_by_id(id: str, db = Depends(get_database)):

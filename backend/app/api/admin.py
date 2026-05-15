@@ -120,15 +120,52 @@ async def create_blog(item: BlogCreate, db = Depends(get_database), admin: str =
 @router.delete("/news/{id}")
 async def delete_blog(id: str, db = Depends(get_database), admin: str = Depends(get_current_admin)):
     from bson import ObjectId
-    await db["news"].delete_one({"_id": ObjectId(id)})
+    oid = ObjectId(id)
+    # Try deleting from news collection
+    res1 = await db["news"].delete_one({"_id": oid})
+    # Also try deleting from universal_content
+    res2 = await db["universal_content"].delete_one({"_id": oid})
+    
+    if res1.deleted_count == 0 and res2.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="News item not found")
+        
     return {"message": "Deleted"}
 
 @router.put("/news/{id}", response_model=Blog)
 async def update_blog(id: str, item: BlogCreate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
     from bson import ObjectId
+    oid = ObjectId(id)
     update_data = item.model_dump()
     update_data["updated_at"] = datetime.utcnow()
-    await db["news"].update_one({"_id": ObjectId(id)}, {"$set": update_data})
-    doc = await db["news"].find_one({"_id": ObjectId(id)})
+    
+    # Map 'status' back to 'isActive' for universal_content items
+    is_active = update_data.get("status", "Published").lower() == "published"
+    
+    # Try updating in news collection
+    res = await db["news"].update_one({"_id": oid}, {"$set": update_data})
+    
+    # Also try updating in universal_content
+    # For universal content, we might need to update description/image fields specifically
+    uni_update = {
+        "title": update_data.get("title"),
+        "author": update_data.get("author"),
+        "description": update_data.get("summary") or update_data.get("content"),
+        "image": update_data.get("image_url"),
+        "isActive": is_active,
+        "updatedAt": datetime.utcnow()
+    }
+    await db["universal_content"].update_one({"_id": oid}, {"$set": uni_update})
+    
+    # Fetch result from either collection
+    doc = await db["news"].find_one({"_id": oid}) or await db["universal_content"].find_one({"_id": oid})
+    if not doc:
+        raise HTTPException(status_code=404, detail="News item not found")
+        
     doc["_id"] = str(doc["_id"])
     return doc
+@router.get("/news", response_model=List[Blog])
+async def list_admin_news(db = Depends(get_database)):
+    """List all news/blog posts for admin."""
+    # We can just reuse the same logic or import it
+    from app.api.public import list_news
+    return await list_news(db)

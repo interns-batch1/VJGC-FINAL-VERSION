@@ -9,7 +9,7 @@ router = APIRouter()
 
 def serialize_doc(doc):
     if not doc: return None
-    doc["id"] = str(doc.pop("_id"))
+    doc["id"] = str(doc.get("_id"))
     return doc
 
 @router.get("/", response_model=List[UniversalContent])

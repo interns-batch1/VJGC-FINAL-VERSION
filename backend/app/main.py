@@ -46,11 +46,17 @@ templates.env.globals["url_for"] = safe_url_for
 async def debug_exception_handler(request: Request, exc: Exception):
     import traceback
     print(f"DEBUG ERROR: {str(exc)}\n{traceback.format_exc()}")
+    if request.url.path.startswith("/api"):
+        from fastapi.responses import JSONResponse
+        return JSONResponse(status_code=500, content={"detail": str(exc)})
     return templates.TemplateResponse(request, "index-2.html", await get_page_context("index-2"))
 
-# Custom 404 Handler to prevent JSON responses for users
+# Custom 404 Handler to prevent JSON responses for users, but allow API 404s
 @app.exception_handler(404)
 async def not_found_exception_handler(request: Request, exc: Exception):
+    if request.url.path.startswith("/api"):
+        from fastapi.responses import JSONResponse
+        return JSONResponse(status_code=404, content={"detail": "API endpoint not found"})
     return templates.TemplateResponse(request, "index-2.html", await get_page_context("index-2"))
 
 # CORS
@@ -310,5 +316,7 @@ async def dynamic_route(request: Request, path: str):
             context["all_media_news"] = all_media
             
         return templates.TemplateResponse(request, template_file, context)
-    except Exception:
+    except Exception as e:
+        import traceback
+        print(f"ERROR rendering {path}: {str(e)}\n{traceback.format_exc()}")
         return templates.TemplateResponse(request, "index-2.html", await get_page_context("index-2"))

@@ -323,6 +323,21 @@ async def update_content_by_id(id: str, data: Dict[str, Any], db = Depends(get_d
 
 
 # ---------------------------------------------------------------------------
+# PUT /content/{id}/publish
+# Sets the content status to active/published.
+# ---------------------------------------------------------------------------
+@router.put("/content/{id}/publish")
+async def publish_content(id: str, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    result = await db["universal_content"].update_one(
+        {"_id": ObjectId(id)},
+        {"$set": {"isActive": True, "updatedAt": datetime.utcnow()}}
+    )
+    if result.matched_count == 0:
+        raise HTTPException(status_code=404, detail="Content not found")
+    return {"message": "Published successfully"}
+
+
+# ---------------------------------------------------------------------------
 # DELETE /content/{id}
 # ---------------------------------------------------------------------------
 @router.delete("/content/{id}")
