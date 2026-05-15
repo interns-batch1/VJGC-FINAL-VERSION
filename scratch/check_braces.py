@@ -1,21 +1,13 @@
+with open(r"c:\Users\Admin\vjgc-final\vjs-website\static\css\custom.css", "r", encoding="utf-8") as f:
+    content = f.read()
 
-content = open(r'c:\Users\Admin\vjgc-final\vjs-website\static\css\custom.css', 'r', encoding='utf-8').read()
-stack = []
-for i, char in enumerate(content):
-    if char == '{':
-        stack.append(i)
-    elif char == '}':
-        if not stack:
-            print(f"Extra closing brace at position {i}")
-        else:
-            stack.pop()
+open_braces = content.count("{")
+close_braces = content.count("}")
 
-if stack:
-    for pos in stack:
-        print(f"Unclosed opening brace starting at position {pos}")
-        # Print some context
-        start = max(0, pos - 50)
-        end = min(len(content), pos + 100)
-        print(f"Context: {content[start:end]}")
+print(f"Open braces: {open_braces}")
+print(f"Close braces: {close_braces}")
+
+if open_braces != close_braces:
+    print("Mismatched braces detected!")
 else:
-    print("Braces are balanced")
+    print("Braces match.")

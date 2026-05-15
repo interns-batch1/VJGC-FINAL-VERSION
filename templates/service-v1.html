@@ -183,7 +183,27 @@
 
 <body>
 	<div class="main-page-wrapper">
-		<!-- Theme Main Menu -->
+		<div id="preloader">
+			<div class="preloader-content">
+				<div class="logo-container">
+					<div class="pulse-ring"></div>
+					<div class="pulse-ring"></div>
+					<div class="pulse-ring"></div>
+					<div class="logo-circle">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo">
+					</div>
+				</div>
+				<div class="brand-text">
+					<div class="brand-main">VIJAYALAKSHMI GROUP</div>
+					<div class="brand-sub">OF COMPANIES</div>
+				</div>
+				<div class="loading-bar-container">
+					<div class="loading-bar-fill"></div>
+				</div>
+				<div class="loading-text">LOADING</div>
+			</div>
+		</div>
+
 		<header class="theme-main-menu menu-overlay menu-style-one white-vr sticky-menu adani-nav-fx">
 			<div class="inner-content position-relative">
 				<div class="top-header">
@@ -715,6 +735,9 @@
 
 
 
+
+
+
 <footer class="footer-vjs-premium">
 				<div class="footer-gold-bar"></div>
 				<div class="footer-container">
@@ -802,6 +825,30 @@
 				</div>
 			</footer>
 
+
+		
+		<script id="vjs-preloader-script">
+			(function() {
+				const startTime = Date.now();
+				window.addEventListener('load', function() {
+					const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
+					const elapsed = Date.now() - startTime;
+					const delay = Math.max(0, minDisplayTime - elapsed);
+
+					setTimeout(() => {
+						const preloader = document.getElementById('preloader');
+						if (preloader) {
+							preloader.style.opacity = '0';
+							preloader.style.visibility = 'hidden';
+							setTimeout(() => {
+								preloader.style.display = 'none';
+							}, 1000);
+						}
+						document.body.style.overflow = 'visible';
+					}, delay);
+				});
+			})();
+		</script>
 </body>
 
 </html>
