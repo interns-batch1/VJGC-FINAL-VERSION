@@ -10,3 +10,4 @@ python-dotenv
 pillow
 jinja2
 bcrypt
+cloudinary

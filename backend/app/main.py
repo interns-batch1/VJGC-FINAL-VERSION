@@ -15,13 +15,9 @@ print(f"DEBUG: MONGO_URI from settings: {settings.MONGO_URI}")
 
 # Setup Paths
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-UPLOAD_DIR = os.path.join(os.getcwd(), "uploads")
-if not os.path.exists(UPLOAD_DIR):
-    os.makedirs(UPLOAD_DIR)
 
 # Serve static files
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
-app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
 # Setup Templates
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
