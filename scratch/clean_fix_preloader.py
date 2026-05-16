@@ -8,8 +8,8 @@ def clean_fix():
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
-					<div class="logo-circle">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo">
+					<div class="logo-circle" style="width: 120px; height: 120px; padding: 14px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(197, 160, 89, 0.2);">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain;">
 					</div>
 				</div>
 				<div class="brand-text">
