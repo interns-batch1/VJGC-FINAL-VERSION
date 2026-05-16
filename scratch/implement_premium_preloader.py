@@ -38,7 +38,7 @@ def implement_premium_preloader():
 		.logo-circle {
 			width: 120px;
 			height: 120px;
-			border: 1px solid rgba(197, 160, 89, 0.2);
+			border: 1px solid rgba(220, 38, 38, 0.2);
 			border-radius: 50%;
 			padding: 14px;
 			background: #fff;
@@ -89,7 +89,7 @@ def implement_premium_preloader():
 		}
 
 		.brand-main {
-			color: #c5a059;
+			color: #dc2626;
 			font-size: 22px;
 			font-weight: 700;
 			letter-spacing: 8px;
@@ -99,7 +99,7 @@ def implement_premium_preloader():
 		}
 
 		.brand-sub {
-			color: #c5a059;
+			color: #dc2626;
 			font-size: 11px;
 			font-weight: 500;
 			letter-spacing: 4px;
@@ -110,7 +110,7 @@ def implement_premium_preloader():
 		.loading-bar-container {
 			width: 220px;
 			height: 1px;
-			background: rgba(197, 160, 89, 0.15);
+			background: rgba(220, 38, 38, 0.15);
 			margin-bottom: 15px;
 			position: relative;
 			overflow: hidden;
@@ -121,7 +121,7 @@ def implement_premium_preloader():
 			top: 0;
 			left: 0;
 			height: 100%;
-			background: #c5a059;
+			background: #dc2626;
 			width: 0%;
 			animation: fillBar 4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 		}
@@ -137,7 +137,7 @@ def implement_premium_preloader():
 		}
 
 		.loading-text {
-			color: #c5a059;
+			color: #dc2626;
 			font-size: 9px;
 			letter-spacing: 5px;
 			text-transform: uppercase;

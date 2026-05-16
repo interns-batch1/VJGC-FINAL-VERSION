@@ -8,8 +8,8 @@ def update_preloader_color():
     ]
 
     # Pattern to find .brand-main color
-    # Currently: color: #c5a059;
-    pattern = r'(\.brand-main\s*\{[^}]*color:\s*)#c5a059'
+    # Currently: color: #dc2626;
+    pattern = r'(\.brand-main\s*\{[^}]*color:\s*)#dc2626'
     replacement = r'\1#dc2626' # Vibrant red to match the rings
 
     for directory in target_dirs:

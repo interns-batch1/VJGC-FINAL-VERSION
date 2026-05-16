@@ -16,7 +16,7 @@ def fix_bytes():
     correct_text = """.logo-circle {
 			width: 120px;
 			height: 120px;
-			border: 1px solid rgba(197, 160, 89, 0.2);
+			border: 1px solid rgba(220, 38, 38, 0.2);
 			border-radius: 50%;
 			padding: 14px;"""
     correct_bytes = correct_text.encode('utf-8')
