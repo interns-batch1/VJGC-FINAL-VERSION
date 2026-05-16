@@ -16,7 +16,8 @@ h6,
 }
 
 html {
-  background-color: #0b1120 !important; /* Footer color for gaps */
+  background-color: #0b1120 !important;
+  /* Footer color for gaps */
 }
 
 body {
@@ -2494,166 +2495,171 @@ section,
 
 /* GLOBAL SECTION REFINEMENT */
 .section-title {
-    font-size: clamp(26px, 3.5vw, 36px) !important;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 30px !important;
+  font-size: clamp(26px, 3.5vw, 36px) !important;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 30px !important;
 }
 
-.glance-section-v3, .biz-section-v2, .at-a-glance-section, .foundation-biz-section {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
+.glance-section-v3,
+.biz-section-v2,
+.at-a-glance-section,
+.foundation-biz-section {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
 }
 
 .at-a-glance-section {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
 }
 
 .vjs-impact-card {
-    padding: 30px 20px !important;
+  padding: 30px 20px !important;
 }
 
-.vjs-vm-section, .vjs-impact-section {
-    padding: 60px 0 !important;
+.vjs-vm-section,
+.vjs-impact-section {
+  padding: 60px 0 !important;
 }
 
 .vjs-impact-card .num {
-    font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
 }
 
 .vjs-impact-card .icon-wrap {
-    width: 70px !important;
-    height: 70px !important;
-    margin-bottom: 20px !important;
+  width: 70px !important;
+  height: 70px !important;
+  margin-bottom: 20px !important;
 }
 
 /* Additional Premium Card Type Refinement */
 .glance-card-premium h5 {
-    font-size: 20px !important;
-    margin-bottom: 10px !important;
+  font-size: 20px !important;
+  margin-bottom: 10px !important;
 }
 
 .glance-card-premium p {
-    font-size: 15px !important;
-    line-height: 1.6 !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
 }
 
 .glance-card-premium .p-4 {
-    padding: 20px !important;
+  padding: 20px !important;
 }
 
 /* PREMIUM WHITE CARD DESIGN SYSTEM */
 
 .vjs-card-premium-white {
-    background: #ffffff;
-    border: 1px solid #f0f0f0;
-    border-top: 3px solid #dc2626;
-    border-radius: 12px;
-    padding: 0;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-top: 3px solid #dc2626;
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .vjs-card-premium-white:hover {
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
-    transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
 }
 
 /* Middle Card Elevation Effect */
-.vjs-card-row > div:nth-child(2) .vjs-card-premium-white {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    z-index: 2;
-    border-color: #e5e5e5;
+.vjs-card-row>div:nth-child(2) .vjs-card-premium-white {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  border-color: #e5e5e5;
 }
 
 .card-img-box {
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
 }
 
 .card-img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 .vjs-card-premium-white:hover .card-img-box img {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 /* Frosted Category Badge with Fallback */
 .card-badge-frosted {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: rgba(255, 255, 255, 0.92); /* Solid Fallback */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #1a1a1a;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 3;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(255, 255, 255, 0.92);
+  /* Solid Fallback */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 3;
 }
 
 /* Content Area */
 .card-content-area {
-    padding: 22px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  padding: 22px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-header-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
 }
 
 .card-icon-box {
-    width: 38px;
-    height: 38px;
-    background: #fdfaf3;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #dc2626;
-    font-size: 18px;
-    flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background: #fdfaf3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc2626;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .card-header-divider {
-    height: 1px;
-    flex-grow: 1;
-    background: linear-gradient(to right, #eee, transparent);
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(to right, #eee, transparent);
 }
 
 .serif-heading {
-    font-family: 'Playfair Display', 'Georgia', serif !important;
-    font-size: 19px;
-    font-weight: 700;
+  font-family: 'Playfair Display', 'Georgia', serif !important;
+  font-size: 19px;
+  font-weight: 700;
 }
 
 .muted-desc {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
@@ -2668,15 +2674,18 @@ section,
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
   .footer-column {
     border-left: none;
     padding-left: 0;
   }
+
   .bottom-inner {
     flex-direction: column;
     gap: 20px;
     text-align: center;
   }
+
   .legal-links {
     flex-wrap: wrap;
     justify-content: center;

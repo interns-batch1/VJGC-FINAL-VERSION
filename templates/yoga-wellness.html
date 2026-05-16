@@ -565,7 +565,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="{{ card.image_url if card.image_url else 'https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800' }}" alt="{{ card.title }}">
-									<div class="card-badge-frosted">YOGA WELLNESS</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -585,7 +585,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="/static/images/media/vjs_yoga-wellness_glance_1.png" alt="Excellence">
-									<div class="card-badge-frosted">YOGA WELLNESS</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -602,7 +602,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="/static/images/media/vjs_yoga-wellness_glance_2.png" alt="Innovation">
-									<div class="card-badge-frosted">YOGA WELLNESS</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -632,7 +632,7 @@
                             <div class="vjs-card-premium-white">
                                 <div class="card-img-box">
                                     <img src="{% if card.image_url %}{{ card.image_url }}{% else %}https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800{% endif %}" alt="{{ card.title }}">
-                                    <div class="card-badge-frosted">YOGA WELLNESS</div>
+
                                 </div>
                                 <div class="card-content-area">
                                     <div class="card-header-row">
@@ -651,38 +651,37 @@
 				</div>
 			</section>
 
-			<!-- CTA Section -->
-			<section class="vjs-cta-section"
-				style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200');">
-				<div class="container text-center">
-					<h2 class="text-white">Begin Your Journey to Inner Peace</h2>
-					<a href="#" class="btn-visit">Explore Wellness Programs</a>
-				</div>
-			</section>
+	</div> <!-- /.light-bg-page-wrapper -->
+</div> <!-- /.main-page-wrapper -->
 
-			<!-- Footer -->
-			
-		</div>
+<!-- Attached CTA Section -->
+<section class="vjs-cta-section m-0"
+	style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200'); border-bottom: none; position: relative; z-index: 5;">
+	<div class="container text-center pb-150 pt-150">
+		<h2 class="text-white">Begin Your Journey to Inner Peace</h2>
+		<a href="#" class="btn-visit">Explore Wellness Programs</a>
+	</div>
+</section>
 
-		
+<style>
+	.light-bg-page-wrapper { padding-bottom: 0 !important; }
+	.main-page-wrapper { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+	.footer-vjs-premium { margin-top: 0 !important; }
+	.vjs-cta-section { margin-top: 0 !important; margin-bottom: 0 !important; }
+</style>
 
-		
-		<!-- Optional JavaScript -->
-		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
-		<!-- AOS (CDN Fix) -->
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<!-- jQuery Appear (CDN Fix) -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/1.0.1/jquery.appear.min.js"></script>
-		<!-- jQuery CountTo (CDN Fix) -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
-		<!-- WOW JS -->
-		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
-		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+<!-- Optional JavaScript -->
+<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/1.0.1/jquery.appear.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
+<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
 
 	</div>
 

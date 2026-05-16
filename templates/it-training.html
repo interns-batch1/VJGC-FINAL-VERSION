@@ -566,7 +566,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="{{ card.image_url if card.image_url else 'https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800' }}" alt="{{ card.title }}">
-									<div class="card-badge-frosted">IT TRAINING</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -586,7 +586,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="/static/images/media/vjs_it-training_glance_1.png" alt="Excellence">
-									<div class="card-badge-frosted">IT TRAINING</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -603,7 +603,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="/static/images/media/vjs_it-training_glance_2.png" alt="Innovation">
-									<div class="card-badge-frosted">IT TRAINING</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -633,7 +633,7 @@
                             <div class="vjs-card-premium-white">
                                 <div class="card-img-box">
                                     <img src="{% if card.image_url %}{{ card.image_url }}{% else %}https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800{% endif %}" alt="{{ card.title }}">
-                                    <div class="card-badge-frosted">IT TRAINING</div>
+
                                 </div>
                                 <div class="card-content-area">
                                     <div class="card-header-row">
@@ -652,69 +652,56 @@
 				</div>
 			</section>
 
-			<!-- CTA Section -->
-			<section class="vjs-cta-section"
-				style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200');">
-				<div class="container text-center">
-					<h2 class="text-white">Ready to Transform Your Career?</h2>
-					<a href="#" class="btn-visit">Visit Academy Website</a>
-				</div>
-			</section>
-
-			<!-- Footer -->
-			
-		</div>
-
-		
-
-		<!-- Optional JavaScript -->
-		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}"></script>
-	</div>
-
-		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
-
-		<div id="google_translate_element" style="display:none;"></div>
-		<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-	<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
-		<i class="bi bi-chevron-double-up"></i>
-	</button>
-
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const scrollTopBtn = document.getElementById('vjs-scroll-top');
-			if (!scrollTopBtn) return;
-
-			window.addEventListener('scroll', function () {
-				if (window.pageYOffset > 400) {
-					scrollTopBtn.classList.add('visible');
-				} else {
-					scrollTopBtn.classList.remove('visible');
-				}
-			});
-
-			scrollTopBtn.addEventListener('click', function () {
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
-				});
-			});
-		});
-	</script>
-
-
-
-
-
 	</div> <!-- /.light-bg-page-wrapper -->
 </div> <!-- /.main-page-wrapper -->
+
+<!-- Attached CTA Section -->
+<section class="vjs-cta-section m-0"
+	style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200'); border-bottom: none; position: relative; z-index: 5;">
+	<div class="container text-center pb-150 pt-150">
+		<h2 class="text-white">Ready to Transform Your Career?</h2>
+		<a href="#" class="btn-visit">Visit Academy Website</a>
+	</div>
+</section>
+
+<style>
+	.light-bg-page-wrapper { padding-bottom: 0 !important; }
+	.main-page-wrapper { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+	.footer-vjs-premium { margin-top: 0 !important; }
+	.vjs-cta-section { margin-top: 0 !important; margin-bottom: 0 !important; }
+</style>
+
+<!-- Optional JavaScript -->
+<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}"></script>
+<script src="{{ url_for('static', filename='js/navbar-hover.js') }}"></script>
+<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+
+<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
+	<i class="bi bi-chevron-double-up"></i>
+</button>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const scrollTopBtn = document.getElementById('vjs-scroll-top');
+		if (!scrollTopBtn) return;
+		window.addEventListener('scroll', function () {
+			if (window.pageYOffset > 400) {
+				scrollTopBtn.classList.add('visible');
+			} else {
+				scrollTopBtn.classList.remove('visible');
+			}
+		});
+		scrollTopBtn.addEventListener('click', function () {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		});
+	});
+</script>
 
 
 <footer class="footer-vjs-premium">

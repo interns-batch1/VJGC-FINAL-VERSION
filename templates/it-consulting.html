@@ -764,6 +764,7 @@
 				padding: 0;
 				overflow: hidden;
 				background: #ffffff;
+				margin-bottom: 40px;
 			}
 
 			.vjs-velocity-pill {
@@ -866,7 +867,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="{{ card.image_url if card.image_url else 'https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800' }}" alt="{{ card.title }}">
-									<div class="card-badge-frosted">IT CONSULTING</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -886,7 +887,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="/static/images/media/vjs_it-consulting_glance_1.png" alt="Excellence">
-									<div class="card-badge-frosted">IT CONSULTING</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -903,7 +904,7 @@
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
 									<img src="/static/images/media/vjs_it-consulting_glance_2.png" alt="Innovation">
-									<div class="card-badge-frosted">IT CONSULTING</div>
+
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -941,7 +942,7 @@
                             <div class="vjs-card-premium-white">
                                 <div class="card-img-box">
                                     <img src="{% if card.image_url %}{{ card.image_url }}{% else %}https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800{% endif %}" alt="{{ card.title }}">
-                                    <div class="card-badge-frosted">IT CONSULTING</div>
+
                                 </div>
                                 <div class="card-content-area">
                                     <div class="card-header-row">
@@ -968,7 +969,7 @@
 			============================================== 
 			-->
 			<div
-				class="feedback-section-five border-100 position-relative pt-225 xl-pt-200 lg-pt-120 md-pt-80 pb-300 xl-pb-200 lg-pb-150">
+				class="feedback-section-five border-100 position-relative pt-120 xl-pt-100 lg-pt-80 md-pt-60 pb-120 xl-pb-100 lg-pb-80">
 				<div class="container">
 					<div class="position-relative">
 						<div class="feedback-slider-three">
@@ -1002,30 +1003,31 @@
 						<!-- /.feedback-slider-three -->
 					</div>
 				</div>
-				<img src="{{ url_for('static', filename='images/') }}lazy.svg"
-					data-src="{{ url_for('static', filename='images/') }}shape/shape_24.svg" alt=""
-					class="lazy-img shapes shape_01">
-
 			</div>
 			<!-- /.feedback-section-five -->
 
 			<!--
 			=====================================================
 				Footer Three
-			=====================================================
 			-->
-			<!-- CTA Section -->
-			<section class="vjs-cta-section"
-				style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200');">
-				<div class="container text-center">
-					<h2 class="text-white">To Know More About Vijayalakshmi IT Consulting</h2>
-					<a href="#" class="btn-visit">Visit Website</a>
-				</div>
-			</section>
+	</div> <!-- /.light-bg-page-wrapper -->
+</div> <!-- /.main-page-wrapper -->
 
-			
-		</div>
-		<!-- /.light-bg-page-wrapper -->
+<!-- Attached CTA Section -->
+<section class="vjs-cta-section m-0"
+	style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200'); border-bottom: none; position: relative; z-index: 5;">
+	<div class="container text-center pb-150 pt-150">
+		<h2 class="text-white">To Know More About Vijayalakshmi IT Consulting</h2>
+		<a href="#" class="btn-visit">Visit Website</a>
+	</div>
+</section>
+
+<style>
+	.light-bg-page-wrapper { padding-bottom: 0 !important; }
+	.main-page-wrapper { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+	.footer-vjs-premium { margin-top: 0 !important; }
+	.vjs-cta-section { margin-top: 50px !important; margin-bottom: 0 !important; }
+</style>
 
 		<!-- Modal -->
 		<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
