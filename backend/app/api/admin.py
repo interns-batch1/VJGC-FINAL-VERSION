@@ -5,15 +5,24 @@ from app.schemas.achievement import Achievement, AchievementCreate
 from app.schemas.about import About, AboutUpdate
 from app.schemas.service import Service, ServiceCreate
 from app.schemas.blog import Blog, BlogCreate
+from app.core.config import settings
 from typing import List
 from datetime import datetime
 import uuid
-import shutil
 import os
+import cloudinary
+import cloudinary.uploader
+
+# Configure Cloudinary
+cloudinary.config(
+    cloud_name=settings.CLOUDINARY_CLOUD_NAME,
+    api_key=settings.CLOUDINARY_API_KEY,
+    api_secret=settings.CLOUDINARY_API_SECRET,
+    secure=True
+)
 
 router = APIRouter()
 
-UPLOAD_DIR = os.path.join(os.getcwd(), "uploads")
 ALLOWED_EXTENSIONS = {"jpg", "jpeg", "png", "webp", "gif", "mp4", "mov"}
 
 # --- Media Management ---
@@ -24,21 +33,21 @@ async def upload_image(file: UploadFile = File(...), admin: str = Depends(get_cu
         if file_ext not in ALLOWED_EXTENSIONS:
             raise HTTPException(status_code=400, detail=f"Invalid file type: {file_ext}")
         
-        unique_filename = f"{uuid.uuid4()}.{file_ext}"
-        # Ensure directory exists
-        if not os.path.exists(UPLOAD_DIR):
-            os.makedirs(UPLOAD_DIR)
-            
-        file_path = os.path.join(UPLOAD_DIR, unique_filename)
-        with open(file_path, "wb") as buffer:
-            shutil.copyfileobj(file.file, buffer)
-            
-        # Return full URL including the domain/port to ensure frontend can load it
-        full_url = f"http://localhost:5000/uploads/{unique_filename}"
-        return {"url": full_url, "filename": unique_filename}
+        # Upload to Cloudinary
+        upload_result = cloudinary.uploader.upload(
+            file.file,
+            folder="vjs_group",
+            resource_type="auto"
+        )
+        
+        return {
+            "url": upload_result["secure_url"],
+            "filename": file.filename,
+            "public_id": upload_result["public_id"]
+        }
     except Exception as e:
-        print(f"Upload Error: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+        print(f"Cloudinary Upload Error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
 # --- About Us ---
 @router.post("/about", response_model=About)
@@ -145,7 +154,6 @@ async def update_blog(id: str, item: BlogCreate, db = Depends(get_database), adm
     res = await db["news"].update_one({"_id": oid}, {"$set": update_data})
     
     # Also try updating in universal_content
-    # For universal content, we might need to update description/image fields specifically
     uni_update = {
         "title": update_data.get("title"),
         "author": update_data.get("author"),
@@ -156,16 +164,14 @@ async def update_blog(id: str, item: BlogCreate, db = Depends(get_database), adm
     }
     await db["universal_content"].update_one({"_id": oid}, {"$set": uni_update})
     
-    # Fetch result from either collection
     doc = await db["news"].find_one({"_id": oid}) or await db["universal_content"].find_one({"_id": oid})
     if not doc:
         raise HTTPException(status_code=404, detail="News item not found")
         
     doc["_id"] = str(doc["_id"])
     return doc
+
 @router.get("/news", response_model=List[Blog])
 async def list_admin_news(db = Depends(get_database)):
-    """List all news/blog posts for admin."""
-    # We can just reuse the same logic or import it
     from app.api.public import list_news
     return await list_news(db)
