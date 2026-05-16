@@ -28,7 +28,7 @@
 		/* ADANI STYLE FULL-SCREEN FIX */
 		html,
 		body {
-			height: 100%;
+			min-height: 100%;
 			margin: 0;
 			padding: 0;
 		}
@@ -60,7 +60,7 @@
 		}
 	</style>
 
-	
+
 
 	<style>
 		/* OVERRIDE FOR SCROLL TO TOP */
@@ -109,7 +109,7 @@
 		}
 	</style>
 
-<style>
+	<style>
 		/* ===== PREMIUM BRANDED PRELOADER ===== */
 		#preloader {
 			position: fixed;
@@ -153,7 +153,7 @@
 			align-items: center;
 			justify-content: center;
 			animation: logoBreathing 4s ease-in-out infinite;
-			box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 		}
 
 		.logo-circle img {
@@ -173,19 +173,46 @@
 			z-index: 1;
 		}
 
-		.pulse-ring:nth-child(1) { animation-delay: 0s; }
-		.pulse-ring:nth-child(2) { animation-delay: 1.3s; }
-		.pulse-ring:nth-child(3) { animation-delay: 2.6s; }
+		.pulse-ring:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		.pulse-ring:nth-child(2) {
+			animation-delay: 1.3s;
+		}
+
+		.pulse-ring:nth-child(3) {
+			animation-delay: 2.6s;
+		}
 
 		@keyframes ringPulse {
-			0% { transform: scale(1); opacity: 0; }
-			30% { opacity: 0.6; }
-			100% { transform: scale(2.8); opacity: 0; }
+			0% {
+				transform: scale(1);
+				opacity: 0;
+			}
+
+			30% {
+				opacity: 0.6;
+			}
+
+			100% {
+				transform: scale(2.8);
+				opacity: 0;
+			}
 		}
 
 		@keyframes logoBreathing {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50% { opacity: 0.8; transform: scale(0.96); }
+
+			0%,
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			50% {
+				opacity: 0.8;
+				transform: scale(0.96);
+			}
 		}
 
 		.brand-text {
@@ -233,13 +260,25 @@
 		}
 
 		@keyframes fillBar {
-			0% { width: 0%; }
-			100% { width: 100%; }
+			0% {
+				width: 0%;
+			}
+
+			100% {
+				width: 100%;
+			}
 		}
 
 		@keyframes fadeInText {
-			from { opacity: 0; transform: translateY(10px); }
-			to { opacity: 1; transform: translateY(0); }
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		.loading-text {
@@ -253,8 +292,15 @@
 		}
 
 		@keyframes blinkText {
-			0%, 100% { opacity: 0.8; }
-			50% { opacity: 0.2; }
+
+			0%,
+			100% {
+				opacity: 0.8;
+			}
+
+			50% {
+				opacity: 0.2;
+			}
 		}
 	</style>
 </head>
@@ -268,7 +314,8 @@
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="logo-circle">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="VJS Logo">
 					</div>
 				</div>
 				<div class="brand-text">
@@ -577,6 +624,7 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-7" data-aos="fade-right">
+						<div class="vjs-pill-tag"><span class="dot"></span> SOCIAL RESPONSIBILITY</div>
 						<h2 class="fw-bold mb-30" style="color: #08201b;">Overview</h2>
 						<p class="sus-overview-text mb-30">The Lakshmi Trust Initiative, powered by Springreen's CSR
 							efforts, provides educational support for students from underserved communities to drive
@@ -591,12 +639,21 @@
 						</div>
 					</div>
 					<div class="col-lg-5 ms-auto" data-aos="fade-left">
-						<div class="simple-auto-slider">
-							<div><img
-									src="{{ url_for('static', filename='images/media/sustainability_new.png') }}?v=1.0"
-									alt="Sustainability"></div>
-							<div><img src="{{ url_for('static', filename='images/media/solutions_new.png') }}?v=1.0"
-									alt="Solutions"></div>
+						<div class="vjs-premium-slider-container">
+							<div class="vjs-slider-decor">
+								<div class="circle-outline circle-1"></div>
+								<div class="circle-outline circle-2"></div>
+							</div>
+							<div class="vjs-slider-main-wrap">
+								<div class="simple-auto-slider">
+									<div><img src="{{ url_for('static', filename='images/media/sustainability_new.png') }}?v=1.0" alt="Sustainability"></div>
+									<div><img src="{{ url_for('static', filename='images/media/solutions_new.png') }}?v=1.0" alt="Solutions"></div>
+								</div>
+								<div class="vjs-slider-nav">
+									<button class="nav-btn prev"><i class="bi bi-chevron-left"></i></button>
+									<button class="nav-btn next"><i class="bi bi-chevron-right"></i></button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -942,9 +999,9 @@
 		</div>
 
 		<!-- Footer -->
-		
 
-		
+
+
 
 		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
 		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
@@ -957,7 +1014,16 @@
 		<script>
 			$(document).ready(function () {
 				if ($('.simple-auto-slider').length) {
-					$('.simple-auto-slider').slick({ autoplay: true, autoplaySpeed: 4000, dots: true, arrows: false, fade: true, cssEase: 'linear' });
+					$('.simple-auto-slider').slick({ 
+						autoplay: true, 
+						autoplaySpeed: 4000, 
+						dots: true, 
+						arrows: true,
+						prevArrow: $('.vjs-slider-nav .prev'),
+						nextArrow: $('.vjs-slider-nav .next'),
+						fade: true, 
+						cssEase: 'linear' 
+					});
 				}
 				// Trigger progress bar animation on scroll
 				$(window).on('scroll', function () {
@@ -975,14 +1041,11 @@
 	<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
 	<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
 
-		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+	<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
 
-		<div id="google_translate_element" style="display:none;"></div>
-		<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-	
-
-	
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript"
+		src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
@@ -990,12 +1053,16 @@
 
 
 
-	
-
-	
 
 
-	
+
+
+
+
+
+
+
+
 
 
 	<!-- Standardized Scroll to Top Button -->
@@ -1004,7 +1071,7 @@
 	</button>
 
 	<script>
-		(function() {
+		window.addEventListener('load', function () {
 			const scrollTopBtn = document.getElementById('vjs-scroll-top');
 			if (!scrollTopBtn) return;
 
@@ -1017,133 +1084,135 @@
 				}
 			}
 
+			// Use both window and document to ensure coverage in restricted height layouts
 			window.addEventListener('scroll', toggleScrollBtn, { passive: true });
 			document.addEventListener('scroll', toggleScrollBtn, { passive: true });
+			
+			// Initial check
 			toggleScrollBtn();
 
 			scrollTopBtn.addEventListener('click', function () {
 				window.scrollTo({ top: 0, behavior: 'smooth' });
+				// Fallback for some browsers
 				document.documentElement.scrollTop = 0;
 				document.body.scrollTop = 0;
 			});
-		})();
+		});
 	</script>
 
 
-<footer class="footer-vjs-premium">
-				<div class="footer-gold-bar"></div>
-				<div class="footer-container">
-					<div class="footer-main">
-						<!-- Brand Column -->
-						<div class="footer-column footer-brand-col">
-							<div class="footer-logo">
-								<div class="logo-icon-circle">
-									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
-								</div>
-								<div class="logo-text">
-									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
-									<span class="brand-sub">OF COMPANIES</span>
-								</div>
-							</div>
-							<div class="footer-divider-h"></div>
-							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
-							<div class="social-links">
-								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
-							</div>
+	<footer class="footer-vjs-premium">
+		<div class="footer-gold-bar"></div>
+		<div class="footer-container">
+			<div class="footer-main">
+				<!-- Brand Column -->
+				<div class="footer-column footer-brand-col">
+					<div class="footer-logo">
+						<div class="logo-icon-circle">
+							<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo"
+								style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
 						</div>
-
-						<!-- About Us Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">ABOUT US</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/about-us-v2">About Company</a></li>
-								<li><a href="/about-us-v1">Chairman's Office</a></li>
-								<li><a href="/service-v1">Leadership</a></li>
-								<li><a href="/about-us-v1">Our Journey</a></li>
-								<li><a href="/service-v1">Awards</a></li>
-							</ul>
+						<div class="logo-text">
+							<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+							<span class="brand-sub">OF COMPANIES</span>
 						</div>
-
-						<!-- Businesses Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">BUSINESSES</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/it-consulting">Infrastructure</a></li>
-								<li><a href="/green-energy">Energy & Utilities</a></li>
-								<li><a href="/logistics-services">Transport & Logistics</a></li>
-								<li><a href="/export-import">Consumer Products</a></li>
-								<li><a href="/property-services">Real Estate</a></li>
-								<li><a href="/yoga-wellness">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- Quick Links Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">QUICK LINKS</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/pricing">Investors</a></li>
-								<li><a href="/media-release">Newsroom</a></li>
-								<li><a href="/about-us-v1">Careers</a></li>
-								<li><a href="/contact">Contact Us</a></li>
-							</ul>
-						</div>
+					</div>
+					<div class="footer-divider-h"></div>
+					<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
+					<div class="social-links">
+						<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
 					</div>
 				</div>
 
-				<!-- Bottom Bar -->
-				<div class="footer-bottom-vjs">
-					<div class="footer-container">
-						<div class="bottom-inner">
-							<div class="copyright">
-								<i class="bi bi-crown-fill gold-icon"></i>
-								<span>© 2026 Vijayalakshmi Group of Companies</span>
-							</div>
-							<div class="legal-links">
-								<a href="#">All rights reserved</a>
-                                <a href="/contact">Legal Disclaimer</a>
-								<a href="/contact">Privacy Notice</a>
-								<a href="/contact">Terms & Conditions</a>
-								<a href="/contact">Cookie Policy</a>
-							</div>
-						</div>
+				<!-- About Us Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">ABOUT US</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/about-us-v2">About Company</a></li>
+						<li><a href="/about-us-v1">Chairman's Office</a></li>
+						<li><a href="/service-v1">Leadership</a></li>
+						<li><a href="/about-us-v1">Our Journey</a></li>
+						<li><a href="/service-v1">Awards</a></li>
+					</ul>
+				</div>
+
+				<!-- Businesses Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">BUSINESSES</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/it-consulting">Infrastructure</a></li>
+						<li><a href="/green-energy">Energy & Utilities</a></li>
+						<li><a href="/logistics-services">Transport & Logistics</a></li>
+						<li><a href="/export-import">Consumer Products</a></li>
+						<li><a href="/property-services">Real Estate</a></li>
+						<li><a href="/yoga-wellness">Healthcare</a></li>
+					</ul>
+				</div>
+
+				<!-- Quick Links Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">QUICK LINKS</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/sustainability">Sustainability</a></li>
+						<li><a href="/media-kit">Media Kit</a></li>
+						<li><a href="/media-release">Newsroom</a></li>
+						<li><a href="/about-us-v1">Careers</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom Bar -->
+		<div class="footer-bottom-vjs">
+			<div class="footer-container">
+				<div class="bottom-inner">
+					<div class="copyright">
+						<i class="bi bi-crown-fill gold-icon"></i>
+						<span>© 2026 Vijayalakshmi Group of Companies</span>
+					</div>
+					<div class="legal-links">
+						<a href="#">All rights reserved</a>
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
 					</div>
 				</div>
-			</footer>
+			</div>
+		</div>
+	</footer>
 
 
-		
-		<script id="vjs-preloader-script">
-			(function() {
-				const startTime = Date.now();
-				window.addEventListener('load', function() {
-					const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
-					const elapsed = Date.now() - startTime;
-					const delay = Math.max(0, minDisplayTime - elapsed);
 
-					setTimeout(() => {
-						const preloader = document.getElementById('preloader');
-						if (preloader) {
-							preloader.style.opacity = '0';
-							preloader.style.visibility = 'hidden';
-							setTimeout(() => {
-								preloader.style.display = 'none';
-							}, 1000);
-						}
-						document.body.style.overflow = 'visible';
-					}, delay);
-				});
-			})();
-		</script>
+	<script id="vjs-preloader-script">
+		(function () {
+			const startTime = Date.now();
+			window.addEventListener('load', function () {
+				const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
+				const elapsed = Date.now() - startTime;
+				const delay = Math.max(0, minDisplayTime - elapsed);
+
+				setTimeout(() => {
+					const preloader = document.getElementById('preloader');
+					if (preloader) {
+						preloader.style.opacity = '0';
+						preloader.style.visibility = 'hidden';
+						setTimeout(() => {
+							preloader.style.display = 'none';
+						}, 1000);
+					}
+					document.body.style.overflow = 'visible';
+				}, delay);
+			});
+		})();
+	</script>
 </body>
 
 </html>
-
-
-

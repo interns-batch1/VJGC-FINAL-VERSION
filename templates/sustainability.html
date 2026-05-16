@@ -36,8 +36,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.0" media="all">
 	<style>
 		/* ADANI STYLE FULL-SCREEN FIX */
-		html, body {
-			height: 100%;
+		html,
+		body {
+			min-height: 100%;
 			margin: 0;
 			padding: 0;
 		}
@@ -760,7 +761,7 @@
 	</button>
 
 	<script>
-		(function() {
+		window.addEventListener('load', function () {
 			const scrollTopBtn = document.getElementById('vjs-scroll-top');
 			if (!scrollTopBtn) return;
 
@@ -773,16 +774,20 @@
 				}
 			}
 
+			// Use both window and document to ensure coverage in restricted height layouts
 			window.addEventListener('scroll', toggleScrollBtn, { passive: true });
 			document.addEventListener('scroll', toggleScrollBtn, { passive: true });
+			
+			// Initial check
 			toggleScrollBtn();
 
 			scrollTopBtn.addEventListener('click', function () {
 				window.scrollTo({ top: 0, behavior: 'smooth' });
+				// Fallback for some browsers
 				document.documentElement.scrollTop = 0;
 				document.body.scrollTop = 0;
 			});
-		})();
+		});
 	</script>
 
 
@@ -844,10 +849,10 @@
 							<div class="title-underline"></div>
 							<ul class="footer-links">
 								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/pricing">Investors</a></li>
+								<li><a href="/media-kit">Media Kit</a></li>
 								<li><a href="/media-release">Newsroom</a></li>
 								<li><a href="/about-us-v1">Careers</a></li>
-								<li><a href="/contact">Contact Us</a></li>
+								
 							</ul>
 						</div>
 					</div>
@@ -863,10 +868,10 @@
 							</div>
 							<div class="legal-links">
 								<a href="#">All rights reserved</a>
-                                <a href="/contact">Legal Disclaimer</a>
-								<a href="/contact">Privacy Notice</a>
-								<a href="/contact">Terms & Conditions</a>
-								<a href="/contact">Cookie Policy</a>
+                                <a href="#">Legal Disclaimer</a>
+								<a href="#">Privacy Notice</a>
+								<a href="#">Terms & Conditions</a>
+								<a href="#">Cookie Policy</a>
 							</div>
 						</div>
 					</div>

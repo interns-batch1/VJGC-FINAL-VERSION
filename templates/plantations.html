@@ -23,8 +23,8 @@
 	<!-- Main style sheet -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}" media="all">
 	<!-- responsive style sheet -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}" media="all">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.0" media="all">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar-vjs.css') }}" media="all">
 
 	<style>
@@ -552,8 +552,8 @@
 				<div class="container">
 					<h2 class="section-title text-center mb-5">At a Glance.</h2>
 					<div class="row vjs-card-row justify-content-center g-4">
-						{% if cms['At a Glance'] and cms['At a Glance'].content %}
-						{% for card in cms['At a Glance'].content %}
+						{% if cms['At a Glance'] and cms['At a Glance'].content and cms['At a Glance'].content[0].title != 'Section Content' %}
+						{% for card in cms['At a Glance'].content if card.title and card.title.strip() != '' and 'section content' not in card.title.lower() and 'placeholder' not in card.title.lower() %}
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
@@ -761,10 +761,10 @@
 							<div class="title-underline"></div>
 							<ul class="footer-links">
 								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/pricing">Investors</a></li>
+								<li><a href="/media-kit">Media Kit</a></li>
 								<li><a href="/media-release">Newsroom</a></li>
 								<li><a href="/about-us-v1">Careers</a></li>
-								<li><a href="/contact">Contact Us</a></li>
+								
 							</ul>
 						</div>
 					</div>
@@ -780,10 +780,10 @@
 							</div>
 							<div class="legal-links">
 								<a href="#">All rights reserved</a>
-                                <a href="/contact">Legal Disclaimer</a>
-								<a href="/contact">Privacy Notice</a>
-								<a href="/contact">Terms & Conditions</a>
-								<a href="/contact">Cookie Policy</a>
+                                <a href="#">Legal Disclaimer</a>
+								<a href="#">Privacy Notice</a>
+								<a href="#">Terms & Conditions</a>
+								<a href="#">Cookie Policy</a>
 							</div>
 						</div>
 					</div>

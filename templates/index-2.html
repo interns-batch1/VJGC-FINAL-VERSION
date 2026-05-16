@@ -166,11 +166,11 @@
 		}
 
 		.hero-controls button:hover {
-			background: #A2D732;
-			border-color: #A2D732;
-			color: #000;
+			background: #ffffff;
+			border-color: #ffffff;
+			color: #08201b;
 			transform: translateY(-5px) scale(1.05);
-			box-shadow: 0 15px 40px rgba(162, 215, 50, 0.4);
+			box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
 		}
 
 		.hero-controls button:active {
@@ -604,44 +604,58 @@
 			margin-bottom: 24px !important;
 		}
 
-		/* Resize and Move Button: Enhanced Visibility & Aesthetics */
+		/* Premium Hero Button Design */
 		.hero-banner-one .btn-two.icon-link {
 			display: inline-flex !important;
-			font-size: 15px !important;
-			font-weight: 600 !important;
-			padding: 12px 30px !important;
-			margin-top: 0 !important;
-			clear: both;
-			background: #A2D732 !important;
-			/* High-visibility Brand Green */
-			color: #051411 !important;
-			/* Dark text for contrast */
-			border: 1px solid #A2D732 !important;
-			/* Small/thin border */
+			align-items: center !important;
+			background: #08201b !important; /* Dark nav green background */
+			color: #ffffff !important; /* White text */
+			padding: 8px 10px 8px 24px !important;
 			border-radius: 50px !important;
-			box-shadow: 0 10px 20px rgba(162, 215, 50, 0.2) !important;
-			transition: all 0.3s ease !important;
-			align-items: center;
-			justify-content: center;
+			font-weight: 700 !important;
+			font-size: 14px !important;
+			text-transform: uppercase !important;
+			letter-spacing: 1px !important;
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+			text-decoration: none !important;
+			border: none !important;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+			height: 48px !important;
+			min-width: unset !important;
+			margin-top: 0 !important;
 		}
 
 		.hero-banner-one .btn-two.icon-link:hover {
-			background: #ffffff !important;
-			border-color: #ffffff !important;
-			color: #051411 !important;
+			background: #0a2d26 !important; /* Slightly lighter/different dark green for hover */
 			transform: translateY(-3px) !important;
-			box-shadow: 0 15px 30px rgba(255, 255, 255, 0.25) !important;
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
+			color: #ffffff !important;
 		}
 
-		/* Column layout: heading on top, button underneath */
-		.hero-slider-one .item .container .row>[class*="col-"] {
+		.hero-banner-one .btn-two.icon-link span {
+			margin-right: 15px !important;
+			line-height: 1 !important;
+		}
+
+		.hero-banner-one .btn-two.icon-link .btn-icon-circle {
+			width: 30px !important;
+			height: 30px !important;
+			background-color: #ffffff !important; /* White circle background */
+			border-radius: 50% !important;
 			display: flex !important;
-			flex-direction: column !important;
-			align-items: flex-start !important;
+			align-items: center !important;
+			justify-content: center !important;
+			transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 		}
 
-		.hero-banner-one .btn-two .icon {
-			width: 18px !important;
+		.hero-banner-one .btn-two.icon-link .btn-icon-circle i {
+			color: #08201b !important; /* Dark green icon */
+			font-size: 14px !important;
+			line-height: 1 !important;
+		}
+
+		.hero-banner-one .btn-two.icon-link:hover .btn-icon-circle {
+			transform: translateX(5px) !important;
 		}
 
 		@media (max-width: 991px) {
@@ -1247,12 +1261,11 @@
 									{{ slide.description or 'Innovation • Excellence • Growth' }}
 								</p>
 								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s"
-									style="padding: 10px 25px; font-size: 14px; min-width: 150px;">
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>{{ slide.cta_text or 'Learn More' }}</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
+									<div class="btn-icon-circle">
+										<i class="bi bi-arrow-up-right"></i>
+									</div>
 								</a>
 							</div>
 						</div>
@@ -1283,12 +1296,11 @@
 									Community • Empowerment • Trust
 								</p>
 								<a href="{{ url_for('dynamic_route', path='about-us-v1') }}"
-									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s"
-									style="padding: 10px 25px; font-size: 14px; min-width: 150px;">
+									class="btn-two icon-link wow fadeInUp" data-wow-delay="0.2s">
 									<span>Learn More</span>
-									<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-										data-src="{{ url_for('static', filename='images/icon/icon_02.svg') }}?v=1.0"
-										alt="" class="lazy-img icon ms-2">
+									<div class="btn-icon-circle">
+										<i class="bi bi-arrow-up-right"></i>
+									</div>
 								</a>
 							</div>
 						</div>
@@ -1363,7 +1375,7 @@
 				<div class="col-md-6">
 					<div class="ps-xl-5 ps-md-4 pe-xxl-5 d-flex align-items-center justify-content-between">
 						<div>
-							<h3 class="fw-bold">We don't compete ” we set the standard</h3>
+							<h3 class="fw-bold">We don't compete , we set the standard</h3>
 							<p class="text-md m0">Driven by pride. Defined by results.</p>
 						</div>
 					</div>
@@ -1540,14 +1552,48 @@
 		<div class="security-alert-section wow fadeInUp" style="background: #fff; padding: 20px 0; border-bottom: 1px solid #eee;">
 			<div class="container">
 				<div class="security-alert-box" style="padding: 0 15px;">
+					{% set notice = cms['Notice'].content[0] if cms['Notice'] and cms['Notice'].content else None %}
 					<h6 class="alert-title fw-bold" style="font-size: 18px; color: #000; margin-bottom: 15px; letter-spacing: 0.5px;">
-						Important Notice
+						{{ notice.title if notice else 'Important Notice' }}
 					</h6>
 					<p class="alert-text" style="font-size: 15px; color: #666; line-height: 1.8; margin-bottom: 20px; max-width: 1200px;">
-						All official announcements, important alerts, and updates from Vijayalakshmi Group of Companies will be published and regularly updated through this section. We encourage everyone to refer only to our official communication channels for accurate and verified information. In the event of any misinformation, unauthorized activities, false claims, or any matter that may affect our customers, partners, employees, or the public, the Vijayalakshmi Group of Companies will provide timely notifications and necessary updates here. Please stay connected to this section to receive the latest official information, notices, and important company-related updates directly from Vijayalakshmi Group of Companies.
-					<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="read-more-link" style="color: #000; font-weight: 600; text-decoration: underline; font-size: 14px;">
-						Read More
-					</a>
+						<span id="notice-content-wrapper">
+							{% if notice %}
+								{{ notice.description }}
+							{% else %}
+								All official announcements, important alerts, and updates from Vijayalakshmi Group of Companies will be published and regularly updated through this section. We encourage everyone to refer only to our official communication channels for accurate and verified information. In the event of any misinformation, unauthorized activities, false claims, or any matter that may affect our customers, partners, employees, or the public, the Vijayalakshmi Group of Companies will provide timely notifications and necessary updates here. Please stay connected to this section to receive the latest official information, notices, and important company-related updates directly from Vijayalakshmi Group of Companies.
+							{% endif %}
+						</span>
+						<a href="javascript:void(0)" id="notice-toggle" class="read-more-link" style="color: #000; font-weight: 600; text-decoration: underline; font-size: 14px; cursor: pointer; display: inline-block; margin-left: 5px;">
+							Read More
+						</a>
+					</p>
+					<script>
+						document.addEventListener('DOMContentLoaded', function() {
+							const wrapper = document.getElementById('notice-content-wrapper');
+							const toggleBtn = document.getElementById('notice-toggle');
+							if(wrapper && toggleBtn) {
+								const fullText = wrapper.textContent.trim();
+								const lastPeriodIndex = fullText.lastIndexOf('. ', fullText.length - 5);
+								
+								if (lastPeriodIndex !== -1) {
+									const mainText = fullText.substring(0, lastPeriodIndex + 2);
+									const extraText = fullText.substring(lastPeriodIndex + 2);
+									
+									wrapper.innerHTML = mainText + '<span id="notice-extra-span" style="display: none;">' + extraText + '</span>';
+									
+									toggleBtn.addEventListener('click', function(e) {
+										e.preventDefault();
+										const extraSpan = document.getElementById('notice-extra-span');
+										if(extraSpan) extraSpan.style.display = 'inline';
+										this.style.display = 'none';
+									});
+								} else {
+									toggleBtn.style.display = 'none';
+								}
+							}
+						});
+					</script>
 				</div>
 			</div>
 		</div>
@@ -2327,10 +2373,10 @@
 							<div class="title-underline"></div>
 							<ul class="footer-links">
 								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/pricing">Investors</a></li>
+								<li><a href="/media-kit">Media Kit</a></li>
 								<li><a href="/media-release">Newsroom</a></li>
 								<li><a href="/about-us-v1">Careers</a></li>
-								<li><a href="/contact">Contact Us</a></li>
+								
 							</ul>
 						</div>
 					</div>
@@ -2346,10 +2392,10 @@
 							</div>
 							<div class="legal-links">
 								<a href="#">All rights reserved</a>
-                                <a href="/contact">Legal Disclaimer</a>
-								<a href="/contact">Privacy Notice</a>
-								<a href="/contact">Terms & Conditions</a>
-								<a href="/contact">Cookie Policy</a>
+                                <a href="#">Legal Disclaimer</a>
+								<a href="#">Privacy Notice</a>
+								<a href="#">Terms & Conditions</a>
+								<a href="#">Cookie Policy</a>
 							</div>
 						</div>
 					</div>

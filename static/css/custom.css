@@ -1211,18 +1211,150 @@ body {
   color: #9ec008;
 }
 
-/* Simple Slider */
-.simple-auto-slider {
-  border-radius: 24px;
+/* ================= PREMIUM SLIDER & PILL TAG ================= */
+.vjs-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #e9f5ef;
+  color: #1a5c40;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.vjs-pill-tag .dot {
+  width: 6px;
+  height: 6px;
+  background: #1a5c40;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.vjs-premium-slider-container {
+  position: relative;
+  padding: 10px;
+}
+
+.vjs-slider-decor {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
+  pointer-events: none;
+  width: 150px;
+  height: 150px;
+}
+
+.vjs-slider-decor .circle-outline {
+  position: absolute;
+  border: 1.5px solid rgba(162, 215, 50, 0.25);
+  border-radius: 50%;
+}
+
+.vjs-slider-decor .circle-1 {
+  width: 120px;
+  height: 120px;
+  top: 0;
+  right: 0;
+}
+
+.vjs-slider-decor .circle-2 {
+  width: 80px;
+  height: 80px;
+  top: 30px;
+  right: 20px;
+}
+
+.vjs-slider-main-wrap {
+  position: relative;
+  z-index: 2;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.simple-auto-slider {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  /* Managed by wrapper */
 }
 
 .simple-auto-slider .slick-slide img {
   width: 100%;
-  height: 450px;
+  height: 480px;
   object-fit: cover;
 }
+
+/* Custom Slick Dots below image */
+.vjs-premium-slider-container .slick-dots {
+  position: static;
+  margin-top: 20px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.vjs-premium-slider-container .slick-dots li {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.vjs-premium-slider-container .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c2e0d1;
+  border: none;
+  padding: 0;
+  font-size: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.vjs-premium-slider-container .slick-dots li.slick-active button {
+  width: 24px;
+  border-radius: 10px;
+  background: #08201b;
+}
+
+/* Navigation Arrows overlaid bottom-right */
+.vjs-slider-nav {
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.vjs-slider-nav .nav-btn {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #08201b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.vjs-slider-nav .nav-btn:hover {
+  background: #08201b;
+  color: #fff;
+}
+
 
 /* "Our Commitment" section */
 .commitment-box {
@@ -2553,7 +2685,7 @@ section,
 .vjs-card-premium-white {
   background: #ffffff;
   border: 1px solid #f0f0f0;
-  border-top: 3px solid #dc2626;
+  border-top: 4px solid #A2D732 !important;
   border-radius: 12px;
   padding: 0;
   overflow: hidden;
@@ -2580,6 +2712,8 @@ section,
 .card-img-box {
   width: 100%;
   aspect-ratio: 16/9;
+  min-height: 200px; /* Prevent collapse if image is missing */
+  background: #f8f9fa; /* Light placeholder background */
   overflow: hidden;
   position: relative;
 }
