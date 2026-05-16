@@ -186,6 +186,80 @@ async def get_sections(page: str = "home", subpage: Optional[str] = None):
     # If it's already a list, return it
     return config if isinstance(config, list) else []
 
+# ---------------------------------------------------------------------------
+# GET /all-categories
+# Returns a list of distinct category names for the admin UI.
+# ---------------------------------------------------------------------------
+@router.get("/category-metadata")
+async def get_all_categories(db = Depends(get_database)):
+    """Retrieve unique combinations of mainPage, subSection, and category 
+    along with the count of items in each.
+    """
+    pipeline = [
+        # Filter out records missing critical fields
+        {"$match": {"mainPage": {"$ne": None}, "category": {"$ne": None}}},
+        {
+            "$group": {
+                "_id": {
+                    "mainPage": "$mainPage",
+                    "subSection": "$subSection",
+                    "category": "$category"
+                },
+                "count": {"$sum": 1}
+            }
+        },
+        {
+            "$project": {
+                "_id": 0,
+                "mainPage": {"$ifNull": ["$_id.mainPage", ""]},
+                "subSection": {"$ifNull": ["$_id.subSection", ""]},
+                "category": {"$ifNull": ["$_id.category", ""]},
+                "count": 1
+            }
+        },
+        {"$sort": {"mainPage": 1, "subSection": 1, "category": 1}}
+    ]
+    results = []
+    async for doc in db["universal_content"].aggregate(pipeline):
+        results.append(doc)
+    return results
+
+
+@router.put("/categories/rename")
+async def rename_category(data: Dict[str, Any], db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    """Rename a category across all records for a specific page/subsection."""
+    old_main_page = data.get("oldMainPage")
+    old_sub_section = data.get("oldSubSection") or ""
+    old_category = data.get("oldCategory")
+    new_category = data.get("newCategory")
+
+    if not all([old_main_page, old_category, new_category]):
+        raise HTTPException(status_code=400, detail="oldMainPage, oldCategory, and newCategory are required")
+
+    result = await db["universal_content"].update_many(
+        {"mainPage": old_main_page, "subSection": old_sub_section, "category": old_category},
+        {"$set": {"category": new_category, "updatedAt": datetime.utcnow()}}
+    )
+    
+    return {"message": f"Renamed {result.modified_count} items"}
+
+
+@router.post("/categories/bulk-delete")
+async def bulk_delete_category(data: Dict[str, Any], db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    """Delete all records in a specific category."""
+    main_page = data.get("mainPage")
+    sub_section = data.get("subSection") or ""
+    category = data.get("category")
+
+    if not all([main_page, category]):
+        raise HTTPException(status_code=400, detail="mainPage and category are required")
+
+    result = await db["universal_content"].delete_many(
+        {"mainPage": main_page, "subSection": sub_section, "category": category}
+    )
+    
+    return {"message": f"Deleted {result.deleted_count} items"}
+
 
 # ---------------------------------------------------------------------------
 # GET /content

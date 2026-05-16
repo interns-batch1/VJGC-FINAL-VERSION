@@ -14,4 +14,4 @@ if __name__ == "__main__":
         from backend.app.main import app
         
     # Use string import and reload=True so changes take effect immediately
-    uvicorn.run("backend.app.main:app" if "backend" in sys.modules else "app.main:app", host="127.0.0.1", port=5005, reload=True)
+    uvicorn.run("backend.app.main:app" if "backend" in sys.modules else "app.main:app", host="127.0.0.1", port=5006, reload=True)

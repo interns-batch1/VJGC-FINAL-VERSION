@@ -65,7 +65,6 @@ app.add_middleware(
 )
 
 # Static Files handled above with BASE_DIR
-
 @app.on_event("startup")
 async def startup_event():
     await connect_to_mongo()
