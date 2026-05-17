@@ -826,25 +826,30 @@
 		</section>
 
 		<!-- SECTION 4: SUCCESS STORY -->
+		{% set story = cms['Success Story'].content[0] if cms['Success Story'].content else None %}
 		<section class="vjs-success-section">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
-						<img src="{{ url_for('static', filename='images/media/img_12.jpg') }}?v=1.0" alt=""
+						<img src="{% if story and story.image_url %}{{ story.image_url }}{% else %}{{ url_for('static', filename='images/media/img_12.jpg') }}{% endif %}?v=1.0" alt=""
 							class="vjs-success-img">
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="vjs-success-content">
 							<div class="title-one mb-30">
-								<h2>Our Success Story</h2>
+								<h2>{% if story and story.title %}{{ story.title }}{% else %}Our Success Story{% endif %}</h2>
 							</div>
-							<p class="text-lg text-dark mb-40">From a local enterprise to a diversified global group,
-								our journey has been defined by resilience, innovation, and long-term value creation for
-								our stakeholders.</p>
-							<p class="mb-40">Vijayalakshmi Group started with a single vision: to deliver excellence
-								across boundaries. Today, we are proud to stand at the forefront of the infrastructure,
-								energy, and logistics sectors, driving the economy forward with integrity and a
-								futuristic outlook.</p>
+							{% if story and story.description %}
+								<p class="text-lg text-dark mb-40">{{ story.description | safe }}</p>
+							{% else %}
+								<p class="text-lg text-dark mb-40">From a local enterprise to a diversified global group,
+									our journey has been defined by resilience, innovation, and long-term value creation for
+									our stakeholders.</p>
+								<p class="mb-40">Vijayalakshmi Group started with a single vision: to deliver excellence
+									across boundaries. Today, we are proud to stand at the forefront of the infrastructure,
+									energy, and logistics sectors, driving the economy forward with integrity and a
+									futuristic outlook.</p>
+							{% endif %}
 							<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-five">Read Full
 								Journey</a>
 						</div>

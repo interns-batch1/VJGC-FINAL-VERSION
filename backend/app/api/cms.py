@@ -97,7 +97,9 @@ PAGES_CONFIG = {
             {"name": "Advisors", "label": "Advisors", "type": "cards"}
         ],
         "Awards": [
-            {"name": "Awards", "label": "Awards", "type": "cards"}
+            {"name": "Advisors", "label": "Our Advisor Coordinators", "type": "cards"},
+            {"name": "Awards", "label": "Global Recognition", "type": "cards"},
+            {"name": "Success Story", "label": "Our Success Story", "type": "cards"}
         ]
     },
     "Business Verticals": {
