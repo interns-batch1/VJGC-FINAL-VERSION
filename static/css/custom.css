@@ -52,6 +52,14 @@ body {
   animation: premiumReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Ensure the description in the hero banner always breaks to a new line below the heading */
+.hero-banner-five .bg-wrapper p,
+.hero-banner-five p.text-lg {
+  display: block !important;
+  width: fit-content !important;
+  clear: both !important;
+}
+
 @keyframes premiumReveal {
   0% {
     opacity: 0;
@@ -2060,10 +2068,13 @@ body #preloader #ctn-preloader .site-loader-video {
 }
 
 @keyframes logoBreathing {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.8;
     transform: scale(0.96);
@@ -2118,6 +2129,7 @@ body #preloader #ctn-preloader .site-loader-video {
   0% {
     width: 0%;
   }
+
   100% {
     width: 100%;
   }
@@ -2128,6 +2140,7 @@ body #preloader #ctn-preloader .site-loader-video {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2145,9 +2158,12 @@ body #preloader #ctn-preloader .site-loader-video {
 }
 
 @keyframes blinkText {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
   }
+
   50% {
     opacity: 0.2;
   }
@@ -2379,64 +2395,7 @@ section,
   overflow: hidden;
 }
 
-/* ============================================================
-   DYNAMIC BREADCRUMB
-   ============================================================ */
-.vjs-dynamic-breadcrumb {
-  position: absolute;
-  left: 50px;
-  bottom: 40px;
-  z-index: 10;
-  color: #fff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  pointer-events: none;
-  display: flex;
-  flex-direction: column;
-}
 
-.vjs-dynamic-breadcrumb .bc-text {
-  display: flex;
-  align-items: center;
-}
-
-.vjs-dynamic-breadcrumb .bc-home {
-  opacity: 0.6;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.vjs-dynamic-breadcrumb .bc-separator {
-  opacity: 0.8;
-  font-size: 16px;
-  margin: 0 10px;
-}
-
-.vjs-dynamic-breadcrumb .bc-current {
-  opacity: 1;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.vjs-dynamic-breadcrumb .bc-line {
-  width: 100%;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.4);
-  margin-top: 8px;
-}
-
-@media (max-width: 768px) {
-  .vjs-dynamic-breadcrumb {
-    left: 20px;
-    bottom: 20px;
-  }
-
-  .vjs-dynamic-breadcrumb .bc-home,
-  .vjs-dynamic-breadcrumb .bc-separator,
-  .vjs-dynamic-breadcrumb .bc-current {
-    font-size: 14px;
-  }
-}
 
 /* ============================================================
    GLOBAL FOOTER SOCIAL ICONS (Circular & Visible Lines)
@@ -2898,8 +2857,10 @@ section,
 .card-img-box {
   width: 100%;
   aspect-ratio: 16/9;
-  min-height: 200px; /* Prevent collapse if image is missing */
-  background: #f8f9fa; /* Light placeholder background */
+  min-height: 200px;
+  /* Prevent collapse if image is missing */
+  background: #f8f9fa;
+  /* Light placeholder background */
   overflow: hidden;
   position: relative;
 }

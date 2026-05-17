@@ -1249,10 +1249,10 @@
 			</div>
 
 			<style>
-				@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+				@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300..500;1,9..40,300..500&display=swap');
 
 				.vjs-timeline-section {
-					font-family: 'Inter', sans-serif;
+					font-family: 'DM Sans', sans-serif;
 				}
 
 				.vjs-bubble-wrap {
@@ -1471,6 +1471,7 @@
 					transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 					border: 1px solid rgba(222, 234, 209, 1);
 					box-shadow: 0 15px 35px rgba(8, 32, 27, 0.04);
+					font-family: 'DM Sans', sans-serif !important;
 				}
 
 				.timeline-card:hover {
@@ -1481,14 +1482,15 @@
 
 				.card-image-wrap {
 					position: relative;
-					height: 190px;
+					height: 200px !important;
 					overflow: hidden;
+					width: 100% !important;
 				}
 
 				.card-image-wrap img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
+					width: 100% !important;
+					height: 100% !important;
+					object-fit: cover !important;
 					transition: transform 1s ease;
 				}
 
@@ -1498,22 +1500,28 @@
 
 				.card-year-badge {
 					position: absolute;
-					bottom: 15px;
-					right: 20px;
-					background: rgba(8, 32, 27, 0.85);
-					backdrop-filter: blur(8px);
-					color: #9ec008;
-					padding: 6px 18px;
-					border-radius: 30px;
-					font-weight: 800;
-					font-size: 14px;
-					border: 1px solid rgba(255, 255, 255, 0.1);
-					font-family: 'Outfit', sans-serif;
+					bottom: 12px !important;
+					right: 16px !important;
+					background: #132c25 !important;
+					color: #a2d732 !important;
+					padding: 5px 16px !important;
+					border-radius: 30px !important;
+					font-weight: 700 !important;
+					font-size: 13px !important;
+					border: none !important;
+					font-family: 'DM Sans', sans-serif !important;
+					letter-spacing: 0.5px !important;
+					box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+					z-index: 2;
+				}
+
+				.card-year-badge::before {
+					content: "EST. ";
 				}
 
 				.card-year-badge.green {
-					background: rgba(158, 192, 8, 0.9);
-					color: #08201b;
+					background: #132c25 !important;
+					color: #a2d732 !important;
 				}
 
 				.card-body {
@@ -1521,71 +1529,93 @@
 				}
 
 				.card-brand {
-					font-family: 'Outfit', sans-serif;
-					font-size: 24px;
-					font-weight: 800;
-					color: #08201b;
-					margin-bottom: 6px;
-					letter-spacing: -0.5px;
+					font-family: 'Playfair Display', serif !important;
+					font-size: 26px !important;
+					font-weight: 600 !important;
+					color: #132c25 !important;
+					margin-bottom: 8px !important;
+					letter-spacing: -0.2px !important;
+					display: flex !important;
+					align-items: center !important;
+					gap: 10px !important;
+				}
+
+				.card-brand i {
+					color: #132c25 !important;
+					font-size: 24px !important;
 				}
 
 				.card-tagline {
-					font-size: 14px;
-					color: #777;
-					font-style: italic;
-					margin-bottom: 25px;
+					font-family: 'DM Sans', sans-serif !important;
+					font-size: 14.5px !important;
+					color: #555 !important;
+					font-style: italic !important;
+					margin-bottom: 25px !important;
 					font-weight: 400;
 				}
 
 				.card-details-box {
-					background: #fbfdf9;
-					padding: 25px;
-					border-radius: 20px;
-					display: flex;
-					flex-direction: column;
-					gap: 18px;
-					border: 1px solid #f0f7ec;
+					background: #f5f4f0 !important;
+					padding: 24px !important;
+					border-radius: 16px !important;
+					display: flex !important;
+					flex-direction: column !important;
+					gap: 16px !important;
+					border: none !important;
 				}
 
 				.detail-row {
-					display: flex;
-					gap: 16px;
-					align-items: flex-start;
-					font-size: 14.5px;
-					line-height: 1.6;
-					color: #333;
+					display: flex !important;
+					gap: 14px !important;
+					align-items: flex-start !important;
+					font-size: 14.5px !important;
+					line-height: 1.5 !important;
+					color: #444 !important;
+					font-family: 'DM Sans', sans-serif !important;
+					font-weight: 400;
+				}
+
+				.detail-row + .detail-row {
+					border-top: 0.5px solid rgba(0, 0, 0, 0.08) !important;
+					padding-top: 16px !important;
 				}
 
 				.detail-icon {
-					font-size: 18px;
-					flex-shrink: 0;
-					margin-top: 3px;
-					width: 24px;
-					height: 24px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
+					width: 28px !important;
+					height: 28px !important;
+					border-radius: 50% !important;
+					display: flex !important;
+					align-items: center !important;
+					justify-content: center !important;
+					flex-shrink: 0 !important;
+					font-size: 12px !important;
+					margin-top: 2px !important;
 				}
 
 				.detail-icon.seedling {
-					color: #27ae60;
+					background-color: #e8f5e9 !important;
+					color: #2e7d32 !important;
 				}
 
 				.detail-icon.growth {
-					color: #9ec008;
+					background-color: #e3f2fd !important;
+					color: #1565c0 !important;
 				}
 
 				.detail-icon.current {
-					color: #196164;
+					background-color: #f3e5f5 !important;
+					color: #6a1b9a !important;
 				}
 
 				.detail-icon.strategic {
-					color: #e67e22;
+					background-color: #fff3e0 !important;
+					color: #d84315 !important;
 				}
 
 				.detail-row strong {
-					color: #08201b;
-					font-weight: 700;
+					color: #132c25 !important;
+					font-weight: 600 !important;
+					font-family: 'DM Sans', sans-serif !important;
 				}
 
 				.vjs-positioning-header h3,
@@ -2049,6 +2079,10 @@
 					$('.vjs-milestone-content').on('click', function () {
 						$(this).toggleClass('active');
 						$(this).find('.vjs-gallery-wrap').slideToggle(500);
+					});
+					// Clean timeline labels (replace colons with a long dash)
+					$('.detail-row strong').each(function() {
+						$(this).html($(this).html().replace(':', ' —'));
 					});
 				});
 			</script>
