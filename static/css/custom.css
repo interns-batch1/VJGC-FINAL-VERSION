@@ -1967,6 +1967,192 @@ body #preloader #ctn-preloader .site-loader-video {
   border-radius: 0 !important;
 }
 
+/* ===== PREMIUM BRANDED PRELOADER ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+}
+
+.preloader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.logo-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 14px;
+  background: #fff;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logoBreathing 4s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.logo-circle img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  max-width: 72px !important;
+  max-height: 72px !important;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1.5px solid rgba(220, 38, 38, 0.25);
+  border-radius: 50%;
+  animation: ringPulse 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  opacity: 0;
+  z-index: 1;
+}
+
+.pulse-ring:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.pulse-ring:nth-child(2) {
+  animation-delay: 1.3s;
+}
+
+.pulse-ring:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+@keyframes logoBreathing {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.96);
+  }
+}
+
+.brand-text {
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInText 1s ease-out 0.5s forwards;
+}
+
+.brand-main {
+  color: #dc2626;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+
+.brand-sub {
+  color: #dc2626;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.loading-bar-container {
+  width: 220px;
+  height: 1px;
+  background: rgba(220, 38, 38, 0.15);
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #dc2626;
+  width: 0%;
+  animation: fillBar 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes fillBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading-text {
+  color: #dc2626;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  animation: blinkText 2.5s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes blinkText {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
 /* NEWS SLIDER SPACING */
 .news-slider .item {
   padding: 0 15px;
