@@ -175,3 +175,82 @@ async def update_blog(id: str, item: BlogCreate, db = Depends(get_database), adm
 async def list_admin_news(db = Depends(get_database)):
     from app.api.public import list_news
     return await list_news(db)
+
+# --- Admin Profile & Security Settings ---
+from pydantic import BaseModel
+
+class ProfileUpdate(BaseModel):
+    name: str
+    email: str
+    avatar: str
+
+class PasswordChange(BaseModel):
+    current_password: str
+    new_password: str
+
+@router.get("/me")
+async def get_my_profile(db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    profile = await db["admin_profile"].find_one({"username": admin})
+    if not profile:
+        profile = await db["admin_profile"].find_one({"email": admin})
+        
+    if not profile:
+        return {
+            "name": "Admin",
+            "email": "admin@vjsgroups.com" if admin == "admin" else admin,
+            "avatar": "/static/images/media/avatar.png"
+        }
+    
+    return {
+        "name": profile.get("name", "Admin"),
+        "email": profile.get("email", admin),
+        "avatar": profile.get("avatar") or "/static/images/media/avatar.png"
+    }
+
+@router.put("/profile")
+async def update_my_profile(profile_data: ProfileUpdate, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    await db["admin_profile"].update_one(
+        {"username": admin},
+        {
+            "$set": {
+                "name": profile_data.name,
+                "email": profile_data.email,
+                "avatar": profile_data.avatar,
+                "updatedAt": datetime.utcnow()
+            }
+        },
+        upsert=True
+    )
+    return {"message": "Profile updated successfully"}
+
+@router.put("/change-password")
+async def change_admin_password(pw_data: PasswordChange, db = Depends(get_database), admin: str = Depends(get_current_admin)):
+    from app.core import security
+    
+    # 1. Fetch current password hash
+    profile = await db["admin_profile"].find_one({"username": admin})
+    
+    if profile and "password_hash" in profile:
+        current_hash = profile["password_hash"]
+    else:
+        # Fallback to default password
+        from app.api.auth import ADMIN_PASSWORD_HASH
+        current_hash = ADMIN_PASSWORD_HASH
+        
+    # 2. Verify current password
+    if not security.verify_password(pw_data.current_password, current_hash):
+        raise HTTPException(status_code=400, detail="Incorrect current password")
+        
+    # 3. Hash and save new password
+    new_hash = security.get_password_hash(pw_data.new_password)
+    await db["admin_profile"].update_one(
+        {"username": admin},
+        {
+            "$set": {
+                "password_hash": new_hash,
+                "updatedAt": datetime.utcnow()
+            }
+        },
+        upsert=True
+    )
+    return {"message": "Password changed successfully"}

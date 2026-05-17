@@ -131,28 +131,63 @@
 			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 		}
 
-		.vjs-award-card {
+		.vjs-new-awards-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 20px;
+			margin-top: 40px;
+		}
+		.vjs-new-award-card {
 			background: #ffffff;
-			padding: 30px;
-			border-radius: 20px;
-			text-align: center;
+			border: 0.5px solid rgba(0, 0, 0, 0.08);
+			border-radius: 12px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
 			height: 100%;
-			transition: all 0.3s ease;
 		}
-
-		.vjs-award-card:hover {
-			background: #1ca161;
+		.vjs-new-award-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 		}
-
-		.vjs-award-card:hover h5,
-		.vjs-award-card:hover p {
-			color: #ffffff;
+		.vjs-new-award-img-wrapper {
+			position: relative;
+			height: 180px;
+			width: 100%;
+			border-top: 3px solid #1ca161;
+			overflow: hidden;
 		}
-
-		.vjs-award-card h5 {
+		.vjs-new-award-img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.vjs-new-award-content {
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			text-align: left;
+		}
+		.vjs-new-award-icon {
+			color: #e74c3c;
+			font-size: 20px;
+			margin-bottom: 12px;
+			display: inline-block;
+		}
+		.vjs-new-award-title {
+			font-size: 18px;
 			font-weight: 700;
-			margin-bottom: 10px;
 			color: #08201b;
+			margin-bottom: 8px;
+			line-height: 1.3;
+		}
+		.vjs-new-award-desc {
+			font-size: 14px;
+			color: #666666;
+			line-height: 1.5;
+			margin: 0;
 		}
 
 		/* SUCCESS STORY */
@@ -749,75 +784,82 @@
 		<!-- SECTION 3: AWARDS -->
 		<section class="vjs-awards-section">
 			<div class="container">
-				<div class="title-one mb-60 wow fadeInUp">
-					<h2>Global Recognition</h2>
+				<div class="title-one text-center mb-60 wow fadeInUp">
+					<h2>Global Recognition Awards</h2>
 					<p class="text-lg">Our unwavering commitment to excellence has been recognized by industry leaders
 						worldwide.</p>
 				</div>
 
-				<!-- Moving images slider -->
-				<div class="vjs-award-slider-wrap wow fadeInUp">
-					<div class="award-slider-one">
-						<div class="item">
-							<div class="vjs-award-item"><img src="vjs_award_excellence_trophy_1776587508170.png" alt="">
-							</div>
-						</div>
-						<div class="item">
-							<div class="vjs-award-item"><img
-									src="{{ url_for('static', filename='images/logo/media_01.png') }}?v=1.0" alt="">
-							</div>
-						</div>
-						<div class="item">
-							<div class="vjs-award-item"><img
-									src="{{ url_for('static', filename='images/logo/media_02.png') }}?v=1.0" alt="">
-							</div>
-						</div>
-						<div class="item">
-							<div class="vjs-award-item"><img
-									src="{{ url_for('static', filename='images/logo/media_03.png') }}?v=1.0" alt="">
-							</div>
-						</div>
-						<div class="item">
-							<div class="vjs-award-item"><img src="vjs_award_excellence_trophy_1776587508170.png" alt="">
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Award Cards Below -->
-				<div class="row">
+				<!-- Redesigned Award Cards Grid -->
+				<div class="vjs-new-awards-grid">
 					{% if cms.Awards.content %}
 					{% for item in cms.Awards.content %}
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
-						<div class="vjs-award-card">
-							<h5>{{ item.title }}</h5>
-							<p>{{ item.description }}</p>
+					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+						<div class="vjs-new-award-img-wrapper">
+							<img src="{% if item.image_url %}{{ item.image_url }}{% else %}/static/images/awards/bni.jpg{% endif %}" alt="{{ item.title }}" class="vjs-new-award-img">
+						</div>
+						<div class="vjs-new-award-content">
+							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
+							<h3 class="vjs-new-award-title">{{ item.title }}</h3>
+							<p class="vjs-new-award-desc">{{ item.description }}</p>
 						</div>
 					</div>
 					{% endfor %}
 					{% else %}
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp">
-						<div class="vjs-award-card">
-							<h5>Excellence 2024</h5>
-							<p>Highest industry safety and quality standards recognition.</p>
+					<!-- Fallback to static cards if no data in DB -->
+					<!-- Card 1 -->
+					<div class="vjs-new-award-card wow fadeInUp">
+						<div class="vjs-new-award-img-wrapper">
+							<img src="/static/images/awards/bni.jpg" alt="BNI Awards" class="vjs-new-award-img">
+						</div>
+						<div class="vjs-new-award-content">
+							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
+							<h3 class="vjs-new-award-title">BNI Awards</h3>
+							<p class="vjs-new-award-desc">Recognized for exceptional networking and business contribution at a national level.</p>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="vjs-award-card">
-							<h5>Innovation Award</h5>
-							<p>Breakthrough solutions in green energy and utilities.</p>
+					<!-- Card 2 -->
+					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="0.1s">
+						<div class="vjs-new-award-img-wrapper">
+							<img src="/static/images/awards/etnow.jpg" alt="ET NOW Awards" class="vjs-new-award-img">
+						</div>
+						<div class="vjs-new-award-content">
+							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
+							<h3 class="vjs-new-award-title">ET NOW Awards</h3>
+							<p class="vjs-new-award-desc">Honored by Economic Times NOW for outstanding leadership and industry impact.</p>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="vjs-award-card">
-							<h5>Sustainability Lead</h5>
-							<p>Commemorated for sustainable supply chain practices.</p>
+					<!-- Card 3 -->
+					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="0.2s">
+						<div class="vjs-new-award-img-wrapper">
+							<img src="/static/images/awards/msme.jpg" alt="MSME Woman Led Startup" class="vjs-new-award-img">
+						</div>
+						<div class="vjs-new-award-content">
+							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
+							<h3 class="vjs-new-award-title">MSME Woman Led Startup</h3>
+							<p class="vjs-new-award-desc">Awarded for building a thriving woman-led startup in the MSME sector.</p>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 mb-30 wow fadeInUp" data-wow-delay="0.3s">
-						<div class="vjs-award-card">
-							<h5>Leadership Gold</h5>
-							<p>Recognized for outstanding corporate governance.</p>
+					<!-- Card 4 -->
+					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="0.3s">
+						<div class="vjs-new-award-img-wrapper">
+							<img src="/static/images/awards/womenpreneur.jpg" alt="Womenpreneur 2023" class="vjs-new-award-img">
+						</div>
+						<div class="vjs-new-award-content">
+							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
+							<h3 class="vjs-new-award-title">Womenpreneur 2023</h3>
+							<p class="vjs-new-award-desc">Celebrated as a leading woman entrepreneur driving change and innovation in 2023.</p>
+						</div>
+					</div>
+					<!-- Card 5 -->
+					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="0.4s">
+						<div class="vjs-new-award-img-wrapper">
+							<img src="/static/images/awards/indiatoday.jpg" alt="India Today Business Awards" class="vjs-new-award-img">
+						</div>
+						<div class="vjs-new-award-content">
+							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
+							<h3 class="vjs-new-award-title">India Today Business Awards</h3>
+							<p class="vjs-new-award-desc">Honored by India Today for exemplary business growth and vision.</p>
 						</div>
 					</div>
 					{% endif %}
