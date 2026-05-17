@@ -16,7 +16,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     Login endpoint to get JWT access token.
     Accepts 'username' and 'password' as form-data.
     """
-    if form_data.username != ADMIN_USERNAME or not security.verify_password(form_data.password, ADMIN_PASSWORD_HASH):
+    if form_data.username not in [ADMIN_USERNAME, "admin@vjsgroups.com"] or not security.verify_password(form_data.password, ADMIN_PASSWORD_HASH):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect username or password",
