@@ -136,7 +136,9 @@ async def get_page_context(path: str):
     sub_name = sub_name or ""
     
     query = {"mainPage": {"$regex": f"^{page_name}$", "$options": "i"}, "isActive": True}
-    if sub_name:
+    if clean_path == "service-v1":
+        query["subSection"] = {"$in": ["Leadership", "Awards"]}
+    elif sub_name:
         query["subSection"] = sub_name
     else:
         # For pages without a specific subSection, match empty string or None

@@ -719,6 +719,7 @@
 		</div>
 
 		<!-- SECTION 2: ADVISORS -->
+		{% if cms.Advisors.content %}
 		<section class="vjs-advisors-section">
 			<div class="container">
 				<div class="title-one text-center mb-80 wow fadeInUp">
@@ -727,7 +728,6 @@
 						verticals.</p>
 				</div>
 				<div class="row">
-					{% if cms.Advisors.content %}
 					{% for item in cms.Advisors.content %}
 					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
 						<div class="vjs-advisor-card">
@@ -738,48 +738,10 @@
 						</div>
 					</div>
 					{% endfor %}
-					{% else %}
-					<!-- Fallback to static cards if no data in DB -->
-					<!-- Card 1 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_27.jpg') }}?v=1.0" alt=""
-								class="vjs-advisor-img">
-							<h4>Zubayer Hasan</h4>
-							<span>Strategy Lead</span>
-						</div>
-					</div>
-					<!-- Card 2 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_28.jpg') }}?v=1.0" alt=""
-								class="vjs-advisor-img">
-							<h4>Maria Escolova</h4>
-							<span>Operations Head</span>
-						</div>
-					</div>
-					<!-- Card 3 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_29.jpg') }}?v=1.0" alt=""
-								class="vjs-advisor-img">
-							<h4>Rashedul Kabir</h4>
-							<span>Finance Director</span>
-						</div>
-					</div>
-					<!-- Card 4 -->
-					<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-						<div class="vjs-advisor-card">
-							<img src="{{ url_for('static', filename='images/media/img_30.jpg') }}?v=1.0" alt=""
-								class="vjs-advisor-img">
-							<h4>Cristiano Messi</h4>
-							<span>Supply Chain</span>
-						</div>
-					</div>
-					{% endif %}
 				</div>
 			</div>
 		</section>
+		{% endif %}
 
 		<!-- SECTION 3: AWARDS -->
 		<section class="vjs-awards-section">

@@ -4,7 +4,7 @@
 <head>
 	<!-- Force Join With Us Kit to show on scroll to bottom -->
 	<script>
-		(function() {
+		(function () {
 			// 1. Clear local tracking data on load so it can re-trigger on every refresh
 			const clearKitData = () => {
 				const cookies = document.cookie.split(";");
@@ -25,7 +25,7 @@
 
 			// 2. Trigger popup only when user scrolls to bottom
 			let triggered = false;
-			window.addEventListener('scroll', function() {
+			window.addEventListener('scroll', function () {
 				if (triggered) return;
 
 				// Calculate scroll position
@@ -35,7 +35,7 @@
 				// If user is within 100px of the bottom (footer area)
 				if (scrollPosition >= pageHeight - 150) {
 					triggered = true;
-					setTimeout(function() {
+					setTimeout(function () {
 						const kitTrigger = document.createElement('a');
 						kitTrigger.setAttribute('data-formkit-toggle', '7ae406bec1');
 						kitTrigger.href = "#";
@@ -43,7 +43,7 @@
 						document.body.appendChild(kitTrigger);
 						kitTrigger.click();
 						console.log("Kit popup triggered by scroll");
-					}, 200); 
+					}, 200);
 				}
 			});
 		})();
@@ -208,7 +208,7 @@
 			}
 		}
 
-						/* ===== PREMIUM BRANDED PRELOADER ===== */
+		/* ===== PREMIUM BRANDED PRELOADER ===== */
 		#preloader {
 			position: fixed;
 			inset: 0;
@@ -251,7 +251,7 @@
 			align-items: center;
 			justify-content: center;
 			animation: logoBreathing 4s ease-in-out infinite;
-			box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 		}
 
 		.logo-circle img {
@@ -271,19 +271,46 @@
 			z-index: 1;
 		}
 
-		.pulse-ring:nth-child(1) { animation-delay: 0s; }
-		.pulse-ring:nth-child(2) { animation-delay: 1.3s; }
-		.pulse-ring:nth-child(3) { animation-delay: 2.6s; }
+		.pulse-ring:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		.pulse-ring:nth-child(2) {
+			animation-delay: 1.3s;
+		}
+
+		.pulse-ring:nth-child(3) {
+			animation-delay: 2.6s;
+		}
 
 		@keyframes ringPulse {
-			0% { transform: scale(1); opacity: 0; }
-			30% { opacity: 0.6; }
-			100% { transform: scale(2.8); opacity: 0; }
+			0% {
+				transform: scale(1);
+				opacity: 0;
+			}
+
+			30% {
+				opacity: 0.6;
+			}
+
+			100% {
+				transform: scale(2.8);
+				opacity: 0;
+			}
 		}
 
 		@keyframes logoBreathing {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50% { opacity: 0.8; transform: scale(0.96); }
+
+			0%,
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			50% {
+				opacity: 0.8;
+				transform: scale(0.96);
+			}
 		}
 
 		.brand-text {
@@ -331,13 +358,25 @@
 		}
 
 		@keyframes fillBar {
-			0% { width: 0%; }
-			100% { width: 100%; }
+			0% {
+				width: 0%;
+			}
+
+			100% {
+				width: 100%;
+			}
 		}
 
 		@keyframes fadeInText {
-			from { opacity: 0; transform: translateY(10px); }
-			to { opacity: 1; transform: translateY(0); }
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		.loading-text {
@@ -351,10 +390,20 @@
 		}
 
 		@keyframes blinkText {
-			0%, 100% { opacity: 0.8; }
-			50% { opacity: 0.2; }
+
+			0%,
+			100% {
+				opacity: 0.8;
+			}
+
+			50% {
+				opacity: 0.2;
+			}
 		}
-			50% { opacity: 0.2; }
+
+		50% {
+			opacity: 0.2;
+		}
 		}
 
 		@keyframes adaniNavReveal {
@@ -608,8 +657,10 @@
 		.hero-banner-one .btn-two.icon-link {
 			display: inline-flex !important;
 			align-items: center !important;
-			background: #08201b !important; /* Dark nav green background */
-			color: #ffffff !important; /* White text */
+			background: #08201b !important;
+			/* Dark nav green background */
+			color: #ffffff !important;
+			/* White text */
 			padding: 8px 10px 8px 24px !important;
 			border-radius: 50px !important;
 			font-weight: 700 !important;
@@ -626,7 +677,8 @@
 		}
 
 		.hero-banner-one .btn-two.icon-link:hover {
-			background: #0a2d26 !important; /* Slightly lighter/different dark green for hover */
+			background: #0a2d26 !important;
+			/* Slightly lighter/different dark green for hover */
 			transform: translateY(-3px) !important;
 			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3) !important;
 			color: #ffffff !important;
@@ -640,7 +692,8 @@
 		.hero-banner-one .btn-two.icon-link .btn-icon-circle {
 			width: 30px !important;
 			height: 30px !important;
-			background-color: #ffffff !important; /* White circle background */
+			background-color: #ffffff !important;
+			/* White circle background */
 			border-radius: 50% !important;
 			display: flex !important;
 			align-items: center !important;
@@ -649,7 +702,8 @@
 		}
 
 		.hero-banner-one .btn-two.icon-link .btn-icon-circle i {
-			color: #08201b !important; /* Dark green icon */
+			color: #08201b !important;
+			/* Dark green icon */
 			font-size: 14px !important;
 			line-height: 1 !important;
 		}
@@ -939,7 +993,8 @@
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="logo-circle">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="VJS Logo">
 					</div>
 				</div>
 				<div class="brand-text">
@@ -1222,6 +1277,7 @@
 						</div>
 					</div> <!--/.top-header-->
 				</div> <!-- /.inner-content -->
+			</div>
 		</header>
 		<!-- /.theme-main-menu -->
 
@@ -1390,9 +1446,11 @@
 			BLock Feature One
 		============================================== 
 		-->
-		<div class="block-feature-one position-relative pt-0" style=" width: 100%; margin: 0 !important; border-radius: 0 !important; padding-bottom: 80px; background-color: #eff3f2;">
+		<div class="block-feature-one position-relative pt-0"
+			style=" width: 100%; margin: 0 !important; border-radius: 0 !important; padding-bottom: 80px; background-color: #eff3f2;">
 			<!-- Leadership Statement Section -->
-			<div class="vjs-leadership-banner" style="padding-top: 80px !important; background: transparent !important;">
+			<div class="vjs-leadership-banner"
+				style="padding-top: 80px !important; background: transparent !important;">
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-5 wow fadeInLeft">
@@ -1420,8 +1478,11 @@
 			<!-- /.Leadership Statement Section -->
 
 			<!-- Attractive Divider Line -->
-			<div class="vjs-section-divider wow fadeInUp" style="padding: 50px 0; display: flex; flex-direction: column; align-items: center; gap: 4px; opacity: 0.8;">
-				<div style="height: 1.5px; width: 100%; max-width: 1200px; background: linear-gradient(to right, transparent, rgba(26, 65, 55, 0.6) 20%, rgba(26, 65, 55, 0.8) 50%, rgba(26, 65, 55, 0.6) 80%, transparent);"></div>
+			<div class="vjs-section-divider wow fadeInUp"
+				style="padding: 50px 0; display: flex; flex-direction: column; align-items: center; gap: 4px; opacity: 0.8;">
+				<div
+					style="height: 1.5px; width: 100%; max-width: 1200px; background: linear-gradient(to right, transparent, rgba(26, 65, 55, 0.6) 20%, rgba(26, 65, 55, 0.8) 50%, rgba(26, 65, 55, 0.6) 80%, transparent);">
+				</div>
 			</div>
 
 			<div class="container" style="padding-top: 40px !important; padding-bottom: 40px !important;">
@@ -1549,43 +1610,55 @@
 		<!-- /.block-feature-one -->
 
 		<!-- Security Alert Section -->
-		<div class="security-alert-section wow fadeInUp" style="background: #fff; padding: 20px 0; border-bottom: 1px solid #eee;">
+		<div class="security-alert-section wow fadeInUp"
+			style="background: #fff; padding: 20px 0; border-bottom: 1px solid #eee;">
 			<div class="container">
 				<div class="security-alert-box" style="padding: 0 15px;">
 					{% set notice = cms['Notice'].content[0] if cms['Notice'] and cms['Notice'].content else None %}
-					<h6 class="alert-title fw-bold" style="font-size: 18px; color: #000; margin-bottom: 15px; letter-spacing: 0.5px;">
+					<h6 class="alert-title fw-bold"
+						style="font-size: 18px; color: #000; margin-bottom: 15px; letter-spacing: 0.5px;">
 						{{ notice.title if notice else 'Important Notice' }}
 					</h6>
-					<p class="alert-text" style="font-size: 15px; color: #666; line-height: 1.8; margin-bottom: 20px; max-width: 1200px;">
+					<p class="alert-text"
+						style="font-size: 15px; color: #666; line-height: 1.8; margin-bottom: 20px; max-width: 1200px;">
 						<span id="notice-content-wrapper">
 							{% if notice %}
-								{{ notice.description }}
+							{{ notice.description }}
 							{% else %}
-								All official announcements, important alerts, and updates from Vijayalakshmi Group of Companies will be published and regularly updated through this section. We encourage everyone to refer only to our official communication channels for accurate and verified information. In the event of any misinformation, unauthorized activities, false claims, or any matter that may affect our customers, partners, employees, or the public, the Vijayalakshmi Group of Companies will provide timely notifications and necessary updates here. Please stay connected to this section to receive the latest official information, notices, and important company-related updates directly from Vijayalakshmi Group of Companies.
+							All official announcements, important alerts, and updates from Vijayalakshmi Group of
+							Companies will be published and regularly updated through this section. We encourage
+							everyone to refer only to our official communication channels for accurate and verified
+							information. In the event of any misinformation, unauthorized activities, false claims, or
+							any matter that may affect our customers, partners, employees, or the public, the
+							Vijayalakshmi Group of Companies will provide timely notifications and necessary updates
+							here. Please stay connected to this section to receive the latest official information,
+							notices, and important company-related updates directly from Vijayalakshmi Group of
+							Companies.
 							{% endif %}
 						</span>
-						<a href="javascript:void(0)" id="notice-toggle" class="read-more-link" style="color: #000; font-weight: 600; text-decoration: underline; font-size: 14px; cursor: pointer; display: inline-block; margin-left: 5px;">
+						<a href="javascript:void(0)" id="notice-toggle" class="read-more-link"
+							style="color: #000; font-weight: 600; text-decoration: underline; font-size: 14px; cursor: pointer; display: inline-block; margin-left: 5px;">
 							Read More
 						</a>
 					</p>
 					<script>
-						document.addEventListener('DOMContentLoaded', function() {
+						document.addEventListener('DOMContentLoaded', function () {
 							const wrapper = document.getElementById('notice-content-wrapper');
 							const toggleBtn = document.getElementById('notice-toggle');
-							if(wrapper && toggleBtn) {
+							if (wrapper && toggleBtn) {
 								const fullText = wrapper.textContent.trim();
 								const lastPeriodIndex = fullText.lastIndexOf('. ', fullText.length - 5);
-								
+
 								if (lastPeriodIndex !== -1) {
 									const mainText = fullText.substring(0, lastPeriodIndex + 2);
 									const extraText = fullText.substring(lastPeriodIndex + 2);
-									
+
 									wrapper.innerHTML = mainText + '<span id="notice-extra-span" style="display: none;">' + extraText + '</span>';
-									
-									toggleBtn.addEventListener('click', function(e) {
+
+									toggleBtn.addEventListener('click', function (e) {
 										e.preventDefault();
 										const extraSpan = document.getElementById('notice-extra-span');
-										if(extraSpan) extraSpan.style.display = 'inline';
+										if (extraSpan) extraSpan.style.display = 'inline';
 										this.style.display = 'none';
 									});
 								} else {
@@ -2210,19 +2283,13 @@
 			Blog Section One
 		=====================================================
 		-->
-			<div class="vjs-news-wrapper">
+			<div class="vjs-news-wrapper" style="padding-bottom: 260px !important; margin-bottom: -150px !important;">
 				<div class="container">
 					<div class="position-relative">
 						<div class="d-flex align-items-center justify-content-between mb-40 lg-mb-20">
 							<div class="title-one">
 								<h2 class="mb-10">Latest News.</h2>
 								<p class="text-lg m0">Get the latest update, trips & tricks from our expert.</p>
-							</div>
-							<div class="news-controls d-flex gap-3">
-								<button id="news-prev" class="news-arrow" aria-label="Previous Slide"><i
-										class="bi bi-arrow-left"></i></button>
-								<button id="news-next" class="news-arrow" aria-label="Next Slide"><i
-										class="bi bi-arrow-right"></i></button>
 							</div>
 						</div>
 
@@ -2242,7 +2309,8 @@
 									</div>
 									<figure
 										class="post-img position-relative d-flex justify-content-end align-items-end m0 overflow-hidden">
-										{% if (item.image_url or item.image) and (item.image_url or item.image).endswith('.mp4') %}
+										{% if (item.image_url or item.image) and (item.image_url or
+										item.image).endswith('.mp4') %}
 										<video loop muted playsinline autoplay
 											style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
 											<source src="{{ item.image_url or item.image }}" type="video/mp4">
@@ -2261,6 +2329,13 @@
 							</div>
 							{% endif %}
 						</div> <!-- /.news-slider -->
+
+						<div class="news-controls d-flex gap-3 justify-content-end" style="margin-top: 10px !important;">
+							<button id="news-prev" class="news-arrow" aria-label="Previous Slide"><i
+									class="bi bi-arrow-left"></i></button>
+							<button id="news-next" class="news-arrow" aria-label="Next Slide"><i
+									class="bi bi-arrow-right"></i></button>
+						</div>
 					</div> <!-- /.position-relative -->
 				</div> <!-- /.container -->
 			</div> <!-- /.vjs-news-wrapper -->
@@ -2315,92 +2390,94 @@
 		</div> <!-- /.main-page-wrapper -->
 
 
-<footer class="footer-vjs-premium">
-				<div class="footer-gold-bar"></div>
+		<footer class="footer-vjs-premium">
+			<div class="footer-gold-bar"></div>
+			<div class="footer-container">
+				<div class="footer-main">
+					<!-- Brand Column -->
+					<div class="footer-column footer-brand-col">
+						<div class="footer-logo">
+							<div class="logo-icon-circle">
+								<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo"
+									style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+							</div>
+							<div class="logo-text">
+								<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+								<span class="brand-sub">OF COMPANIES</span>
+							</div>
+						</div>
+						<div class="footer-divider-h"></div>
+						<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.
+						</p>
+						<div class="social-links">
+							<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+							<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+							<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+							<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+
+					<!-- About Us Column -->
+					<div class="footer-column">
+						<h5 class="footer-title">ABOUT US</h5>
+						<div class="title-underline"></div>
+						<ul class="footer-links">
+							<li><a href="/about-us-v2">About Company</a></li>
+							<li><a href="/about-us-v1">Chairman's Office</a></li>
+							<li><a href="/service-v1">Leadership</a></li>
+							<li><a href="/about-us-v1">Our Journey</a></li>
+							<li><a href="/service-v1">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- Businesses Column -->
+					<div class="footer-column">
+						<h5 class="footer-title">BUSINESSES</h5>
+						<div class="title-underline"></div>
+						<ul class="footer-links">
+							<li><a href="/it-consulting">Infrastructure</a></li>
+							<li><a href="/green-energy">Energy & Utilities</a></li>
+							<li><a href="/logistics-services">Transport & Logistics</a></li>
+							<li><a href="/export-import">Consumer Products</a></li>
+							<li><a href="/property-services">Real Estate</a></li>
+							<li><a href="/yoga-wellness">Healthcare</a></li>
+						</ul>
+					</div>
+
+					<!-- Quick Links Column -->
+					<div class="footer-column">
+						<h5 class="footer-title">QUICK LINKS</h5>
+						<div class="title-underline"></div>
+						<ul class="footer-links">
+							<li><a href="/sustainability">Sustainability</a></li>
+							<li><a href="/media-kit">Media Kit</a></li>
+							<li><a href="/media-release">Newsroom</a></li>
+							<li><a href="/about-us-v1">Careers</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bottom Bar -->
+			<div class="footer-bottom-vjs">
 				<div class="footer-container">
-					<div class="footer-main">
-						<!-- Brand Column -->
-						<div class="footer-column footer-brand-col">
-							<div class="footer-logo">
-								<div class="logo-icon-circle">
-									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
-								</div>
-								<div class="logo-text">
-									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
-									<span class="brand-sub">OF COMPANIES</span>
-								</div>
-							</div>
-							<div class="footer-divider-h"></div>
-							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
-							<div class="social-links">
-								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
-							</div>
+					<div class="bottom-inner">
+						<div class="copyright">
+							<i class="bi bi-crown-fill gold-icon"></i>
+							<span>© 2026 Vijayalakshmi Group of Companies</span>
 						</div>
-
-						<!-- About Us Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">ABOUT US</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/about-us-v2">About Company</a></li>
-								<li><a href="/about-us-v1">Chairman's Office</a></li>
-								<li><a href="/service-v1">Leadership</a></li>
-								<li><a href="/about-us-v1">Our Journey</a></li>
-								<li><a href="/service-v1">Awards</a></li>
-							</ul>
-						</div>
-
-						<!-- Businesses Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">BUSINESSES</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/it-consulting">Infrastructure</a></li>
-								<li><a href="/green-energy">Energy & Utilities</a></li>
-								<li><a href="/logistics-services">Transport & Logistics</a></li>
-								<li><a href="/export-import">Consumer Products</a></li>
-								<li><a href="/property-services">Real Estate</a></li>
-								<li><a href="/yoga-wellness">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- Quick Links Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">QUICK LINKS</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/media-kit">Media Kit</a></li>
-								<li><a href="/media-release">Newsroom</a></li>
-								<li><a href="/about-us-v1">Careers</a></li>
-								
-							</ul>
+						<div class="legal-links">
+							<a href="#">All rights reserved</a>
+							<a href="#">Legal Disclaimer</a>
+							<a href="#">Privacy Notice</a>
+							<a href="#">Terms & Conditions</a>
+							<a href="#">Cookie Policy</a>
 						</div>
 					</div>
 				</div>
-
-				<!-- Bottom Bar -->
-				<div class="footer-bottom-vjs">
-					<div class="footer-container">
-						<div class="bottom-inner">
-							<div class="copyright">
-								<i class="bi bi-crown-fill gold-icon"></i>
-								<span>© 2026 Vijayalakshmi Group of Companies</span>
-							</div>
-							<div class="legal-links">
-								<a href="#">All rights reserved</a>
-                                <a href="#">Legal Disclaimer</a>
-								<a href="#">Privacy Notice</a>
-								<a href="#">Terms & Conditions</a>
-								<a href="#">Cookie Policy</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			</div>
+		</footer>
 
 
 
@@ -2420,37 +2497,37 @@
 		<script type="text/javascript"
 			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-	<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
-		<i class="bi bi-chevron-double-up"></i>
-	</button>
+		<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
+			<i class="bi bi-chevron-double-up"></i>
+		</button>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const scrollTopBtn = document.getElementById('vjs-scroll-top');
-			if (!scrollTopBtn) return;
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const scrollTopBtn = document.getElementById('vjs-scroll-top');
+				if (!scrollTopBtn) return;
 
-			window.addEventListener('scroll', function () {
-				if (window.pageYOffset > 400) {
-					scrollTopBtn.classList.add('visible');
-				} else {
-					scrollTopBtn.classList.remove('visible');
-				}
-			});
+				window.addEventListener('scroll', function () {
+					if (window.pageYOffset > 400) {
+						scrollTopBtn.classList.add('visible');
+					} else {
+						scrollTopBtn.classList.remove('visible');
+					}
+				});
 
-			scrollTopBtn.addEventListener('click', function () {
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
+				scrollTopBtn.addEventListener('click', function () {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
 				});
 			});
-		});
-	</script>
+		</script>
 
-		
+
 		<script id="vjs-preloader-script">
-			(function() {
+			(function () {
 				const startTime = Date.now();
-				window.addEventListener('load', function() {
+				window.addEventListener('load', function () {
 					const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
 					const elapsed = Date.now() - startTime;
 					const delay = Math.max(0, minDisplayTime - elapsed);
@@ -2472,6 +2549,3 @@
 </body>
 
 </html>
-
-
-

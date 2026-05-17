@@ -33,20 +33,50 @@ async def upload_image(file: UploadFile = File(...), admin: str = Depends(get_cu
         if file_ext not in ALLOWED_EXTENSIONS:
             raise HTTPException(status_code=400, detail=f"Invalid file type: {file_ext}")
         
-        # Upload to Cloudinary
-        upload_result = cloudinary.uploader.upload(
-            file.file,
-            folder="vjs_group",
-            resource_type="auto"
-        )
-        
-        return {
-            "url": upload_result["secure_url"],
-            "filename": file.filename,
-            "public_id": upload_result["public_id"]
-        }
+        try:
+            # Try Cloudinary upload first
+            upload_result = cloudinary.uploader.upload(
+                file.file,
+                folder="vjs_group",
+                resource_type="auto"
+            )
+            return {
+                "url": upload_result["secure_url"],
+                "filename": file.filename,
+                "public_id": upload_result["public_id"]
+            }
+        except Exception as cloud_err:
+            print(f"Cloudinary Upload failed: {str(cloud_err)}. Falling back to local upload.")
+            
+            # Local fallback saving
+            import shutil
+            import uuid
+            
+            # Setup path: vjs-website/static/images/media/uploads/
+            PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+            SAVE_DIR = os.path.join(PROJECT_ROOT, "static", "images", "media", "uploads")
+            os.makedirs(SAVE_DIR, exist_ok=True)
+            
+            # Generate unique filename to avoid duplicates
+            unique_filename = f"{uuid.uuid4().hex}_{file.filename}"
+            dest_path = os.path.join(SAVE_DIR, unique_filename)
+            
+            # Reset file pointer and write locally
+            file.file.seek(0)
+            with open(dest_path, "wb") as buffer:
+                shutil.copyfileobj(file.file, buffer)
+                
+            local_url = f"/static/images/media/uploads/{unique_filename}"
+            print(f"Local fallback upload success! Saved to {dest_path}, URL: {local_url}")
+            
+            return {
+                "url": local_url,
+                "filename": file.filename,
+                "public_id": f"local_{unique_filename}"
+            }
+            
     except Exception as e:
-        print(f"Cloudinary Upload Error: {str(e)}")
+        print(f"Upload Error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
 # --- About Us ---
