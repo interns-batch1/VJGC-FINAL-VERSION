@@ -14,12 +14,19 @@ import cloudinary
 import cloudinary.uploader
 
 # Configure Cloudinary
-cloudinary.config(
-    cloud_name=settings.CLOUDINARY_CLOUD_NAME or "dmm9fvcox",
-    api_key=settings.CLOUDINARY_API_KEY or "266587243377924",
-    api_secret=settings.CLOUDINARY_API_SECRET or "Sh1eN-ObcD0AcH-ypg31IDGmCnM",
-    secure=True
-)
+def get_cloudinary_config():
+    cloud_name = settings.CLOUDINARY_CLOUD_NAME
+    api_key = settings.CLOUDINARY_API_KEY
+    api_secret = settings.CLOUDINARY_API_SECRET
+    
+    if not cloud_name or len(str(cloud_name).strip()) < 3 or str(cloud_name).lower() in ("none", "undefined"):
+        cloud_name = "dmm9fvcox"
+    if not api_key or len(str(api_key).strip()) < 3 or str(api_key).lower() in ("none", "undefined"):
+        api_key = "266587243377924"
+    if not api_secret or len(str(api_secret).strip()) < 3 or str(api_secret).lower() in ("none", "undefined"):
+        api_secret = "Sh1eN-ObcD0AcH-ypg31IDGmCnM"
+        
+    return str(cloud_name).strip(), str(api_key).strip(), str(api_secret).strip()
 
 router = APIRouter()
 
@@ -33,13 +40,26 @@ async def upload_image(file: UploadFile = File(...), admin: str = Depends(get_cu
         if file_ext not in ALLOWED_EXTENSIONS:
             raise HTTPException(status_code=400, detail=f"Invalid file type: {file_ext}")
         
+        # Dynamically apply validated Cloudinary configuration
+        cloud_name, api_key, api_secret = get_cloudinary_config()
+        cloudinary.config(
+            cloud_name=cloud_name,
+            api_key=api_key,
+            api_secret=api_secret,
+            secure=True
+        )
+        
         try:
-            # Read file bytes asynchronously to avoid any file pointer streaming issues on Vercel
+            # Read file bytes asynchronously
             file_bytes = await file.read()
             
-            # Try Cloudinary upload first
+            # Wrap in BytesIO to guarantee 100% compatibility with Cloudinary Python SDK file-like expectations
+            import io
+            file_stream = io.BytesIO(file_bytes)
+            
+            # Upload to Cloudinary
             upload_result = cloudinary.uploader.upload(
-                file_bytes,
+                file_stream,
                 folder="vjs_group",
                 resource_type="auto"
             )
@@ -51,33 +71,41 @@ async def upload_image(file: UploadFile = File(...), admin: str = Depends(get_cu
         except Exception as cloud_err:
             print(f"Cloudinary Upload failed: {str(cloud_err)}. Falling back to local upload.")
             
-            # Local fallback saving
-            import shutil
-            import uuid
-            
-            # Setup path: vjs-website/static/images/media/uploads/
-            PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-            SAVE_DIR = os.path.join(PROJECT_ROOT, "static", "images", "media", "uploads")
-            os.makedirs(SAVE_DIR, exist_ok=True)
-            
-            # Generate unique filename to avoid duplicates
-            unique_filename = f"{uuid.uuid4().hex}_{file.filename}"
-            dest_path = os.path.join(SAVE_DIR, unique_filename)
-            
-            # Reset file pointer and write locally
-            file.file.seek(0)
-            with open(dest_path, "wb") as buffer:
-                shutil.copyfileobj(file.file, buffer)
+            try:
+                # Local fallback saving
+                import shutil
+                import uuid
                 
-            local_url = f"/static/images/media/uploads/{unique_filename}"
-            print(f"Local fallback upload success! Saved to {dest_path}, URL: {local_url}")
+                # Setup path: vjs-website/static/images/media/uploads/
+                PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+                SAVE_DIR = os.path.join(PROJECT_ROOT, "static", "images", "media", "uploads")
+                os.makedirs(SAVE_DIR, exist_ok=True)
+                
+                # Generate unique filename to avoid duplicates
+                unique_filename = f"{uuid.uuid4().hex}_{file.filename}"
+                dest_path = os.path.join(SAVE_DIR, unique_filename)
+                
+                # Reset file pointer and write locally
+                file.file.seek(0)
+                with open(dest_path, "wb") as buffer:
+                    shutil.copyfileobj(file.file, buffer)
+                    
+                local_url = f"/static/images/media/uploads/{unique_filename}"
+                print(f"Local fallback upload success! Saved to {dest_path}, URL: {local_url}")
+                
+                return {
+                    "url": local_url,
+                    "filename": file.filename,
+                    "public_id": f"local_{unique_filename}"
+                }
+            except Exception as local_err:
+                raise HTTPException(
+                    status_code=500,
+                    detail=f"Upload failed. Cloudinary Error: {str(cloud_err)}. Local Fallback Error: {str(local_err)}"
+                )
             
-            return {
-                "url": local_url,
-                "filename": file.filename,
-                "public_id": f"local_{unique_filename}"
-            }
-            
+    except HTTPException as http_ex:
+        raise http_ex
     except Exception as e:
         print(f"Upload Error: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
