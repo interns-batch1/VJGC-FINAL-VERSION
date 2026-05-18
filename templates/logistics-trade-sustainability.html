@@ -1018,16 +1018,21 @@
 		<script>
 			$(document).ready(function () {
 				if ($('.simple-auto-slider').length) {
-					$('.simple-auto-slider').slick({ 
-						autoplay: true, 
-						autoplaySpeed: 4000, 
-						dots: true, 
-						arrows: true,
-						prevArrow: $('.vjs-slider-nav .prev'),
-						nextArrow: $('.vjs-slider-nav .next'),
-						fade: true, 
-						cssEase: 'linear' 
-					});
+					var $slider = $('.simple-auto-slider');
+					if ($slider.children().length > 1) {
+						$slider.slick({ 
+							autoplay: true, 
+							autoplaySpeed: 4000, 
+							dots: true, 
+							arrows: true,
+							prevArrow: $('.vjs-slider-nav .prev'),
+							nextArrow: $('.vjs-slider-nav .next'),
+							fade: true, 
+							cssEase: 'linear' 
+						});
+					} else {
+						$('.vjs-slider-nav').hide();
+					}
 				}
 				// Trigger progress bar animation on scroll
 				$(window).on('scroll', function () {
