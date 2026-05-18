@@ -419,6 +419,17 @@ async def get_content(
     results = []
     async for doc in db["universal_content"].find(query).sort("order", 1):
         doc["_id"] = str(doc.pop("_id"))
+        
+        # Normalize and map image path to image_url and icon_url for frontend compatibility
+        img_path = doc.get("image") or ""
+        if img_path:
+            if img_path.startswith('/static/'):
+                img_path = img_path.replace(' ', '%20')
+            elif not img_path.startswith(('http', '/')):
+                img_path = f"/uploads/{img_path}"
+        doc["image_url"] = img_path
+        doc["icon_url"] = img_path
+        
         results.append(doc)
 
     print(f"DEBUG /content found {len(results)} items")
