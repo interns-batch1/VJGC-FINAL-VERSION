@@ -58,7 +58,13 @@ async def not_found_exception_handler(request: Request, exc: Exception):
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:5006",
+        "https://vjgc-admin.vercel.app",
+    ],
+    allow_origin_regex="https://vjgc-admin-.*\\.vercel\\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
