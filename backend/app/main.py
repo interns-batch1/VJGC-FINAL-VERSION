@@ -16,8 +16,15 @@ print(f"DEBUG: MONGO_URI from settings: {settings.MONGO_URI}")
 # Setup Paths
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+# Custom StaticFiles subclass to enforce browser caching
+class CachedStaticFiles(StaticFiles):
+    def file_response(self, *args, **kwargs):
+        response = super().file_response(*args, **kwargs)
+        response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        return response
+
 # Serve static files
-app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
+app.mount("/static", CachedStaticFiles(directory=str(BASE_DIR / "static")), name="static")
 
 # Setup Templates
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
@@ -89,6 +96,13 @@ app.include_router(content.router, prefix="/api/content", tags=["Content Managem
 from app.db.mongodb import get_database
 
 async def get_page_context(path: str):
+    from app.core.cache import cms_cache
+    import copy
+    
+    cached_val = cms_cache.get(path)
+    if cached_val is not None:
+        return copy.deepcopy(cached_val)
+        
     db = get_database()
     context = {}
     
@@ -204,6 +218,8 @@ async def get_page_context(path: str):
         
     context["cms"] = cms_content
 
+    # Save calculated context to the in-memory cache
+    cms_cache.set(path, copy.deepcopy(context))
     
     return context
 

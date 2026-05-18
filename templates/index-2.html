@@ -1295,7 +1295,7 @@
 				<div class="item m0">
 					<div class="hero-img">
 						{% if slide.video_url or (slide.image and slide.image.endswith('.mp4')) %}
-						<video class="hero-video-bg" muted playsinline preload="auto" autoplay>
+						<video class="hero-video-bg" muted playsinline preload="none">
 							<source src="{{ slide.image_url or slide.video_url or slide.image }}?t=1" type="video/mp4">
 						</video>
 						{% else %}
@@ -1333,7 +1333,7 @@
 				<!-- Slide 1: Community -->
 				<div class="item m0">
 					<div class="hero-img">
-						<video class="hero-video-bg" muted playsinline preload="auto" autoplay>
+						<video class="hero-video-bg" muted playsinline preload="none">
 							<source
 								src="{{ url_for('static', filename='images/hero video/african-american-mother-playing-with-her-daughters-2026-01-20-18-10-31-utc.mp4') }}?t=1"
 								type="video/mp4">
@@ -1453,21 +1453,20 @@
 				style="padding-top: 80px !important; background: transparent !important;">
 				<div class="container">
 					<div class="row align-items-center">
+						{% set leader = cms['Leadership Statement'].content[0] if cms['Leadership Statement'] and cms['Leadership Statement'].content else None %}
 						<div class="col-lg-5 wow fadeInLeft">
 							<div class="leader-portrait-wrap">
-								<img src="{{ url_for('static', filename='images/media/chairman_portrait.png') }}?v=1.0"
-									alt="Mr. Vijayalakshmi" class="leader-portrait lazy-img">
+								<img src="{{ leader.image_url or leader.image if leader else url_for('static', filename='images/media/chairman_portrait.png') }}?v=1.0"
+									alt="{{ leader.title if leader else 'Ms. M. Vijayalakshmi' }}" class="leader-portrait lazy-img">
 							</div>
 						</div>
 						<div class="col-lg-7 wow fadeInRight">
 							<div class="vjs-quote-wrapper">
 								<div class="vjs-quote-box">
-									<p>"Empowerment is not just about providing technology or services; it's about
-										building an ecosystem where innovation and trust create a legacy of sustainable
-										growth for everyone."</p>
+									<p>"{{ leader.description if leader else 'Empowerment is not just about providing technology or services; it\'s about building an ecosystem where innovation and trust create a legacy of sustainable growth for everyone.' }}"</p>
 									<div class="vjs-leader-meta">
-										<h5>Ms. M. Vijayalakshmi</h5>
-										<p>Managing Director of VJS Group</p>
+										<h5>{{ leader.title if leader else 'Ms. M. Vijayalakshmi' }}</h5>
+										<p>{{ leader.cta_text if leader else 'Managing Director of VJS Group' }}</p>
 									</div>
 								</div>
 							</div>
@@ -1680,41 +1679,35 @@
 			<div class="container">
 				<div class="wrapper">
 					<div class="row align-items-stretch">
+						{% set mission = cms['Our Mission'].content[0] if cms['Our Mission'] and cms['Our Mission'].content else None %}
 						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex">
 							<div class="card-style-three pb-35 sm-pb-30 w-100"
 								style="background-color: #A2D732; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column;">
 								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ url_for('static', filename='images/icon/icon_10.svg') }}?v=1.0" alt=""
+									data-src="{{ mission.image_url or mission.image or url_for('static', filename='images/icon/icon_10.svg') }}?v=1.0" alt=""
 									class="lazy-img icon"
 									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block;align-self: self-start;">
-								<h4 class="fw-bold text-dark" style="font-size: 24px; margin: 0 0 15px 0;">Our Mission
-								</h4>
-								<p class="text-dark" style="margin: 0; line-height: 1.6;">To deliver innovative and
-									reliable solutions across diverse
-									industries by combining
-									technology, expertise, and customer-focused services”‚empowering businesses and
-									communities to achieve sustainable growth.
-								</p>
+								<h4 class="fw-bold text-dark" style="font-size: 24px; margin: 0 0 15px 0;">{{ mission.title if mission else 'Our Mission' }}</h4>
+								<p class="text-dark" style="margin: 0; line-height: 1.6;">{{ mission.description if mission else 'To deliver innovative and reliable solutions across diverse industries by combining technology, expertise, and customer-focused services”‚empowering businesses and communities to achieve sustainable growth.' }}</p>
 							</div>
 							<!-- /.card-style-three -->
 						</div>
+						{% set vision = cms['Our Vision'].content[0] if cms['Our Vision'] and cms['Our Vision'].content else None %}
 						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex" data-wow-delay="0.1s">
 							<div class="card-style-three pb-35 sm-pb-30 w-100"
 								style="background-color: #196164; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
 
 								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ url_for('static', filename='images/icon/icon_11.svg') }}?v=1.0" alt=""
+									data-src="{{ vision.image_url or vision.image or url_for('static', filename='images/icon/icon_11.svg') }}?v=1.0" alt=""
 									class="lazy-img icon"
 									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block; align-self: flex-start;">
 
 								<h4 class="fw-bold text-white" style="font-size: 24px; margin: 0 0 15px 0;">
-									Our Vision
+									{{ vision.title if vision else 'Our Vision' }}
 								</h4>
 
 								<p class="text-white" style="margin: 0; line-height: 1.6;">
-									To become a trusted and leading group of companies recognized
-									for excellence in technology, education, wellness, and global trade,
-									creating long-term value and positive impact worldwide.
+									{{ vision.description if vision else 'To become a trusted and leading group of companies recognized for excellence in technology, education, wellness, and global trade, creating long-term value and positive impact worldwide.' }}
 								</p>
 
 							</div>
@@ -1973,7 +1966,63 @@
 
 			<div class="purpose-section mt-120 lg-mt-80">
 				<div class="purpose-container">
-
+					{% if cms['Our Purpose'] and cms['Our Purpose'].content %}
+					{% for card in cms['Our Purpose'].content %}
+					<div class="purpose-pane {% if loop.first %}active{% endif %}"
+						style="--bg: url('{{ card.image_url or card.image }}')">
+						<div class="pane-overlay"></div>
+						<div class="pane-content-left">
+							<div class="pane-number">0{{ loop.index }}</div>
+							<div class="pane-label">{{ card.title }}</div>
+						</div>
+						<div class="content-wrap">
+							<div class="title">
+								{% if card.title == 'Sustainability' %}
+								FOR A <br> SUSTAINABLE <br> TOMORROW
+								{% elif card.title == 'Solutions' %}
+								BUILDING <br> FUTURE-READY <br> SOLUTIONS
+								{% elif card.title == 'Education' %}
+								EMPOWERING <br> THE NEXT <br> GENERATION
+								{% elif card.title == 'Wellness' %}
+								HOLISTIC <br> WELLNESS <br> JOURNEYS
+								{% else %}
+								{{ card.title | upper }}
+								{% endif %}
+							</div>
+							<div class="csr-card">
+								<h3>
+									{% if card.title == 'Sustainability' %}
+									100 MILLION TREES PLEDGED
+									{% elif card.title == 'Solutions' %}
+									ENTERPRISE INNOVATION
+									{% elif card.title == 'Education' %}
+									15,000+ STUDENTS
+									{% elif card.title == 'Wellness' %}
+									AYURVEDA & YOGA
+									{% else %}
+									{{ card.title | upper }}
+									{% endif %}
+								</h3>
+								<p>{{ card.description }}</p>
+								<a href="#" class="view-impact">
+									{% if card.title == 'Sustainability' %}
+									View Impact ’
+									{% elif card.title == 'Solutions' %}
+									Explore More ’
+									{% elif card.title == 'Education' %}
+									See Impact ’
+									{% elif card.title == 'Wellness' %}
+									Discover Wellness ’
+									{% else %}
+									Explore More ’
+									{% endif %}
+								</a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+					{% else %}
+					<!-- Fallback Panes -->
 					<!-- PANE 1: Sustainability -->
 					<div class="purpose-pane active"
 						style="--bg: url('{{ url_for('static', filename='images/media/csr_sustainability.png') }}')">
@@ -2045,6 +2094,7 @@
 							</div>
 						</div>
 					</div>
+					{% endif %}
 
 					<style>
 						.purpose-container {

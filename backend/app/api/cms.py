@@ -5,6 +5,7 @@ from app.schemas.universal_content import UniversalContent, UniversalContentCrea
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 from bson import ObjectId
+from app.core.cache import cms_cache
 import uuid
 
 router = APIRouter()
@@ -65,6 +66,11 @@ SLUG_TO_NAME = {
     "Company Mission": "Company Mission",
     "company-vision":  "Company Vision",
     "company-mission": "Company Mission",
+    "Notice":          "Notice",
+    "Leadership Statement": "Leadership Statement",
+    "Our Mission":     "Our Mission",
+    "Our Vision":      "Our Vision",
+    "Our Purpose":     "Our Purpose",
 }
 
 def resolve(slug: Optional[str]) -> Optional[str]:
@@ -89,9 +95,14 @@ def resolve(slug: Optional[str]) -> Optional[str]:
 # This defines the UI dropdowns in the Admin Panel.
 PAGES_CONFIG = {
     "home": [
-        {"name": "Hero Section",    "label": "Hero Section",    "type": "hero"},
-        {"name": "Services",        "label": "Services",        "type": "cards"},
-        {"name": "Insights News", "label": "Insights News", "type": "news"},
+        {"name": "Hero Section",          "label": "Hero Section",          "type": "hero"},
+        {"name": "Notice",                "label": "Notice",                "type": "hero"},
+        {"name": "Leadership Statement",  "label": "Leadership Statement",  "type": "hero"},
+        {"name": "Services",              "label": "Services",              "type": "cards"},
+        {"name": "Our Mission",           "label": "Our Mission",           "type": "hero"},
+        {"name": "Our Vision",            "label": "Our Vision",            "type": "hero"},
+        {"name": "Our Purpose",           "label": "Our Purpose",           "type": "cards"},
+        {"name": "Insights News",         "label": "Insights News",         "type": "news"},
     ],
     "About Us": {
         "About Group": [
@@ -345,7 +356,7 @@ async def rename_category(data: Dict[str, Any], db = Depends(get_database), admi
         {"mainPage": old_main_page, "subSection": old_sub_section, "category": old_category},
         {"$set": {"category": new_category, "updatedAt": datetime.utcnow()}}
     )
-    
+    cms_cache.clear()
     return {"message": f"Renamed {result.modified_count} items"}
 
 
@@ -362,7 +373,7 @@ async def bulk_delete_category(data: Dict[str, Any], db = Depends(get_database),
     result = await db["universal_content"].delete_many(
         {"mainPage": main_page, "subSection": sub_section, "category": category}
     )
-    
+    cms_cache.clear()
     return {"message": f"Deleted {result.deleted_count} items"}
 
 
@@ -445,7 +456,11 @@ async def get_content(
         "Aditya Powers",
         "Springreen",
         "Real Estate Division",
-        "Aham Grham"
+        "Aham Grham",
+        "Notice",
+        "Leadership Statement",
+        "Our Mission",
+        "Our Vision"
     }
     news_categories = {"Insights / News", "News Section", "News"}
     if c in hero_categories:
@@ -492,6 +507,7 @@ async def upsert_content(data: Dict[str, Any], db = Depends(get_database), admin
         {"$set": doc, "$setOnInsert": {"createdAt": datetime.utcnow()}},
         upsert=True
     )
+    cms_cache.clear()
     return {"message": "Success"}
 
 
@@ -520,6 +536,7 @@ async def update_content_by_id(id: str, data: Dict[str, Any], db = Depends(get_d
     result = await db["universal_content"].update_one({"_id": ObjectId(id)}, {"$set": data})
     if result.matched_count == 0:
         raise HTTPException(status_code=404, detail="Content not found")
+    cms_cache.clear()
     return {"message": "Updated"}
 
 
@@ -535,6 +552,7 @@ async def publish_content(id: str, db = Depends(get_database), admin: str = Depe
     )
     if result.matched_count == 0:
         raise HTTPException(status_code=404, detail="Content not found")
+    cms_cache.clear()
     return {"message": "Published successfully"}
 
 
@@ -546,6 +564,7 @@ async def delete_content(id: str, db = Depends(get_database), admin: str = Depen
     result = await db["universal_content"].delete_one({"_id": ObjectId(id)})
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Content not found")
+    cms_cache.clear()
     return {"message": "Deleted"}
     
 # ---------------------------------------------------------------------------
