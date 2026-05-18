@@ -1,10 +1,7 @@
 {
   "functions": {
     "api/index.py": {
-      "excludeFiles": [
-        "static/**",
-        "uploads/**"
-      ]
+      "excludeFiles": "{static/**,uploads/**}"
     }
   },
   "routes": [
