@@ -1,9 +1,10 @@
 {
-  "functions": {
-    "api/**/*.py": {
-      "excludeFiles": "{static/**,uploads/**}"
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
     }
-  },
+  ],
   "routes": [
     {
       "handle": "filesystem"
