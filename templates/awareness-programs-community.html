@@ -596,22 +596,23 @@
 		</header>
 
 		<!-- Hero Section -->
+		{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
 		<div class="sustainability-hero"
-			style="background-image: url('{{ url_for('static', filename='images/assets/sustainability_hero.png') }}');">
+			style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/assets/sustainability_hero.png') }}{% endif %}');">
 			<div class="container" data-aos="fade-up">
 				<div class="row">
 					<div class="col-lg-10">
 						<span class="section-label text-white opacity-75 mb-10 d-block">Community Development
 							Programs</span>
-						<h1 class="mb-20">Community Awareness</h1>
-						<p class="text-white opacity-75">Knowledge sharing for a healthier and greener world.</p>
+						<h1 class="mb-20">{{ hero.title or 'Community Awareness' }}</h1>
+						<p class="text-white opacity-75">{{ hero.subtitle or hero.description or 'Knowledge sharing for a healthier and greener world.' }}</p>
 						<ul class="style-none d-inline-flex pager mt-40">
 							<li><a href="{{ url_for('home') }}" class="text-white opacity-50">Home</a></li>
 							<li><span class="text-white opacity-50 px-2">/</span></li>
 							<li><a href="{{ url_for('dynamic_route', path='sustainability') }}"
 									class="text-white opacity-50">Sustainability</a></li>
 							<li><span class="text-white opacity-50 px-2">/</span></li>
-							<li class="text-white fw-bold">Community Awareness</li>
+							<li class="text-white fw-bold">{{ hero.title or 'Community Awareness' }}</li>
 						</ul>
 					</div>
 				</div>
@@ -645,8 +646,14 @@
 							</div>
 							<div class="vjs-slider-main-wrap">
 								<div class="simple-auto-slider">
-									<div><img src="{{ url_for('static', filename='images/media/sustainability_new.png') }}?v=1.0" alt="Sustainability"></div>
-									<div><img src="{{ url_for('static', filename='images/media/solutions_new.png') }}?v=1.0" alt="Solutions"></div>
+									{% if cms['Slider Images'] and cms['Slider Images'].content %}
+										{% for item in cms['Slider Images'].content %}
+											<div><img src="{{ item.image_url }}" alt="{{ item.title or 'Sustainability' }}"></div>
+										{% endfor %}
+									{% else %}
+										<div><img src="{{ url_for('static', filename='images/media/sustainability_new.png') }}?v=1.0" alt="Sustainability"></div>
+										<div><img src="{{ url_for('static', filename='images/media/solutions_new.png') }}?v=1.0" alt="Solutions"></div>
+									{% endif %}
 								</div>
 								<div class="vjs-slider-nav">
 									<button class="nav-btn prev"><i class="bi bi-chevron-left"></i></button>

@@ -21,6 +21,10 @@ SLUG_TO_NAME = {
     "Newsroom": "Newsroom",
     "blog":     "Blog",
     "Blog":     "Blog",
+    "sustainability": "Sustainability",
+    "Sustainability": "Sustainability",
+    "slider-images":  "Slider Images",
+    "Slider Images":  "Slider Images",
     
     # Sub-sections (about)
     "about-group":  "About Group",
@@ -169,6 +173,88 @@ PAGES_CONFIG = {
             {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
             {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"},
             {"name": "Our Business", "label": "Our Business", "type": "cards"}
+        ]
+    },
+    "Sustainability": {
+        "Main landing": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"},
+            {"name": "Our Business", "label": "Our Business", "type": "cards"}
+        ],
+        "Digital Transformation & IT Consulting": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Cloud, Hosting & Infrastructure": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Renewable Energy Solutions": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Logistics & Trade Enablement": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Education & Skill Development": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Tree Plantation & Green Cover": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Eco-conscious Technology Solutions": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Renewable Energy Adoption": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Sustainable Business Practices": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Educational Support": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Financial & Material Aid": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Skill-Building Programs": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Rural & Semi-Urban Engagement": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Awareness Programs": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
+        ],
+        "Local Infrastructure Support": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Slider Images", "label": "Slider Images", "type": "cards"},
+            {"name": "At a Glance",  "label": "At a Glance",  "type": "cards"}
         ]
     },
     "Newsroom": {

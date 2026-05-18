@@ -126,7 +126,24 @@ async def get_page_context(path: str):
         "yoga-wellness": ("Business Verticals", "Yoga & Wellness"),
         "travel-rentals": ("Business Verticals", "Travel & Rentals"),
         "plantations": ("Business Verticals", "Plantations & Exotic Trees"),
-        "plantations-exotic-trees": ("Business Verticals", "Plantations & Exotic Trees")
+        "plantations-exotic-trees": ("Business Verticals", "Plantations & Exotic Trees"),
+        # Sustainability Section
+        "sustainability": ("Sustainability", "Main landing"),
+        "digital-transformation-sustainability": ("Sustainability", "Digital Transformation & IT Consulting"),
+        "cloud-infrastructure-sustainability": ("Sustainability", "Cloud, Hosting & Infrastructure"),
+        "renewable-energy-solutions": ("Sustainability", "Renewable Energy Solutions"),
+        "logistics-trade-sustainability": ("Sustainability", "Logistics & Trade Enablement"),
+        "education-skill-sustainability": ("Sustainability", "Education & Skill Development"),
+        "tree-plantation-sustainability": ("Sustainability", "Tree Plantation & Green Cover"),
+        "eco-tech-solutions": ("Sustainability", "Eco-conscious Technology Solutions"),
+        "renewable-energy-adoption": ("Sustainability", "Renewable Energy Adoption"),
+        "sustainable-business-practices": ("Sustainability", "Sustainable Business Practices"),
+        "educational-support-csr": ("Sustainability", "Educational Support"),
+        "financial-material-aid": ("Sustainability", "Financial & Material Aid"),
+        "skill-building-youth": ("Sustainability", "Skill-Building Programs"),
+        "rural-semi-urban-engagement": ("Sustainability", "Rural & Semi-Urban Engagement"),
+        "awareness-programs-community": ("Sustainability", "Awareness Programs"),
+        "local-infrastructure-support": ("Sustainability", "Local Infrastructure Support")
     }
     
     # Normalize path
