@@ -1021,7 +1021,8 @@
 		<script>
 			$(document).ready(function () {
 				if ($('.simple-auto-slider').length) {
-					$('.simple-auto-slider').slick({ 
+					var $slider = $('.simple-auto-slider');
+					$slider.slick({ 
 						autoplay: true, 
 						autoplaySpeed: 4000, 
 						dots: true, 
@@ -1031,6 +1032,15 @@
 						fade: true, 
 						cssEase: 'linear' 
 					});
+					
+					// Hide navigation if there is only 1 slide
+					if ($slider.slick('getSlick').slideCount <= 1) {
+						$('.vjs-slider-nav').hide();
+						$slider.find('.slick-dots').hide();
+					} else {
+						$('.vjs-slider-nav').show();
+						$slider.find('.slick-dots').show();
+					}
 				}
 				// Trigger progress bar animation on scroll
 				$(window).on('scroll', function () {
