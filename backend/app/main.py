@@ -108,7 +108,7 @@ async def get_page_context(path: str):
         "service-v1": ("About Us", "Leadership"),
         "media-release": ("Newsroom", "Media Release"),
         "media-kit": ("Newsroom", "Media Release"),
-        "blog-v1": ("Blog", ""),
+        "blog-v1": ("About Us", "Foundation"),
         # Business Verticals
         "data-centers-hosting": ("Business Verticals", "Enterprise Data Centers & Hosting Services"),
         "it-consulting": ("Business Verticals", "IT Consulting"),

@@ -198,6 +198,8 @@
 
 		.vjs-success-img {
 			width: 100%;
+			height: 480px;
+			object-fit: cover;
 			border-radius: 30px;
 			box-shadow: 20px 20px 60px rgba(28, 161, 97, 0.1);
 		}
@@ -207,6 +209,9 @@
 		}
 
 		@media (max-width: 991px) {
+			.vjs-success-img {
+				height: 380px;
+			}
 			.vjs-success-content {
 				padding-left: 0;
 				margin-top: 50px;
@@ -690,7 +695,7 @@
 		{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'].content else None %}
 		<div class="hero-banner-five">
 			<div class="bg-wrapper position-relative"
-				style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/hero/cheerful-businesspeople-standing-on-top-of-stairca-2026-01-11-08-46-59-utc.jpg') }}{% endif %}?v=1.0'); background-size: cover; background-position: center; min-height: 100vh; display: flex; align-items: center;">
+				style="background-image: url('{% if hero.image_url %}{{ hero.image_url }}{% else %}{{ url_for('static', filename='images/hero/cheerful-businesspeople-standing-on-top-of-stairca-2026-01-11-08-46-59-utc.jpg') }}{% endif %}?v=1.0'); background-size: cover; background-position: center 18%; background-repeat: no-repeat; background-color: #07211b; min-height: 100vh; padding-top: 100px; display: flex; align-items: center;">
 				<div class="container position-relative" style="z-index: 2;">
 					<div class="row justify-content-between">
 						<div class="col-lg-8 col-md-10 wow fadeInLeft">
@@ -761,7 +766,6 @@
 							<img src="{% if item.image_url %}{{ item.image_url }}{% else %}/static/images/awards/bni.jpg{% endif %}" alt="{{ item.title }}" class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
-							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
 							<h3 class="vjs-new-award-title">{{ item.title }}</h3>
 							<p class="vjs-new-award-desc">{{ item.description }}</p>
 						</div>
@@ -775,7 +779,6 @@
 							<img src="/static/images/awards/bni.jpg" alt="BNI Awards" class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
-							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
 							<h3 class="vjs-new-award-title">BNI Awards</h3>
 							<p class="vjs-new-award-desc">Recognized for exceptional networking and business contribution at a national level.</p>
 						</div>
@@ -786,7 +789,6 @@
 							<img src="/static/images/awards/etnow.jpg" alt="ET NOW Awards" class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
-							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
 							<h3 class="vjs-new-award-title">ET NOW Awards</h3>
 							<p class="vjs-new-award-desc">Honored by Economic Times NOW for outstanding leadership and industry impact.</p>
 						</div>
@@ -797,7 +799,6 @@
 							<img src="/static/images/awards/msme.jpg" alt="MSME Woman Led Startup" class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
-							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
 							<h3 class="vjs-new-award-title">MSME Woman Led Startup</h3>
 							<p class="vjs-new-award-desc">Awarded for building a thriving woman-led startup in the MSME sector.</p>
 						</div>
@@ -808,7 +809,6 @@
 							<img src="/static/images/awards/womenpreneur.jpg" alt="Womenpreneur 2023" class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
-							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
 							<h3 class="vjs-new-award-title">Womenpreneur 2023</h3>
 							<p class="vjs-new-award-desc">Celebrated as a leading woman entrepreneur driving change and innovation in 2023.</p>
 						</div>
@@ -819,7 +819,6 @@
 							<img src="/static/images/awards/indiatoday.jpg" alt="India Today Business Awards" class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
-							<i class="bi bi-briefcase-fill vjs-new-award-icon"></i>
 							<h3 class="vjs-new-award-title">India Today Business Awards</h3>
 							<p class="vjs-new-award-desc">Honored by India Today for exemplary business growth and vision.</p>
 						</div>

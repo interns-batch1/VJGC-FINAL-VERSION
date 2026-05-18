@@ -57,6 +57,10 @@ SLUG_TO_NAME = {
     "Insights News":  "Insights News",
     "Advisors":       "Advisors",
     "News":           "News",
+    "Company Vision":  "Company Vision",
+    "Company Mission": "Company Mission",
+    "company-vision":  "Company Vision",
+    "company-mission": "Company Mission",
 }
 
 def resolve(slug: Optional[str]) -> Optional[str]:
@@ -88,6 +92,8 @@ PAGES_CONFIG = {
     "About Us": {
         "About Group": [
             {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Company Vision", "label": "Company Vision", "type": "hero"},
+            {"name": "Company Mission", "label": "Company Mission", "type": "hero"},
             {"name": "Insights News", "label": "Insights News", "type": "news"}
         ],
         "Our Journey": [
@@ -100,6 +106,17 @@ PAGES_CONFIG = {
             {"name": "Advisors", "label": "Our Advisor Coordinators", "type": "cards"},
             {"name": "Awards", "label": "Global Recognition", "type": "cards"},
             {"name": "Success Story", "label": "Our Success Story", "type": "cards"}
+        ],
+        "Foundation": [
+            {"name": "Hero Section", "label": "Hero Section", "type": "hero"},
+            {"name": "Purpose Statement", "label": "Purpose Statement", "type": "hero"},
+            {"name": "Aditya IT Academy", "label": "Aditya IT Academy", "type": "hero"},
+            {"name": "Vijay Anjaneya CSR", "label": "Vijay Anjaneya CSR", "type": "hero"},
+            {"name": "Aditya Powers", "label": "Aditya Powers", "type": "hero"},
+            {"name": "Springreen", "label": "Springreen", "type": "hero"},
+            {"name": "Real Estate Division", "label": "Real Estate Division", "type": "hero"},
+            {"name": "Aham Grham", "label": "Aham Grham", "type": "hero"},
+            {"name": "At a Glance", "label": "At a Glance", "type": "cards"}
         ]
     },
     "Business Verticals": {
@@ -321,7 +338,18 @@ async def get_content(
     print(f"DEBUG /content found {len(results)} items")
 
     # Infer section type from the category name so the admin renders correct fields
-    hero_categories = {"Hero Section"}
+    hero_categories = {
+        "Hero Section", 
+        "Company Vision", 
+        "Company Mission",
+        "Purpose Statement",
+        "Aditya IT Academy",
+        "Vijay Anjaneya CSR",
+        "Aditya Powers",
+        "Springreen",
+        "Real Estate Division",
+        "Aham Grham"
+    }
     news_categories = {"Insights / News", "News Section", "News"}
     if c in hero_categories:
         section_type = "hero"

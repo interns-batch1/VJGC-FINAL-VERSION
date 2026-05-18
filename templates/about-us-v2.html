@@ -1338,17 +1338,30 @@
 
 
 		<!-- Company Vision Section -->
+		{% set vision = cms['Company Vision'].content[0] if cms['Company Vision'].content else None %}
 		<section class="vjs-vm-section">
 			<div class="container">
 				<div class="vjs-vm-container">
 					<div class="vjs-vm-content wow fadeInLeft">
 						<span class="vjs-vm-label">Defining Our Purpose</span>
-						<h2 class="vjs-vm-title">COMPANY<br>VISION</h2>
-						<p class="vjs-vm-text">To be a world class leader in businesses that enrich lives and contribute
-							to nations in building infrastructure through sustainable value creation.</p>
+						<h2 class="vjs-vm-title">
+							{% if vision and vision.title %}
+								{{ vision.title | safe }}
+							{% else %}
+								COMPANY<br>VISION
+							{% endif %}
+						</h2>
+						<p class="vjs-vm-text">
+							{% if vision and vision.description %}
+								{{ vision.description | safe }}
+							{% else %}
+								To be a world class leader in businesses that enrich lives and contribute
+								to nations in building infrastructure through sustainable value creation.
+							{% endif %}
+						</p>
 					</div>
 					<div class="vjs-vm-image wow fadeInRight">
-						<img src="{{ url_for('static', filename='images/media/vision_landscape.png') }}?v=1.0"
+						<img src="{% if vision and vision.image_url %}{{ vision.image_url }}{% else %}{{ url_for('static', filename='images/media/vision_landscape.png') }}?v=1.0{% endif %}"
 							alt="Company Vision - Sustainable Value Creation">
 					</div>
 				</div>
@@ -1356,18 +1369,30 @@
 		</section>
 
 		<!-- Company Mission Section -->
+		{% set mission = cms['Company Mission'].content[0] if cms['Company Mission'].content else None %}
 		<section class="vjs-vm-section">
 			<div class="container">
 				<div class="vjs-vm-container">
 					<div class="vjs-vm-image wow fadeInLeft">
-						<img src="{{ url_for('static', filename='images/media/mission_industrial.png') }}?v=1.0"
+						<img src="{% if mission and mission.image_url %}{{ mission.image_url }}{% else %}{{ url_for('static', filename='images/media/mission_industrial.png') }}?v=1.0{% endif %}"
 							alt="Company Mission - Empowering Communities">
 					</div>
 					<div class="vjs-vm-content wow fadeInRight">
 						<span class="vjs-vm-label">Our Path Forward</span>
-						<h2 class="vjs-vm-title">COMPANY<br>MISSION</h2>
-						<p class="vjs-vm-text">Defining sustainable growth through innovative infrastructure, ethical
-							trade, and financial excellence, empowering communities and nations for a resilient future.
+						<h2 class="vjs-vm-title">
+							{% if mission and mission.title %}
+								{{ mission.title | safe }}
+							{% else %}
+								COMPANY<br>MISSION
+							{% endif %}
+						</h2>
+						<p class="vjs-vm-text">
+							{% if mission and mission.description %}
+								{{ mission.description | safe }}
+							{% else %}
+								Defining sustainable growth through innovative infrastructure, ethical
+								trade, and financial excellence, empowering communities and nations for a resilient future.
+							{% endif %}
 						</p>
 					</div>
 				</div>

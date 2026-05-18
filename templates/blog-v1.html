@@ -739,9 +739,10 @@
 		============================================== 
 		-->
 		<!-- STATIC HERO SECTION -->
+		{% set hero = cms['Hero Section'].content[0] if cms['Hero Section'] and cms['Hero Section'].content else None %}
 		<div class="hero-banner-one vjs-foundation-hero">
 			<div class="hero-img">
-				<img src="{{ url_for('static', filename='images/media/foundation_edu.png') }}"
+				<img src="{{ hero.image_url if hero else url_for('static', filename='images/media/foundation_edu.png') }}"
 					alt="Vijayalakshmi Foundation" style="width: 100%; height: 100%; object-fit: cover;">
 				<div class="hero-overlay" style="background: rgba(0,0,0,0.4);"></div>
 			</div>
@@ -749,8 +750,13 @@
 				<div class="row">
 					<div class="col-lg-8 col-md-10">
 						<div class="foundation-card">
-							<h1>Empowering Communities, <span style="color: #9ec008;">Transforming Lives</span></h1>
-							<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">At Vijayalakshmi Foundation, we are committed to driving grassroots change through sustainable education, healthcare, and environmental initiatives. Together, we build a future where every individual has the opportunity to thrive.</p>
+							{% if hero %}
+								<h1>{{ hero.title }}</h1>
+								<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">{{ hero.description }}</p>
+							{% else %}
+								<h1>Empowering Communities, <span style="color: #9ec008;">Transforming Lives</span></h1>
+								<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">At Vijayalakshmi Foundation, we are committed to driving grassroots change through sustainable education, healthcare, and environmental initiatives. Together, we build a future where every individual has the opportunity to thrive.</p>
+							{% endif %}
 						</div>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb" style="background: none; padding: 0; margin-top: 20px;">
@@ -773,6 +779,7 @@
 			Quote Section (Second Section)
 		=====================================================
 		-->
+		{% set purpose = cms['Purpose Statement'].content[0] if cms['Purpose Statement'] and cms['Purpose Statement'].content else None %}
 		<div class="quote-section-one pt-120 pb-120"
 			style="background: #fdfdfd; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
 			<div class="container">
@@ -786,23 +793,40 @@
 									<img src="{{ url_for('static', filename='images/icon/icon_93.svg') }}?v=1.0" alt=""
 										style="width: 45px; filter: brightness(0);">
 								</div>
-								<h2 class="text-white fw-500 mb-50"
-									style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-									"Driving community upliftment and sustainable social impact through education, basic
-									support, and local development."</h2>
-								<div class="d-flex align-items-center justify-content-center">
-									<div
-										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
+								{% if purpose %}
+									<h2 class="text-white fw-500 mb-50"
+										style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+										"{{ purpose.description }}"</h2>
+									<div class="d-flex align-items-center justify-content-center">
+										<div
+											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
+										</div>
+										<h6 class="post-info text-white m0"
+											style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
+											{{ purpose.title }}</h6>
+										<div
+											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
+										</div>
 									</div>
-									<h6 class="post-info text-white m0"
-										style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
-										Lakshmi Trust Initiative. <span
-											style="color: #9ec008; font-weight: 700; margin-left: 10px;">Purpose
-											Statement</span></h6>
-									<div
-										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
+								{% else %}
+									<h2 class="text-white fw-500 mb-50"
+										style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+										"Driving community upliftment and sustainable social impact through education, basic
+										support, and local development."</h2>
+									<div class="d-flex align-items-center justify-content-center">
+										<div
+											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
+										</div>
+										<h6 class="post-info text-white m0"
+											style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
+											Lakshmi Trust Initiative. <span
+												style="color: #9ec008; font-weight: 700; margin-left: 10px;">Purpose
+												Statement</span></h6>
+										<div
+											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
+										</div>
 									</div>
-								</div>
+								{% endif %}
 							</div>
 						</div>
 					</div>
@@ -816,25 +840,35 @@
 			Ecosystem Section
 		=====================================================
 		-->
+		{% set it_academy = cms['Aditya IT Academy'].content[0] if cms['Aditya IT Academy'] and cms['Aditya IT Academy'].content else None %}
 		<div class="ecosystem-section pt-120 pb-120 bg-white">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
-						<div class="title-style-one mb-40">
-							<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">Where Education
-								<br><span style="color: #9ec008;">Meets Opportunity</span>
-							</h2>
-						</div>
-						<p class="text-lg mb-30" style="color: #444; line-height: 1.8;">
-							<strong>Aditya Institute – Academy & IT Skilling Hub</strong>, powered by the Vijayalakshmi
-							Foundation, is built to transform learning into real careers.
-						</p>
-						<p class="mb-40" style="color: #666; line-height: 1.8; font-size: 17px;">
-							We are not just an institute—we are part of a larger mission to empower students through
-							education, skill development, and employment opportunities. Many students supported by the
-							foundation begin their journey here, gaining industry-ready IT skills and practical
-							knowledge.
-						</p>
+						{% if it_academy %}
+							<div class="title-style-one mb-40">
+								<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">{{ it_academy.title }}</h2>
+							</div>
+							<p class="text-lg mb-30" style="color: #444; line-height: 1.8; font-size: 17px;">
+								{{ it_academy.description }}
+							</p>
+						{% else %}
+							<div class="title-style-one mb-40">
+								<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">Where Education
+									<br><span style="color: #9ec008;">Meets Opportunity</span>
+								</h2>
+							</div>
+							<p class="text-lg mb-30" style="color: #444; line-height: 1.8;">
+								<strong>Aditya Institute – Academy & IT Skilling Hub</strong>, powered by the Vijayalakshmi
+								Foundation, is built to transform learning into real careers.
+							</p>
+							<p class="mb-40" style="color: #666; line-height: 1.8; font-size: 17px;">
+								We are not just an institute—we are part of a larger mission to empower students through
+								education, skill development, and employment opportunities. Many students supported by the
+								foundation begin their journey here, gaining industry-ready IT skills and practical
+								knowledge.
+							</p>
+						{% endif %}
 						<h5 class="fw-bold mb-40"
 							style="color: #081c17; font-size: 22px; border-left: 4px solid #9ec008; padding-left: 15px;">
 							Our goal is simple: to turn potential into profession.
@@ -887,7 +921,7 @@
 						<div class="img-gallery position-relative mt-50 lg-mt-20 ps-xl-5">
 							<div class="position-relative"
 								style="border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
-								<img src="{{ url_for('static', filename='images/media/aditya_institute_learning.png') }}?v=1.0"
+								<img src="{{ it_academy.image_url if it_academy else url_for('static', filename='images/media/aditya_institute_learning.png') }}"
 									alt="Students Learning" class="w-100" style="object-fit: cover; aspect-ratio: 4/3;">
 								<div
 									style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(8, 28, 23, 0.2) 0%, rgba(158, 192, 8, 0.2) 100%); mix-blend-mode: multiply;">
@@ -1116,22 +1150,30 @@
 		</style>
 
 		<!-- Section 4: Vijay Anjaneya Traders -->
+		{% set anjaneya = cms['Vijay Anjaneya CSR'].content[0] if cms['Vijay Anjaneya CSR'] and cms['Vijay Anjaneya CSR'].content else None %}
 		<div class="foundation-biz-section bg-soft-purple">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-img-container">
-							<div class="f-biz-badge">Nourishment</div>
-							<img src="{{ url_for('static', filename='images/media/hero_foundation_2.png') }}" alt="Nourishment">
+							<img src="{{ anjaneya.image_url if anjaneya else url_for('static', filename='images/media/hero_foundation_2.png') }}" alt="Nourishment">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-content ps-lg-5">
-							<h2>Vijay Anjaneya Traders – <span class="f-highlight">Sharing Nourishment</span> with Humanity</h2>
-							<p>Vijay Anjaneya Traders actively supports orphanages and old age homes by providing food, fruits, and essential supplies to those in need. We believe that no individual should experience hunger or neglect, especially the elderly and children without support systems. Our contribution reflects compassion, dignity, and the commitment to spreading care through essential nourishment and community service.</p>
-							<div class="f-quote-box">
-								<span>"Spreading care through essential nourishment"</span>
-							</div>
+							{% if anjaneya %}
+								<h2>{{ anjaneya.title }}</h2>
+								<p>{{ anjaneya.description }}</p>
+								<div class="f-quote-box">
+									<span>"{{ anjaneya.subtitle or "Spreading care through essential nourishment" }}"</span>
+								</div>
+							{% else %}
+								<h2>Vijay Anjaneya Traders – <span class="f-highlight">Sharing Nourishment</span> with Humanity</h2>
+								<p>Vijay Anjaneya Traders actively supports orphanages and old age homes by providing food, fruits, and essential supplies to those in need. We believe that no individual should experience hunger or neglect, especially the elderly and children without support systems. Our contribution reflects compassion, dignity, and the commitment to spreading care through essential nourishment and community service.</p>
+								<div class="f-quote-box">
+									<span>"Spreading care through essential nourishment"</span>
+								</div>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -1141,22 +1183,30 @@
 		<div class="f-divider"></div>
 
 		<!-- Section 5: Aditya Powers -->
+		{% set aditya_powers = cms['Aditya Powers'].content[0] if cms['Aditya Powers'] and cms['Aditya Powers'].content else None %}
 		<div class="foundation-biz-section bg-white">
 			<div class="container">
 				<div class="row align-items-center flex-row-reverse">
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-img-container">
-							<div class="f-biz-badge">Sustainable Energy</div>
-							<img src="{{ url_for('static', filename='images/media/vjs_energy_glance_1.png') }}" alt="Solar Energy">
+							<img src="{{ aditya_powers.image_url if aditya_powers else url_for('static', filename='images/media/vjs_energy_glance_1.png') }}" alt="Solar Energy">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-content pe-lg-5">
-							<h2>Aditya Powers – <span class="f-highlight">Empowering Lives</span> Through Sustainable Energy</h2>
-							<p>Aditya Powers proudly supports recently widowed women by providing free solar energy solutions for their homes. This initiative is designed to reduce financial burden while promoting sustainable and independent living. By bringing renewable energy into vulnerable households, we aim to create hope, security, and long-term empowerment for women facing difficult life circumstances.</p>
-							<div class="f-quote-box">
-								<span>"Bringing light to vulnerable households"</span>
-							</div>
+							{% if aditya_powers %}
+								<h2>{{ aditya_powers.title }}</h2>
+								<p>{{ aditya_powers.description }}</p>
+								<div class="f-quote-box">
+									<span>"{{ aditya_powers.subtitle or "Bringing light to vulnerable households" }}"</span>
+								</div>
+							{% else %}
+								<h2>Aditya Powers – <span class="f-highlight">Empowering Lives</span> Through Sustainable Energy</h2>
+								<p>Aditya Powers proudly supports recently widowed women by providing free solar energy solutions for their homes. This initiative is designed to reduce financial burden while promoting sustainable and independent living. By bringing renewable energy into vulnerable households, we aim to create hope, security, and long-term empowerment for women facing difficult life circumstances.</p>
+								<div class="f-quote-box">
+									<span>"Bringing light to vulnerable households"</span>
+								</div>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -1166,22 +1216,30 @@
 		<div class="f-divider"></div>
 
 		<!-- Section 6: Springreen -->
+		{% set springreen = cms['Springreen'].content[0] if cms['Springreen'] and cms['Springreen'].content else None %}
 		<div class="foundation-biz-section bg-soft-purple">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-img-container">
-							<div class="f-biz-badge">Employment</div>
-							<img src="{{ url_for('static', filename='images/media/whyus_training.png') }}" alt="Employment">
+							<img src="{{ springreen.image_url if springreen else url_for('static', filename='images/media/whyus_training.png') }}" alt="Employment">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-content ps-lg-5">
-							<h2>Springreen – Creating <span class="f-highlight">Opportunities</span> for Better Futures</h2>
-							<p>Springreen is dedicated to empowering unemployed youth, bachelors, and economically disadvantaged individuals by creating meaningful employment opportunities. We believe that employment is not just a source of income but a pathway to dignity, confidence, and self-reliance. Our initiatives focus on helping individuals build stable careers and brighter futures through inclusive growth and equal opportunities.</p>
-							<div class="f-quote-box">
-								<span>"Employment as a pathway to dignity"</span>
-							</div>
+							{% if springreen %}
+								<h2>{{ springreen.title }}</h2>
+								<p>{{ springreen.description }}</p>
+								<div class="f-quote-box">
+									<span>"{{ springreen.subtitle or "Employment as a pathway to dignity" }}"</span>
+								</div>
+							{% else %}
+								<h2>Springreen – Creating <span class="f-highlight">Opportunities</span> for Better Futures</h2>
+								<p>Springreen is dedicated to empowering unemployed youth, bachelors, and economically disadvantaged individuals by creating meaningful employment opportunities. We believe that employment is not just a source of income but a pathway to dignity, confidence, and self-reliance. Our initiatives focus on helping individuals build stable careers and brighter futures through inclusive growth and equal opportunities.</p>
+								<div class="f-quote-box">
+									<span>"Employment as a pathway to dignity"</span>
+								</div>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -1191,22 +1249,30 @@
 		<div class="f-divider"></div>
 
 		<!-- Section 7: Real Estate Division -->
+		{% set real_estate = cms['Real Estate Division'].content[0] if cms['Real Estate Division'] and cms['Real Estate Division'].content else None %}
 		<div class="foundation-biz-section bg-white">
 			<div class="container">
 				<div class="row align-items-center flex-row-reverse">
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-img-container">
-							<div class="f-biz-badge">Profit with Purpose</div>
-							<img src="{{ url_for('static', filename='images/media/hero_foundation_1.png') }}" alt="Elderly Care">
+							<img src="{{ real_estate.image_url if real_estate else url_for('static', filename='images/media/hero_foundation_1.png') }}" alt="Elderly Care">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-content pe-lg-5">
-							<h2>Real Estate Division – <span class="f-highlight">Profits with a Purpose</span></h2>
-							<p>Our Real Estate Division proudly contributes 1% of its profits toward supporting old age homes and elderly care initiatives. We strongly believe that business growth should also create social value and meaningful community impact. Through this contribution, we continue to support senior citizens with dignity, care, and essential resources that improve their quality of life.</p>
-							<div class="f-quote-box">
-								<span>"1% of profits for elderly care"</span>
-							</div>
+							{% if real_estate %}
+								<h2>{{ real_estate.title }}</h2>
+								<p>{{ real_estate.description }}</p>
+								<div class="f-quote-box">
+									<span>"{{ real_estate.subtitle or "1% of profits for elderly care" }}"</span>
+								</div>
+							{% else %}
+								<h2>Real Estate Division – <span class="f-highlight">Profits with a Purpose</span></h2>
+								<p>Our Real Estate Division proudly contributes 1% of its profits toward supporting old age homes and elderly care initiatives. We strongly believe that business growth should also create social value and meaningful community impact. Through this contribution, we continue to support senior citizens with dignity, care, and essential resources that improve their quality of life.</p>
+								<div class="f-quote-box">
+									<span>"1% of profits for elderly care"</span>
+								</div>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -1216,22 +1282,30 @@
 		<div class="f-divider"></div>
 
 		<!-- Section 8: Aham Grham -->
+		{% set aham_grham = cms['Aham Grham'].content[0] if cms['Aham Grham'] and cms['Aham Grham'].content else None %}
 		<div class="foundation-biz-section bg-soft-purple">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-img-container">
-							<div class="f-biz-badge">Wellness</div>
-							<img src="{{ url_for('static', filename='images/media/vjs_yoga_new.png') }}" alt="Wellness">
+							<img src="{{ aham_grham.image_url if aham_grham else url_for('static', filename='images/media/vjs_yoga_new.png') }}" alt="Wellness">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-content ps-lg-5">
-							<h2>Aham Grham – <span class="f-highlight">Wellness</span> with a Social Purpose</h2>
-							<p>Aham Grham organizes yoga camps and wellness programs focused on promoting healthy living, inner peace, and mental wellbeing. As part of our social contribution, a portion of the proceeds from these initiatives supports orphanages and children in need. Our goal is to combine wellness with compassion, creating positive change both for the individual and the broader community.</p>
-							<div class="f-quote-box">
-								<span>"Wellness combined with compassion"</span>
-							</div>
+							{% if aham_grham %}
+								<h2>{{ aham_grham.title }}</h2>
+								<p>{{ aham_grham.description }}</p>
+								<div class="f-quote-box">
+									<span>"{{ aham_grham.subtitle or "Wellness combined with compassion" }}"</span>
+								</div>
+							{% else %}
+								<h2>Aham Grham – <span class="f-highlight">Wellness</span> with a Social Purpose</h2>
+								<p>Aham Grham organizes yoga camps and wellness programs focused on promoting healthy living, inner peace, and mental wellbeing. As part of our social contribution, a portion of the proceeds from these initiatives supports orphanages and children in need. Our goal is to combine wellness with compassion, creating positive change both for the individual and the broader community.</p>
+								<div class="f-quote-box">
+									<span>"Wellness combined with compassion"</span>
+								</div>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -1259,68 +1333,89 @@
 				</div>
 
 				<div class="row gx-xl-5 gy-5">
-					<!-- Card 1: Education Support -->
-					<div class="col-lg-4 col-md-6 wow fadeInUp">
-						<div class="glance-card-premium"
-							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-								<img src="{{ url_for('static', filename='images/media/glance_empowerment.png') }}?v=1.0"
-									alt="Education Support" class="w-100 h-100 tran4s" style="object-fit: cover;">
-								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
-									class="accent-bar"></div>
+					{% if cms['At a Glance'] and cms['At a Glance'].content %}
+						{% for card in cms['At a Glance'].content %}
+							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+								<div class="glance-card-premium"
+									style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+									<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+										<img src="{{ card.image_url }}"
+											alt="{{ card.title }}" class="w-100 h-100 tran4s" style="object-fit: cover;">
+										<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+											class="accent-bar"></div>
+									</div>
+									<div class="p-4 pt-30 pb-40 px-xl-5">
+										<h5 class="fw-bold mb-15"
+											style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">{{ card.title }}
+										</h5>
+										<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">{{ card.description }}</p>
+									</div>
+								</div>
 							</div>
-							<div class="p-4 pt-30 pb-40 px-xl-5">
-								<h5 class="fw-bold mb-15"
-									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Education Support
-								</h5>
-								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Assistance for
-									students, learning resources, and basic digital exposure to build future-ready
-									talent.</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 2: Social Service -->
-					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-						<div class="glance-card-premium"
-							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-								<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0"
-									alt="Social Service" class="w-100 h-100 tran4s" style="object-fit: cover;">
-								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
-									class="accent-bar"></div>
-							</div>
-							<div class="p-4 pt-30 pb-40 px-xl-5">
-								<h5 class="fw-bold mb-15"
-									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Social Service</h5>
-								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Financial and
-									material support during critical needs, rural assistance, and emergency support
-									programs.</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- Card 3: Community Development -->
-					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-						<div class="glance-card-premium"
-							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-								<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0"
-									alt="Community Development" class="w-100 h-100 tran4s" style="object-fit: cover;">
-								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
-									class="accent-bar"></div>
-							</div>
-							<div class="p-4 pt-30 pb-40 px-xl-5">
-								<h5 class="fw-bold mb-15"
-									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Community
-									Development</h5>
-								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Driving
-									sustainable grassroots development through local engagement and infrastructure
-									needs.</p>
+						{% endfor %}
+					{% else %}
+						<!-- Card 1: Education Support -->
+						<div class="col-lg-4 col-md-6 wow fadeInUp">
+							<div class="glance-card-premium"
+								style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+								<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+									<img src="{{ url_for('static', filename='images/media/glance_empowerment.png') }}?v=1.0"
+										alt="Education Support" class="w-100 h-100 tran4s" style="object-fit: cover;">
+									<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+										class="accent-bar"></div>
+								</div>
+								<div class="p-4 pt-30 pb-40 px-xl-5">
+									<h5 class="fw-bold mb-15"
+										style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Education Support
+									</h5>
+									<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Assistance for
+										students, learning resources, and basic digital exposure to build future-ready
+										talent.</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
+						<!-- Card 2: Social Service -->
+						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+							<div class="glance-card-premium"
+								style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+								<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+									<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0"
+										alt="Social Service" class="w-100 h-100 tran4s" style="object-fit: cover;">
+									<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+										class="accent-bar"></div>
+								</div>
+								<div class="p-4 pt-30 pb-40 px-xl-5">
+									<h5 class="fw-bold mb-15"
+										style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Social Service</h5>
+									<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Financial and
+										material support during critical needs, rural assistance, and emergency support
+										programs.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card 3: Community Development -->
+						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+							<div class="glance-card-premium"
+								style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+								<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+									<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0"
+										alt="Community Development" class="w-100 h-100 tran4s" style="object-fit: cover;">
+									<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+										class="accent-bar"></div>
+								</div>
+								<div class="p-4 pt-30 pb-40 px-xl-5">
+									<h5 class="fw-bold mb-15"
+										style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Community
+										Development</h5>
+									<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Driving
+										sustainable grassroots development through local engagement and infrastructure
+										needs.</p>
+								</div>
+							</div>
+						</div>
+					{% endif %}
 				</div>
 
 				<!-- Proof of Impact Section -->
