@@ -97,7 +97,7 @@
 			}
 		}
 	</style>
-<style>
+	<style>
 		/* ===== PREMIUM BRANDED PRELOADER ===== */
 		#preloader {
 			position: fixed;
@@ -141,7 +141,7 @@
 			align-items: center;
 			justify-content: center;
 			animation: logoBreathing 4s ease-in-out infinite;
-			box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 		}
 
 		.logo-circle img {
@@ -161,19 +161,46 @@
 			z-index: 1;
 		}
 
-		.pulse-ring:nth-child(1) { animation-delay: 0s; }
-		.pulse-ring:nth-child(2) { animation-delay: 1.3s; }
-		.pulse-ring:nth-child(3) { animation-delay: 2.6s; }
+		.pulse-ring:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		.pulse-ring:nth-child(2) {
+			animation-delay: 1.3s;
+		}
+
+		.pulse-ring:nth-child(3) {
+			animation-delay: 2.6s;
+		}
 
 		@keyframes ringPulse {
-			0% { transform: scale(1); opacity: 0; }
-			30% { opacity: 0.6; }
-			100% { transform: scale(2.8); opacity: 0; }
+			0% {
+				transform: scale(1);
+				opacity: 0;
+			}
+
+			30% {
+				opacity: 0.6;
+			}
+
+			100% {
+				transform: scale(2.8);
+				opacity: 0;
+			}
 		}
 
 		@keyframes logoBreathing {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50% { opacity: 0.8; transform: scale(0.96); }
+
+			0%,
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			50% {
+				opacity: 0.8;
+				transform: scale(0.96);
+			}
 		}
 
 		.brand-text {
@@ -221,13 +248,25 @@
 		}
 
 		@keyframes fillBar {
-			0% { width: 0%; }
-			100% { width: 100%; }
+			0% {
+				width: 0%;
+			}
+
+			100% {
+				width: 100%;
+			}
 		}
 
 		@keyframes fadeInText {
-			from { opacity: 0; transform: translateY(10px); }
-			to { opacity: 1; transform: translateY(0); }
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		.loading-text {
@@ -241,8 +280,15 @@
 		}
 
 		@keyframes blinkText {
-			0%, 100% { opacity: 0.8; }
-			50% { opacity: 0.2; }
+
+			0%,
+			100% {
+				opacity: 0.8;
+			}
+
+			50% {
+				opacity: 0.2;
+			}
 		}
 	</style>
 </head>
@@ -256,7 +302,8 @@
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="logo-circle">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="VJS Logo">
 					</div>
 				</div>
 				<div class="brand-text">
@@ -508,28 +555,33 @@
 						</nav>
 
 						<div class="right-widget d-none d-lg-flex align-items-center">
-							
-							</div>
-							<!-- Language Dropdown -->
-							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
-								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
-									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
-										style="font-size: 10px;"></i>
-								</button>
-								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
-								</ul>
-							</div>
+
 						</div>
-					</div> <!--/.top-header-->
-				</div> <!-- /.inner-content -->
+						<!-- Language Dropdown -->
+						<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+							<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+								<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="en">ENG</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="hi">हिन्दी (HIN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ta">தமிழ் (TAM)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="te">తెలుగు (TEL)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ml">മലയാളം (MAL)</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!--/.top-header-->
+			</div> <!-- /.inner-content -->
 		</header>
 		<!-- /.theme-main-menu -->
 		<!-- HERO SECTION -->
@@ -1403,6 +1455,7 @@
 					font-weight: 700;
 					margin: 12px 0 6px;
 					letter-spacing: -0.5px;
+					color: #ffffff !important;
 				}
 
 				.phase-desc {
@@ -1575,7 +1628,7 @@
 					font-weight: 400;
 				}
 
-				.detail-row + .detail-row {
+				.detail-row+.detail-row {
 					border-top: 0.5px solid rgba(0, 0, 0, 0.08) !important;
 					padding-top: 16px !important;
 				}
@@ -1901,338 +1954,337 @@
 
 
 
-			<!-- Modal -->
-			<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-				<div class="modal-dialog modal-fullscreen modal-dialog-centered">
-					<div class="container">
-						<div class="user-data-form modal-content">
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							<div class="form-wrapper m-auto">
-								<ul class="nav nav-tabs border-0 w-100" role="tablist">
-									<li class="nav-item" role="presentation">
-										<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1"
-											role="tab">Login</button>
-									</li>
-									<li class="nav-item" role="presentation">
-										<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2"
-											role="tab">Signup</button>
-									</li>
-								</ul>
-								<div class="tab-content mt-30">
-									<div class="tab-pane show active" role="tabpanel" id="fc1">
-										<div class="text-center mb-20">
-											<h2>Hi, Welcome Back!</h2>
-											<p>Still don't have an account? <a href="#">Sign up</a></p>
-										</div>
-										<form action="#">
-											<div class="row">
-												<div class="col-12">
-													<div class="input-group-meta position-relative mb-25">
-														<label>Email*</label>
-														<input type="email" placeholder="Youremail@gmail.com">
-													</div>
-												</div>
-												<div class="col-12">
-													<div class="input-group-meta position-relative mb-20">
-														<label>Password*</label>
-														<input type="password" placeholder="Enter Password"
-															class="pass_log_id">
-														<span class="placeholder_icon"><span class="passVicon"><img
-																	src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
-																	alt=""></span></span>
-													</div>
-												</div>
-												<div class="col-12">
-													<div
-														class="agreement-checkbox d-flex justify-content-between align-items-center">
-														<div>
-															<input type="checkbox" id="remember">
-															<label for="remember">Keep me logged in</label>
-														</div>
-														<a href="#">Forget Password?</a>
-													</div> <!-- /.agreement-checkbox -->
-												</div>
-												<div class="col-12">
-													<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
+		<!-- Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-fullscreen modal-dialog-centered">
+				<div class="container">
+					<div class="user-data-form modal-content">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="form-wrapper m-auto">
+							<ul class="nav nav-tabs border-0 w-100" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#fc1"
+										role="tab">Login</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" data-bs-toggle="tab" data-bs-target="#fc2"
+										role="tab">Signup</button>
+								</li>
+							</ul>
+							<div class="tab-content mt-30">
+								<div class="tab-pane show active" role="tabpanel" id="fc1">
+									<div class="text-center mb-20">
+										<h2>Hi, Welcome Back!</h2>
+										<p>Still don't have an account? <a href="#">Sign up</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="Youremail@gmail.com">
 												</div>
 											</div>
-										</form>
-									</div>
-									<!-- /.tab-pane -->
-									<div class="tab-pane" role="tabpanel" id="fc2">
-										<div class="text-center mb-20">
-											<h2>Register</h2>
-											<p>Already have an account? <a href="#">Login</a></p>
-										</div>
-										<form action="#">
-											<div class="row">
-												<div class="col-12">
-													<div class="input-group-meta position-relative mb-25">
-														<label>Name*</label>
-														<input type="text" placeholder="Zubayer Hasan">
-													</div>
-												</div>
-												<div class="col-12">
-													<div class="input-group-meta position-relative mb-25">
-														<label>Email*</label>
-														<input type="email" placeholder="zubayerhasan@gmail.com">
-													</div>
-												</div>
-												<div class="col-12">
-													<div class="input-group-meta position-relative mb-20">
-														<label>Password*</label>
-														<input type="password" placeholder="Enter Password"
-															class="pass_log_id">
-														<span class="placeholder_icon"><span class="passVicon"><img
-																	src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
-																	alt=""></span></span>
-													</div>
-												</div>
-												<div class="col-12">
-													<div
-														class="agreement-checkbox d-flex justify-content-between align-items-center">
-														<div>
-															<input type="checkbox" id="remember2">
-															<label for="remember2">By hitting the "Register" button, you
-																agree to the <a href="#">Terms conditions</a> & <a
-																	href="#">Privacy Policy</a></label>
-														</div>
-													</div> <!-- /.agreement-checkbox -->
-												</div>
-												<div class="col-12">
-													<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
 												</div>
 											</div>
-										</form>
-									</div>
-									<!-- /.tab-pane -->
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember">
+														<label for="remember">Keep me logged in</label>
+													</div>
+													<a href="#">Forget Password?</a>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Login</button>
+											</div>
+										</div>
+									</form>
 								</div>
+								<!-- /.tab-pane -->
+								<div class="tab-pane" role="tabpanel" id="fc2">
+									<div class="text-center mb-20">
+										<h2>Register</h2>
+										<p>Already have an account? <a href="#">Login</a></p>
+									</div>
+									<form action="#">
+										<div class="row">
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Name*</label>
+													<input type="text" placeholder="Zubayer Hasan">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-25">
+													<label>Email*</label>
+													<input type="email" placeholder="zubayerhasan@gmail.com">
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="input-group-meta position-relative mb-20">
+													<label>Password*</label>
+													<input type="password" placeholder="Enter Password"
+														class="pass_log_id">
+													<span class="placeholder_icon"><span class="passVicon"><img
+																src="{{ url_for('static', filename='images/icon/icon_13.svg') }}?v=1.0"
+																alt=""></span></span>
+												</div>
+											</div>
+											<div class="col-12">
+												<div
+													class="agreement-checkbox d-flex justify-content-between align-items-center">
+													<div>
+														<input type="checkbox" id="remember2">
+														<label for="remember2">By hitting the "Register" button, you
+															agree to the <a href="#">Terms conditions</a> & <a
+																href="#">Privacy Policy</a></label>
+													</div>
+												</div> <!-- /.agreement-checkbox -->
+											</div>
+											<div class="col-12">
+												<button class="btn-four w-100 tran3s d-block mt-20">Sign up</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- /.tab-pane -->
+							</div>
 
-								<div class="d-flex align-items-center mt-30 mb-10">
-									<div class="line"></div>
-									<span class="pe-3 ps-3 fs-6">OR</span>
-									<div class="line"></div>
+							<div class="d-flex align-items-center mt-30 mb-10">
+								<div class="line"></div>
+								<span class="pe-3 ps-3 fs-6">OR</span>
+								<div class="line"></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Google</span>
+									</a>
 								</div>
-								<div class="row">
-									<div class="col-sm-6">
-										<a href="#"
-											class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-											<img src="{{ url_for('static', filename='images/icon/google.png') }}?v=1.0"
-												alt="">
-											<span class="ps-3">Signup with Google</span>
-										</a>
-									</div>
-									<div class="col-sm-6">
-										<a href="#"
-											class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
-											<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0"
-												alt="">
-											<span class="ps-3">Signup with Facebook</span>
-										</a>
-									</div>
+								<div class="col-sm-6">
+									<a href="#"
+										class="social-use-btn d-flex align-items-center justify-content-center tran3s w-100 mt-10">
+										<img src="{{ url_for('static', filename='images/icon/facebook.png') }}?v=1.0"
+											alt="">
+										<span class="ps-3">Signup with Facebook</span>
+									</a>
 								</div>
 							</div>
-							<!-- /.form-wrapper -->
 						</div>
-						<!-- /.user-data-form -->
+						<!-- /.form-wrapper -->
+					</div>
+					<!-- /.user-data-form -->
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
+		<!-- WOW js -->
+		<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
+		<!-- Slick Slider -->
+		<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
+		<!-- Fancybox -->
+		<script src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
+		<!-- Lazy -->
+		<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
+		<!-- js Counter -->
+		<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
+
+		<!-- validator js -->
+		<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
+
+		<!-- Theme js -->
+		<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
+		<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
+		<!-- Navbar Hover Animation -->
+		<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
+		<script>
+			$(document).ready(function () {
+				$('.vjs-milestone-content').on('click', function () {
+					$(this).toggleClass('active');
+					$(this).find('.vjs-gallery-wrap').slideToggle(500);
+				});
+				// Clean timeline labels (replace colons with a long dash)
+				$('.detail-row strong').each(function () {
+					$(this).html($(this).html().replace(':', ' —'));
+				});
+			});
+		</script>
+		<!-- Hero Slider Logic -->
+		<script>
+			$(document).ready(function () {
+				var $heroSlider = $('.hero-slider-one');
+				if ($heroSlider.length) {
+					$heroSlider.slick({
+						dots: false,
+						arrows: false,
+						fade: true,
+						infinite: true,
+						autoplay: false, // Handled by video 'ended' event
+						speed: 1000
+					});
+
+					// Bind navigation buttons
+					$('.prev-hero').click(function () {
+						$heroSlider.slick('slickPrev');
+					});
+					$('.next-hero').click(function () {
+						$heroSlider.slick('slickNext');
+					});
+
+					// Sequential Video Playback Logic
+					function playCurrentVideo() {
+						var $currentSlide = $('.hero-slider-one .slick-current');
+						var $video = $currentSlide.find('video');
+
+						if ($video.length) {
+							var video = $video[0];
+							video.currentTime = 0;
+							var playPromise = video.play();
+
+							if (playPromise !== undefined) {
+								playPromise.catch(error => {
+									console.log("Autoplay prevented, moving to next slide in 5s");
+									setTimeout(() => $heroSlider.slick('slickNext'), 5000);
+								});
+							}
+
+							$video.off('ended').on('ended', function () {
+								$heroSlider.slick('slickNext');
+							});
+						} else {
+							// Fallback for image slides
+							setTimeout(() => $heroSlider.slick('slickNext'), 5000);
+						}
+					}
+
+					// Initial play
+					playCurrentVideo();
+
+					// Play on slide change
+					$heroSlider.on('afterChange', function (event, slick, currentSlide) {
+						playCurrentVideo();
+					});
+				}
+			});
+		</script>
+	</div> <!-- /.main-page-wrapper -->
+
+
+	<footer class="footer-vjs-premium">
+		<div class="footer-gold-bar"></div>
+		<div class="footer-container">
+			<div class="footer-main">
+				<!-- Brand Column -->
+				<div class="footer-column footer-brand-col">
+					<div class="footer-logo">
+						<div class="logo-icon-circle">
+							<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo"
+								style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+						</div>
+						<div class="logo-text">
+							<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+							<span class="brand-sub">OF COMPANIES</span>
+						</div>
+					</div>
+					<div class="footer-divider-h"></div>
+					<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
+					<div class="social-links">
+						<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+					</div>
+				</div>
+
+				<!-- About Us Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">ABOUT US</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/about-us-v2">About Company</a></li>
+						<li><a href="/about-us-v1">Chairman's Office</a></li>
+						<li><a href="/service-v1">Leadership</a></li>
+						<li><a href="/about-us-v1">Our Journey</a></li>
+						<li><a href="/service-v1">Awards</a></li>
+					</ul>
+				</div>
+
+				<!-- Businesses Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">BUSINESSES</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/it-consulting">Infrastructure</a></li>
+						<li><a href="/green-energy">Energy & Utilities</a></li>
+						<li><a href="/logistics-services">Transport & Logistics</a></li>
+						<li><a href="/export-import">Consumer Products</a></li>
+						<li><a href="/property-services">Real Estate</a></li>
+						<li><a href="/yoga-wellness">Healthcare</a></li>
+					</ul>
+				</div>
+
+				<!-- Quick Links Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">QUICK LINKS</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/sustainability">Sustainability</a></li>
+						<li><a href="/media-kit">Media Kit</a></li>
+						<li><a href="/media-release">Newsroom</a></li>
+						<li><a href="/about-us-v1">Careers</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom Bar -->
+		<div class="footer-bottom-vjs">
+			<div class="footer-container">
+				<div class="bottom-inner">
+					<div class="copyright">
+						<i class="bi bi-crown-fill gold-icon"></i>
+						<span>© 2026 Vijayalakshmi Group of Companies</span>
+					</div>
+					<div class="legal-links">
+						<a href="#">All rights reserved</a>
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
 					</div>
 				</div>
 			</div>
-
-
-			
-
-
-
-
-			<!-- Optional JavaScript _____________________________  -->
-
-			<!-- jQuery first, then Bootstrap JS -->
-			<!-- jQuery -->
-			<script src="{{ url_for('static', filename='vendor/jquery.min.js') }}?v=1.0"></script>
-			<!-- Bootstrap JS -->
-			<script
-				src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}?v=1.0"></script>
-			<!-- WOW js -->
-			<script src="{{ url_for('static', filename='vendor/wow/wow.min.js') }}?v=1.0"></script>
-			<!-- Slick Slider -->
-			<script src="{{ url_for('static', filename='vendor/slick/slick.min.js') }}?v=1.0"></script>
-			<!-- Fancybox -->
-			<script
-				src="{{ url_for('static', filename='vendor/fancybox/dist/jquery.fancybox.min.js') }}?v=1.0"></script>
-			<!-- Lazy -->
-			<script src="{{ url_for('static', filename='vendor/jquery.lazy.min.js') }}?v=1.0"></script>
-			<!-- js Counter -->
-			<script src="{{ url_for('static', filename='vendor/jquery.counterup.min.js') }}?v=1.0"></script>
-			<script src="{{ url_for('static', filename='vendor/jquery.waypoints.min.js') }}?v=1.0"></script>
-
-			<!-- validator js -->
-			<script src="{{ url_for('static', filename='vendor/validator.js') }}?v=1.0"></script>
-
-			<!-- Theme js -->
-			<script src="{{ url_for('static', filename='js/theme.js') }}?v=1.0"></script>
-			<script src="{{ url_for('static', filename='js/mega-dropdown.js') }}?v=1.0"></script>
-			<!-- Navbar Hover Animation -->
-			<script src="{{ url_for('static', filename='js/navbar-hover.js') }}?v=1.0"></script>
-			<script>
-				$(document).ready(function () {
-					$('.vjs-milestone-content').on('click', function () {
-						$(this).toggleClass('active');
-						$(this).find('.vjs-gallery-wrap').slideToggle(500);
-					});
-					// Clean timeline labels (replace colons with a long dash)
-					$('.detail-row strong').each(function() {
-						$(this).html($(this).html().replace(':', ' —'));
-					});
-				});
-			</script>
-			<!-- Hero Slider Logic -->
-			<script>
-				$(document).ready(function () {
-					var $heroSlider = $('.hero-slider-one');
-					if ($heroSlider.length) {
-						$heroSlider.slick({
-							dots: false,
-							arrows: false,
-							fade: true,
-							infinite: true,
-							autoplay: false, // Handled by video 'ended' event
-							speed: 1000
-						});
-
-						// Bind navigation buttons
-						$('.prev-hero').click(function () {
-							$heroSlider.slick('slickPrev');
-						});
-						$('.next-hero').click(function () {
-							$heroSlider.slick('slickNext');
-						});
-
-						// Sequential Video Playback Logic
-						function playCurrentVideo() {
-							var $currentSlide = $('.hero-slider-one .slick-current');
-							var $video = $currentSlide.find('video');
-
-							if ($video.length) {
-								var video = $video[0];
-								video.currentTime = 0;
-								var playPromise = video.play();
-
-								if (playPromise !== undefined) {
-									playPromise.catch(error => {
-										console.log("Autoplay prevented, moving to next slide in 5s");
-										setTimeout(() => $heroSlider.slick('slickNext'), 5000);
-									});
-								}
-
-								$video.off('ended').on('ended', function () {
-									$heroSlider.slick('slickNext');
-								});
-							} else {
-								// Fallback for image slides
-								setTimeout(() => $heroSlider.slick('slickNext'), 5000);
-							}
-						}
-
-						// Initial play
-						playCurrentVideo();
-
-						// Play on slide change
-						$heroSlider.on('afterChange', function (event, slick, currentSlide) {
-							playCurrentVideo();
-						});
-					}
-				});
-			</script>
-		</div> <!-- /.main-page-wrapper -->
-
-
-<footer class="footer-vjs-premium">
-				<div class="footer-gold-bar"></div>
-				<div class="footer-container">
-					<div class="footer-main">
-						<!-- Brand Column -->
-						<div class="footer-column footer-brand-col">
-							<div class="footer-logo">
-								<div class="logo-icon-circle">
-									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
-								</div>
-								<div class="logo-text">
-									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
-									<span class="brand-sub">OF COMPANIES</span>
-								</div>
-							</div>
-							<div class="footer-divider-h"></div>
-							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
-							<div class="social-links">
-								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
-							</div>
-						</div>
-
-						<!-- About Us Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">ABOUT US</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/about-us-v2">About Company</a></li>
-								<li><a href="/about-us-v1">Chairman's Office</a></li>
-								<li><a href="/service-v1">Leadership</a></li>
-								<li><a href="/about-us-v1">Our Journey</a></li>
-								<li><a href="/service-v1">Awards</a></li>
-							</ul>
-						</div>
-
-						<!-- Businesses Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">BUSINESSES</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/it-consulting">Infrastructure</a></li>
-								<li><a href="/green-energy">Energy & Utilities</a></li>
-								<li><a href="/logistics-services">Transport & Logistics</a></li>
-								<li><a href="/export-import">Consumer Products</a></li>
-								<li><a href="/property-services">Real Estate</a></li>
-								<li><a href="/yoga-wellness">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- Quick Links Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">QUICK LINKS</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/media-kit">Media Kit</a></li>
-								<li><a href="/media-release">Newsroom</a></li>
-								<li><a href="/about-us-v1">Careers</a></li>
-								
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- Bottom Bar -->
-				<div class="footer-bottom-vjs">
-					<div class="footer-container">
-						<div class="bottom-inner">
-							<div class="copyright">
-								<i class="bi bi-crown-fill gold-icon"></i>
-								<span>© 2026 Vijayalakshmi Group of Companies</span>
-							</div>
-							<div class="legal-links">
-								<a href="#">All rights reserved</a>
-                                <a href="#">Legal Disclaimer</a>
-								<a href="#">Privacy Notice</a>
-								<a href="#">Terms & Conditions</a>
-								<a href="#">Cookie Policy</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+		</div>
+	</footer>
 
 
 
@@ -2242,10 +2294,10 @@
 
 
 
-		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
-		<div id="google_translate_element" style="display:none;"></div>
-		<script type="text/javascript"
-			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
+	<div id="google_translate_element" style="display:none;"></div>
+	<script type="text/javascript"
+		src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 	<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
 		<i class="bi bi-chevron-double-up"></i>
@@ -2273,32 +2325,29 @@
 		});
 	</script>
 
-		
-		<script id="vjs-preloader-script">
-			(function() {
-				const startTime = Date.now();
-				window.addEventListener('load', function() {
-					const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
-					const elapsed = Date.now() - startTime;
-					const delay = Math.max(0, minDisplayTime - elapsed);
 
-					setTimeout(() => {
-						const preloader = document.getElementById('preloader');
-						if (preloader) {
-							preloader.style.opacity = '0';
-							preloader.style.visibility = 'hidden';
-							setTimeout(() => {
-								preloader.style.display = 'none';
-							}, 1000);
-						}
-						document.body.style.overflow = 'visible';
-					}, delay);
-				});
-			})();
-		</script>
+	<script id="vjs-preloader-script">
+		(function () {
+			const startTime = Date.now();
+			window.addEventListener('load', function () {
+				const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
+				const elapsed = Date.now() - startTime;
+				const delay = Math.max(0, minDisplayTime - elapsed);
+
+				setTimeout(() => {
+					const preloader = document.getElementById('preloader');
+					if (preloader) {
+						preloader.style.opacity = '0';
+						preloader.style.visibility = 'hidden';
+						setTimeout(() => {
+							preloader.style.display = 'none';
+						}, 1000);
+					}
+					document.body.style.overflow = 'visible';
+				}, delay);
+			});
+		})();
+	</script>
 </body>
 
 </html>
-
-
-

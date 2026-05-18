@@ -562,7 +562,7 @@
       }
 
       var breadcrumbHTML = `
-        <ul class="style-none d-inline-flex pager mt-40" style="padding-left: 0 !important;">
+        <ul class="style-none d-inline-flex pager mt-15" style="padding-left: 0 !important; margin-top: 15px !important;">
           <li><a href="/" class="text-white opacity-50">Home</a></li>
           ${midLevelHTML}
           <li><span class="text-white opacity-50 px-2">/</span></li>
