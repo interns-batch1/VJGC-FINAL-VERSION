@@ -402,7 +402,7 @@
   }
 
 
-  // ------------------------ Partner Slider One
+  // ------------------------ Partner Slider One (Infinite Continuous Marquee Ticker)
   if ($(".partner-slider-one").length) {
     $('.partner-slider-one').slick({
       dots: false,
@@ -412,7 +412,12 @@
       slidesToShow: 5,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 3500,
+      autoplaySpeed: 0,
+      speed: 6000,
+      cssEase: 'linear',
+      infinite: true,
+      pauseOnHover: false,
+      pauseOnFocus: false,
       responsive: [
         {
           breakpoint: 992,
