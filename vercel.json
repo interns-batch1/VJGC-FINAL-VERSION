@@ -4,12 +4,6 @@
       "excludeFiles": "static/**,backend/uploads/**"
     }
   },
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
-  ],
   "routes": [
     {
       "handle": "filesystem"
