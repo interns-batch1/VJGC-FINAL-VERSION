@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "static/**,backend/uploads/**"
+    }
+  },
   "builds": [
     {
       "src": "api/index.py",
