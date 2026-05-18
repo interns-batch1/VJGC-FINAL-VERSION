@@ -34,9 +34,12 @@ async def upload_image(file: UploadFile = File(...), admin: str = Depends(get_cu
             raise HTTPException(status_code=400, detail=f"Invalid file type: {file_ext}")
         
         try:
+            # Read file bytes asynchronously to avoid any file pointer streaming issues on Vercel
+            file_bytes = await file.read()
+            
             # Try Cloudinary upload first
             upload_result = cloudinary.uploader.upload(
-                file.file,
+                file_bytes,
                 folder="vjs_group",
                 resource_type="auto"
             )
