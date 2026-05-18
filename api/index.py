@@ -1,4 +1,5 @@
 import sys
+# Trigger fresh optimized build v2
 from pathlib import Path
 
 # Add the project root and backend directory to sys.path
