@@ -603,9 +603,9 @@
 						<source src="{{ slide.video_url or slide.image }}" type="video/mp4">
 					</video>
 					{% else %}
-					<div class="hero-video-bg"
-						style="background-image: url('{{ slide.image_url or slide.image or url_for('static', filename='images/media/our_journey_hero.png') }}'); background-size: cover; background-position: center; width: 100%; height: 100%;">
-					</div>
+					<img class="hero-video-bg"
+						src="{{ slide.image_url or slide.image or url_for('static', filename='images/media/our_journey_hero.png') }}"
+						style="object-fit: cover; width: 100%; height: 100%;" alt="Hero Background">
 					{% endif %}
 					<div class="hero-overlay"
 						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 1;">
@@ -633,7 +633,15 @@
 			{% endfor %}
 			{% else %}
 			<div class="bg-wrapper position-relative"
-				style="background-image: url('{{ url_for('static', filename='images/media/our_journey_hero.png') }}'); background-size: cover; background-position: center; min-height: 100vh; display: flex; align-items: center;">
+				style="min-height: 100vh; display: flex; align-items: center; overflow: hidden;">
+				<div class="hero-img-wrapper"
+					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+					<img class="hero-video-bg" src="{{ url_for('static', filename='images/media/our_journey_hero.png') }}"
+						style="width: 100%; height: 100%; object-fit: cover;" alt="Hero Background">
+					<div class="hero-overlay"
+						style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 1;">
+					</div>
+				</div>
 				<div class="container position-relative" style="z-index: 2;">
 					<div class="row justify-content-between">
 						<div class="col-lg-8 col-md-10 wow fadeInLeft">
@@ -650,9 +658,6 @@
 							</nav>
 						</div>
 					</div>
-				</div>
-				<div class="hero-overlay"
-					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 1;">
 				</div>
 			</div>
 			{% endif %}

@@ -124,7 +124,8 @@
 			display: flex !important;
 			align-items: center;
 			z-index: 5;
-			background: #08201b; /* Fallback */
+			background: #08201b;
+			/* Fallback */
 		}
 
 		.vjs-hero-slider .hero-img {
@@ -289,7 +290,7 @@
 			}
 		}
 	</style>
-<style>
+	<style>
 		/* ===== PREMIUM BRANDED PRELOADER ===== */
 		#preloader {
 			position: fixed;
@@ -333,7 +334,7 @@
 			align-items: center;
 			justify-content: center;
 			animation: logoBreathing 4s ease-in-out infinite;
-			box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 		}
 
 		.logo-circle img {
@@ -353,19 +354,46 @@
 			z-index: 1;
 		}
 
-		.pulse-ring:nth-child(1) { animation-delay: 0s; }
-		.pulse-ring:nth-child(2) { animation-delay: 1.3s; }
-		.pulse-ring:nth-child(3) { animation-delay: 2.6s; }
+		.pulse-ring:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		.pulse-ring:nth-child(2) {
+			animation-delay: 1.3s;
+		}
+
+		.pulse-ring:nth-child(3) {
+			animation-delay: 2.6s;
+		}
 
 		@keyframes ringPulse {
-			0% { transform: scale(1); opacity: 0; }
-			30% { opacity: 0.6; }
-			100% { transform: scale(2.8); opacity: 0; }
+			0% {
+				transform: scale(1);
+				opacity: 0;
+			}
+
+			30% {
+				opacity: 0.6;
+			}
+
+			100% {
+				transform: scale(2.8);
+				opacity: 0;
+			}
 		}
 
 		@keyframes logoBreathing {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50% { opacity: 0.8; transform: scale(0.96); }
+
+			0%,
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			50% {
+				opacity: 0.8;
+				transform: scale(0.96);
+			}
 		}
 
 		.brand-text {
@@ -413,13 +441,25 @@
 		}
 
 		@keyframes fillBar {
-			0% { width: 0%; }
-			100% { width: 100%; }
+			0% {
+				width: 0%;
+			}
+
+			100% {
+				width: 100%;
+			}
 		}
 
 		@keyframes fadeInText {
-			from { opacity: 0; transform: translateY(10px); }
-			to { opacity: 1; transform: translateY(0); }
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		.loading-text {
@@ -433,8 +473,15 @@
 		}
 
 		@keyframes blinkText {
-			0%, 100% { opacity: 0.8; }
-			50% { opacity: 0.2; }
+
+			0%,
+			100% {
+				opacity: 0.8;
+			}
+
+			50% {
+				opacity: 0.2;
+			}
 		}
 	</style>
 </head>
@@ -448,7 +495,8 @@
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="logo-circle">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="VJS Logo">
 					</div>
 				</div>
 				<div class="brand-text">
@@ -704,28 +752,33 @@
 						</nav>
 
 						<div class="right-widget d-none d-lg-flex align-items-center">
-							
-							</div>
-							<!-- Language Dropdown -->
-							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
-								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
-									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
-										style="font-size: 10px;"></i>
-								</button>
-								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
-								</ul>
-							</div>
+
 						</div>
-					</div> <!--/.top-header-->
-				</div> <!-- /.inner-content -->
+						<!-- Language Dropdown -->
+						<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+							<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+								<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="en">ENG</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="hi">हिन्दी (HIN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ta">தமிழ் (TAM)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="te">తెలుగు (TEL)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ml">മലയാളം (MAL)</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!--/.top-header-->
+			</div> <!-- /.inner-content -->
 		</header>
 		<!-- /.theme-main-menu -->
 
@@ -751,11 +804,15 @@
 					<div class="col-lg-8 col-md-10">
 						<div class="foundation-card">
 							{% if hero %}
-								<h1>{{ hero.title }}</h1>
-								<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">{{ hero.description }}</p>
+							<h1>{{ hero.title }}</h1>
+							<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">{{
+								hero.description }}</p>
 							{% else %}
-								<h1>Empowering Communities, <span style="color: #9ec008;">Transforming Lives</span></h1>
-								<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">At Vijayalakshmi Foundation, we are committed to driving grassroots change through sustainable education, healthcare, and environmental initiatives. Together, we build a future where every individual has the opportunity to thrive.</p>
+							<h1>Empowering Communities, <span style="color: #9ec008;">Transforming Lives</span></h1>
+							<p class="mt-20 text-white opacity-75" style="font-size: 17px; line-height: 1.6;">At
+								Vijayalakshmi Foundation, we are committed to driving grassroots change through
+								sustainable education, healthcare, and environmental initiatives. Together, we build a
+								future where every individual has the opportunity to thrive.</p>
 							{% endif %}
 						</div>
 						<nav aria-label="breadcrumb">
@@ -779,7 +836,8 @@
 			Quote Section (Second Section)
 		=====================================================
 		-->
-		{% set purpose = cms['Purpose Statement'].content[0] if cms['Purpose Statement'] and cms['Purpose Statement'].content else None %}
+		{% set purpose = cms['Purpose Statement'].content[0] if cms['Purpose Statement'] and cms['Purpose
+		Statement'].content else None %}
 		<div class="quote-section-one pt-120 pb-120"
 			style="background: #fdfdfd; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
 			<div class="container">
@@ -794,38 +852,38 @@
 										style="width: 45px; filter: brightness(0);">
 								</div>
 								{% if purpose %}
-									<h2 class="text-white fw-500 mb-50"
-										style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-										"{{ purpose.description }}"</h2>
-									<div class="d-flex align-items-center justify-content-center">
-										<div
-											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
-										</div>
-										<h6 class="post-info text-white m0"
-											style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
-											{{ purpose.title }}</h6>
-										<div
-											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
-										</div>
+								<h2 class="text-white fw-500 mb-50"
+									style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+									"{{ purpose.description }}"</h2>
+								<div class="d-flex align-items-center justify-content-center">
+									<div
+										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
 									</div>
+									<h6 class="post-info text-white m0"
+										style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
+										{{ purpose.title }}</h6>
+									<div
+										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
+									</div>
+								</div>
 								{% else %}
-									<h2 class="text-white fw-500 mb-50"
-										style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
-										"Driving community upliftment and sustainable social impact through education, basic
-										support, and local development."</h2>
-									<div class="d-flex align-items-center justify-content-center">
-										<div
-											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
-										</div>
-										<h6 class="post-info text-white m0"
-											style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
-											Lakshmi Trust Initiative. <span
-												style="color: #9ec008; font-weight: 700; margin-left: 10px;">Purpose
-												Statement</span></h6>
-										<div
-											style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
-										</div>
+								<h2 class="text-white fw-500 mb-50"
+									style="font-size: 42px; line-height: 1.4; letter-spacing: -1px; text-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+									"Driving community upliftment and sustainable social impact through education, basic
+									support, and local development."</h2>
+								<div class="d-flex align-items-center justify-content-center">
+									<div
+										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-right: 20px;">
 									</div>
+									<h6 class="post-info text-white m0"
+										style="font-size: 19px; letter-spacing: 1.5px; text-transform: uppercase;">
+										Lakshmi Trust Initiative. <span
+											style="color: #9ec008; font-weight: 700; margin-left: 10px;">Purpose
+											Statement</span></h6>
+									<div
+										style="height: 1px; width: 50px; background: rgba(255,255,255,0.2); margin-left: 20px;">
+									</div>
+								</div>
 								{% endif %}
 							</div>
 						</div>
@@ -840,34 +898,36 @@
 			Ecosystem Section
 		=====================================================
 		-->
-		{% set it_academy = cms['Aditya IT Academy'].content[0] if cms['Aditya IT Academy'] and cms['Aditya IT Academy'].content else None %}
+		{% set it_academy = cms['Aditya IT Academy'].content[0] if cms['Aditya IT Academy'] and cms['Aditya IT
+		Academy'].content else None %}
 		<div class="ecosystem-section pt-120 pb-120 bg-white">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
 						{% if it_academy %}
-							<div class="title-style-one mb-40">
-								<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">{{ it_academy.title }}</h2>
-							</div>
-							<p class="text-lg mb-30" style="color: #444; line-height: 1.8; font-size: 17px;">
-								{{ it_academy.description }}
-							</p>
+						<div class="title-style-one mb-40">
+							<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">{{ it_academy.title
+								}}</h2>
+						</div>
+						<p class="text-lg mb-30" style="color: #444; line-height: 1.8; font-size: 17px;">
+							{{ it_academy.description }}
+						</p>
 						{% else %}
-							<div class="title-style-one mb-40">
-								<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">Where Education
-									<br><span style="color: #9ec008;">Meets Opportunity</span>
-								</h2>
-							</div>
-							<p class="text-lg mb-30" style="color: #444; line-height: 1.8;">
-								<strong>Aditya Institute – Academy & IT Skilling Hub</strong>, powered by the Vijayalakshmi
-								Foundation, is built to transform learning into real careers.
-							</p>
-							<p class="mb-40" style="color: #666; line-height: 1.8; font-size: 17px;">
-								We are not just an institute—we are part of a larger mission to empower students through
-								education, skill development, and employment opportunities. Many students supported by the
-								foundation begin their journey here, gaining industry-ready IT skills and practical
-								knowledge.
-							</p>
+						<div class="title-style-one mb-40">
+							<h2 class="main-title fw-bold" style="color: #081c17; font-size: 42px;">Where Education
+								<br><span style="color: #9ec008;">Meets Opportunity</span>
+							</h2>
+						</div>
+						<p class="text-lg mb-30" style="color: #444; line-height: 1.8;">
+							<strong>Aditya Institute – Academy & IT Skilling Hub</strong>, powered by the Vijayalakshmi
+							Foundation, is built to transform learning into real careers.
+						</p>
+						<p class="mb-40" style="color: #666; line-height: 1.8; font-size: 17px;">
+							We are not just an institute—we are part of a larger mission to empower students through
+							education, skill development, and employment opportunities. Many students supported by the
+							foundation begin their journey here, gaining industry-ready IT skills and practical
+							knowledge.
+						</p>
 						{% endif %}
 						<h5 class="fw-bold mb-40"
 							style="color: #081c17; font-size: 22px; border-left: 4px solid #9ec008; padding-left: 15px;">
@@ -1047,7 +1107,8 @@
 			}
 
 			.foundation-biz-section.bg-soft-purple {
-				background: #f8fcf5; /* Matches the soft green of path-to-future */
+				background: #f8fcf5;
+				/* Matches the soft green of path-to-future */
 			}
 
 			.foundation-biz-section.bg-white {
@@ -1105,7 +1166,8 @@
 
 			.f-highlight {
 				color: #9ec008 !important;
-				display: block; /* Matches the 'Meets Opportunity' stacked style if desired, or keep as inline */
+				display: block;
+				/* Matches the 'Meets Opportunity' stacked style if desired, or keep as inline */
 			}
 
 			.f-biz-content p {
@@ -1143,6 +1205,7 @@
 					height: 400px;
 					margin-bottom: 50px;
 				}
+
 				.f-biz-content h2 {
 					font-size: 32px;
 				}
@@ -1150,29 +1213,36 @@
 		</style>
 
 		<!-- Section 4: Vijay Anjaneya Traders -->
-		{% set anjaneya = cms['Vijay Anjaneya CSR'].content[0] if cms['Vijay Anjaneya CSR'] and cms['Vijay Anjaneya CSR'].content else None %}
+		{% set anjaneya = cms['Vijay Anjaneya CSR'].content[0] if cms['Vijay Anjaneya CSR'] and cms['Vijay Anjaneya
+		CSR'].content else None %}
 		<div class="foundation-biz-section bg-soft-purple">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-img-container">
-							<img src="{{ anjaneya.image_url if anjaneya else url_for('static', filename='images/media/hero_foundation_2.png') }}" alt="Nourishment">
+							<img src="{{ anjaneya.image_url if anjaneya else url_for('static', filename='images/media/hero_foundation_2.png') }}"
+								alt="Nourishment">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-content ps-lg-5">
 							{% if anjaneya %}
-								<h2>{{ anjaneya.title }}</h2>
-								<p>{{ anjaneya.description }}</p>
-								<div class="f-quote-box">
-									<span>"{{ anjaneya.subtitle or "Spreading care through essential nourishment" }}"</span>
-								</div>
+							<h2>{{ anjaneya.title }}</h2>
+							<p>{{ anjaneya.description }}</p>
+							<div class="f-quote-box">
+								<span>"{{ anjaneya.subtitle or "Spreading care through essential nourishment" }}"</span>
+							</div>
 							{% else %}
-								<h2>Vijay Anjaneya Traders – <span class="f-highlight">Sharing Nourishment</span> with Humanity</h2>
-								<p>Vijay Anjaneya Traders actively supports orphanages and old age homes by providing food, fruits, and essential supplies to those in need. We believe that no individual should experience hunger or neglect, especially the elderly and children without support systems. Our contribution reflects compassion, dignity, and the commitment to spreading care through essential nourishment and community service.</p>
-								<div class="f-quote-box">
-									<span>"Spreading care through essential nourishment"</span>
-								</div>
+							<h2>Vijay Anjaneya Traders – <span class="f-highlight">Sharing Nourishment</span> with
+								Humanity</h2>
+							<p>Vijay Anjaneya Traders actively supports orphanages and old age homes by providing food,
+								fruits, and essential supplies to those in need. We believe that no individual should
+								experience hunger or neglect, especially the elderly and children without support
+								systems. Our contribution reflects compassion, dignity, and the commitment to spreading
+								care through essential nourishment and community service.</p>
+							<div class="f-quote-box">
+								<span>"Spreading care through essential nourishment"</span>
+							</div>
 							{% endif %}
 						</div>
 					</div>
@@ -1183,29 +1253,36 @@
 		<div class="f-divider"></div>
 
 		<!-- Section 5: Aditya Powers -->
-		{% set aditya_powers = cms['Aditya Powers'].content[0] if cms['Aditya Powers'] and cms['Aditya Powers'].content else None %}
+		{% set aditya_powers = cms['Aditya Powers'].content[0] if cms['Aditya Powers'] and cms['Aditya Powers'].content
+		else None %}
 		<div class="foundation-biz-section bg-white">
 			<div class="container">
 				<div class="row align-items-center flex-row-reverse">
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-img-container">
-							<img src="{{ aditya_powers.image_url if aditya_powers else url_for('static', filename='images/media/vjs_energy_glance_1.png') }}" alt="Solar Energy">
+							<img src="{{ aditya_powers.image_url if aditya_powers else url_for('static', filename='images/media/vjs_energy_glance_1.png') }}"
+								alt="Solar Energy">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-content pe-lg-5">
 							{% if aditya_powers %}
-								<h2>{{ aditya_powers.title }}</h2>
-								<p>{{ aditya_powers.description }}</p>
-								<div class="f-quote-box">
-									<span>"{{ aditya_powers.subtitle or "Bringing light to vulnerable households" }}"</span>
-								</div>
+							<h2>{{ aditya_powers.title }}</h2>
+							<p>{{ aditya_powers.description }}</p>
+							<div class="f-quote-box">
+								<span>"{{ aditya_powers.subtitle or "Bringing light to vulnerable households" }}"</span>
+							</div>
 							{% else %}
-								<h2>Aditya Powers – <span class="f-highlight">Empowering Lives</span> Through Sustainable Energy</h2>
-								<p>Aditya Powers proudly supports recently widowed women by providing free solar energy solutions for their homes. This initiative is designed to reduce financial burden while promoting sustainable and independent living. By bringing renewable energy into vulnerable households, we aim to create hope, security, and long-term empowerment for women facing difficult life circumstances.</p>
-								<div class="f-quote-box">
-									<span>"Bringing light to vulnerable households"</span>
-								</div>
+							<h2>Aditya Powers – <span class="f-highlight">Empowering Lives</span> Through Sustainable
+								Energy</h2>
+							<p>Aditya Powers proudly supports recently widowed women by providing free solar energy
+								solutions for their homes. This initiative is designed to reduce financial burden while
+								promoting sustainable and independent living. By bringing renewable energy into
+								vulnerable households, we aim to create hope, security, and long-term empowerment for
+								women facing difficult life circumstances.</p>
+							<div class="f-quote-box">
+								<span>"Bringing light to vulnerable households"</span>
+							</div>
 							{% endif %}
 						</div>
 					</div>
@@ -1222,23 +1299,29 @@
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-img-container">
-							<img src="{{ springreen.image_url if springreen else url_for('static', filename='images/media/whyus_training.png') }}" alt="Employment">
+							<img src="{{ springreen.image_url if springreen else url_for('static', filename='images/media/whyus_training.png') }}"
+								alt="Employment">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-content ps-lg-5">
 							{% if springreen %}
-								<h2>{{ springreen.title }}</h2>
-								<p>{{ springreen.description }}</p>
-								<div class="f-quote-box">
-									<span>"{{ springreen.subtitle or "Employment as a pathway to dignity" }}"</span>
-								</div>
+							<h2>{{ springreen.title }}</h2>
+							<p>{{ springreen.description }}</p>
+							<div class="f-quote-box">
+								<span>"{{ springreen.subtitle or "Employment as a pathway to dignity" }}"</span>
+							</div>
 							{% else %}
-								<h2>Springreen – Creating <span class="f-highlight">Opportunities</span> for Better Futures</h2>
-								<p>Springreen is dedicated to empowering unemployed youth, bachelors, and economically disadvantaged individuals by creating meaningful employment opportunities. We believe that employment is not just a source of income but a pathway to dignity, confidence, and self-reliance. Our initiatives focus on helping individuals build stable careers and brighter futures through inclusive growth and equal opportunities.</p>
-								<div class="f-quote-box">
-									<span>"Employment as a pathway to dignity"</span>
-								</div>
+							<h2>Springreen – Creating <span class="f-highlight">Opportunities</span> for Better Futures
+							</h2>
+							<p>Springreen is dedicated to empowering unemployed youth, bachelors, and economically
+								disadvantaged individuals by creating meaningful employment opportunities. We believe
+								that employment is not just a source of income but a pathway to dignity, confidence, and
+								self-reliance. Our initiatives focus on helping individuals build stable careers and
+								brighter futures through inclusive growth and equal opportunities.</p>
+							<div class="f-quote-box">
+								<span>"Employment as a pathway to dignity"</span>
+							</div>
 							{% endif %}
 						</div>
 					</div>
@@ -1249,29 +1332,35 @@
 		<div class="f-divider"></div>
 
 		<!-- Section 7: Real Estate Division -->
-		{% set real_estate = cms['Real Estate Division'].content[0] if cms['Real Estate Division'] and cms['Real Estate Division'].content else None %}
+		{% set real_estate = cms['Real Estate Division'].content[0] if cms['Real Estate Division'] and cms['Real Estate
+		Division'].content else None %}
 		<div class="foundation-biz-section bg-white">
 			<div class="container">
 				<div class="row align-items-center flex-row-reverse">
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-img-container">
-							<img src="{{ real_estate.image_url if real_estate else url_for('static', filename='images/media/hero_foundation_1.png') }}" alt="Elderly Care">
+							<img src="{{ real_estate.image_url if real_estate else url_for('static', filename='images/media/hero_foundation_1.png') }}"
+								alt="Elderly Care">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-content pe-lg-5">
 							{% if real_estate %}
-								<h2>{{ real_estate.title }}</h2>
-								<p>{{ real_estate.description }}</p>
-								<div class="f-quote-box">
-									<span>"{{ real_estate.subtitle or "1% of profits for elderly care" }}"</span>
-								</div>
+							<h2>{{ real_estate.title }}</h2>
+							<p>{{ real_estate.description }}</p>
+							<div class="f-quote-box">
+								<span>"{{ real_estate.subtitle or "1% of profits for elderly care" }}"</span>
+							</div>
 							{% else %}
-								<h2>Real Estate Division – <span class="f-highlight">Profits with a Purpose</span></h2>
-								<p>Our Real Estate Division proudly contributes 1% of its profits toward supporting old age homes and elderly care initiatives. We strongly believe that business growth should also create social value and meaningful community impact. Through this contribution, we continue to support senior citizens with dignity, care, and essential resources that improve their quality of life.</p>
-								<div class="f-quote-box">
-									<span>"1% of profits for elderly care"</span>
-								</div>
+							<h2>Real Estate Division – <span class="f-highlight">Profits with a Purpose</span></h2>
+							<p>Our Real Estate Division proudly contributes 1% of its profits toward supporting old age
+								homes and elderly care initiatives. We strongly believe that business growth should also
+								create social value and meaningful community impact. Through this contribution, we
+								continue to support senior citizens with dignity, care, and essential resources that
+								improve their quality of life.</p>
+							<div class="f-quote-box">
+								<span>"1% of profits for elderly care"</span>
+							</div>
 							{% endif %}
 						</div>
 					</div>
@@ -1288,23 +1377,28 @@
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
 						<div class="f-biz-img-container">
-							<img src="{{ aham_grham.image_url if aham_grham else url_for('static', filename='images/media/vjs_yoga_new.png') }}" alt="Wellness">
+							<img src="{{ aham_grham.image_url if aham_grham else url_for('static', filename='images/media/vjs_yoga_new.png') }}"
+								alt="Wellness">
 						</div>
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="f-biz-content ps-lg-5">
 							{% if aham_grham %}
-								<h2>{{ aham_grham.title }}</h2>
-								<p>{{ aham_grham.description }}</p>
-								<div class="f-quote-box">
-									<span>"{{ aham_grham.subtitle or "Wellness combined with compassion" }}"</span>
-								</div>
+							<h2>{{ aham_grham.title }}</h2>
+							<p>{{ aham_grham.description }}</p>
+							<div class="f-quote-box">
+								<span>"{{ aham_grham.subtitle or "Wellness combined with compassion" }}"</span>
+							</div>
 							{% else %}
-								<h2>Aham Grham – <span class="f-highlight">Wellness</span> with a Social Purpose</h2>
-								<p>Aham Grham organizes yoga camps and wellness programs focused on promoting healthy living, inner peace, and mental wellbeing. As part of our social contribution, a portion of the proceeds from these initiatives supports orphanages and children in need. Our goal is to combine wellness with compassion, creating positive change both for the individual and the broader community.</p>
-								<div class="f-quote-box">
-									<span>"Wellness combined with compassion"</span>
-								</div>
+							<h2>Aham Grham – <span class="f-highlight">Wellness</span> with a Social Purpose</h2>
+							<p>Aham Grham organizes yoga camps and wellness programs focused on promoting healthy
+								living, inner peace, and mental wellbeing. As part of our social contribution, a portion
+								of the proceeds from these initiatives supports orphanages and children in need. Our
+								goal is to combine wellness with compassion, creating positive change both for the
+								individual and the broader community.</p>
+							<div class="f-quote-box">
+								<span>"Wellness combined with compassion"</span>
+							</div>
 							{% endif %}
 						</div>
 					</div>
@@ -1334,87 +1428,88 @@
 
 				<div class="row gx-xl-5 gy-5">
 					{% if cms['At a Glance'] and cms['At a Glance'].content %}
-						{% for card in cms['At a Glance'].content %}
-							<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
-								<div class="glance-card-premium"
-									style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-									<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-										<img src="{{ card.image_url }}"
-											alt="{{ card.title }}" class="w-100 h-100 tran4s" style="object-fit: cover;">
-										<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
-											class="accent-bar"></div>
-									</div>
-									<div class="p-4 pt-30 pb-40 px-xl-5">
-										<h5 class="fw-bold mb-15"
-											style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">{{ card.title }}
-										</h5>
-										<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">{{ card.description }}</p>
-									</div>
-								</div>
+					{% for card in cms['At a Glance'].content %}
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
+						<div class="glance-card-premium"
+							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+								<img src="{{ card.image_url }}" alt="{{ card.title }}" class="w-100 h-100 tran4s"
+									style="object-fit: cover;">
+								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+									class="accent-bar"></div>
 							</div>
-						{% endfor %}
+							<div class="p-4 pt-30 pb-40 px-xl-5">
+								<h5 class="fw-bold mb-15"
+									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">{{ card.title }}
+								</h5>
+								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">{{
+									card.description }}</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
 					{% else %}
-						<!-- Card 1: Education Support -->
-						<div class="col-lg-4 col-md-6 wow fadeInUp">
-							<div class="glance-card-premium"
-								style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-								<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-									<img src="{{ url_for('static', filename='images/media/glance_empowerment.png') }}?v=1.0"
-										alt="Education Support" class="w-100 h-100 tran4s" style="object-fit: cover;">
-									<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
-										class="accent-bar"></div>
-								</div>
-								<div class="p-4 pt-30 pb-40 px-xl-5">
-									<h5 class="fw-bold mb-15"
-										style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Education Support
-									</h5>
-									<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Assistance for
-										students, learning resources, and basic digital exposure to build future-ready
-										talent.</p>
-								</div>
+					<!-- Card 1: Education Support -->
+					<div class="col-lg-4 col-md-6 wow fadeInUp">
+						<div class="glance-card-premium"
+							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+								<img src="{{ url_for('static', filename='images/media/glance_empowerment.png') }}?v=1.0"
+									alt="Education Support" class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+									class="accent-bar"></div>
+							</div>
+							<div class="p-4 pt-30 pb-40 px-xl-5">
+								<h5 class="fw-bold mb-15"
+									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Education Support
+								</h5>
+								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Assistance for
+									students, learning resources, and basic digital exposure to build future-ready
+									talent.</p>
 							</div>
 						</div>
+					</div>
 
-						<!-- Card 2: Social Service -->
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-							<div class="glance-card-premium"
-								style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-								<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-									<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0"
-										alt="Social Service" class="w-100 h-100 tran4s" style="object-fit: cover;">
-									<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
-										class="accent-bar"></div>
-								</div>
-								<div class="p-4 pt-30 pb-40 px-xl-5">
-									<h5 class="fw-bold mb-15"
-										style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Social Service</h5>
-									<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Financial and
-										material support during critical needs, rural assistance, and emergency support
-										programs.</p>
-								</div>
+					<!-- Card 2: Social Service -->
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+						<div class="glance-card-premium"
+							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+								<img src="{{ url_for('static', filename='images/media/glance_healthcare.png') }}?v=1.0"
+									alt="Social Service" class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+									class="accent-bar"></div>
+							</div>
+							<div class="p-4 pt-30 pb-40 px-xl-5">
+								<h5 class="fw-bold mb-15"
+									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Social Service</h5>
+								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Financial and
+									material support during critical needs, rural assistance, and emergency support
+									programs.</p>
 							</div>
 						</div>
+					</div>
 
-						<!-- Card 3: Community Development -->
-						<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<div class="glance-card-premium"
-								style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-								<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
-									<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0"
-										alt="Community Development" class="w-100 h-100 tran4s" style="object-fit: cover;">
-									<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
-										class="accent-bar"></div>
-								</div>
-								<div class="p-4 pt-30 pb-40 px-xl-5">
-									<h5 class="fw-bold mb-15"
-										style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Community
-										Development</h5>
-									<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Driving
-										sustainable grassroots development through local engagement and infrastructure
-										needs.</p>
-								</div>
+					<!-- Card 3: Community Development -->
+					<div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="glance-card-premium"
+							style="background: #fff; border-radius: 24px; overflow: hidden; height: 100%; transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+							<div class="img-box" style="aspect-ratio: 16/10; overflow: hidden; position: relative;">
+								<img src="{{ url_for('static', filename='images/media/glance_environment.png') }}?v=1.0"
+									alt="Community Development" class="w-100 h-100 tran4s" style="object-fit: cover;">
+								<div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: #9ec008; transform: scaleX(0); transition: transform 0.5s ease; transform-origin: left;"
+									class="accent-bar"></div>
+							</div>
+							<div class="p-4 pt-30 pb-40 px-xl-5">
+								<h5 class="fw-bold mb-15"
+									style="color: #081c17; font-size: 24px; letter-spacing: -0.5px;">Community
+									Development</h5>
+								<p class="m0" style="line-height: 1.7; color: #666; font-size: 17px;">Driving
+									sustainable grassroots development through local engagement and infrastructure
+									needs.</p>
 							</div>
 						</div>
+					</div>
 					{% endif %}
 				</div>
 
@@ -1554,7 +1649,7 @@
 		=====================================================
 		-->
 
-		
+
 
 
 		<!-- Modal -->
@@ -1696,7 +1791,7 @@
 		</div>
 
 
-		
+
 
 
 
@@ -1727,92 +1822,93 @@
 	</div> <!-- /.main-page-wrapper -->
 
 
-<footer class="footer-vjs-premium">
-				<div class="footer-gold-bar"></div>
-				<div class="footer-container">
-					<div class="footer-main">
-						<!-- Brand Column -->
-						<div class="footer-column footer-brand-col">
-							<div class="footer-logo">
-								<div class="logo-icon-circle">
-									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
-								</div>
-								<div class="logo-text">
-									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
-									<span class="brand-sub">OF COMPANIES</span>
-								</div>
-							</div>
-							<div class="footer-divider-h"></div>
-							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
-							<div class="social-links">
-								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
-							</div>
+	<footer class="footer-vjs-premium">
+		<div class="footer-gold-bar"></div>
+		<div class="footer-container">
+			<div class="footer-main">
+				<!-- Brand Column -->
+				<div class="footer-column footer-brand-col">
+					<div class="footer-logo">
+						<div class="logo-icon-circle">
+							<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo"
+								style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
 						</div>
-
-						<!-- About Us Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">ABOUT US</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/about-us-v2">About Company</a></li>
-								<li><a href="/about-us-v1">Chairman's Office</a></li>
-								<li><a href="/service-v1">Leadership</a></li>
-								<li><a href="/about-us-v1">Our Journey</a></li>
-								<li><a href="/service-v1">Awards</a></li>
-							</ul>
+						<div class="logo-text">
+							<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+							<span class="brand-sub">OF COMPANIES</span>
 						</div>
-
-						<!-- Businesses Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">BUSINESSES</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/it-consulting">Infrastructure</a></li>
-								<li><a href="/green-energy">Energy & Utilities</a></li>
-								<li><a href="/logistics-services">Transport & Logistics</a></li>
-								<li><a href="/export-import">Consumer Products</a></li>
-								<li><a href="/property-services">Real Estate</a></li>
-								<li><a href="/yoga-wellness">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- Quick Links Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">QUICK LINKS</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/media-kit">Media Kit</a></li>
-								<li><a href="/media-release">Newsroom</a></li>
-								<li><a href="/about-us-v1">Careers</a></li>
-								
-							</ul>
-						</div>
+					</div>
+					<div class="footer-divider-h"></div>
+					<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
+					<div class="social-links">
+						<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
 					</div>
 				</div>
 
-				<!-- Bottom Bar -->
-				<div class="footer-bottom-vjs">
-					<div class="footer-container">
-						<div class="bottom-inner">
-							<div class="copyright">
-								<i class="bi bi-crown-fill gold-icon"></i>
-								<span>© 2026 Vijayalakshmi Group of Companies</span>
-							</div>
-							<div class="legal-links">
-								<a href="#">All rights reserved</a>
-                                <a href="#">Legal Disclaimer</a>
-								<a href="#">Privacy Notice</a>
-								<a href="#">Terms & Conditions</a>
-								<a href="#">Cookie Policy</a>
-							</div>
-						</div>
+				<!-- About Us Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">ABOUT US</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/about-us-v2">About Company</a></li>
+						<li><a href="/about-us-v1">Chairman's Office</a></li>
+						<li><a href="/service-v1">Leadership</a></li>
+						<li><a href="/about-us-v1">Our Journey</a></li>
+						<li><a href="/service-v1">Awards</a></li>
+					</ul>
+				</div>
+
+				<!-- Businesses Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">BUSINESSES</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/it-consulting">Infrastructure</a></li>
+						<li><a href="/green-energy">Energy & Utilities</a></li>
+						<li><a href="/logistics-services">Transport & Logistics</a></li>
+						<li><a href="/export-import">Consumer Products</a></li>
+						<li><a href="/property-services">Real Estate</a></li>
+						<li><a href="/yoga-wellness">Healthcare</a></li>
+					</ul>
+				</div>
+
+				<!-- Quick Links Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">QUICK LINKS</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/sustainability">Sustainability</a></li>
+						<li><a href="/media-kit">Media Kit</a></li>
+						<li><a href="/media-release">Newsroom</a></li>
+						<li><a href="/about-us-v1">Careers</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom Bar -->
+		<div class="footer-bottom-vjs">
+			<div class="footer-container">
+				<div class="bottom-inner">
+					<div class="copyright">
+						<i class="bi bi-crown-fill gold-icon"></i>
+						<span>© 2026 Vijayalakshmi Group of Companies</span>
+					</div>
+					<div class="legal-links">
+						<a href="#">All rights reserved</a>
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
 					</div>
 				</div>
-			</footer>
+			</div>
+		</div>
+	</footer>
 
 
 
@@ -1852,32 +1948,29 @@
 		});
 	</script>
 
-		
-		<script id="vjs-preloader-script">
-			(function() {
-				const startTime = Date.now();
-				window.addEventListener('load', function() {
-					const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
-					const elapsed = Date.now() - startTime;
-					const delay = Math.max(0, minDisplayTime - elapsed);
 
-					setTimeout(() => {
-						const preloader = document.getElementById('preloader');
-						if (preloader) {
-							preloader.style.opacity = '0';
-							preloader.style.visibility = 'hidden';
-							setTimeout(() => {
-								preloader.style.display = 'none';
-							}, 1000);
-						}
-						document.body.style.overflow = 'visible';
-					}, delay);
-				});
-			})();
-		</script>
+	<script id="vjs-preloader-script">
+		(function () {
+			const startTime = Date.now();
+			window.addEventListener('load', function () {
+				const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
+				const elapsed = Date.now() - startTime;
+				const delay = Math.max(0, minDisplayTime - elapsed);
+
+				setTimeout(() => {
+					const preloader = document.getElementById('preloader');
+					if (preloader) {
+						preloader.style.opacity = '0';
+						preloader.style.visibility = 'hidden';
+						setTimeout(() => {
+							preloader.style.display = 'none';
+						}, 1000);
+					}
+					document.body.style.overflow = 'visible';
+				}, delay);
+			});
+		})();
+	</script>
 </body>
 
 </html>
-
-
-

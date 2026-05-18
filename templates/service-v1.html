@@ -137,6 +137,7 @@
 			gap: 20px;
 			margin-top: 40px;
 		}
+
 		.vjs-new-award-card {
 			background: #ffffff;
 			border: 0.5px solid rgba(0, 0, 0, 0.08);
@@ -147,10 +148,12 @@
 			transition: transform 0.3s ease, box-shadow 0.3s ease;
 			height: 100%;
 		}
+
 		.vjs-new-award-card:hover {
 			transform: translateY(-5px);
 			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 		}
+
 		.vjs-new-award-img-wrapper {
 			position: relative;
 			height: 180px;
@@ -158,11 +161,13 @@
 			border-top: 3px solid #1ca161;
 			overflow: hidden;
 		}
+
 		.vjs-new-award-img {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 		}
+
 		.vjs-new-award-content {
 			padding: 20px;
 			display: flex;
@@ -170,12 +175,14 @@
 			align-items: flex-start;
 			text-align: left;
 		}
+
 		.vjs-new-award-icon {
 			color: #e74c3c;
 			font-size: 20px;
 			margin-bottom: 12px;
 			display: inline-block;
 		}
+
 		.vjs-new-award-title {
 			font-size: 18px;
 			font-weight: 700;
@@ -183,6 +190,7 @@
 			margin-bottom: 8px;
 			line-height: 1.3;
 		}
+
 		.vjs-new-award-desc {
 			font-size: 14px;
 			color: #666666;
@@ -212,6 +220,7 @@
 			.vjs-success-img {
 				height: 380px;
 			}
+
 			.vjs-success-content {
 				padding-left: 0;
 				margin-top: 50px;
@@ -311,10 +320,13 @@
 		}
 
 		@keyframes logoBreathing {
-			0%, 100% {
+
+			0%,
+			100% {
 				opacity: 1;
 				transform: scale(1);
 			}
+
 			50% {
 				opacity: 0.8;
 				transform: scale(0.96);
@@ -369,6 +381,7 @@
 			0% {
 				width: 0%;
 			}
+
 			100% {
 				width: 100%;
 			}
@@ -379,6 +392,7 @@
 				opacity: 0;
 				transform: translateY(10px);
 			}
+
 			to {
 				opacity: 1;
 				transform: translateY(0);
@@ -396,9 +410,12 @@
 		}
 
 		@keyframes blinkText {
-			0%, 100% {
+
+			0%,
+			100% {
 				opacity: 0.8;
 			}
+
 			50% {
 				opacity: 0.2;
 			}
@@ -409,14 +426,16 @@
 
 <body>
 	<div class="main-page-wrapper">
-		<div id="preloader" style="position: fixed; inset: 0; background: #ffffff; z-index: 9999999; display: flex; align-items: center; justify-content: center;">
+		<div id="preloader"
+			style="position: fixed; inset: 0; background: #ffffff; z-index: 9999999; display: flex; align-items: center; justify-content: center;">
 			<div class="preloader-content">
 				<div class="logo-container">
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="logo-circle">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo" style="max-width: 72px; max-height: 72px; object-fit: contain;">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="VJS Logo" style="max-width: 72px; max-height: 72px; object-fit: contain;">
 					</div>
 				</div>
 				<div class="brand-text">
@@ -667,28 +686,33 @@
 						</nav>
 
 						<div class="right-widget d-none d-lg-flex align-items-center">
-							
-							</div>
-							<!-- Language Dropdown -->
-							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
-								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
-									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
-										style="font-size: 10px;"></i>
-								</button>
-								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
-								</ul>
-							</div>
+
 						</div>
-					</div> <!--/.top-header-->
-				</div> <!-- /.inner-content -->
+						<!-- Language Dropdown -->
+						<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+							<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+								<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="en">ENG</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="hi">हिन्दी (HIN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ta">தமிழ் (TAM)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="te">తెలుగు (TEL)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ml">മലയാളം (MAL)</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!--/.top-header-->
+			</div> <!-- /.inner-content -->
 		</header>
 
 		<!-- HERO SECTION -->
@@ -711,7 +735,8 @@
 								{% if hero.subtitle %}
 								{{ hero.subtitle }}
 								{% else %}
-								Empowering industries through visionary leadership <br> and a commitment to global excellence.
+								Empowering industries through visionary leadership <br> and a commitment to global
+								excellence.
 								{% endif %}
 							</p>
 						</div>
@@ -763,7 +788,8 @@
 					{% for item in cms.Awards.content %}
 					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="{{ 0.1 * loop.index0 }}s">
 						<div class="vjs-new-award-img-wrapper">
-							<img src="{% if item.image_url %}{{ item.image_url }}{% else %}/static/images/awards/bni.jpg{% endif %}" alt="{{ item.title }}" class="vjs-new-award-img">
+							<img src="{% if item.image_url %}{{ item.image_url }}{% else %}/static/images/awards/bni.jpg{% endif %}"
+								alt="{{ item.title }}" class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
 							<h3 class="vjs-new-award-title">{{ item.title }}</h3>
@@ -780,7 +806,8 @@
 						</div>
 						<div class="vjs-new-award-content">
 							<h3 class="vjs-new-award-title">BNI Awards</h3>
-							<p class="vjs-new-award-desc">Recognized for exceptional networking and business contribution at a national level.</p>
+							<p class="vjs-new-award-desc">Recognized for exceptional networking and business
+								contribution at a national level.</p>
 						</div>
 					</div>
 					<!-- Card 2 -->
@@ -790,37 +817,44 @@
 						</div>
 						<div class="vjs-new-award-content">
 							<h3 class="vjs-new-award-title">ET NOW Awards</h3>
-							<p class="vjs-new-award-desc">Honored by Economic Times NOW for outstanding leadership and industry impact.</p>
+							<p class="vjs-new-award-desc">Honored by Economic Times NOW for outstanding leadership and
+								industry impact.</p>
 						</div>
 					</div>
 					<!-- Card 3 -->
 					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="0.2s">
 						<div class="vjs-new-award-img-wrapper">
-							<img src="/static/images/awards/msme.jpg" alt="MSME Woman Led Startup" class="vjs-new-award-img">
+							<img src="/static/images/awards/msme.jpg" alt="MSME Woman Led Startup"
+								class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
 							<h3 class="vjs-new-award-title">MSME Woman Led Startup</h3>
-							<p class="vjs-new-award-desc">Awarded for building a thriving woman-led startup in the MSME sector.</p>
+							<p class="vjs-new-award-desc">Awarded for building a thriving woman-led startup in the MSME
+								sector.</p>
 						</div>
 					</div>
 					<!-- Card 4 -->
 					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="0.3s">
 						<div class="vjs-new-award-img-wrapper">
-							<img src="/static/images/awards/womenpreneur.jpg" alt="Womenpreneur 2023" class="vjs-new-award-img">
+							<img src="/static/images/awards/womenpreneur.jpg" alt="Womenpreneur 2023"
+								class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
 							<h3 class="vjs-new-award-title">Womenpreneur 2023</h3>
-							<p class="vjs-new-award-desc">Celebrated as a leading woman entrepreneur driving change and innovation in 2023.</p>
+							<p class="vjs-new-award-desc">Celebrated as a leading woman entrepreneur driving change and
+								innovation in 2023.</p>
 						</div>
 					</div>
 					<!-- Card 5 -->
 					<div class="vjs-new-award-card wow fadeInUp" data-wow-delay="0.4s">
 						<div class="vjs-new-award-img-wrapper">
-							<img src="/static/images/awards/indiatoday.jpg" alt="India Today Business Awards" class="vjs-new-award-img">
+							<img src="/static/images/awards/indiatoday.jpg" alt="India Today Business Awards"
+								class="vjs-new-award-img">
 						</div>
 						<div class="vjs-new-award-content">
 							<h3 class="vjs-new-award-title">India Today Business Awards</h3>
-							<p class="vjs-new-award-desc">Honored by India Today for exemplary business growth and vision.</p>
+							<p class="vjs-new-award-desc">Honored by India Today for exemplary business growth and
+								vision.</p>
 						</div>
 					</div>
 					{% endif %}
@@ -834,24 +868,25 @@
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-lg-6 wow fadeInLeft">
-						<img src="{% if story and story.image_url %}{{ story.image_url }}{% else %}{{ url_for('static', filename='images/media/img_12.jpg') }}{% endif %}?v=1.0" alt=""
-							class="vjs-success-img">
+						<img src="{% if story and story.image_url %}{{ story.image_url }}{% else %}{{ url_for('static', filename='images/media/img_12.jpg') }}{% endif %}?v=1.0"
+							alt="" class="vjs-success-img">
 					</div>
 					<div class="col-lg-6 wow fadeInRight">
 						<div class="vjs-success-content">
 							<div class="title-one mb-30">
-								<h2>{% if story and story.title %}{{ story.title }}{% else %}Our Success Story{% endif %}</h2>
+								<h2>{% if story and story.title %}{{ story.title }}{% else %}Our Success Story{% endif
+									%}</h2>
 							</div>
 							{% if story and story.description %}
-								<p class="text-lg text-dark mb-40">{{ story.description | safe }}</p>
+							<p class="text-lg text-dark mb-40">{{ story.description | safe }}</p>
 							{% else %}
-								<p class="text-lg text-dark mb-40">From a local enterprise to a diversified global group,
-									our journey has been defined by resilience, innovation, and long-term value creation for
-									our stakeholders.</p>
-								<p class="mb-40">Vijayalakshmi Group started with a single vision: to deliver excellence
-									across boundaries. Today, we are proud to stand at the forefront of the infrastructure,
-									energy, and logistics sectors, driving the economy forward with integrity and a
-									futuristic outlook.</p>
+							<p class="text-lg text-dark mb-40">From a local enterprise to a diversified global group,
+								our journey has been defined by resilience, innovation, and long-term value creation for
+								our stakeholders.</p>
+							<p class="mb-40">Vijayalakshmi Group started with a single vision: to deliver excellence
+								across boundaries. Today, we are proud to stand at the forefront of the infrastructure,
+								energy, and logistics sectors, driving the economy forward with integrity and a
+								futuristic outlook.</p>
 							{% endif %}
 							<a href="{{ url_for('dynamic_route', path='about-us-v1') }}" class="btn-five">Read Full
 								Journey</a>
@@ -866,7 +901,7 @@
 			Footer One
 		=====================================================
 		-->
-		
+
 		<!-- Vijayalakshmi Group Site Utils -->
 		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
 		<!-- Google Translate Element -->
@@ -874,57 +909,57 @@
 		<script type="text/javascript"
 			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-	<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
-		<i class="bi bi-chevron-double-up"></i>
-	</button>
+		<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
+			<i class="bi bi-chevron-double-up"></i>
+		</button>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const scrollTopBtn = document.getElementById('vjs-scroll-top');
-			if (!scrollTopBtn) return;
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const scrollTopBtn = document.getElementById('vjs-scroll-top');
+				if (!scrollTopBtn) return;
 
-			window.addEventListener('scroll', function () {
-				if (window.pageYOffset > 400) {
-					scrollTopBtn.classList.add('visible');
-				} else {
-					scrollTopBtn.classList.remove('visible');
-				}
-			});
+				window.addEventListener('scroll', function () {
+					if (window.pageYOffset > 400) {
+						scrollTopBtn.classList.add('visible');
+					} else {
+						scrollTopBtn.classList.remove('visible');
+					}
+				});
 
-			scrollTopBtn.addEventListener('click', function () {
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
+				scrollTopBtn.addEventListener('click', function () {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
 				});
 			});
-		});
-	</script>
+		</script>
 
-	<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
-		<i class="bi bi-chevron-double-up"></i>
-	</button>
+		<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
+			<i class="bi bi-chevron-double-up"></i>
+		</button>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			const scrollTopBtn = document.getElementById('vjs-scroll-top');
-			if (!scrollTopBtn) return;
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const scrollTopBtn = document.getElementById('vjs-scroll-top');
+				if (!scrollTopBtn) return;
 
-			window.addEventListener('scroll', function () {
-				if (window.pageYOffset > 400) {
-					scrollTopBtn.classList.add('visible');
-				} else {
-					scrollTopBtn.classList.remove('visible');
-				}
-			});
+				window.addEventListener('scroll', function () {
+					if (window.pageYOffset > 400) {
+						scrollTopBtn.classList.add('visible');
+					} else {
+						scrollTopBtn.classList.remove('visible');
+					}
+				});
 
-			scrollTopBtn.addEventListener('click', function () {
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
+				scrollTopBtn.addEventListener('click', function () {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
 				});
 			});
-		});
-	</script>
+		</script>
 
 
 
@@ -932,99 +967,101 @@
 
 
 
-<footer class="footer-vjs-premium">
-				<div class="footer-gold-bar"></div>
+		<footer class="footer-vjs-premium">
+			<div class="footer-gold-bar"></div>
+			<div class="footer-container">
+				<div class="footer-main">
+					<!-- Brand Column -->
+					<div class="footer-column footer-brand-col">
+						<div class="footer-logo">
+							<div class="logo-icon-circle">
+								<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo"
+									style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+							</div>
+							<div class="logo-text">
+								<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+								<span class="brand-sub">OF COMPANIES</span>
+							</div>
+						</div>
+						<div class="footer-divider-h"></div>
+						<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.
+						</p>
+						<div class="social-links">
+							<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+							<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+							<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+							<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
+						</div>
+					</div>
+
+					<!-- About Us Column -->
+					<div class="footer-column">
+						<h5 class="footer-title">ABOUT US</h5>
+						<div class="title-underline"></div>
+						<ul class="footer-links">
+							<li><a href="/about-us-v2">About Company</a></li>
+							<li><a href="/about-us-v1">Chairman's Office</a></li>
+							<li><a href="/service-v1">Leadership</a></li>
+							<li><a href="/about-us-v1">Our Journey</a></li>
+							<li><a href="/service-v1">Awards</a></li>
+						</ul>
+					</div>
+
+					<!-- Businesses Column -->
+					<div class="footer-column">
+						<h5 class="footer-title">BUSINESSES</h5>
+						<div class="title-underline"></div>
+						<ul class="footer-links">
+							<li><a href="/it-consulting">Infrastructure</a></li>
+							<li><a href="/green-energy">Energy & Utilities</a></li>
+							<li><a href="/logistics-services">Transport & Logistics</a></li>
+							<li><a href="/export-import">Consumer Products</a></li>
+							<li><a href="/property-services">Real Estate</a></li>
+							<li><a href="/yoga-wellness">Healthcare</a></li>
+						</ul>
+					</div>
+
+					<!-- Quick Links Column -->
+					<div class="footer-column">
+						<h5 class="footer-title">QUICK LINKS</h5>
+						<div class="title-underline"></div>
+						<ul class="footer-links">
+							<li><a href="/sustainability">Sustainability</a></li>
+							<li><a href="/media-kit">Media Kit</a></li>
+							<li><a href="/media-release">Newsroom</a></li>
+							<li><a href="/about-us-v1">Careers</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Bottom Bar -->
+			<div class="footer-bottom-vjs">
 				<div class="footer-container">
-					<div class="footer-main">
-						<!-- Brand Column -->
-						<div class="footer-column footer-brand-col">
-							<div class="footer-logo">
-								<div class="logo-icon-circle">
-									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
-								</div>
-								<div class="logo-text">
-									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
-									<span class="brand-sub">OF COMPANIES</span>
-								</div>
-							</div>
-							<div class="footer-divider-h"></div>
-							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
-							<div class="social-links">
-								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
-							</div>
+					<div class="bottom-inner">
+						<div class="copyright">
+							<i class="bi bi-crown-fill gold-icon"></i>
+							<span>© 2026 Vijayalakshmi Group of Companies</span>
 						</div>
-
-						<!-- About Us Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">ABOUT US</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/about-us-v2">About Company</a></li>
-								<li><a href="/about-us-v1">Chairman's Office</a></li>
-								<li><a href="/service-v1">Leadership</a></li>
-								<li><a href="/about-us-v1">Our Journey</a></li>
-								<li><a href="/service-v1">Awards</a></li>
-							</ul>
-						</div>
-
-						<!-- Businesses Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">BUSINESSES</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/it-consulting">Infrastructure</a></li>
-								<li><a href="/green-energy">Energy & Utilities</a></li>
-								<li><a href="/logistics-services">Transport & Logistics</a></li>
-								<li><a href="/export-import">Consumer Products</a></li>
-								<li><a href="/property-services">Real Estate</a></li>
-								<li><a href="/yoga-wellness">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- Quick Links Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">QUICK LINKS</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/media-kit">Media Kit</a></li>
-								<li><a href="/media-release">Newsroom</a></li>
-								<li><a href="/about-us-v1">Careers</a></li>
-								
-							</ul>
+						<div class="legal-links">
+							<a href="#">All rights reserved</a>
+							<a href="#">Legal Disclaimer</a>
+							<a href="#">Privacy Notice</a>
+							<a href="#">Terms & Conditions</a>
+							<a href="#">Cookie Policy</a>
 						</div>
 					</div>
 				</div>
-
-				<!-- Bottom Bar -->
-				<div class="footer-bottom-vjs">
-					<div class="footer-container">
-						<div class="bottom-inner">
-							<div class="copyright">
-								<i class="bi bi-crown-fill gold-icon"></i>
-								<span>© 2026 Vijayalakshmi Group of Companies</span>
-							</div>
-							<div class="legal-links">
-								<a href="#">All rights reserved</a>
-                                <a href="#">Legal Disclaimer</a>
-								<a href="#">Privacy Notice</a>
-								<a href="#">Terms & Conditions</a>
-								<a href="#">Cookie Policy</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
+			</div>
+		</footer>
 
 
-		
+
 		<script id="vjs-preloader-script">
-			(function() {
+			(function () {
 				const startTime = Date.now();
-				window.addEventListener('load', function() {
+				window.addEventListener('load', function () {
 					const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
 					const elapsed = Date.now() - startTime;
 					const delay = Math.max(0, minDisplayTime - elapsed);
@@ -1046,6 +1083,3 @@
 </body>
 
 </html>
-
-
-

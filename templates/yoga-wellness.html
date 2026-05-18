@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -606,11 +606,13 @@
 					<h2 class="section-title text-center mb-5">At a Glance.</h2>
 					<div class="row vjs-card-row justify-content-center g-4">
 						{% if cms['At a Glance'] and cms['At a Glance'].content %}
-						{% for card in cms['At a Glance'].content if card.title and card.title.strip() != '' and 'section content' not in card.title.lower() and 'placeholder' not in card.title.lower() %}
+						{% for card in cms['At a Glance'].content if card.title and card.title.strip() != '' and
+						'section content' not in card.title.lower() and 'placeholder' not in card.title.lower() %}
 						<div class="col-lg-4 col-md-6 d-flex wow fadeInUp" data-wow-delay="{{ loop.index0 * 0.1 }}s">
 							<div class="vjs-card-premium-white">
 								<div class="card-img-box">
-									<img src="{{ card.image_url if card.image_url else 'https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800' }}" alt="{{ card.title or 'At a Glance' }}">
+									<img src="{{ card.image_url if card.image_url else 'https://images.unsplash.com/photo-1451187534963-11d967f98ad4?auto=format&fit=crop&q=80&w=800' }}"
+										alt="{{ card.title or 'At a Glance' }}">
 								</div>
 								<div class="card-content-area">
 									<div class="card-header-row">
@@ -636,7 +638,8 @@
 										<div class="card-header-divider"></div>
 									</div>
 									<h4 class="serif-heading">Strategic Excellence</h4>
-									<p class="muted-desc">Driving value through innovation and industry-leading standards.</p>
+									<p class="muted-desc">Driving value through innovation and industry-leading
+										standards.</p>
 								</div>
 							</div>
 						</div>
@@ -651,7 +654,8 @@
 										<div class="card-header-divider"></div>
 									</div>
 									<h4 class="serif-heading">Global Innovation</h4>
-									<p class="muted-desc">Transforming sectors with future-ready technology and expert insights.</p>
+									<p class="muted-desc">Transforming sectors with future-ready technology and expert
+										insights.</p>
 								</div>
 							</div>
 						</div>

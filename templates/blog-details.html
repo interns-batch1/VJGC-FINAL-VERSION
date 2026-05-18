@@ -97,7 +97,7 @@
 			}
 		}
 	</style>
-<style>
+	<style>
 		/* ===== PREMIUM BRANDED PRELOADER ===== */
 		#preloader {
 			position: fixed;
@@ -141,7 +141,7 @@
 			align-items: center;
 			justify-content: center;
 			animation: logoBreathing 4s ease-in-out infinite;
-			box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 		}
 
 		.logo-circle img {
@@ -161,19 +161,46 @@
 			z-index: 1;
 		}
 
-		.pulse-ring:nth-child(1) { animation-delay: 0s; }
-		.pulse-ring:nth-child(2) { animation-delay: 1.3s; }
-		.pulse-ring:nth-child(3) { animation-delay: 2.6s; }
+		.pulse-ring:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		.pulse-ring:nth-child(2) {
+			animation-delay: 1.3s;
+		}
+
+		.pulse-ring:nth-child(3) {
+			animation-delay: 2.6s;
+		}
 
 		@keyframes ringPulse {
-			0% { transform: scale(1); opacity: 0; }
-			30% { opacity: 0.6; }
-			100% { transform: scale(2.8); opacity: 0; }
+			0% {
+				transform: scale(1);
+				opacity: 0;
+			}
+
+			30% {
+				opacity: 0.6;
+			}
+
+			100% {
+				transform: scale(2.8);
+				opacity: 0;
+			}
 		}
 
 		@keyframes logoBreathing {
-			0%, 100% { opacity: 1; transform: scale(1); }
-			50% { opacity: 0.8; transform: scale(0.96); }
+
+			0%,
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+			50% {
+				opacity: 0.8;
+				transform: scale(0.96);
+			}
 		}
 
 		.brand-text {
@@ -221,13 +248,25 @@
 		}
 
 		@keyframes fillBar {
-			0% { width: 0%; }
-			100% { width: 100%; }
+			0% {
+				width: 0%;
+			}
+
+			100% {
+				width: 100%;
+			}
 		}
 
 		@keyframes fadeInText {
-			from { opacity: 0; transform: translateY(10px); }
-			to { opacity: 1; transform: translateY(0); }
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		.loading-text {
@@ -241,8 +280,15 @@
 		}
 
 		@keyframes blinkText {
-			0%, 100% { opacity: 0.8; }
-			50% { opacity: 0.2; }
+
+			0%,
+			100% {
+				opacity: 0.8;
+			}
+
+			50% {
+				opacity: 0.2;
+			}
 		}
 	</style>
 </head>
@@ -256,7 +302,8 @@
 					<div class="pulse-ring"></div>
 					<div class="pulse-ring"></div>
 					<div class="logo-circle">
-						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0" alt="VJS Logo">
+						<img src="{{ url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.0"
+							alt="VJS Logo">
 					</div>
 				</div>
 				<div class="brand-text">
@@ -517,28 +564,33 @@
 						</nav>
 
 						<div class="right-widget d-none d-lg-flex align-items-center">
-							
-							</div>
-							<!-- Language Dropdown -->
-							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
-								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
-									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
-										style="font-size: 10px;"></i>
-								</button>
-								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="en">ENG</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="hi">हिन्दी (HIN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ta">தமிழ் (TAM)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="te">తెలుగు (TEL)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)" data-lang="ml">മലയാളം (MAL)</a></li>
-								</ul>
-							</div>
+
 						</div>
-					</div> <!--/.top-header-->
-				</div> <!-- /.inner-content -->
+						<!-- Language Dropdown -->
+						<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
+							<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
+								<i class="bi bi-chevron-down ms-1 text-white opacity-50" style="font-size: 10px;"></i>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="en">ENG</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="hi">हिन्दी (HIN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ta">தமிழ் (TAM)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="te">తెలుగు (TEL)</a></li>
+								<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
+										data-lang="ml">മലയാളം (MAL)</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!--/.top-header-->
+			</div> <!-- /.inner-content -->
 		</header>
 		<!-- /.theme-main-menu -->
 
@@ -677,7 +729,7 @@
 		=====================================================
 		-->
 
-		
+
 
 
 		<!-- Modal -->
@@ -819,7 +871,7 @@
 		</div>
 
 
-		
+
 
 
 
@@ -854,92 +906,93 @@
 	</div> <!-- /.main-page-wrapper -->
 
 
-<footer class="footer-vjs-premium">
-				<div class="footer-gold-bar"></div>
-				<div class="footer-container">
-					<div class="footer-main">
-						<!-- Brand Column -->
-						<div class="footer-column footer-brand-col">
-							<div class="footer-logo">
-								<div class="logo-icon-circle">
-									<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
-								</div>
-								<div class="logo-text">
-									<span class="brand-name">VIJAYALAKSHMI GROUP</span>
-									<span class="brand-sub">OF COMPANIES</span>
-								</div>
-							</div>
-							<div class="footer-divider-h"></div>
-							<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
-							<div class="social-links">
-								<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
-								<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
-							</div>
+	<footer class="footer-vjs-premium">
+		<div class="footer-gold-bar"></div>
+		<div class="footer-container">
+			<div class="footer-main">
+				<!-- Brand Column -->
+				<div class="footer-column footer-brand-col">
+					<div class="footer-logo">
+						<div class="logo-icon-circle">
+							<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo"
+								style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
 						</div>
-
-						<!-- About Us Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">ABOUT US</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/about-us-v2">About Company</a></li>
-								<li><a href="/about-us-v1">Chairman's Office</a></li>
-								<li><a href="/service-v1">Leadership</a></li>
-								<li><a href="/about-us-v1">Our Journey</a></li>
-								<li><a href="/service-v1">Awards</a></li>
-							</ul>
+						<div class="logo-text">
+							<span class="brand-name">VIJAYALAKSHMI GROUP</span>
+							<span class="brand-sub">OF COMPANIES</span>
 						</div>
-
-						<!-- Businesses Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">BUSINESSES</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/it-consulting">Infrastructure</a></li>
-								<li><a href="/green-energy">Energy & Utilities</a></li>
-								<li><a href="/logistics-services">Transport & Logistics</a></li>
-								<li><a href="/export-import">Consumer Products</a></li>
-								<li><a href="/property-services">Real Estate</a></li>
-								<li><a href="/yoga-wellness">Healthcare</a></li>
-							</ul>
-						</div>
-
-						<!-- Quick Links Column -->
-						<div class="footer-column">
-							<h5 class="footer-title">QUICK LINKS</h5>
-							<div class="title-underline"></div>
-							<ul class="footer-links">
-								<li><a href="/sustainability">Sustainability</a></li>
-								<li><a href="/media-kit">Media Kit</a></li>
-								<li><a href="/media-release">Newsroom</a></li>
-								<li><a href="/about-us-v1">Careers</a></li>
-								
-							</ul>
-						</div>
+					</div>
+					<div class="footer-divider-h"></div>
+					<p class="brand-desc">Building legacies through vision, integrity, and excellence since decades.</p>
+					<div class="social-links">
+						<a href="#" class="social-box"><i class="bi bi-facebook"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-instagram"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-youtube"></i></a>
+						<a href="#" class="social-box"><i class="bi bi-linkedin"></i></a>
 					</div>
 				</div>
 
-				<!-- Bottom Bar -->
-				<div class="footer-bottom-vjs">
-					<div class="footer-container">
-						<div class="bottom-inner">
-							<div class="copyright">
-								<i class="bi bi-crown-fill gold-icon"></i>
-								<span>© 2026 Vijayalakshmi Group of Companies</span>
-							</div>
-							<div class="legal-links">
-								<a href="#">All rights reserved</a>
-                                <a href="#">Legal Disclaimer</a>
-								<a href="#">Privacy Notice</a>
-								<a href="#">Terms & Conditions</a>
-								<a href="#">Cookie Policy</a>
-							</div>
-						</div>
+				<!-- About Us Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">ABOUT US</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/about-us-v2">About Company</a></li>
+						<li><a href="/about-us-v1">Chairman's Office</a></li>
+						<li><a href="/service-v1">Leadership</a></li>
+						<li><a href="/about-us-v1">Our Journey</a></li>
+						<li><a href="/service-v1">Awards</a></li>
+					</ul>
+				</div>
+
+				<!-- Businesses Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">BUSINESSES</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/it-consulting">Infrastructure</a></li>
+						<li><a href="/green-energy">Energy & Utilities</a></li>
+						<li><a href="/logistics-services">Transport & Logistics</a></li>
+						<li><a href="/export-import">Consumer Products</a></li>
+						<li><a href="/property-services">Real Estate</a></li>
+						<li><a href="/yoga-wellness">Healthcare</a></li>
+					</ul>
+				</div>
+
+				<!-- Quick Links Column -->
+				<div class="footer-column">
+					<h5 class="footer-title">QUICK LINKS</h5>
+					<div class="title-underline"></div>
+					<ul class="footer-links">
+						<li><a href="/sustainability">Sustainability</a></li>
+						<li><a href="/media-kit">Media Kit</a></li>
+						<li><a href="/media-release">Newsroom</a></li>
+						<li><a href="/about-us-v1">Careers</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom Bar -->
+		<div class="footer-bottom-vjs">
+			<div class="footer-container">
+				<div class="bottom-inner">
+					<div class="copyright">
+						<i class="bi bi-crown-fill gold-icon"></i>
+						<span>© 2026 Vijayalakshmi Group of Companies</span>
+					</div>
+					<div class="legal-links">
+						<a href="#">All rights reserved</a>
+						<a href="#">Legal Disclaimer</a>
+						<a href="#">Privacy Notice</a>
+						<a href="#">Terms & Conditions</a>
+						<a href="#">Cookie Policy</a>
 					</div>
 				</div>
-			</footer>
+			</div>
+		</div>
+	</footer>
 
 
 
@@ -980,32 +1033,29 @@
 		});
 	</script>
 
-		
-		<script id="vjs-preloader-script">
-			(function() {
-				const startTime = Date.now();
-				window.addEventListener('load', function() {
-					const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
-					const elapsed = Date.now() - startTime;
-					const delay = Math.max(0, minDisplayTime - elapsed);
 
-					setTimeout(() => {
-						const preloader = document.getElementById('preloader');
-						if (preloader) {
-							preloader.style.opacity = '0';
-							preloader.style.visibility = 'hidden';
-							setTimeout(() => {
-								preloader.style.display = 'none';
-							}, 1000);
-						}
-						document.body.style.overflow = 'visible';
-					}, delay);
-				});
-			})();
-		</script>
+	<script id="vjs-preloader-script">
+		(function () {
+			const startTime = Date.now();
+			window.addEventListener('load', function () {
+				const minDisplayTime = 2500; // Minimum time in ms to show the branded preloader
+				const elapsed = Date.now() - startTime;
+				const delay = Math.max(0, minDisplayTime - elapsed);
+
+				setTimeout(() => {
+					const preloader = document.getElementById('preloader');
+					if (preloader) {
+						preloader.style.opacity = '0';
+						preloader.style.visibility = 'hidden';
+						setTimeout(() => {
+							preloader.style.display = 'none';
+						}, 1000);
+					}
+					document.body.style.overflow = 'visible';
+				}, delay);
+			});
+		})();
+	</script>
 </body>
 
 </html>
-
-
-
