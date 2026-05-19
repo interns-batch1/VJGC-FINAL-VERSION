@@ -90,9 +90,12 @@
 		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
 
 	<!-- Font Preloads -->
-	<link rel="preload" href="{{ url_for('static', filename='fonts/Satoshi/fonts/Satoshi-Regular.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="{{ url_for('static', filename='fonts/Satoshi/fonts/Satoshi-Bold.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
-	<link rel="preload" href="{{ url_for('static', filename='fonts/ClashDisplay/fonts/ClashDisplay-Bold.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="{{ url_for('static', filename='fonts/Satoshi/fonts/Satoshi-Regular.woff2') }}" as="font"
+		type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="{{ url_for('static', filename='fonts/Satoshi/fonts/Satoshi-Bold.woff2') }}" as="font"
+		type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="{{ url_for('static', filename='fonts/ClashDisplay/fonts/ClashDisplay-Bold.woff2') }}"
+		as="font" type="font/woff2" crossorigin="anonymous">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
@@ -1684,7 +1687,8 @@
 			<div class="container">
 				<div class="wrapper">
 					<div class="row align-items-stretch">
-						{% set mission = cms['Our Mission'].content[0] if cms['Our Mission'] and cms['Our Mission'].content else None %}
+						{% set mission = cms['Our Mission'].content[0] if cms['Our Mission'] and cms['Our
+						Mission'].content else None %}
 						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex">
 							<div class="card-style-three pb-35 sm-pb-30 w-100"
 								style="background-color: #A2D732; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column;">
@@ -1695,7 +1699,9 @@
 								<h4 class="fw-bold text-dark" style="font-size: 24px; margin: 0 0 15px 0;">{{
 									mission.title if mission else 'Our Mission' }}</h4>
 								<p class="text-dark" style="margin: 0; line-height: 1.6;">{{ mission.description if
-									mission else 'To deliver innovative and reliable solutions through technology, expertise, and customer-focused services, empowering business to achieve sustainable growth' }}</p>
+									mission else 'To deliver innovative and reliable solutions through technology,
+									expertise, and customer-focused services, empowering business to achieve sustainable
+									growth' }}</p>
 							</div>
 							<!-- /.card-style-three -->
 						</div>

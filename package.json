@@ -1,7 +1,0 @@
-{
-  "name": "vjs-groups-template",
-  "private": true,
-  "scripts": {
-    "start": "node ./server.js"
-  }
-}
