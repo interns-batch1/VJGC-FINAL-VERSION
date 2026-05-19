@@ -581,3 +581,8 @@ body {
 	opacity: 1;
 	transform: translateY(0);
 }
+
+/* Global architectural hide for language dropdown widget */
+.vjs-nav-action.dropdown {
+	display: none !important;
+}

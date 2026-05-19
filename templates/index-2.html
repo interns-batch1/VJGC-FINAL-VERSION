@@ -50,13 +50,23 @@
 	</script>
 	<script async data-uid="7ae406bec1" src="https://springreen.kit.com/7ae406bec1/index.js"></script>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
-	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
+	<meta name="keywords" content="{{ seo.keywords }}">
+	<meta name="description" content="{{ seo.description }}">
+	<link rel="canonical" href="{{ seo.canonical_url or request.url }}">
+	<meta name="robots" content="{{ seo.robots }}">
 	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
-	<meta property="og:url" content="https://creativegigstf.com">
+	<meta property="og:url" content="{{ seo.og_url or request.url }}">
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Vijayalakshmi Group Of Companies">
-	<meta name='og:image' content='{{ url_for(' static', filename='images/assets/ogg.png' ) }}?v=1.2'>
+	<meta property="og:title" content="{{ seo.og_title }}">
+	<meta property="og:description" content="{{ seo.og_description }}">
+	<meta property="og:image" content="{{ seo.og_image or url_for('static', filename='images/assets/ogg.png') }}?v=1.2">
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="{{ seo.og_url or request.url }}">
+	<meta name="twitter:title" content="{{ seo.og_title }}">
+	<meta name="twitter:description" content="{{ seo.og_description }}">
+	<meta name="twitter:image"
+		content="{{ seo.og_image or url_for('static', filename='images/assets/ogg.png') }}?v=1.2">
 	<!-- For IE -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- For Resposive Device -->
@@ -68,7 +78,7 @@
 	<meta name="msapplication-navbutton-color" content="#1A4137">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
-	<title>Vijayalakshmi Group Of Companies</title>
+	<title>{{ seo.title }}</title>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="56x56"
 		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
@@ -1251,29 +1261,7 @@
 
 						<div class="right-widget d-none d-lg-flex align-items-center">
 
-							<!-- Language Dropdown -->
-							<div class="vjs-nav-action dropdown ps-3 ps-xl-4">
-								<button class="dropdown-toggle d-flex align-items-center style-none" type="button"
-									data-bs-toggle="dropdown" aria-expanded="false">
-									<span class="text-white fw-500 fs-6 vjs-lang-label">ENG</span>
-									<i class="bi bi-chevron-down ms-1 text-white opacity-50"
-										style="font-size: 10px;"></i>
-								</button>
-								<ul class="dropdown-menu dropdown-menu-end vjs-lang-menu">
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
-											data-lang="en">ENG</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
-											data-lang="hi">हिन्दी (HIN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
-											data-lang="ta">தமிழ் (TAM)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
-											data-lang="kn">ಕನ್ನಡ (KAN)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
-											data-lang="te">తెలుగు (TEL)</a></li>
-									<li><a class="dropdown-item translate-btn" href="javascript:void(0)"
-											data-lang="ml">മലയാളം (MAL)</a></li>
-								</ul>
-							</div>
+
 						</div>
 					</div> <!--/.top-header-->
 				</div> <!-- /.inner-content -->
@@ -1453,17 +1441,21 @@
 				style="padding-top: 80px !important; background: transparent !important;">
 				<div class="container">
 					<div class="row align-items-center">
-						{% set leader = cms['Leadership Statement'].content[0] if cms['Leadership Statement'] and cms['Leadership Statement'].content else None %}
+						{% set leader = cms['Leadership Statement'].content[0] if cms['Leadership Statement'] and
+						cms['Leadership Statement'].content else None %}
 						<div class="col-lg-5 wow fadeInLeft">
 							<div class="leader-portrait-wrap">
 								<img src="{{ leader.image_url or leader.image if leader else url_for('static', filename='images/media/chairman_portrait.png') }}?v=1.0"
-									alt="{{ leader.title if leader else 'Ms. M. Vijayalakshmi' }}" class="leader-portrait lazy-img">
+									alt="{{ leader.title if leader else 'Ms. M. Vijayalakshmi' }}"
+									class="leader-portrait lazy-img">
 							</div>
 						</div>
 						<div class="col-lg-7 wow fadeInRight">
 							<div class="vjs-quote-wrapper">
 								<div class="vjs-quote-box">
-									<p>"{{ leader.description if leader else 'Empowerment is not just about providing technology or services; it\'s about building an ecosystem where innovation and trust create a legacy of sustainable growth for everyone.' }}"</p>
+									<p>"{{ leader.description if leader else 'Empowerment is not just about providing
+										technology or services; it\'s about building an ecosystem where innovation and
+										trust create a legacy of sustainable growth for everyone.' }}"</p>
 									<div class="vjs-leader-meta">
 										<h5>{{ leader.title if leader else 'Ms. M. Vijayalakshmi' }}</h5>
 										<p>{{ leader.cta_text if leader else 'Managing Director of VJS Group' }}</p>
@@ -1679,27 +1671,33 @@
 			<div class="container">
 				<div class="wrapper">
 					<div class="row align-items-stretch">
-						{% set mission = cms['Our Mission'].content[0] if cms['Our Mission'] and cms['Our Mission'].content else None %}
+						{% set mission = cms['Our Mission'].content[0] if cms['Our Mission'] and cms['Our
+						Mission'].content else None %}
 						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex">
 							<div class="card-style-three pb-35 sm-pb-30 w-100"
 								style="background-color: #A2D732; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column;">
 								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ mission.image_url or mission.image or url_for('static', filename='images/icon/icon_10.svg') }}?v=1.0" alt=""
-									class="lazy-img icon"
+									data-src="{{ mission.image_url or mission.image or url_for('static', filename='images/icon/icon_10.svg') }}?v=1.0"
+									alt="" class="lazy-img icon"
 									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block;align-self: self-start;">
-								<h4 class="fw-bold text-dark" style="font-size: 24px; margin: 0 0 15px 0;">{{ mission.title if mission else 'Our Mission' }}</h4>
-								<p class="text-dark" style="margin: 0; line-height: 1.6;">{{ mission.description if mission else 'To deliver innovative and reliable solutions across diverse industries by combining technology, expertise, and customer-focused services”‚empowering businesses and communities to achieve sustainable growth.' }}</p>
+								<h4 class="fw-bold text-dark" style="font-size: 24px; margin: 0 0 15px 0;">{{
+									mission.title if mission else 'Our Mission' }}</h4>
+								<p class="text-dark" style="margin: 0; line-height: 1.6;">{{ mission.description if
+									mission else 'To deliver innovative and reliable solutions across diverse industries
+									by combining technology, expertise, and customer-focused services”‚empowering
+									businesses and communities to achieve sustainable growth.' }}</p>
 							</div>
 							<!-- /.card-style-three -->
 						</div>
-						{% set vision = cms['Our Vision'].content[0] if cms['Our Vision'] and cms['Our Vision'].content else None %}
+						{% set vision = cms['Our Vision'].content[0] if cms['Our Vision'] and cms['Our Vision'].content
+						else None %}
 						<div class="col-lg-4 col-md-6 wow fadeInUp d-flex" data-wow-delay="0.1s">
 							<div class="card-style-three pb-35 sm-pb-30 w-100"
 								style="background-color: #196164; border-radius: 20px; padding: 30px; padding-top: 10px !important; display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
 
 								<img src="{{ url_for('static', filename='images/lazy.svg') }}?v=1.0"
-									data-src="{{ vision.image_url or vision.image or url_for('static', filename='images/icon/icon_11.svg') }}?v=1.0" alt=""
-									class="lazy-img icon"
+									data-src="{{ vision.image_url or vision.image or url_for('static', filename='images/icon/icon_11.svg') }}?v=1.0"
+									alt="" class="lazy-img icon"
 									style="height: 40px; width: auto; margin: 0 0 25px 0; display: block; align-self: flex-start;">
 
 								<h4 class="fw-bold text-white" style="font-size: 24px; margin: 0 0 15px 0;">
@@ -1707,7 +1705,9 @@
 								</h4>
 
 								<p class="text-white" style="margin: 0; line-height: 1.6;">
-									{{ vision.description if vision else 'To become a trusted and leading group of companies recognized for excellence in technology, education, wellness, and global trade, creating long-term value and positive impact worldwide.' }}
+									{{ vision.description if vision else 'To become a trusted and leading group of
+									companies recognized for excellence in technology, education, wellness, and global
+									trade, creating long-term value and positive impact worldwide.' }}
 								</p>
 
 							</div>
@@ -2380,7 +2380,8 @@
 							{% endif %}
 						</div> <!-- /.news-slider -->
 
-						<div class="news-controls d-flex gap-3 justify-content-end" style="margin-top: 10px !important;">
+						<div class="news-controls d-flex gap-3 justify-content-end"
+							style="margin-top: 10px !important;">
 							<button id="news-prev" class="news-arrow" aria-label="Previous Slide"><i
 									class="bi bi-arrow-left"></i></button>
 							<button id="news-next" class="news-arrow" aria-label="Next Slide"><i
@@ -2542,10 +2543,7 @@
 		<script src="{{ url_for('static', filename='js/site-utils.js') }}?v=1.0"></script>
 		<!-- Video Hover Logic -->
 		<script src="{{ url_for('static', filename='js/video-hover.js') }}?v=1.0"></script>
-		<!-- Google Translate Element -->
-		<div id="google_translate_element" style="display:none;"></div>
-		<script type="text/javascript"
-			src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 		<button id="vjs-scroll-top" class="vjs-scroll-top-btn" aria-label="Scroll to top">
 			<i class="bi bi-chevron-double-up"></i>

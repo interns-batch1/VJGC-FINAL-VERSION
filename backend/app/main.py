@@ -218,6 +218,149 @@ async def get_page_context(path: str):
         
     context["cms"] = cms_content
 
+    # Dynamic SEO Metadata integration
+    seo_defaults = {
+        "": {
+            "title": "Vijayalakshmi Group | Leading Sustainable Conglomerate",
+            "description": "Vijayalakshmi Group of Companies is a premier global conglomerate specializing in Enterprise Data Centers, Green Energy, Logistics, IT Consulting, and Tree Plantations.",
+            "keywords": "Green Energy, Data Centers, Logistics, VJS Group, IT Consulting, Tree Plantations, Vijayalakshmi Group",
+            "og_title": "Vijayalakshmi Group of Companies | Sustainable Enterprise",
+            "og_description": "Empowering sustainable growth across diverse business verticals globally.",
+            "og_url": "https://vijayalakshmigroup.com/",
+            "robots": "index, follow"
+        },
+        "index-2": {
+            "title": "Vijayalakshmi Group | Leading Sustainable Conglomerate",
+            "description": "Vijayalakshmi Group of Companies is a premier global conglomerate specializing in Enterprise Data Centers, Green Energy, Logistics, IT Consulting, and Tree Plantations.",
+            "keywords": "Green Energy, Data Centers, Logistics, VJS Group, IT Consulting, Tree Plantations, Vijayalakshmi Group",
+            "og_title": "Vijayalakshmi Group of Companies | Sustainable Enterprise",
+            "og_description": "Empowering sustainable growth across diverse business verticals globally.",
+            "og_url": "https://vijayalakshmigroup.com/",
+            "robots": "index, follow"
+        },
+        "about-us-v1": {
+            "title": "Our Journey | About Vijayalakshmi Group",
+            "description": "Learn about the heritage, journey, and milestones of the Vijayalakshmi Group of Companies.",
+            "keywords": "Our Journey, VJS Group History, Milestone, About Vijayalakshmi Group",
+            "robots": "index, follow"
+        },
+        "about-us-v2": {
+            "title": "About Group | Vijayalakshmi Group",
+            "description": "Discover Vijayalakshmi Group of Companies' corporate history, core values, and vision.",
+            "keywords": "About Group, Corporate Values, VJS Vision, Vijayalakshmi Group",
+            "robots": "index, follow"
+        },
+        "service-v1": {
+            "title": "Leadership & Awards | Vijayalakshmi Group",
+            "description": "Meet our leadership team and explore the prestigious awards and recognition received by the Vijayalakshmi Group of Companies.",
+            "keywords": "VJS Leadership, Group Awards, Corporate Recognition, Vijayalakshmi Group",
+            "robots": "index, follow"
+        },
+        "green-energy": {
+            "title": "Green Energy & Solar Manufacturing | Vijayalakshmi Group",
+            "description": "Explore eco-friendly energy solutions and advanced solar manufacturing services by Vijayalakshmi Group of Companies.",
+            "keywords": "Solar Manufacturing, Green Energy, Renewable Energy, Eco Friendly, Vijayalakshmi Group",
+            "robots": "index, follow"
+        },
+        "data-centers-hosting": {
+            "title": "Enterprise Data Centers & Hosting | Vijayalakshmi Group",
+            "description": "Secure, scalable, and sustainable enterprise data center hosting and cloud infrastructure solutions by Vijayalakshmi Group.",
+            "keywords": "Data Centers, Hosting Services, Cloud Infrastructure, Sustainable Hosting, Vijayalakshmi Group",
+            "robots": "index, follow"
+        },
+        "it-consulting": {
+            "title": "IT Consulting & Digital Transformation | Vijayalakshmi Group",
+            "description": "Drive innovation and business optimization with elite IT consulting and enterprise systems design by Vijayalakshmi Group.",
+            "keywords": "IT Consulting, Digital Transformation, Business Optimization, Software Services",
+            "robots": "index, follow"
+        },
+        "logistics-services": {
+            "title": "Logistics Services & Global Supply Chain | Vijayalakshmi Group",
+            "description": "Safe, reliable, and integrated global supply chain and logistics services by Vijayalakshmi Group of Companies.",
+            "keywords": "Logistics Services, Supply Chain, Cargo, Warehousing, Global Logistics",
+            "robots": "index, follow"
+        },
+        "export-import": {
+            "title": "Export & Import Global Trade | Vijayalakshmi Group",
+            "description": "Facilitating seamless international trade and commodity export-import solutions across multiple sectors.",
+            "keywords": "Export Import, Global Trade, Commodities, VJS Import Export",
+            "robots": "index, follow"
+        },
+        "property-services": {
+            "title": "Property Services & Asset Management | Vijayalakshmi Group",
+            "description": "Premium real estate solutions, property development, and corporate asset management by Vijayalakshmi Group.",
+            "keywords": "Property Services, Asset Management, Corporate Real Estate, Property Development",
+            "robots": "index, follow"
+        },
+        "it-training": {
+            "title": "IT Training & Professional Development | Vijayalakshmi Group",
+            "description": "Empowering students and professionals with top-tier technology courses, certifications, and hands-on skill development.",
+            "keywords": "IT Training, Professional Education, Skill Building, Tech Certification",
+            "robots": "index, follow"
+        },
+        "yoga-wellness": {
+            "title": "Yoga & Wellness Center | Vijayalakshmi Group",
+            "description": "Promoting holistic health, mental clarity, and spiritual well-being through advanced yoga and wellness programs.",
+            "keywords": "Yoga and Wellness, Holistic Health, VJS Yoga Center, Mindfulness",
+            "robots": "index, follow"
+        },
+        "travel-rentals": {
+            "title": "Travel & Premium Rentals | Vijayalakshmi Group",
+            "description": "Hassle-free corporate car rentals, holiday planning, and premium tour operations by Vijayalakshmi Group.",
+            "keywords": "Travel Rentals, Premium Tour, Car Rental, Corporate Travel, Holiday Planner",
+            "robots": "index, follow"
+        },
+        "plantations": {
+            "title": "Plantations & Exotic Trees | Vijayalakshmi Group",
+            "description": "Pioneering commercial plantations, sustainability conservation projects, and timber/horticultural cultivation.",
+            "keywords": "Tree Plantation, Exotic Trees, Conservation, Green Cover, VJS Plantations",
+            "robots": "index, follow"
+        },
+        "plantations-exotic-trees": {
+            "title": "Plantations & Exotic Trees | Vijayalakshmi Group",
+            "description": "Pioneering commercial plantations, sustainability conservation projects, and timber/horticultural cultivation.",
+            "keywords": "Tree Plantation, Exotic Trees, Conservation, Green Cover, VJS Plantations",
+            "robots": "index, follow"
+        },
+        "media-release": {
+            "title": "Newsroom & Media Release | Vijayalakshmi Group",
+            "description": "Stay updated with the latest press releases, corporate announcements, and insights from Vijayalakshmi Group of Companies.",
+            "keywords": "Media Release, Press Release, VJS Newsroom, Corporate Insights",
+            "robots": "index, follow"
+        },
+        "sustainability": {
+            "title": "Sustainability & Corporate Social Responsibility | Vijayalakshmi Group",
+            "description": "Discover the sustainability vision, environmental milestones, and community CSR initiatives of the Vijayalakshmi Group of Companies.",
+            "keywords": "Sustainability VJS, CSR Initiatives, Green Business, Community Care",
+            "robots": "index, follow"
+        }
+    }
+
+    # Fetch customized SEO record from database, fallback to defaults
+    seo_record = None
+    try:
+        seo_record = await db["seo_metadata"].find_one({"page_path": clean_path})
+    except Exception as e:
+        print(f"Error fetching SEO record for {clean_path}: {e}")
+
+    if not seo_record:
+        seo_record = seo_defaults.get(clean_path, {
+            "title": "Vijayalakshmi Group of Companies",
+            "description": "Official website of Vijayalakshmi Group of Companies.",
+            "keywords": "Green Energy, Data Centers, Logistics, VJS Group",
+            "robots": "index, follow"
+        })
+    else:
+        seo_record["_id"] = str(seo_record["_id"])
+
+    # Ensure OpenGraph elements exist
+    seo_record["og_title"] = seo_record.get("og_title") or seo_record.get("title")
+    seo_record["og_description"] = seo_record.get("og_description") or seo_record.get("description")
+    seo_record["canonical_url"] = seo_record.get("canonical_url")
+    seo_record["robots"] = seo_record.get("robots") or "index, follow"
+
+    context["seo"] = seo_record
+
     # Save calculated context to the in-memory cache
     cms_cache.set(path, copy.deepcopy(context))
     
