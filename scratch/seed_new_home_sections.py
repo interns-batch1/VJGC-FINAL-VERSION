@@ -14,7 +14,7 @@ SEED_DATA = [
         "subSection": "",
         "category": "Our Mission",
         "title": "Our Mission",
-        "description": "To deliver innovative and reliable solutions across diverse industries by combining technology, expertise, and customer-focused services—empowering businesses and communities to achieve sustainable growth.",
+        "description": "To deliver innovative and reliable solutions through technology, expertise, and customer-focused services, empowering business to achieve sustainable growth",
         "image": "/static/images/icon/icon_10.svg",
         "isActive": True,
         "updatedAt": NOW

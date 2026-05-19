@@ -4,6 +4,7 @@ from app.schemas.universal_content import UniversalContent, UniversalContentCrea
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 from bson import ObjectId
+from app.core.cache import cms_cache
 
 router = APIRouter()
 
@@ -109,6 +110,7 @@ async def create_universal_content(data: UniversalContentCreate, db = Depends(ge
         return_document=True
     )
     
+    cms_cache.clear()
     return serialize_doc(result)
 
 @router.put("/{id}", response_model=UniversalContent)
@@ -127,6 +129,7 @@ async def update_universal_content(id: str, data: UniversalContentUpdate, db = D
     if not result:
         raise HTTPException(status_code=404, detail="Content not found")
         
+    cms_cache.clear()
     return serialize_doc(result)
 
 @router.delete("/{id}")
@@ -138,4 +141,6 @@ async def delete_universal_content(id: str, db = Depends(get_database)):
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Content not found")
         
+    cms_cache.clear()
     return {"message": "Content deleted successfully"}
+
