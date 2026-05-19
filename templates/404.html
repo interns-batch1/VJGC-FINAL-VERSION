@@ -2,14 +2,32 @@
 <html lang="en">
 
 <head>
+
+	<meta name="keywords" content="{{ seo.keywords if seo else '' }}">
+	<meta name="description" content="{{ seo.description if seo else '' }}">
+	<link rel="canonical" href="{{ seo.canonical_url or request.url }}">
+	<meta name="robots" content="{{ seo.robots or 'index, follow' }}">
+	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
+	<meta property="og:url" content="{{ seo.og_url or request.url }}">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{{ seo.og_title or (seo.title if seo else '') }}">
+	<meta property="og:description" content="{{ seo.og_description or (seo.description if seo else '') }}">
+	<meta property="og:image" content="{{ seo.og_image or url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.2">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="{{ seo.og_url or request.url }}">
+	<meta name="twitter:title" content="{{ seo.og_title or (seo.title if seo else '') }}">
+	<meta name="twitter:description" content="{{ seo.og_description or (seo.description if seo else '') }}">
+	<meta name="twitter:image" content="{{ seo.og_image or url_for('static', filename='images/logo/vijayalakshmi-mark.png') }}?v=1.2">
+	<title>{{ seo.title if seo else 'Vijayalakshmi Group of Companies' }}</title>
+
     <meta charset="UTF-8">
-	<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
-	<meta name="description" content="Vijayalakshmi Group Of Companies website.">
-    <meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
-    <meta property="og:url" content="https://creativegigstf.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Vijayalakshmi Group Of Companies">
-	<meta name='og:image' content='{{ url_for('static', filename='images/assets/ogg.png') }}?v=1.2'>
+	
+	
+    
+    
+    
+    
+	
     <!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- For Resposive Device -->
@@ -21,7 +39,7 @@
     <meta name="msapplication-navbutton-color" content="#1A4137">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
-    <title>Vijayalakshmi Group Of Companies</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="56x56" href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
     <!-- Bootstrap CSS -->
