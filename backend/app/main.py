@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -69,9 +69,6 @@ app.add_middleware(
         "http://localhost:3000",
         "http://localhost:3001",
         "http://localhost:5006",
-        "http://127.0.0.1:3000",
-        "http://127.0.0.1:3001",
-        "http://127.0.0.1:5006",
         "https://vjgc-admin.vercel.app",
     ],
     allow_origin_regex="https://vjgc-admin-.*\\.vercel\\.app",
@@ -418,6 +415,29 @@ async def blog_details(request: Request, id: str):
         return templates.TemplateResponse(request, "media-release.html", await get_page_context("media-release"))
 
     return templates.TemplateResponse(request, "blog-details.html", context)
+
+@app.get("/robots.txt", response_class=PlainTextResponse)
+def robots():
+    return "User-agent: *\nAllow: /\nSitemap: https://vijayalakshmigroup.com/sitemap.xml"
+
+@app.get("/sitemap.xml")
+def sitemap():
+    content = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://vijayalakshmigroup.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vijayalakshmigroup.com/media-kit</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vijayalakshmigroup.com/media-release</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>"""
+    return Response(content=content, media_type="application/xml")
 
 # Serve Website Pages
 @app.get("/", name="home")

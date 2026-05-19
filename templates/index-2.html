@@ -50,21 +50,27 @@
 	</script>
 	<script async data-uid="7ae406bec1" src="https://springreen.kit.com/7ae406bec1/index.js"></script>
 	<meta charset="UTF-8">
-	<meta name="keywords" content="{{ seo.keywords }}">
-	<meta name="description" content="{{ seo.description }}">
+	<meta name="keywords"
+		content="{{ seo.keywords or 'Green Energy, Data Centers, Logistics, VJS Group, IT Consulting, Tree Plantations, Vijayalakshmi Group' }}">
+	<meta name="description"
+		content="{{ seo.description or 'Vijayalakshmi Group of Companies is a premier global conglomerate specializing in Enterprise Data Centers, Green Energy, Logistics, IT Consulting, and Tree Plantations.' }}">
 	<link rel="canonical" href="{{ seo.canonical_url or request.url }}">
-	<meta name="robots" content="{{ seo.robots }}">
+	<meta name="robots" content="{{ seo.robots or 'index, follow' }}">
 	<meta property="og:site_name" content="Vijayalakshmi Group Of Companies">
 	<meta property="og:url" content="{{ seo.og_url or request.url }}">
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="{{ seo.og_title }}">
-	<meta property="og:description" content="{{ seo.og_description }}">
+	<meta property="og:title"
+		content="{{ seo.og_title or seo.title or 'Vijayalakshmi Group | Leading Sustainable Conglomerate' }}">
+	<meta property="og:description"
+		content="{{ seo.og_description or seo.description or 'Vijayalakshmi Group of Companies is a premier global conglomerate specializing in Enterprise Data Centers, Green Energy, Logistics, IT Consulting, and Tree Plantations.' }}">
 	<meta property="og:image" content="{{ seo.og_image or url_for('static', filename='images/assets/ogg.png') }}?v=1.2">
 	<!-- Twitter Cards -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:url" content="{{ seo.og_url or request.url }}">
-	<meta name="twitter:title" content="{{ seo.og_title }}">
-	<meta name="twitter:description" content="{{ seo.og_description }}">
+	<meta name="twitter:title"
+		content="{{ seo.og_title or seo.title or 'Vijayalakshmi Group | Leading Sustainable Conglomerate' }}">
+	<meta name="twitter:description"
+		content="{{ seo.og_description or seo.description or 'Vijayalakshmi Group of Companies is a premier global conglomerate specializing in Enterprise Data Centers, Green Energy, Logistics, IT Consulting, and Tree Plantations.' }}">
 	<meta name="twitter:image"
 		content="{{ seo.og_image or url_for('static', filename='images/assets/ogg.png') }}?v=1.2">
 	<!-- For IE -->
@@ -78,22 +84,29 @@
 	<meta name="msapplication-navbutton-color" content="#1A4137">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
-	<title>{{ seo.title }}</title>
+	<title>{{ seo.title or 'Vijayalakshmi Group | Leading Sustainable Conglomerate' }}</title>
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="56x56"
 		href="{{ url_for('static', filename='images/fav-icon/icon.png') }}?v=1.0">
+
+	<!-- Font Preloads -->
+	<link rel="preload" href="{{ url_for('static', filename='fonts/Satoshi/fonts/Satoshi-Regular.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="{{ url_for('static', filename='fonts/Satoshi/fonts/Satoshi-Bold.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="{{ url_for('static', filename='fonts/ClashDisplay/fonts/ClashDisplay-Bold.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}?v=1.0"
 		media="all">
 	<!-- Main style sheet -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.0"
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.min.css') }}?v=1.1"
 		media="all">
 	<!-- responsive style sheet -->
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.0"
-		media="all">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.3" media="all">
-	<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.1"
-		media='all'>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/responsive.css') }}?v=1.1"
+		media="print" onload="this.media='all'">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}?v=1.4" media="print"
+		onload="this.media='all'">
+	<link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/navbar-vjs.css') }}?v=1.2"
+		media="print" onload="this.media='all'">
 	<style>
 		.hero-banner-one .hero-slider-one {
 			position: relative !important;
@@ -1447,7 +1460,7 @@
 							<div class="leader-portrait-wrap">
 								<img src="{{ leader.image_url or leader.image if leader else url_for('static', filename='images/media/chairman_portrait.png') }}?v=1.0"
 									alt="{{ leader.title if leader else 'Ms. M. Vijayalakshmi' }}"
-									class="leader-portrait lazy-img">
+									class="leader-portrait lazy-img" loading="lazy">
 							</div>
 						</div>
 						<div class="col-lg-7 wow fadeInRight">
@@ -2367,7 +2380,8 @@
 										</video>
 										{% else %}
 										<img src="{{ item.image_url or item.image or url_for('static', filename='images/media/blog_01.jpg') }}"
-											alt="" class="lazy-img w-100 h-100" style="object-fit: cover;">
+											alt="" class="lazy-img w-100 h-100" style="object-fit: cover;"
+											loading="lazy">
 										{% endif %}
 									</figure>
 								</article>
@@ -2450,7 +2464,8 @@
 						<div class="footer-logo">
 							<div class="logo-icon-circle">
 								<img src="/static/images/logo/vijayalakshmi-mark.png" alt="VJS Logo"
-									style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+									style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;"
+									loading="lazy">
 							</div>
 							<div class="logo-text">
 								<span class="brand-name">VIJAYALAKSHMI GROUP</span>
